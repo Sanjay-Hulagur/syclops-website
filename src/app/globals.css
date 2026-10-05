@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-paper: #f6f1e8;
+  --color-ink: #12141a;
+  --color-quiet: #efe8dc;
+  --color-line: #ddd4c4;
+  --color-iris: #c45c26;
+  --color-iris-dark: #9a451c;
+  --color-money: #1f6b4a;
+  --color-leak: #9b2f2f;
+  --color-muted: #5c574e;
+  --color-cream: #fbf7f0;
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-syne);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-iris) 28%, transparent);
+  color: var(--color-ink);
+}
+
+.display {
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+}
+
+.ring-iris {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-iris) 25%, transparent);
+}
+
+@keyframes sy-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sy-dash {
+  to {
+    stroke-dashoffset: -160;
+  }
+}
+
+@keyframes sy-breathe {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes sy-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes sy-draw {
+  from {
+    stroke-dashoffset: 220;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes sy-dot {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.sy-orbit {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sy-orbit 56s linear infinite;
+}
+
+.sy-orbit-rev {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sy-orbit 80s linear infinite reverse;
+}
+
+.sy-dash {
+  stroke-dasharray: 5 12;
+  animation: sy-dash 22s linear infinite;
+}
+
+.sy-breathe {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sy-breathe 9s ease-in-out infinite;
+}
+
+.sy-float {
+  animation: sy-float 8s ease-in-out infinite;
+}
+
+.sy-float-d {
+  animation: sy-float 9s ease-in-out 1.2s infinite;
+}
+
+.sy-draw {
+  stroke-dasharray: 220;
+  animation: sy-draw 7s ease-in-out infinite alternate;
+}
+
+.sy-dot {
+  animation: sy-dot 4.5s ease-in-out infinite;
+}
+
+.sy-dot-d {
+  animation: sy-dot 4.5s ease-in-out 1.4s infinite;
+}
+
+.sy-dot-e {
+  animation: sy-dot 4.5s ease-in-out 2.6s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
