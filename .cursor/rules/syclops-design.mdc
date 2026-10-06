@@ -1,0 +1,16 @@
+---
+description: Follow the shared Syclops visual theme (paper, ink, iris — no blue/red/white brand).
+alwaysApply: true
+---
+
+# Syclops visual theme
+
+When building or restyling any Syclops UI, follow **[DESIGN.md](../DESIGN.md)**.
+
+Hard rules:
+
+- Brand accent is terracotta **iris** `#C45C26`, not blue and not red.
+- Surfaces are warm **paper / cream**, never `#FFFFFF` as the page background.
+- Text is **ink** `#12141A`. Success is **money** `#1F6B4A`. Danger is **leak** `#7A2E1F`.
+- Do not introduce Tailwind `blue-*`, `sky-*`, `indigo-*`, or bright `red-*` as brand or default CTA.
+- Tokens already live in `src/app/globals.css`. New UI must match them.
