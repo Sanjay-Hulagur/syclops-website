@@ -25,6 +25,11 @@ export default function AnalyticsPage() {
         title="Know which visits still pay."
         body="Loop health, people, and regions. Export from the same screen. No analyst, no month-end paste."
         scene="analytics"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Product", path: "/product" },
+          { name: "Analytics", path: "/product/analytics" },
+        ]}
       />
       <Section eyebrow="The scoreboard" title="Attendance % is not loop health.">
         <Prose>

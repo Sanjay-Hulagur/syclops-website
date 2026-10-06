@@ -25,6 +25,10 @@ export default function CompareIndexPage() {
         title="Different category. Same honesty."
         body="Syclops is not a selfie-attendance app, not a hospital HIS, and not a gym membership widget. It is the visit, the referral, and the plan."
         scene="compare"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Compare", path: "/compare" },
+        ]}
       />
       <Section>
         <Prose>

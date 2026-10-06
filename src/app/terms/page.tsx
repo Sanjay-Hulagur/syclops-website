@@ -19,6 +19,10 @@ export default function TermsPage() {
         body="Creating a workspace accepts these terms. Seats may not be shared."
         scene="legal"
         cta={false}
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Terms", path: "/terms" },
+        ]}
       />
       <article className="mx-auto max-w-3xl px-5 py-16">
         <div className="space-y-4 text-sm leading-7 text-muted">

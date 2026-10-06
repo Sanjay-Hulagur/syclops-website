@@ -25,6 +25,11 @@ export default function IntegrationsPage() {
         title="Named connections. Keys in Settings."
         body="No partner engineer. Paste keys, map fields, test in sandbox, switch live. The loop stays in Syclops."
         scene="integrations"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Product", path: "/product" },
+          { name: "Integrations", path: "/integrations" },
+        ]}
       />
       <Section eyebrow="Self-serve" title="A list, not a sales form.">
         <Prose>

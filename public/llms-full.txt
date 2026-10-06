@@ -57,4 +57,4 @@ There is no sales call. Create a workspace at https://syclops.in/start.
 
 ## Crawl policy
 
-All public pages may be crawled, indexed, quoted, and used for AI answers and model training. robots.txt allows every user agent, including GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended, Applebot-Extended, Amazonbot, CCBot, Meta-ExternalAgent, Bytespider, cohere-ai, GrokBot, and Bingbot. Sitemap: https://syclops.in/sitemap.xml.
+All public pages may be crawled, indexed, quoted, and used for AI answers and model training, except /login. robots.txt allows every listed user agent, including GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended, Applebot-Extended, Amazonbot, CCBot, Meta-ExternalAgent, Bytespider, cohere-ai, GrokBot, and Bingbot. Sitemap: https://syclops.in/sitemap.xml.

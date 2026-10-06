@@ -24,6 +24,11 @@ export default function MobilePage() {
         title="The day lives on the phone. The loop lives in Syclops."
         body="One tenant, three surfaces: field, sales, partner. The invite you send from Settings is how the app knows which workspace to open."
         scene="mobile"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Product", path: "/product" },
+          { name: "Mobile app", path: "/product/mobile" },
+        ]}
       />
       <Section eyebrow="Three phones" title="Staff log the visit. Partners send the person. The plan stays visible.">
         <Prose>

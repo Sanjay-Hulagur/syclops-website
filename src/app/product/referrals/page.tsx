@@ -24,6 +24,11 @@ export default function ReferralsPage() {
         title="One referrer object. Many kinds of people."
         body="Members, alumni, clinics, KOLs, channel partners. They send. They see status. They get paid on the next invoice — without calling your desk."
         scene="referral"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Product", path: "/product" },
+          { name: "Referral management", path: "/product/referrals" },
+        ]}
       />
       <Section eyebrow="Statuses" title="Sent → accepted → converted → paying → churned.">
         <Steps
@@ -70,8 +75,8 @@ export default function ReferralsPage() {
         <Related
           items={[
             { href: "/referral-management-software", label: "Referral management software", body: "What teams search for, and what this covers." },
+            { href: "/gym-referral-software", label: "Gym referral software", body: "Member-get-member beside gym ERP." },
             { href: "/guides/qualification-window", label: "Qualification window", body: "Rewards after they stay. Duplicate phones blocked." },
-            { href: "/product/subscriptions", label: "Subscriptions", body: "The plan the referral became." },
           ]}
         />
       </Section>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CtaBand, PageHero, Steps } from "@/components/page-hero";
+import { CtaBand, PageHero } from "@/components/page-hero";
 import { FeatureGrid, FaqList, Prose, Related, Section } from "@/components/interior";
 import { comparisons, getComparison } from "@/lib/compare";
 import { pageSeo } from "@/lib/seo";
@@ -35,6 +35,11 @@ export default async function ComparePage({ params }: Props) {
         title={page.title}
         body={page.summary}
         scene="compare"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Compare", path: "/compare" },
+          { name: page.theirs, path: `/compare/${page.slug}` },
+        ]}
       />
       <Section eyebrow="The honest split" title="Same category on a slide. Different objects in the product.">
         <Prose>
@@ -101,9 +106,9 @@ export default async function ComparePage({ params }: Props) {
                       body: "CSV in, then the field app is the source of truth.",
                     },
                     {
-                      href: "/start",
-                      label: "Start",
-                      body: "Create a workspace. No quote.",
+                      href: "/product/referrals",
+                      label: "Referral management",
+                      body: "Status the sender can see, not a chat scroll.",
                     },
                     {
                       href: "/compare",

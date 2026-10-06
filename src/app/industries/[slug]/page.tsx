@@ -115,22 +115,30 @@ function industryNext(id: IndustryId, label: string) {
   if (id === "healthcare") {
     return [
       {
+        href: "/referral-management-software",
+        label: "Referral management software",
+        body: "Clinic and partner status the sender can see.",
+      },
+      {
         href: "/blog/clinic-referral-portal-vs-whatsapp",
         label: "Clinic portal vs WhatsApp",
         body: "Status the partner can see without calling the desk.",
       },
-      start,
-      { href: "/product/referrals", label: "Referrals", body: "Portal, window, leakage." },
+      { href: "/product/referrals", label: "Referral product", body: "Portal, window, leakage." },
     ];
   }
   if (id === "education") {
     return [
       {
+        href: "/product/referrals",
+        label: "Referral management",
+        body: "Alumni and parent intros with status.",
+      },
+      {
         href: "/blog/counselor-beat-unpaid-fee-installment",
         label: "Unpaid fees as a visit",
         body: "Counselor beat plus alumni origin on the fee plan.",
       },
-      start,
       { href: "/product/field", label: "Field tracking", body: "Campus check-in and last-visit dates." },
     ];
   }
@@ -148,12 +156,16 @@ function industryNext(id: IndustryId, label: string) {
   if (id === "fintech" || id === "medtech") {
     return [
       {
+        href: "/product/field",
+        label: "Field tracking",
+        body: "Agent and KOL visits with TADA.",
+      },
+      {
         href: "/blog/kol-dsa-referral-loops",
         label: "KOL and DSA loops",
         body: "Same record. Different nouns.",
       },
-      start,
-      { href: "/product", label: "Product", body: "Field, referrals, subscriptions." },
+      { href: "/product/referrals", label: "Referral management", body: "Portal status for the sender." },
     ];
   }
   return [
@@ -176,6 +188,11 @@ export default async function IndustryPage({ params }: Props) {
         title={industry.headline}
         body={industry.body}
         scene="industry"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Industries", path: "/industries" },
+          { name: industry.label, path: `/industries/${industry.id}` },
+        ]}
       />
       <Section eyebrow="Why this loop" title={`Syclops for ${industry.label.toLowerCase()}.`}>
         <Prose>

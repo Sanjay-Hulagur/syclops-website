@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { faqJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 
 export function JsonLd({ data }: { data: unknown }) {
   return (
@@ -85,6 +85,39 @@ export function FaqList({
           </div>
         ))}
       </dl>
+    </>
+  );
+}
+
+export function Breadcrumbs({
+  items,
+}: {
+  items: { name: string; path: string }[];
+}) {
+  if (items.length < 2) return null;
+
+  return (
+    <>
+      <JsonLd data={breadcrumbJsonLd(items)} />
+      <nav aria-label="Breadcrumb" className="border-b border-line bg-paper">
+        <ol className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-2 gap-y-1 px-5 py-3 text-sm text-muted">
+          {items.map((item, index) => {
+            const last = index === items.length - 1;
+            return (
+              <li key={`${item.path}-${item.name}`} className="flex items-center gap-2">
+                {index > 0 ? <span aria-hidden="true">/</span> : null}
+                {last ? (
+                  <span className="text-ink">{item.name}</span>
+                ) : (
+                  <Link href={item.path} className="hover:text-iris">
+                    {item.name}
+                  </Link>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      </nav>
     </>
   );
 }

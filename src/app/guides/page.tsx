@@ -20,6 +20,10 @@ export default function GuidesPage() {
         title="Go live without a person on the other end."
         body="Create a workspace, invite seats, connect billing, share the portal. Each guide is a page. Docs also live in the product."
         scene="start"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Guides", path: "/guides" },
+        ]}
       />
       <Section>
         <Prose>

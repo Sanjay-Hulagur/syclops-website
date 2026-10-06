@@ -25,6 +25,11 @@ export default function SubscriptionsPage() {
         title="The page a field tracker cannot have."
         body="Plans remember who referred them and which visit closed. Failed payments become field work, not another dunning email."
         scene="subscription"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Product", path: "/product" },
+          { name: "Subscriptions", path: "/product/subscriptions" },
+        ]}
       />
       <Section eyebrow="Dunning in the real world" title="Retry the mandate. Then send a person.">
         <Prose>
@@ -89,8 +94,8 @@ export default function SubscriptionsPage() {
         <Related
           items={[
             { href: "/blog/razorpay-memberships-field-dunning", label: "Razorpay then a visit", body: "Retries first. Then the beat." },
+            { href: "/product/referrals", label: "Referral management", body: "Origin stays on the plan." },
             { href: "/product/analytics", label: "Analytics", body: "Which plans still pay." },
-            { href: "/pricing", label: "Pricing", body: "Growth includes subscriptions." },
           ]}
         />
       </Section>

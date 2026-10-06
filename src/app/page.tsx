@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { IndustryMorph } from "@/components/industry-morph";
-import { FaqList, Section } from "@/components/interior";
+import { FaqList, JsonLd, Section } from "@/components/interior";
 import { LoopDiagram } from "@/components/loop-diagram";
 import { CtaBand } from "@/components/page-hero";
 import { SvgScene } from "@/components/svg-scene";
 import { faqs } from "@/lib/guides";
 import { industries } from "@/lib/industries";
-import { pageSeo } from "@/lib/seo";
+import { jsonLdGraph, pageSeo, softwareNode } from "@/lib/seo";
 import { integrations, roles } from "@/lib/site";
 
 const leaks = [
@@ -18,7 +18,7 @@ const leaks = [
 ];
 
 export const metadata: Metadata = pageSeo({
-  title: "Field tracking, referral management, and subscriptions",
+  title: "Syclops — Field Tracking, Referral Management & Subscription Software",
   description:
     "Syclops is field tracking software, referral management, and subscription billing for gyms, campuses, clinics, sales teams, fintech and medtech in India. Self-serve — no sales call.",
   path: "/",
@@ -38,16 +38,19 @@ const products = [
   {
     href: "/product/field",
     title: "Field",
+    cta: "Field tracking",
     body: "Geo check-in, visit photos, routes, daily reports, TADA. Evidence, not surveillance.",
   },
   {
     href: "/product/referrals",
     title: "Referrals",
+    cta: "Referral management",
     body: "Partners, members, alumni, KOLs. One referrer object from intro to payout.",
   },
   {
     href: "/product/subscriptions",
     title: "Subscriptions",
+    cta: "Subscription management",
     body: "Plans, trials, renewals, failed payments. Churn becomes a visit, not an email.",
   },
 ];
@@ -55,6 +58,7 @@ const products = [
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={jsonLdGraph([softwareNode])} />
       <section className="relative overflow-hidden border-b border-line">
         <div className="pointer-events-none absolute -right-10 top-6 hidden w-72 opacity-80 lg:block">
           <SvgScene kind="loop" />
@@ -103,6 +107,37 @@ export default function HomePage() {
           <div className="mt-14">
             <IndustryMorph />
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-line">
+        <div className="mx-auto grid max-w-6xl gap-4 px-5 py-16 sm:grid-cols-3">
+          <article className="rounded-2xl border border-line bg-cream p-5">
+            <h2 className="text-sm font-medium">What is Syclops?</h2>
+            <p className="mt-2 text-sm leading-6 text-muted">
+              Software that keeps a field visit, a partner or member referral,
+              and a paying plan on one record — then writes a visit when the
+              plan is at risk.
+            </p>
+          </article>
+          <article className="rounded-2xl border border-line bg-cream p-5">
+            <h2 className="text-sm font-medium">Who it is for</h2>
+            <p className="mt-2 text-sm leading-6 text-muted">
+              Gyms, campuses, clinics, sales teams, fintech, and medtech in
+              India that grow through people who refer and staff who visit.
+            </p>
+          </article>
+          <article className="rounded-2xl border border-line bg-cream p-5">
+            <h2 className="text-sm font-medium">What it does not replace</h2>
+            <p className="mt-2 text-sm leading-6 text-muted">
+              Gym ERPs, academic systems, hospital HIS, payroll attendance, or
+              a CRM for long named deals.{" "}
+              <Link href="/compare" className="text-iris">
+                Compare the split
+              </Link>
+              .
+            </p>
+          </article>
         </div>
       </section>
 
@@ -160,7 +195,7 @@ export default function HomePage() {
               >
                 <h3 className="display text-2xl font-semibold">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted">{item.body}</p>
-                <p className="mt-6 text-sm font-medium text-iris">Explore →</p>
+                <p className="mt-6 text-sm font-medium text-iris">{item.cta}</p>
               </Link>
             ))}
           </div>
@@ -236,7 +271,7 @@ export default function HomePage() {
                 href="/product/mobile"
                 className="mt-6 inline-flex text-sm font-medium text-iris"
               >
-                See the app →
+                Field force mobile app
               </Link>
             </div>
             <div className="grid grid-cols-3 gap-3">
@@ -275,7 +310,7 @@ export default function HomePage() {
               </h2>
             </div>
             <Link href="/integrations" className="text-sm font-medium text-iris">
-              View all →
+              Named integrations
             </Link>
           </div>
           <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FaqList, Section } from "@/components/interior";
+import { FaqList, JsonLd, Section } from "@/components/interior";
 import { CtaBand, PageHero } from "@/components/page-hero";
-import { pageSeo } from "@/lib/seo";
+import { jsonLdGraph, pageSeo, pricingOfferNodes, softwareNode } from "@/lib/seo";
 
 export const metadata: Metadata = pageSeo({
   title: "Pricing — field seats, referral portal, subscriptions",
@@ -59,11 +59,23 @@ const plans = [
 export default function PricingPage() {
   return (
     <>
+      <JsonLd
+        data={jsonLdGraph([
+          {
+            ...softwareNode,
+            offers: pricingOfferNodes,
+          },
+        ])}
+      />
       <PageHero
         eyebrow="Pricing"
         title="Start with seats. Add the loop you need."
         body="India-first, billed in rupees. Annual terms discount 15% at checkout. Referrer logins are not billed as field seats. No quote, no call."
         scene="pricing"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Pricing", path: "/pricing" },
+        ]}
       />
       <section className="mx-auto grid max-w-6xl gap-4 px-5 py-16 lg:grid-cols-3">
         {plans.map((plan) => (

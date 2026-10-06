@@ -26,6 +26,10 @@ export default function IndustriesPage() {
         title="Horizontal on purpose."
         body="The nouns change. The loop does not. Pick the industry when you create the workspace — visit, referrer, and plan labels follow."
         scene="industry"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Industries", path: "/industries" },
+        ]}
       />
       <Section>
         <Prose>

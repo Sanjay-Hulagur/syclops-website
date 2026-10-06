@@ -19,6 +19,10 @@ export default function SecurityPage() {
         title="A lens, not a leak."
         body="Retention, roles, and exports are in Settings. You do not file a ticket to turn them on."
         scene="security"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Security", path: "/security" },
+        ]}
       />
       <Section>
         <Prose>
@@ -67,8 +71,8 @@ export default function SecurityPage() {
         <Related
           items={[
             { href: "/blog/dpdp-employee-gps-retention", label: "DPDP and GPS retention", body: "Working-day evidence, not a forever trail." },
-            { href: "/pricing", label: "Scale", body: "SSO and India region." },
-            { href: "/start", label: "Start", body: "Your tenant starts empty." },
+            { href: "/privacy", label: "Privacy policy", body: "What is processed, and how you export it." },
+            { href: "/product/field", label: "Field tracking", body: "GPS as visit proof, not CCTV." },
           ]}
         />
       </Section>

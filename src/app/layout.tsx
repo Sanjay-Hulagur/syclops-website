@@ -3,7 +3,11 @@ import { Geist, Syne } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/interior";
-import { organizationJsonLd, softwareJsonLd, websiteJsonLd } from "@/lib/seo";
+import {
+  jsonLdGraph,
+  organizationNode,
+  websiteNode,
+} from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -21,10 +25,9 @@ const syne = Syne({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Field tracking, referral management, subscriptions`,
-    template: `%s · ${site.name}`,
+    default: `${site.name} — Field Tracking, Referral Management & Subscription Software`,
+    template: `%s | ${site.name}`,
   },
-  alternates: { canonical: site.url },
   description: site.description,
   applicationName: site.name,
   category: "Referral management software",
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
     "partner portal",
   ],
   openGraph: {
-    title: `${site.name} — Referral management software`,
+    title: `${site.name} — Field Tracking, Referral Management & Subscription Software`,
     description: site.description,
     url: site.url,
     siteName: site.name,
@@ -52,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Referral management software`,
+    title: `${site.name} — Field Tracking, Referral Management & Subscription Software`,
     description: site.description,
   },
   robots: {
@@ -71,11 +74,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       className={`${geistSans.variable} ${syne.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-paper text-ink">
-        <JsonLd data={[organizationJsonLd, websiteJsonLd, softwareJsonLd]} />
+        <JsonLd data={jsonLdGraph([organizationNode, websiteNode])} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

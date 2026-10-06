@@ -58,6 +58,10 @@ export default function ProductPage() {
         title="The operating system for a paying loop."
         body="GPS tools stop at the pin. CRMs stop at the deal. Vertical software stops at the invoice. Syclops holds the visit, the referral, and the plan together — and you turn it on yourself."
         scene="loop"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Product", path: "/product" },
+        ]}
       />
       <Section eyebrow="The gap" title="Three categories. None of them hold the loop.">
         <Prose>

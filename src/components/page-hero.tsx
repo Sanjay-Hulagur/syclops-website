@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/interior";
 import { SvgScene, type SceneKind } from "@/components/svg-scene";
 
 export function CtaBand({
@@ -45,15 +46,19 @@ export function PageHero({
   body,
   scene = "loop",
   cta = true,
+  crumbs,
 }: {
   eyebrow: string;
   title: string;
   body: string;
   scene?: SceneKind;
   cta?: boolean;
+  crumbs?: { name: string; path: string }[];
 }) {
   return (
-    <header className="border-b border-line bg-cream">
+    <>
+      {crumbs ? <Breadcrumbs items={crumbs} /> : null}
+      <header className="border-b border-line bg-cream">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:py-20 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
@@ -83,6 +88,7 @@ export function PageHero({
         <SvgScene kind={scene} />
       </div>
     </header>
+    </>
   );
 }
 

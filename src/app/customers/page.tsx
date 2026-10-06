@@ -63,6 +63,10 @@ export default function CustomersPage() {
         title="The loop, in the wild."
         body="Shapes of teams running field work, referrals, and plans together — without a CSM in Slack. Names are pattern, not a logo wall."
         scene="customers"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Customers", path: "/customers" },
+        ]}
       />
       <Section>
         <div className="grid gap-4 lg:grid-cols-3">

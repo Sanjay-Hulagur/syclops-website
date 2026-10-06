@@ -24,6 +24,10 @@ export default function FaqPage() {
         title="Answers without a person attached."
         body="If it is not here, it is in Guides or in Settings after you create a workspace."
         scene="blog"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "FAQ", path: "/faq" },
+        ]}
       />
       <Section>
         <FaqList items={faqs} />
@@ -33,7 +37,7 @@ export default function FaqPage() {
           items={[
             { href: "/guides", label: "Guides", body: "Hour-by-hour setup." },
             { href: "/pricing", label: "Pricing", body: "Seats, not quotes." },
-            { href: "/security", label: "Security", body: "GPS and DPDP." },
+            { href: "/security", label: "Security", body: "GPS, DPDP, and RBAC." },
           ]}
         />
       </Section>

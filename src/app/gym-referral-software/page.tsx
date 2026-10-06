@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FaqList, FeatureGrid, JsonLd, Related, Section } from "@/components/interior";
+import { FaqList, FeatureGrid, Related, Section } from "@/components/interior";
 import { CtaBand, PageHero } from "@/components/page-hero";
-import { breadcrumbJsonLd, pageSeo } from "@/lib/seo";
+import { pageSeo } from "@/lib/seo";
 
 const title = "Gym referral software";
 const description =
@@ -73,17 +73,16 @@ const jobs = [
 export default function GymReferralSoftwarePage() {
   return (
     <>
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Home", path: "/" },
-          { name: "Gym referral software", path: "/gym-referral-software" },
-        ])}
-      />
       <PageHero
         eyebrow="Gym referral software"
         title="Gym referral software for member-get-member that still pays."
         body="Syclops tracks which member sent the join, holds the reward until they stay, and writes a trainer visit when the membership is at risk. Your floor ERP can keep classes and the door."
         scene="referral"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Product", path: "/product" },
+          { name: "Gym referral software", path: "/gym-referral-software" },
+        ]}
       />
 
       <Section eyebrow="The problem" title="Referral whiteboards do not survive a failed debit.">

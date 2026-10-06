@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FaqList, FeatureGrid, JsonLd, Related, Section } from "@/components/interior";
+import { FaqList, FeatureGrid, Related, Section } from "@/components/interior";
 import { CtaBand, PageHero } from "@/components/page-hero";
-import { breadcrumbJsonLd, pageSeo } from "@/lib/seo";
+import { pageSeo } from "@/lib/seo";
 import { industries } from "@/lib/industries";
 
 const title = "Referral management software";
@@ -77,20 +77,19 @@ const searches = [
 export default function ReferralManagementSoftwarePage() {
   return (
     <>
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Home", path: "/" },
-          {
-            name: "Referral management software",
-            path: "/referral-management-software",
-          },
-        ])}
-      />
       <PageHero
         eyebrow="Referral management software"
         title="Referral management software for the teams who get introduced."
         body="Syclops tracks every partner, member, alumni, clinic, and channel referral from the person who sent it to the invoice that paid them. Field visits and subscriptions stay on the same record."
         scene="referral"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Product", path: "/product" },
+          {
+            name: "Referral management software",
+            path: "/referral-management-software",
+          },
+        ]}
       />
 
       <Section

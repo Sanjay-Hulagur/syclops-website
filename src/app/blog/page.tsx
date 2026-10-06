@@ -19,6 +19,10 @@ export default function BlogPage() {
         title="The loop, in writing."
         body="Referral leakage, why GPS is not a growth system, and why subscriptions still need a field team."
         scene="blog"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+        ]}
       />
       <section className="mx-auto grid max-w-6xl gap-4 px-5 py-16">
         {posts.map((post) => (

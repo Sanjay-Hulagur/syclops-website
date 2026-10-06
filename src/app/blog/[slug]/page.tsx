@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/page-hero";
-import { JsonLd, Related } from "@/components/interior";
+import { Breadcrumbs, JsonLd, Related } from "@/components/interior";
 import { SvgScene } from "@/components/svg-scene";
-import { getPost, posts } from "@/lib/blog";
+import { getPost, postRelated, posts } from "@/lib/blog";
 import { pageSeo } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -41,11 +41,20 @@ export default async function BlogPostPage({ params }: Props) {
           "@type": "Article",
           headline: post.title,
           datePublished: post.date,
+          dateModified: post.date,
           description: post.excerpt,
-          author: { "@type": "Organization", name: "Syclops" },
+          author: { "@type": "Organization", name: "Syclops", url: site.url },
           publisher: { "@type": "Organization", name: "Syclops", url: site.url },
           mainEntityOfPage: `${site.url}/blog/${post.slug}`,
+          image: `${site.url}/blog/${post.slug}/opengraph-image`,
         }}
+      />
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ]}
       />
       <article className="mx-auto max-w-3xl px-5 py-16">
         <div className="mb-10 max-w-sm">
@@ -64,23 +73,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </article>
       <section className="mx-auto max-w-6xl px-5 pb-16">
-        <Related
-          items={[
-            {
-              href: "/product",
-              label: "Product",
-              body: "Field, referrals, subscriptions.",
-            },
-            ...posts
-              .filter((item) => item.slug !== post.slug)
-              .slice(0, 2)
-              .map((item) => ({
-                href: `/blog/${item.slug}`,
-                label: item.title,
-                body: item.excerpt,
-              })),
-          ]}
-        />
+        <Related items={postRelated(post.slug)} />
       </section>
       <CtaBand />
     </>

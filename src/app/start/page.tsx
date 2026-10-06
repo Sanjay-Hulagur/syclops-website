@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/interior";
 import { StartForm } from "@/components/start-form";
 import { SvgScene } from "@/components/svg-scene";
 import { pageSeo } from "@/lib/seo";
@@ -14,6 +15,13 @@ export const metadata: Metadata = pageSeo({
 
 export default function StartPage() {
   return (
+    <>
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Start", path: "/start" },
+        ]}
+      />
     <section className="mx-auto grid max-w-6xl items-start gap-12 px-5 py-16 lg:grid-cols-[1fr_0.9fr]">
       <div>
         <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
@@ -48,5 +56,6 @@ export default function StartPage() {
       </div>
       <StartForm />
     </section>
+    </>
   );
 }

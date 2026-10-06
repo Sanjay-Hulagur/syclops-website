@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FaqList, FeatureGrid, JsonLd, Related, Section } from "@/components/interior";
+import { FaqList, FeatureGrid, Related, Section } from "@/components/interior";
 import { CtaBand, PageHero } from "@/components/page-hero";
-import { breadcrumbJsonLd, pageSeo } from "@/lib/seo";
+import { pageSeo } from "@/lib/seo";
 
 const title = "TADA software";
 const description =
@@ -74,17 +74,16 @@ const jobs = [
 export default function TadaSoftwarePage() {
   return (
     <>
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Home", path: "/" },
-          { name: "TADA software", path: "/tada-software" },
-        ])}
-      />
       <PageHero
         eyebrow="TADA software"
         title="TADA software that writes mileage from the path, not the pin."
         body="Syclops TADA starts at GPS check-in and closes at checkout. Managers approve a sheet. The visit still belongs to a referral or a paying plan — not a live map."
         scene="field"
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Product", path: "/product" },
+          { name: "TADA software", path: "/tada-software" },
+        ]}
       />
 
       <Section eyebrow="The problem" title="Pin-to-pin TADA is a guess. Field days are not straight lines.">

@@ -19,6 +19,10 @@ export default function RefundPage() {
         body="Cancel in Settings → Billing. Credits apply automatically."
         scene="legal"
         cta={false}
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Refund", path: "/refund" },
+        ]}
       />
       <article className="mx-auto max-w-3xl space-y-6 px-5 py-16">
         <p className="text-sm leading-7 text-muted">

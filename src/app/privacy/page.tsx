@@ -20,6 +20,10 @@ export default function PrivacyPage() {
         body="Your workspace data stays in your tenant. You control retention and exports from Settings."
         scene="legal"
         cta={false}
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Privacy", path: "/privacy" },
+        ]}
       />
       <article className="mx-auto max-w-3xl space-y-8 px-5 py-16">
         <div className="space-y-4 text-sm leading-7 text-muted">

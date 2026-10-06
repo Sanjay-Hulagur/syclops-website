@@ -4,7 +4,7 @@
 
 Syclops is self-serve. Teams create a workspace, invite field seats, and turn on a referrer portal. Referrers are not billed as seats. The portal is included on Growth and Scale. Prices are per field seat per month in INR: Team ₹1,499, Growth ₹2,499, Scale ₹4,499.
 
-Crawling is welcome. Search engines and AI answer engines may fetch every public page. See https://syclops.in/robots.txt and https://syclops.in/sitemap.xml.
+Crawling is welcome. Search engines and AI answer engines may fetch every public page except /login. See https://syclops.in/robots.txt and https://syclops.in/sitemap.xml.
 
 ## Product
 
