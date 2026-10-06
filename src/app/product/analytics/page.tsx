@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
 import { CtaBand, PageHero, Steps } from "@/components/page-hero";
-import { Checklist, FaqList, FeatureGrid, Related, Section } from "@/components/interior";
+import { Checklist, FaqList, FeatureGrid, Prose, Related, Section } from "@/components/interior";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Analytics",
-  description: "See which visits and referrers still produce paying subscriptions.",
-};
+export const metadata: Metadata = pageSeo({
+  title: "Field and referral analytics — visits that still pay",
+  description:
+    "Syclops analytics for loop health: visits that created referrals, referrals that became plans, and plans that renewed. Rank staff by paying outcome, not kilometres.",
+  path: "/product/analytics",
+  keywords: [
+    "field analytics",
+    "referral ROI",
+    "MRR attribution",
+    "TADA reports",
+    "loop health dashboard",
+  ],
+});
 
 export default function AnalyticsPage() {
   return (
@@ -16,6 +26,22 @@ export default function AnalyticsPage() {
         body="Loop health, people, and regions. Export from the same screen. No analyst, no month-end paste."
         scene="analytics"
       />
+      <Section eyebrow="The scoreboard" title="Attendance % is not loop health.">
+        <Prose>
+          <p>
+            GPS dashboards celebrate coverage. CRM dashboards celebrate
+            pipeline. Syclops reports the joins: visits that created referrals,
+            referrals that became plans, plans that renewed. Rank people by
+            paying outcome, not kilometres.
+          </p>
+          <p>
+            Campaign tags are optional labels so camps and ads are not a
+            separate Excel. Region drill uses the hierarchy you set — city,
+            cluster, campus, club. CSV and PDF from the same screen. API on
+            Scale.
+          </p>
+        </Prose>
+      </Section>
       <Section eyebrow="Three lenses">
         <Steps
           items={[
@@ -54,6 +80,7 @@ export default function AnalyticsPage() {
           items={[
             { q: "Can I embed this in another BI tool?", a: "CSV export is on all plans. API on Scale." },
             { q: "Do referrers see analytics?", a: "They see their own sends and payouts. Not the company loop." },
+            { q: "Is this a live GPS map?", a: "No. Location history informs the route. The report is paying outcomes." },
           ]}
         />
       </Section>

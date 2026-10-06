@@ -1,5 +1,15 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { faqJsonLd } from "@/lib/seo";
+
+export function JsonLd({ data }: { data: unknown }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
 
 export function Section({
   eyebrow,
@@ -24,6 +34,14 @@ export function Section({
       ) : null}
       <div className={title || eyebrow ? "mt-8" : undefined}>{children}</div>
     </section>
+  );
+}
+
+export function Prose({ children }: { children: ReactNode }) {
+  return (
+    <div className="max-w-2xl space-y-4 text-base leading-7 text-muted">
+      {children}
+    </div>
   );
 }
 
@@ -53,14 +71,21 @@ export function FaqList({
   items: { q: string; a: string }[];
 }) {
   return (
-    <dl className="divide-y divide-line rounded-3xl border border-line bg-cream">
-      {items.map((item) => (
-        <div key={item.q} className="px-6 py-5">
-          <dt className="font-medium">{item.q}</dt>
-          <dd className="mt-2 text-sm leading-6 text-muted">{item.a}</dd>
-        </div>
-      ))}
-    </dl>
+    <>
+      <JsonLd data={faqJsonLd(items)} />
+      <dl className="divide-y divide-line rounded-3xl border border-line bg-cream">
+        {items.map((item) => (
+          <div key={item.q}>
+            <dt className="px-6 pt-5 font-medium">
+              <h3 className="text-base font-medium">{item.q}</h3>
+            </dt>
+            <dd className="mt-2 px-6 pb-5 text-sm leading-6 text-muted">
+              {item.a}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </>
   );
 }
 

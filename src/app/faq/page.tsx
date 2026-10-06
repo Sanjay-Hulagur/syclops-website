@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
-import { CtaBand, PageHero } from "@/components/page-hero";
 import { FaqList, Related, Section } from "@/components/interior";
+import { CtaBand, PageHero } from "@/components/page-hero";
 import { faqs } from "@/lib/guides";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "FAQ",
-  description: "Self-serve answers for Syclops — seats, GPS, CRM, cancel, hosting.",
-};
+export const metadata: Metadata = pageSeo({
+  title: "FAQ — seats, GPS, CRM, hosting, cancel",
+  description:
+    "Self-serve answers for Syclops: who it is for, field seats vs partner portal, GPS vs CRM vs gym software, offline use, India hosting, and how to cancel.",
+  path: "/faq",
+  keywords: [
+    "Syclops FAQ",
+    "field tracking vs CRM",
+    "GPS field tracking India",
+  ],
+});
 
 export default function FaqPage() {
   return (

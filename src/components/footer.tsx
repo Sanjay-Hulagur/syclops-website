@@ -7,7 +7,13 @@ const columns = [
     links: [
       { href: "/product", label: "Overview" },
       { href: "/product/field", label: "Field tracking" },
+      { href: "/tada-software", label: "TADA software" },
       { href: "/product/referrals", label: "Referrals" },
+      {
+        href: "/referral-management-software",
+        label: "Referral management software",
+      },
+      { href: "/gym-referral-software", label: "Gym referral software" },
       { href: "/product/subscriptions", label: "Subscriptions" },
       { href: "/product/analytics", label: "Analytics" },
       { href: "/product/mobile", label: "Mobile app" },
@@ -33,6 +39,7 @@ const columns = [
       { href: "/compare/gps-trackers", label: "vs GPS-only trackers" },
       { href: "/compare/crm", label: "vs traditional CRM" },
       { href: "/compare/vertical-software", label: "vs vertical software" },
+      { href: "/compare/gym-software", label: "vs gym management software" },
     ],
   },
   {
@@ -59,8 +66,8 @@ export function Footer() {
         <div className="lg:col-span-2">
           <Logo />
           <p className="mt-4 max-w-xs text-sm leading-6 text-muted">
-            One lens on field work, referrals, and subscriptions. Entirely
-            self-serve — create a workspace and go.
+            Referral management software for field teams. Partner and member
+            referrals, visits, and subscriptions — create a workspace and go.
           </p>
           <p className="mt-6 text-sm text-muted">India</p>
         </div>

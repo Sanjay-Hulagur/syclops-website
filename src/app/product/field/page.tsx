@@ -1,22 +1,48 @@
 import type { Metadata } from "next";
 import { CtaBand, PageHero, Steps } from "@/components/page-hero";
-import { Checklist, FaqList, FeatureGrid, Related, Section } from "@/components/interior";
+import { Checklist, FaqList, FeatureGrid, Prose, Related, Section } from "@/components/interior";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Field tracking",
+export const metadata: Metadata = pageSeo({
+  title: "Field tracking software with GPS check-in, routes, and TADA",
   description:
-    "Geo check-in, visit photos, routes, and TADA — proof of work tied to referrals and plans.",
-};
+    "Syclops field tracking for Indian teams: geo check-in, visit photos, beat lists, offline queue, and TADA — proof of work tied to referrals and paying plans.",
+  path: "/product/field",
+  keywords: [
+    "field tracking software India",
+    "GPS check-in",
+    "TADA software",
+    "field force tracking",
+    "beat list",
+  ],
+});
 
 export default function FieldPage() {
   return (
     <>
       <PageHero
-        eyebrow="Field"
+        eyebrow="Field tracking"
         title="Prove the visit. Then attach it to revenue."
-        body="Syclops is not a live-map product. Location is evidence inside the loop: this visit opened a referral, sold a plan, or was sent because a subscription is at risk."
+        body="Syclops is field tracking software for Indian teams — not a live-map product. Location is evidence inside the loop: this visit opened a referral, sold a plan, or was sent because a subscription is at risk."
         scene="field"
       />
+      <Section eyebrow="Not attendance software" title="GPS trackers stop at the pin. Growth does not.">
+        <Prose>
+          <p>
+            Geo-fenced selfie apps and live maps answer where someone was.
+            Field tracking software for gyms, campuses, clinics, and sales
+            teams in India has to answer who they moved, and whether that person still
+            pays. Search “field tracking software India” and you will find live maps.
+            This page is the other job: the pin as evidence on a referral and a plan.
+          </p>
+          <p>
+            Check-in starts the working day. Visits attach to accounts. Checkout
+            closes the route so mileage is the path you walked. Mock locations
+            are flagged. Photo EXIF can be required. The scoreboard is still
+            paying outcomes — not attendance %.
+          </p>
+        </Prose>
+      </Section>
       <Section eyebrow="How a day runs" title="Check in. Cover the beat. Check out.">
         <Steps
           items={[
@@ -50,21 +76,24 @@ export default function FieldPage() {
           ]}
         />
       </Section>
-      <Section eyebrow="FAQ">
+      <Section eyebrow="FAQ" title="Field tracking questions teams actually search.">
         <FaqList
           items={[
-            { q: "Is GPS always on?", a: "Only between check-in and check-out on a working day." },
+            { q: "What is field tracking software in India?", a: "Software that proves a field day — check-in, beat, checkout, TADA — and, in Syclops, attaches that day to a referral and a paying plan. Live GPS alone is attendance software." },
+            { q: "Is GPS always on?", a: "Only between check-in and check-out on a working day. Retention is a setting. See security for DPDP and GPS retention." },
             { q: "Can staff fake a pin?", a: "Mock locations are flagged. Photo EXIF can be required. The product still cares more about the referral that followed." },
             { q: "Who sees live location?", a: "Managers, for the working day. History is the route, not a forever trail unless you extend retention." },
+            { q: "Does TADA replace payroll?", a: "Mileage writes from the route. You approve the sheet. Statutory attendance can stay in HR software." },
+            { q: "How is this different from GeoProof-style trackers?", a: "Those products prove presence. Syclops uses the pin as evidence that a referral opened or a plan was saved." },
           ]}
         />
       </Section>
       <Section eyebrow="Next">
         <Related
           items={[
-            { href: "/product/referrals", label: "Referrals", body: "Turn a visit into a named intro." },
-            { href: "/guides/field-day", label: "Field day guide", body: "The four taps of a working day." },
-            { href: "/product/analytics", label: "Analytics", body: "Rank staff by paying outcomes." },
+            { href: "/tada-software", label: "TADA software", body: "Mileage from the path, rate cards, approval." },
+            { href: "/guides/import-beat-list", label: "Import a beat list", body: "CSV of accounts so the day is not blank." },
+            { href: "/compare/gps-trackers", label: "vs GPS-only", body: "Why attendance % is not enough." },
           ]}
         />
       </Section>

@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
 import { CtaBand, PageHero, Steps } from "@/components/page-hero";
-import { Checklist, FaqList, FeatureGrid, Related, Section } from "@/components/interior";
+import { Checklist, FaqList, FeatureGrid, Prose, Related, Section } from "@/components/interior";
+import { pageSeo } from "@/lib/seo";
 import { integrations } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Integrations",
-  description: "WhatsApp, Razorpay, Stripe, Maps, billing, and ERPs.",
-};
+export const metadata: Metadata = pageSeo({
+  title: "Integrations — WhatsApp, Razorpay, Stripe, Maps",
+  description:
+    "Connect WhatsApp Business, Razorpay, Stripe, Google Maps, and billing or HIS on Scale. Paste keys in Settings. No partner engineer.",
+  path: "/integrations",
+  keywords: [
+    "Razorpay gym software",
+    "WhatsApp Business API field",
+    "Stripe subscriptions India",
+    "Google Maps field routes",
+  ],
+});
 
 export default function IntegrationsPage() {
   return (
@@ -17,6 +26,17 @@ export default function IntegrationsPage() {
         body="No partner engineer. Paste keys, map fields, test in sandbox, switch live. The loop stays in Syclops."
         scene="integrations"
       />
+      <Section eyebrow="Self-serve" title="A list, not a sales form.">
+        <Prose>
+          <p>
+            WhatsApp Business for referral status and failed-payment templates —
+            you own the WABA. Razorpay and Stripe for plan enrollments,
+            retries, and referral credits. Google Maps for geocoding, routes,
+            and visit map PDFs. Billing, HIS, or ERP connectors on Scale so
+            invoices can flow in while origin stays here.
+          </p>
+        </Prose>
+      </Section>
       <Section eyebrow="How you connect">
         <Steps
           items={[
@@ -64,6 +84,7 @@ export default function IntegrationsPage() {
           items={[
             { q: "Webhook docs?", a: "In the product after you create a workspace. Public API on Scale." },
             { q: "On-prem?", a: "No. Multi-tenant cloud. India region on Scale." },
+            { q: "Do you operate our WhatsApp number?", a: "No. You connect your own WhatsApp Business account." },
           ]}
         />
       </Section>

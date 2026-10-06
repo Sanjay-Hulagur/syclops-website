@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CtaBand, PageHero, Steps } from "@/components/page-hero";
-import { Related, Section } from "@/components/interior";
+import { FaqList, Prose, Related, Section } from "@/components/interior";
 import { getGuide, guides } from "@/lib/guides";
+import { pageSeo } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -14,7 +15,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guide = getGuide(slug);
   if (!guide) return {};
-  return { title: guide.title, description: guide.summary };
+  return pageSeo({
+    title: guide.title,
+    description: guide.summary,
+    path: `/guides/${guide.slug}`,
+    keywords: ["Syclops setup", "self-serve", guide.title],
+  });
 }
 
 export default async function GuidePage({ params }: Props) {
@@ -38,8 +44,18 @@ export default async function GuidePage({ params }: Props) {
         body={guide.summary}
         scene={guide.scene}
       />
-      <Section eyebrow="Steps">
+      <Section eyebrow="Before you start">
+        <Prose>
+          {guide.intro.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </Prose>
+      </Section>
+      <Section eyebrow="Steps" title="Do this in the product. There is no specialist on the call.">
         <Steps items={guide.steps} />
+      </Section>
+      <Section eyebrow="FAQ">
+        <FaqList items={guide.faqs} />
       </Section>
       <Section eyebrow="Other guides">
         <Related items={others} />

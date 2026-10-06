@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CtaBand, PageHero } from "@/components/page-hero";
 import { FaqList, Section } from "@/components/interior";
+import { CtaBand, PageHero } from "@/components/page-hero";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Pricing",
-  description: "Per-seat field users, referrer portal, and subscription module.",
-};
+export const metadata: Metadata = pageSeo({
+  title: "Pricing — field seats, referral portal, subscriptions",
+  description:
+    "Syclops pricing in rupees per field seat. Team includes field tracking. Growth adds partner portal and subscriptions. Referrer logins are free.",
+  path: "/pricing",
+  keywords: [
+    "field tracking software pricing India",
+    "referral software pricing",
+    "Syclops plans",
+  ],
+});
 
 const plans = [
   {

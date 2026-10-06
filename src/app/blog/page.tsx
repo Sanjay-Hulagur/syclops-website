@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand, PageHero } from "@/components/page-hero";
 import { posts } from "@/lib/blog";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description: "Notes on referral leakage, field ROI, and subscription churn.",
-};
+export const metadata: Metadata = pageSeo({
+  title: "Blog — TADA, gym referrals, leakage, and churn",
+  description:
+    "Notes on TADA as a path not a pin, gym member-get-member beside ERP, referral leakage, why GPS is not a growth system, and why subscriptions still need a field team.",
+  path: "/blog",
+});
 
 export default function BlogPage() {
   return (

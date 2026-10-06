@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
-import { CtaBand, PageHero, Steps } from "@/components/page-hero";
 import { Checklist, FaqList, FeatureGrid, Related, Section } from "@/components/interior";
+import { CtaBand, PageHero, Steps } from "@/components/page-hero";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo({
   title: "Referral management",
   description:
-    "Partner and member referrals with status from sent to paying.",
-};
+    "Referral management software for partner and member programs. Status from sent to paying, a portal the sender can open, and rewards on the invoice.",
+  path: "/product/referrals",
+  keywords: [
+    "referral management software",
+    "partner referral portal",
+    "member referral program",
+    "referral tracking",
+  ],
+});
 
 export default function ReferralsPage() {
   return (
@@ -61,9 +69,9 @@ export default function ReferralsPage() {
       <Section eyebrow="Next">
         <Related
           items={[
+            { href: "/referral-management-software", label: "Referral management software", body: "What teams search for, and what this covers." },
+            { href: "/guides/qualification-window", label: "Qualification window", body: "Rewards after they stay. Duplicate phones blocked." },
             { href: "/product/subscriptions", label: "Subscriptions", body: "The plan the referral became." },
-            { href: "/guides/referral-portal", label: "Portal guide", body: "Turn it on in Settings." },
-            { href: "/product/field", label: "Field", body: "Visits that create intros." },
           ]}
         />
       </Section>

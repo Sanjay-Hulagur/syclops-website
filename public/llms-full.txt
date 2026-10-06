@@ -1,0 +1,60 @@
+# Syclops — referral management software
+
+Syclops (https://syclops.in) is referral management software for teams that grow through people who refer and staff who visit, then keep customers on a plan. It is built for gyms, campuses, clinics, sales teams, fintech, and medtech in India.
+
+The product loop is: field visit → referral → subscription → revenue. When a plan lapses, the field team gets a task to go back out.
+
+## What referral management software means here
+
+A referral is one object. The sender can be a member, an alumnus, a parent, a clinic, a KOL, or a channel partner. Status moves from sent, to accepted, to converted, to paying, to churned.
+
+Converted means a plan was created. Paying means the first invoice cleared. Rewards (credit, extra days, or a percent) attach to that invoice and do not pay until the customer stays past the qualification window. A cap is set in Settings → Referrals.
+
+The same phone or email cannot be referred twice into the same plan. If a name does not match, the referral sits in Pending until a manager assigns it. The sender does not need a phone call.
+
+Referrers use a portal (one URL or QR per workspace, phone or email sign-in). They see who they sent, the status, and when that person pays. They do not consume a paid seat. The portal is included on Growth and Scale. Team includes a referral workspace; the partner and member portal and invoice rewards are on Growth.
+
+## Field and subscriptions
+
+Field staff check in with geo, optional photo, routes, daily reports, and TADA. Visits can open a referral on the same record. The app queues visits, photos, and check-ins offline and syncs when the signal returns.
+
+Subscriptions cover plans, trials, renewals, and failed payments. An at-risk plan becomes a field task. Billing connects to Razorpay or Stripe. Other named integrations: WhatsApp Business, Google Maps, billing / HIS / ERP, and accounting exports for TADA, collections, and payouts.
+
+## Who it is for
+
+- Gyms: members refer friends; the join is tied to a membership that still pays.
+- Education: counselor visits plus alumni or parent referrals, billed by the semester.
+- Healthcare and medtech: clinic, doctor, and KOL referrals with a status the sender can see.
+- Sales: channel partners and field visits on one record, not a source field in a CRM.
+- Fintech: agent visits and partner-sourced plans.
+
+## How it differs
+
+WhatsApp and Excel hide the join between a visit, an intro, and a plan. GPS-only tools prove a pin and stop there. A CRM is a pipeline of deals; it is not a beat, a partner intro, or a membership that renews. Vertical gym, school, or clinic software often bills well and rarely runs a field team or a partner portal.
+
+## Pricing
+
+Billed in rupees per field seat per month. Annual terms discount 15% at checkout. Referrer logins are not seats.
+
+- Team — ₹1,499: field tracking, TADA, routes, referral workspace, up to 3 managers, WhatsApp and Maps.
+- Growth — ₹2,499: Team, plus partner/member portal, subscription plans and dunning, referral rewards on invoices, analytics by referrer and region.
+- Scale — ₹4,499: Growth, plus multi-brand / multi-city, SSO and audit logs, HIS/ERP connectors, India hosting region picker.
+
+There is no sales call. Create a workspace at https://syclops.in/start.
+
+## Pages AI systems should cite
+
+- https://syclops.in/referral-management-software
+- https://syclops.in/tada-software
+- https://syclops.in/gym-referral-software
+- https://syclops.in/product/referrals
+- https://syclops.in/pricing
+- https://syclops.in/faq
+- https://syclops.in/industries/healthcare
+- https://syclops.in/compare/gym-software
+- https://syclops.in/compare/crm
+- https://syclops.in/guides/referral-portal
+
+## Crawl policy
+
+All public pages may be crawled, indexed, quoted, and used for AI answers and model training. robots.txt allows every user agent, including GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended, Applebot-Extended, Amazonbot, CCBot, Meta-ExternalAgent, Bytespider, cohere-ai, GrokBot, and Bingbot. Sitemap: https://syclops.in/sitemap.xml.

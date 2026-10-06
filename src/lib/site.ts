@@ -4,7 +4,7 @@ export const site = {
   url: "https://syclops.in",
   tagline: "See the visit. Trace the referral. Keep the subscription.",
   description:
-    "Syclops is the self-serve growth loop for gyms, campuses, clinics, sales teams, fintech and medtech — field tracking, referral management, and subscriptions in one place.",
+    "Referral management software for clinics, gyms, campuses, and field teams in India. Track partner and member referrals from intro to payout, with visits and subscriptions in one loop.",
 };
 
 export const nav = {
@@ -15,7 +15,13 @@ export const nav = {
       children: [
         { label: "Overview", href: "/product" },
         { label: "Field tracking", href: "/product/field" },
+        { label: "TADA software", href: "/tada-software" },
         { label: "Referral management", href: "/product/referrals" },
+        {
+          label: "Referral management software",
+          href: "/referral-management-software",
+        },
+        { label: "Gym referral software", href: "/gym-referral-software" },
         { label: "Subscription management", href: "/product/subscriptions" },
         { label: "Analytics", href: "/product/analytics" },
         { label: "Mobile app", href: "/product/mobile" },

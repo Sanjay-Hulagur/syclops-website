@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand, PageHero } from "@/components/page-hero";
-import { FaqList, Section } from "@/components/interior";
+import { FaqList, Prose, Section } from "@/components/interior";
 import { industries } from "@/lib/industries";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Industries",
+export const metadata: Metadata = pageSeo({
+  title: "Industries — gyms, education, healthcare, sales, fintech, medtech",
   description:
-    "Syclops for gyms, education, healthcare, sales, fintech, and medtech.",
-};
+    "Syclops for gyms, campuses, clinics, field sales, fintech, and medtech. Same growth loop — field visit, referral, subscription — with industry nouns.",
+  path: "/industries",
+  keywords: [
+    "gym referral software",
+    "clinic referral software",
+    "education counselor tracking",
+    "medtech KOL visits",
+  ],
+});
 
 export default function IndustriesPage() {
   return (
@@ -19,6 +27,16 @@ export default function IndustriesPage() {
         body="The nouns change. The loop does not. Pick the industry when you create the workspace — visit, referrer, and plan labels follow."
         scene="industry"
       />
+      <Section>
+        <Prose>
+          <p>
+            Horizontal on purpose: gym member-get-member, alumni intros, partner
+            clinics, channel leads, family policy referrals, and KOL evaluations
+            are the same objects. Vertical ERPs stay for classes, marks, or
+            charts.
+          </p>
+        </Prose>
+      </Section>
       <Section>
         <div className="grid gap-4 lg:grid-cols-2">
           {industries.map((item) => (

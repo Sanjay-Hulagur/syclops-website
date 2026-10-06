@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { StartForm } from "@/components/start-form";
 import { SvgScene } from "@/components/svg-scene";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Start",
-  description: "Create a Syclops workspace — field, referrals, and subscriptions.",
-};
+export const metadata: Metadata = pageSeo({
+  title: "Create a Syclops workspace",
+  description:
+    "Start Syclops for free: pick an industry, invite field seats later, share a referral portal, and connect billing in Settings. No sales call.",
+  path: "/start",
+  keywords: ["Syclops signup", "create workspace", "self-serve field tracking"],
+});
 
 export default function StartPage() {
   return (
@@ -22,6 +27,21 @@ export default function StartPage() {
           link. Plans and billing stay in Settings. There is no sales call and
           no implementation manager.
         </p>
+        <ul className="mt-6 max-w-xl space-y-2 text-sm leading-6 text-muted">
+          <li>Field tracking and TADA on Team.</li>
+          <li>Partner and member portal on Growth, with subscriptions.</li>
+          <li>
+            Follow the{" "}
+            <Link href="/guides/create-workspace" className="text-iris">
+              create-workspace guide
+            </Link>{" "}
+            or{" "}
+            <Link href="/pricing" className="text-iris">
+              compare plans
+            </Link>
+            .
+          </li>
+        </ul>
         <div className="mt-10 max-w-sm">
           <SvgScene kind="start" />
         </div>

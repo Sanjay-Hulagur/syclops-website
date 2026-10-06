@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { CtaBand, PageHero } from "@/components/page-hero";
-import { Related, Section } from "@/components/interior";
+import { FaqList, Related, Section } from "@/components/interior";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Customers",
-  description: "How gyms, campuses, and field sales teams run the Syclops loop.",
-};
+export const metadata: Metadata = pageSeo({
+  title: "Customer patterns — gyms, campuses, field sales",
+  description:
+    "How gyms, coaching institutes, clinics, NBFCs, agencies, and medtech teams run field visits, referrals, and plans on Syclops. Patterns, not a logo wall.",
+  path: "/customers",
+});
 
 const stories = [
   {
@@ -76,7 +79,21 @@ export default function CustomersPage() {
               <p className="mt-4 text-xs text-muted">{story.loop}</p>
             </blockquote>
           ))}
-        </div>
+          </div>
+      </Section>
+      <Section eyebrow="FAQ">
+        <FaqList
+          items={[
+            {
+              q: "Are these named customers?",
+              a: "No. They are shapes of teams running the loop. This site does not publish a logo wall.",
+            },
+            {
+              q: "Can I run the same loop?",
+              a: "Yes. Create a workspace, pick the industry, invite seats. The product is the same one they use.",
+            },
+          ]}
+        />
       </Section>
       <Section eyebrow="Next">
         <Related

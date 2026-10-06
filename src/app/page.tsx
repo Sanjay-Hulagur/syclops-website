@@ -1,10 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { IndustryMorph } from "@/components/industry-morph";
+import { FaqList, Section } from "@/components/interior";
 import { LoopDiagram } from "@/components/loop-diagram";
 import { CtaBand } from "@/components/page-hero";
 import { SvgScene } from "@/components/svg-scene";
-import { integrations, roles } from "@/lib/site";
+import { faqs } from "@/lib/guides";
 import { industries } from "@/lib/industries";
+import { pageSeo } from "@/lib/seo";
+import { integrations, roles } from "@/lib/site";
 
 const leaks = [
   { from: "Referrals in WhatsApp", to: "No status" },
@@ -12,6 +16,23 @@ const leaks = [
   { from: "Members in Excel", to: "Stale tomorrow" },
   { from: "Renewals in billing", to: "No field task" },
 ];
+
+export const metadata: Metadata = pageSeo({
+  title: "Field tracking, referral management, and subscriptions",
+  description:
+    "Syclops is field tracking software, referral management, and subscription billing for gyms, campuses, clinics, sales teams, fintech and medtech in India. Self-serve — no sales call.",
+  path: "/",
+  keywords: [
+    "field tracking software India",
+    "referral management software",
+    "referral tracking software",
+    "partner referral software",
+    "gym referral software",
+    "clinic referral software",
+    "GPS field check-in",
+    "subscription dunning",
+  ],
+});
 
 const products = [
   {
@@ -50,9 +71,20 @@ export default function HomePage() {
             Keep the subscription.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-            Syclops is for gyms, campuses, clinics, sales teams, fintech and
-            medtech — anyone who grows through field staff and referred
-            customers on a plan.
+            Field tracking, referral management, and subscriptions in one
+            self-serve loop — for gyms, campuses, clinics, sales teams, fintech
+            and medtech. GPS proves the visit. The portal names the intro. The
+            plan still pays.
+          </p>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
+            <Link
+              href="/referral-management-software"
+              className="font-medium text-ink underline decoration-iris/50 underline-offset-4"
+            >
+              Referral management software
+            </Link>{" "}
+            for partner portals, member-get-member, and clinic or channel
+            referrals, with the visit and the plan on the same record.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -259,6 +291,24 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <Section
+        eyebrow="FAQ"
+        title="Referral management software, in short."
+      >
+        <FaqList items={faqs.slice(0, 6)} />
+        <p className="mt-6 text-sm text-muted">
+          More answers on the{" "}
+          <Link href="/faq" className="text-iris">
+            FAQ
+          </Link>
+          , or compare{" "}
+          <Link href="/compare/gps-trackers" className="text-iris">
+            GPS-only trackers
+          </Link>
+          .
+        </p>
+      </Section>
 
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-5 py-16">

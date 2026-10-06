@@ -2,10 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { LoginForm } from "@/components/login-form";
 import { SvgScene } from "@/components/svg-scene";
+import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Log in",
-  description: "Sign in to your Syclops workspace.",
+  ...pageSeo({
+    title: "Log in",
+    description: "Sign in to your Syclops workspace.",
+    path: "/login",
+  }),
+  robots: { index: false, follow: false },
 };
 
 export default function LoginPage() {
@@ -22,6 +27,10 @@ export default function LoginPage() {
           No new workspace?{" "}
           <Link href="/start" className="text-iris">
             Start for free
+          </Link>
+          . Need the field app invite? See{" "}
+          <Link href="/guides/invite-team" className="text-iris">
+            invite seats
           </Link>
           .
         </p>

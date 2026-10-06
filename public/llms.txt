@@ -1,0 +1,46 @@
+# Syclops
+
+> Syclops is referral management software for gyms, campuses, clinics, sales teams, fintech, and medtech. It tracks partner and member referrals from intro to payout, with field visits and subscriptions on the same record.
+
+Syclops is self-serve. Teams create a workspace, invite field seats, and turn on a referrer portal. Referrers are not billed as seats. The portal is included on Growth and Scale. Prices are per field seat per month in INR: Team ₹1,499, Growth ₹2,499, Scale ₹4,499.
+
+Crawling is welcome. Search engines and AI answer engines may fetch every public page. See https://syclops.in/robots.txt and https://syclops.in/sitemap.xml.
+
+## Product
+
+- [Referral management software](https://syclops.in/referral-management-software): What the category covers, and how Syclops tracks referrals from sent to paying.
+- [Referral product](https://syclops.in/product/referrals): Partner portal, member-get-member, status, rewards, leakage, and duplicate guard.
+- [Field tracking](https://syclops.in/product/field): Geo check-in, visit photos, routes, daily reports, and TADA.
+- [TADA software](https://syclops.in/tada-software): Mileage from the path between check-in and checkout, rate cards, manager approval.
+- [Gym referral software](https://syclops.in/gym-referral-software): Member-get-member beside gym ERP — origin, rewards, trainer visits.
+- [Subscriptions](https://syclops.in/product/subscriptions): Plans, trials, renewals, and failed payments that become field tasks.
+- [Analytics](https://syclops.in/product/analytics): Visits, referrals, and revenue in one lens.
+- [Mobile app](https://syclops.in/product/mobile): Field, partner, and member views. Visits queue offline and sync later.
+- [Integrations](https://syclops.in/integrations): WhatsApp Business, Razorpay, Stripe, Google Maps, billing/HIS/ERP, and accounting exports.
+- [Pricing](https://syclops.in/pricing): Seat pricing. Referrer logins are free.
+- [Security](https://syclops.in/security): GPS use and India hosting on Scale.
+
+## Industries
+
+- [Gyms](https://syclops.in/industries/gyms): Member referrals that become memberships. See also [gym referral software](https://syclops.in/gym-referral-software).
+- [Education](https://syclops.in/industries/education): Counselor visits and alumni or parent referrals.
+- [Healthcare](https://syclops.in/industries/healthcare): Clinic and doctor referral management.
+- [Sales and marketing](https://syclops.in/industries/sales): Channel and partner referrals tied to field visits. See also [channel partner portal vs CRM](https://syclops.in/blog/channel-partner-portal-not-crm-source-field).
+- [Fintech](https://syclops.in/industries/fintech): Agent visits and partner-sourced plans.
+- [Medtech](https://syclops.in/industries/medtech): KOL and clinic referrals into device or service plans.
+
+## Compare and learn
+
+- [Versus WhatsApp and Excel](https://syclops.in/compare/whatsapp-excel)
+- [Versus GPS-only trackers](https://syclops.in/compare/gps-trackers)
+- [Versus a traditional CRM](https://syclops.in/compare/crm)
+- [Versus gym, school, or clinic software](https://syclops.in/compare/vertical-software)
+- [Versus gym management software](https://syclops.in/compare/gym-software)
+- [Guides](https://syclops.in/guides): Workspace, team, field day, import beat list, qualification window, referral portal, billing, reports.
+- [FAQ](https://syclops.in/faq)
+- [Blog](https://syclops.in/blog)
+
+## Start
+
+- [Create a workspace](https://syclops.in/start)
+- [Log in](https://syclops.in/login)

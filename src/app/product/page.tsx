@@ -1,13 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand, PageHero, Steps } from "@/components/page-hero";
-import { FaqList, Related, Section } from "@/components/interior";
+import { FaqList, Prose, Related, Section } from "@/components/interior";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Product",
+export const metadata: Metadata = pageSeo({
+  title: "Product — field tracking, referral management, subscriptions",
   description:
-    "Syclops connects field visits, referral partners, and subscriptions in one growth loop.",
-};
+    "Syclops connects GPS field visits, referral partner portals, and subscription plans in one self-serve growth loop for gyms, campuses, clinics, sales, fintech, and medtech.",
+  path: "/product",
+  keywords: [
+    "field tracking software",
+    "referral management software",
+    "subscription software India",
+    "growth loop",
+  ],
+});
 
 const pillars = [
   {
@@ -51,6 +59,21 @@ export default function ProductPage() {
         body="GPS tools stop at the pin. CRMs stop at the deal. Vertical software stops at the invoice. Syclops holds the visit, the referral, and the plan together — and you turn it on yourself."
         scene="loop"
       />
+      <Section eyebrow="The gap" title="Three categories. None of them hold the loop.">
+        <Prose>
+          <p>
+            Field-force GPS products prove attendance. Traditional CRMs manage
+            deals. Gym, school, and clinic software bill well. Growth teams that
+            run on visits and referred customers still leak: intros in WhatsApp,
+            beats in Excel, renewals in another login.
+          </p>
+          <p>
+            Syclops is self-serve. Create a workspace, invite field seats,
+            share a partner portal, connect Razorpay or Stripe. Field and
+            referrals are enough on Team. Subscriptions unlock on Growth.
+          </p>
+        </Prose>
+      </Section>
       <Section eyebrow="The loop">
         <Steps
           items={[
@@ -79,6 +102,8 @@ export default function ProductPage() {
           items={[
             { q: "Do I need every module?", a: "No. Field and referrals are enough on Team. Subscriptions unlock on Growth." },
             { q: "How long to go live?", a: "A workspace in minutes. A first beat the same day if you import a CSV." },
+            { q: "Is Syclops a CRM?", a: "No. A CRM is deals. Syclops is visit, referrer, and plan — including TADA and dunning." },
+            { q: "Is this GPS tracking software?", a: "GPS is evidence. The product continues to the referral and the subscription." },
           ]}
         />
       </Section>
