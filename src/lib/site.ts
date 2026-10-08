@@ -1,7 +1,9 @@
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://syclops.in").replace(/\/$/, "");
+
 export const site = {
   name: "Syclops",
-  domain: "syclops.in",
-  url: "https://syclops.in",
+  domain: siteUrl.replace(/^https?:\/\//, ""),
+  url: siteUrl,
   tagline: "See the visit. Trace the referral. Keep the subscription.",
   description:
     "Referral management software for clinics, gyms, campuses, and field teams in India. Track partner and member referrals from intro to payout, with visits and subscriptions in one loop.",
