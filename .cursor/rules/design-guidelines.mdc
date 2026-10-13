@@ -1,0 +1,15 @@
+---
+description: Follow DESIGN-GUIDELINES.md for colour, type, padding, searchable dropdowns, logo, and favicon.
+alwaysApply: true
+---
+
+# Design guidelines
+
+Before any UI work in this repo, follow [DESIGN-GUIDELINES.md](../../DESIGN-GUIDELINES.md). Tokens in `src/app/globals.css` stay in sync with it.
+
+- Brand accent is iris `#C45C26`. Page background is paper `#F6F1E8`. Cards are cream `#FBF7F0`. Text is ink `#12141A`.
+- Success is money `#1F6B4A`. Danger is leak `#7A2E1F`.
+- Syne for display, Geist Sans for UI. Keep the size ladder in the guidelines.
+- Marketing sections keep their existing page rhythm. Inside a component, padding stays tight.
+- Every dropdown is a searchable combobox.
+- Logo: `design/syclops-logo.svg`. Favicon: `design/favicon.svg`.

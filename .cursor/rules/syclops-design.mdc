@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Syclops visual theme
 
-When building or restyling any Syclops UI, follow **[DESIGN.md](../DESIGN.md)**.
+When building or restyling any Syclops UI, follow **[DESIGN-GUIDELINES.md](../../DESIGN-GUIDELINES.md)**. Colour detail also lives in [DESIGN.md](../../DESIGN.md); padding and dropdown rules in the guidelines win.
 
 Hard rules:
 
