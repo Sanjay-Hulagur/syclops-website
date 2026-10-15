@@ -30,6 +30,18 @@ function priorityFor(path: string) {
   return 0.4;
 }
 
+/** Google ignores a sitemap lastmod that is in the future. */
+function lastModifiedFor(date?: string) {
+  if (!date) return undefined;
+  const value = new Date(`${date}T00:00:00.000Z`);
+  if (Number.isNaN(value.getTime())) return undefined;
+  const now = new Date();
+  const todayUtc = new Date(
+    Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()),
+  );
+  return value.getTime() > todayUtc.getTime() ? todayUtc : value;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const seen = new Set<string>();
 
@@ -40,9 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [
       {
         url,
-        lastModified: entry.lastModified
-          ? new Date(entry.lastModified)
-          : undefined,
+        lastModified: lastModifiedFor(entry.lastModified),
         changeFrequency: entry.path.startsWith("/blog/") ? "yearly" : "monthly",
         priority: priorityFor(entry.path),
       },

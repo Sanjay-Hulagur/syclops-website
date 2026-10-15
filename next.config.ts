@@ -8,6 +8,16 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [{ source: "/demo", destination: "/start", permanent: true }];
   },
+  async headers() {
+    return [
+      {
+        source: "/login",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
