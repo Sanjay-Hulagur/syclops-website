@@ -51,7 +51,7 @@ export function indexableEntries(): {
   }));
   const blogPaths = posts.map((item) => ({
     path: `/blog/${item.slug}`,
-    lastModified: item.date,
+    lastModified: item.updated,
   }));
 
   return [
