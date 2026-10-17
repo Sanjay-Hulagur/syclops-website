@@ -12,11 +12,11 @@ export const guides = [
     steps: [
       { title: "Use your work email", body: "That email becomes the owner. You can transfer ownership later in Settings → Team." },
       { title: "Name the workspace", body: "Usually the brand, not a person. Members and partners will see this name on the portal." },
-      { title: "Pick an industry", body: "Gyms, education, healthcare, sales, fintech, or medtech. You can rename objects afterwards." },
+      { title: "Pick an industry", body: "Gyms, education, healthcare, sales, fintech, medtech, or others. You can rename objects afterwards." },
       { title: "Land in Settings", body: "Regions, roles, and the empty beat list are ready. Nothing is billed until you add a paid field seat." },
     ],
     faqs: [
-      { q: "Do I need a credit card to start?", a: "No. 14 days without a card. Seats bill when you add paid field or manager users." },
+      { q: "Do I need a credit card to start?", a: "No. The free trial does not need a card. The current length and terms are on the pricing page. Seats bill when you add paid field or manager users." },
       { q: "Can I change industry later?", a: "Yes. Object labels are editable in Settings. Records do not fork." },
     ],
   },

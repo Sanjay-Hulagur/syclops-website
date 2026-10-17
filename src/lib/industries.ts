@@ -230,3 +230,16 @@ export const industries: Industry[] = [
 export function getIndustry(id: string) {
   return industries.find((item) => item.id === id);
 }
+
+/** Start-form choices. "Others" is not an industry page. */
+export const startFormIndustries: { id: string; label: string }[] = [
+  ...industries.map((item) => ({ id: item.id, label: item.label })),
+  { id: "others", label: "Others" },
+];
+
+export function isStartFormIndustry(value: string): boolean {
+  if (startFormIndustries.some((item) => item.id === value)) return true;
+  if (!value.startsWith("others:")) return false;
+  const detail = value.slice("others:".length).trim();
+  return detail.length > 0 && value.length <= 50 && !/[\r\n]/.test(value);
+}

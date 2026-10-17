@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FaqList, JsonLd, Section } from "@/components/interior";
 import { CtaBand, PageHero } from "@/components/page-hero";
+import { getBillingConfig } from "@/lib/billing";
 import { jsonLdGraph, pageSeo, pricingOfferNodes, softwareNode } from "@/lib/seo";
 
 export const metadata: Metadata = pageSeo({
@@ -56,7 +57,8 @@ const plans = [
   },
 ];
 
-export default function PricingPage() {
+export default async function PricingPage() {
+  const billing = await getBillingConfig();
   return (
     <>
       <JsonLd
@@ -108,10 +110,16 @@ export default function PricingPage() {
           </article>
         ))}
       </section>
+      <Section eyebrow="Free trial" title="Terms for free usage">
+        <div className="max-w-3xl space-y-3 text-sm leading-7 text-muted">
+          <p>Free for {billing.trial.days} days. No card to start.</p>
+          <p>{billing.trial.terms}</p>
+        </div>
+      </Section>
       <Section eyebrow="FAQ">
         <FaqList
           items={[
-            { q: "What is billed?", a: "Field and manager seats. Referrers are free. 14 days without a card." },
+            { q: "What is billed?", a: `Field and manager seats. Referrers are free. ${billing.trial.days} days without a card.` },
             { q: "Annual discount?", a: "15% at checkout. Cancel in Settings → Billing." },
             { q: "Can I start on Team and add subscriptions later?", a: "Yes. Upgrade to Growth in Settings. History stays." },
           ]}

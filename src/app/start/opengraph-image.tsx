@@ -8,6 +8,6 @@ export default function Image() {
   return ogImage({
     eyebrow: "Start",
     title: "Create a workspace. No quote.",
-    kicker: "14 days. Field seats bill when you add them.",
+    kicker: "Free trial, no card. Field seats bill when you add them.",
   });
 }

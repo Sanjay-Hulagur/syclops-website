@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
+import { getBillingConfig } from "@/lib/billing";
 import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = pageSeo({
@@ -10,7 +11,8 @@ export const metadata: Metadata = pageSeo({
   path: "/refund",
 });
 
-export default function RefundPage() {
+export default async function RefundPage() {
+  const billing = await getBillingConfig();
   return (
     <>
       <PageHero
@@ -32,8 +34,7 @@ export default function RefundPage() {
         </p>
         <h2 className="display text-xl font-semibold text-ink">Trials</h2>
         <p className="text-sm leading-7 text-muted">
-          Workspaces can start without a card for 14 days. Referrer portal
-          logins are never billed as field seats. See{" "}
+          {billing.trial.terms} See{" "}
           <Link href="/pricing" className="text-iris">
             pricing
           </Link>{" "}

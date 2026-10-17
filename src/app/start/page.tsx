@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/interior";
 import { StartForm } from "@/components/start-form";
 import { SvgScene } from "@/components/svg-scene";
+import { getBillingConfig } from "@/lib/billing";
 import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = pageSeo({
@@ -13,7 +14,8 @@ export const metadata: Metadata = pageSeo({
   keywords: ["Syclops signup", "create workspace", "self-serve field tracking"],
 });
 
-export default function StartPage() {
+export default async function StartPage() {
+  const billing = await getBillingConfig();
   return (
     <>
       <Breadcrumbs
@@ -54,7 +56,7 @@ export default function StartPage() {
           <SvgScene kind="start" />
         </div>
       </div>
-      <StartForm />
+      <StartForm trialDays={billing.trial.days} trialTerms={billing.trial.terms} />
     </section>
     </>
   );
