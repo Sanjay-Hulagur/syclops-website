@@ -5,6 +5,7 @@
   # Turbopack's build cache stores server env values in .sst files that are
   # never published. Keep scanning the repo and the rest of the build output.
   SECRETS_SCAN_OMIT_PATHS = ".next/cache/**,.netlify/.next/cache/**"
-  # The SQL port is 1433, which is also the cap height in Next's font metrics
-  # and the default in src/lib/db.ts. It is not a credential.
-  SECRETS_SCAN_OMIT_KEYS = "DB_PORT"
+  # DB_PORT is 1433, which is also a font metric in Next.
+  # MASTER_DB_NAME is four characters and appears inside ordinary words on
+  # the public site. This site never reads it. Passwords and the host stay scanned.
+  SECRETS_SCAN_OMIT_KEYS = "DB_PORT,MASTER_DB_NAME"
