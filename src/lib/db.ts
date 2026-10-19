@@ -12,6 +12,13 @@ function required(name: string): string {
   return value;
 }
 
+function intEnv(name: string, fallback: number): number {
+  const raw = process.env[name];
+  if (!raw) return fallback;
+  const value = Number(raw);
+  return Number.isFinite(value) ? value : fallback;
+}
+
 export async function getPool(): Promise<sql.ConnectionPool> {
   if (globalForDb.websitePool?.connected) {
     return globalForDb.websitePool;
@@ -19,7 +26,7 @@ export async function getPool(): Promise<sql.ConnectionPool> {
 
   const pool = new sql.ConnectionPool({
     server: required("DB_HOST"),
-    port: Number(process.env.DB_PORT || 1433),
+    port: intEnv("DB_PORT", 1433),
     database: required("DB_NAME"),
     user: required("DB_USER"),
     password: required("DB_PASSWORD"),
@@ -29,8 +36,8 @@ export async function getPool(): Promise<sql.ConnectionPool> {
       enableArithAbort: true,
     },
     pool: {
-      min: Number(process.env.DB_POOL_MIN || 0),
-      max: Number(process.env.DB_POOL_MAX || 10),
+      min: intEnv("DB_POOL_MIN", 0),
+      max: intEnv("DB_POOL_MAX", 10),
       idleTimeoutMillis: 30000,
     },
     connectionTimeout: 30000,

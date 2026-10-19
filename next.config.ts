@@ -2,6 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   trailingSlash: false,
+  // Netlify builds start clean, so this cache is never reused. Turbopack
+  // otherwise writes server env values into .next/cache and the secrets scan fails.
+  experimental: {
+    turbopackFileSystemCacheForBuild: process.env.NETLIFY !== "true",
+  },
   turbopack: {
     root: __dirname,
   },
