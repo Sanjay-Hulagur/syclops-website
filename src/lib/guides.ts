@@ -263,7 +263,7 @@ export const faqs = [
   },
   {
     q: "How do I cancel?",
-    a: "Settings → Billing. Credits follow the refund policy. There is no desk to email.",
+    a: "Settings → Billing stops future renewal. A cancellation is considered within 7 days of the order, and an approved refund takes 14 days, as set out in the refund policy. Write to syclops.team@gmail.com.",
   },
   {
     q: "Can I change industry later?",

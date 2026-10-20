@@ -120,7 +120,7 @@ export default async function PricingPage() {
         <FaqList
           items={[
             { q: "What is billed?", a: `Field and manager seats. Referrers are free. ${billing.trial.days} days without a card.` },
-            { q: "Annual discount?", a: "15% at checkout. Cancel in Settings → Billing." },
+            { q: "Annual discount?", a: "15% at checkout. Stop renewal in Settings → Billing. Refunds of fees paid to Syclops follow the refund policy." },
             { q: "Can I start on Team and add subscriptions later?", a: "Yes. Upgrade to Growth in Settings. History stays." },
           ]}
         />

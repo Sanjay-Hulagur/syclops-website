@@ -26,7 +26,7 @@ function priorityFor(path: string) {
   if (path.startsWith("/guides/")) return 0.55;
   if (path.startsWith("/blog/")) return 0.55;
   if (path.startsWith("/product/")) return 0.5;
-  if (path === "/privacy" || path === "/terms" || path === "/refund") return 0.2;
+  if (path === "/privacy" || path === "/terms" || path === "/cookies" || path === "/refund") return 0.2;
   return 0.4;
 }
 

@@ -62,7 +62,7 @@ export default function SecurityPage() {
         <FaqList
           items={[
             { q: "Can staff see each other’s routes?", a: "Only if you grant the manager role. Field seats see their own day." },
-            { q: "Data subject request?", a: "Settings → Data. Access and deletion without a mailbox." },
+            { q: "Data subject request?", a: "Workspace records are handled in Settings → Data. A request to Syclops goes to syclops.team@gmail.com." },
             { q: "SOC 2 or ISO certificates?", a: "We do not publish audit badges on this site. Encryption, RBAC, and tenant isolation are in the product; ask after you create a workspace if you need a questionnaire." },
           ]}
         />
