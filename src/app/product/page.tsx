@@ -41,7 +41,7 @@ const pillars = [
   {
     href: "/product/mobile",
     title: "Mobile app",
-    body: "Field, sales, and partner. Offline-tolerant.",
+    body: "Android APK now. Google Play Store is coming very soon.",
   },
   {
     href: "/integrations",

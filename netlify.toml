@@ -9,3 +9,9 @@
   # MASTER_DB_NAME is four characters and appears inside ordinary words on
   # the public site. This site never reads it. Passwords and the host stay scanned.
   SECRETS_SCAN_OMIT_KEYS = "DB_PORT,MASTER_DB_NAME"
+
+[[headers]]
+  for = "/downloads/syclops.apk"
+  [headers.values]
+    Content-Type = "application/vnd.android.package-archive"
+    Content-Disposition = "attachment; filename=\"Syclops.apk\""

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
+import { androidApp } from "@/lib/site";
 
 const columns = [
   {
@@ -17,6 +18,7 @@ const columns = [
       { href: "/product/subscriptions", label: "Subscriptions" },
       { href: "/product/analytics", label: "Analytics" },
       { href: "/product/mobile", label: "Mobile app" },
+      { href: androidApp.href, label: "Download Android APK", download: true },
       { href: "/integrations", label: "Integrations" },
       { href: "/security", label: "Security" },
     ],
@@ -46,6 +48,7 @@ const columns = [
     title: "Account",
     links: [
       { href: "/start", label: "Start for free" },
+      { href: "/interested", label: "I'm interested" },
       { href: "/login", label: "Log in" },
       { href: "/guides", label: "Guides" },
       { href: "/faq", label: "FAQ" },
@@ -79,13 +82,23 @@ export function Footer() {
             </p>
             <ul className="mt-3 space-y-2">
               {column.links.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-ink/80 hover:text-iris"
-                  >
-                    {link.label}
-                  </Link>
+                <li key={link.href + link.label}>
+                  {"download" in link && link.download ? (
+                    <a
+                      href={link.href}
+                      download={androidApp.filename}
+                      className="text-sm text-ink/80 hover:text-iris"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm text-ink/80 hover:text-iris"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

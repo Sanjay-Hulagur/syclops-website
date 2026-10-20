@@ -34,6 +34,12 @@ export function CtaBand({
           >
             See pricing
           </Link>
+          <Link
+            href="/interested"
+            className="rounded-full border border-cream/20 px-5 py-2.5 text-sm text-cream hover:bg-cream/5"
+          >
+            I&apos;m interested
+          </Link>
         </div>
       </div>
     </section>

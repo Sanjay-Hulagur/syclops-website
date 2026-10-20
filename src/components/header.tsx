@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Logo } from "@/components/logo";
-import { nav } from "@/lib/site";
+import { androidApp, nav } from "@/lib/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -38,6 +38,12 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
+          <Link href="/interested" className="text-sm text-muted hover:text-ink">
+            Interested
+          </Link>
+          <Link href={androidApp.page} className="text-sm text-muted hover:text-ink">
+            Android app
+          </Link>
           <Link href="/login" className="text-sm text-muted hover:text-ink">
             Log in
           </Link>
@@ -89,8 +95,22 @@ export function Header() {
               </div>
             ))}
             <Link
-              href="/login"
+              href="/interested"
               className="mt-2 py-2 text-sm"
+              onClick={() => setOpen(false)}
+            >
+              Interested
+            </Link>
+            <Link
+              href={androidApp.page}
+              className="py-2 text-sm"
+              onClick={() => setOpen(false)}
+            >
+              Android app
+            </Link>
+            <Link
+              href="/login"
+              className="py-2 text-sm"
               onClick={() => setOpen(false)}
             >
               Log in

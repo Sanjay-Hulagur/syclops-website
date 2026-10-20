@@ -9,6 +9,12 @@ export const site = {
     "Referral management software for clinics, gyms, campuses, and field teams in India. Track partner and member referrals from intro to payout, with visits and subscriptions in one loop.",
 };
 
+export const androidApp = {
+  href: "/downloads/syclops.apk",
+  filename: "Syclops.apk",
+  page: "/product/mobile#download",
+};
+
 export const nav = {
   primary: [
     {

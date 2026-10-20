@@ -17,6 +17,7 @@ const priorityByPath: Record<string, number> = {
   "/product/field": 0.6,
   "/product/subscriptions": 0.6,
   "/start": 0.5,
+  "/interested": 0.6,
 };
 
 function priorityFor(path: string) {

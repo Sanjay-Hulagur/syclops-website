@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { track } from "@/lib/analytics";
 
 export function LoginForm() {
   const [sent, setSent] = useState(false);
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    track("login", { method: "email", form_name: "login" });
     setSent(true);
   }
 

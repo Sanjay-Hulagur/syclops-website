@@ -56,6 +56,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
             kind: "list",
             items: [
               "Account and workspace: name, email address, phone number if you provide one, role, organization, and the details used to sign you in.",
+              "Interest form on this website: name, email, phone, industry, and business name, used to contact you about using Syclops.",
               "Field work: check-in and check-out, routes, visit notes, optional photos, travel and allowance (TADA) sheets, and the accounts those visits belong to.",
               "Location: collected for check-in, routes, and TADA while staff are on a working day, between check-in and check-out. Referral partners do not see GPS. A field seat sees their own day unless the organization grants a manager role. How long location is kept is a setting in the workspace.",
               "Referrals and subscriptions: referrer identity, referral status, plan and invoice metadata, and the records needed to show whether a referred person converted and whether a plan still pays.",
@@ -71,7 +72,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "We process this information to run field visits, referral status, and subscription billing for the workspace that turned those features on. We also use it to authenticate users, keep tenants separate, prevent abuse, complete billing for Syclops seats, and answer a message you send us.",
+            text: "We process this information to run field visits, referral status, and subscription billing for the workspace that turned those features on. We also use it to authenticate users, keep tenants separate, prevent abuse, complete billing for Syclops seats, answer a message you send us, and reply when you submit the interest form.",
           },
           {
             kind: "p",

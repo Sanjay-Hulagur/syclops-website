@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AndroidDownload } from "@/components/android-download";
+import { InterestForm } from "@/components/interest-form";
 import { IndustryMorph } from "@/components/industry-morph";
 import { FaqList, JsonLd, Section } from "@/components/interior";
 import { LoopDiagram } from "@/components/loop-diagram";
@@ -8,7 +10,7 @@ import { SvgScene } from "@/components/svg-scene";
 import { faqs } from "@/lib/guides";
 import { industries } from "@/lib/industries";
 import { jsonLdGraph, pageSeo, softwareNode } from "@/lib/seo";
-import { integrations, roles } from "@/lib/site";
+import { androidApp, integrations, roles } from "@/lib/site";
 
 const leaks = [
   { from: "Referrals in WhatsApp", to: "No status" },
@@ -103,7 +105,21 @@ export default function HomePage() {
             >
               Watch the loop
             </a>
+            <a
+              href={androidApp.href}
+              download={androidApp.filename}
+              className="rounded-full border border-line px-5 py-2.5 text-sm text-ink hover:bg-quiet"
+            >
+              Download Android APK
+            </a>
           </div>
+          <p className="mt-4 text-sm text-muted">
+            Android is ready to install. Google Play Store is coming very soon.{" "}
+            <a href="#interested" className="font-medium text-iris">
+              I&apos;m interested in using Syclops
+            </a>
+            .
+          </p>
           <div className="mt-14">
             <IndustryMorph />
           </div>
@@ -267,9 +283,12 @@ export default function HomePage() {
                 Three phones, one loop. Staff log the visit. Partners send the
                 person. The plan stays visible without a follow-up call.
               </p>
+              <div className="mt-6">
+                <AndroidDownload compact />
+              </div>
               <Link
                 href="/product/mobile"
-                className="mt-6 inline-flex text-sm font-medium text-iris"
+                className="mt-5 inline-flex text-sm font-medium text-iris"
               >
                 Field force mobile app
               </Link>
@@ -374,6 +393,24 @@ export default function HomePage() {
             Create a workspace today. Invite seats when you are ready. There is
             no implementation calendar.
           </p>
+        </div>
+      </section>
+
+      <section id="interested" className="scroll-mt-24 border-b border-line">
+        <div className="mx-auto grid max-w-6xl items-start gap-12 px-5 py-16 lg:grid-cols-[1fr_0.9fr]">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
+              Interested
+            </p>
+            <h2 className="display mt-3 max-w-xl text-3xl font-semibold tracking-tight sm:text-4xl">
+              Tell us you want to use Syclops.
+            </h2>
+            <p className="mt-4 max-w-xl text-base leading-7 text-muted">
+              Name, email, phone, industry, and business name. We reach you
+              about the field app, referrals, and plans.
+            </p>
+          </div>
+          <InterestForm />
         </div>
       </section>
 

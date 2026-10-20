@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AndroidDownload } from "@/components/android-download";
 import { CtaBand, PageHero, Steps } from "@/components/page-hero";
 import { Checklist, FaqList, FeatureGrid, Prose, Related, Section } from "@/components/interior";
 import { pageSeo } from "@/lib/seo";
@@ -6,7 +7,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata: Metadata = pageSeo({
   title: "Field force mobile app for visits, referrals, and plans",
   description:
-    "Syclops mobile app for iOS and Android: field check-in and TADA, sales conversion, and a partner portal. Offline-tolerant for rural routes and clinic basements.",
+    "Download the Syclops Android APK for field check-in, TADA, and referrals. Google Play Store is coming very soon. Offline-tolerant for rural routes and clinic basements.",
   path: "/product/mobile",
   keywords: [
     "field force mobile app",
@@ -30,6 +31,9 @@ export default function MobilePage() {
           { name: "Mobile app", path: "/product/mobile" },
         ]}
       />
+      <Section>
+        <AndroidDownload />
+      </Section>
       <Section eyebrow="Three phones" title="Staff log the visit. Partners send the person. The plan stays visible.">
         <Prose>
           <p>
@@ -38,7 +42,8 @@ export default function MobilePage() {
             GPS — they send, they see status, they get paid.
           </p>
           <p>
-            iOS and Android. Partners can also use the mobile web portal. BYOD
+            Android installs from the APK on this page. Google Play Store is
+            coming very soon. Partners can also use the mobile web portal. BYOD
             is expected: device GPS is used only on a checked-in working day.
             Languages follow the labels you set for visit, referrer, and plan.
           </p>
@@ -48,7 +53,8 @@ export default function MobilePage() {
         <Steps
           items={[
             { title: "Create the workspace", body: "On the web. Then invite." },
-            { title: "Open the invite", body: "Store listing + tenant. No typing a company code." },
+            { title: "Install the APK", body: "Download Android now. Play Store is coming very soon." },
+            { title: "Open the invite", body: "The link carries the tenant. No typing a company code." },
             { title: "Work offline", body: "Queue visits and photos. Sync when the radio returns." },
           ]}
         />
@@ -80,7 +86,10 @@ export default function MobilePage() {
       <Section eyebrow="FAQ">
         <FaqList
           items={[
-            { q: "iOS and Android?", a: "Yes. Partners can also use the mobile web portal." },
+            {
+              q: "Where is the Android app?",
+              a: "Download the APK on this page. Google Play Store is coming very soon. Partners can also use the mobile web portal.",
+            },
             { q: "BYOD?", a: "Yes. Device GPS is used only on a checked-in day." },
             { q: "Does the partner app track location?", a: "No. Partners send referrals and see payouts. They never consume a field seat." },
           ]}

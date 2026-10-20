@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { track } from "@/lib/analytics";
 import { startFormIndustries } from "@/lib/industries";
 
 export function StartForm({
@@ -44,11 +45,18 @@ export function StartForm({
       } | null;
       if (!response.ok) {
         setError(payload?.error || "Could not save that request. Try again.");
+        track("form_error", { form_name: "start", industry });
         return;
       }
+      track("sign_up", {
+        method: "workspace",
+        form_name: "start",
+        industry,
+      });
       setSent(true);
     } catch {
       setError("Could not save that request. Try again.");
+      track("form_error", { form_name: "start", industry });
     } finally {
       setSaving(false);
     }
