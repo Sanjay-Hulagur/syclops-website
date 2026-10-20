@@ -1,3 +1,4 @@
+import dns from "node:dns";
 import nodemailer from "nodemailer";
 import { LEGAL_EMAIL } from "@/lib/legal";
 
@@ -9,8 +10,13 @@ export type InterestLead = {
   businessName: string;
 };
 
-function smtpSecret(value: string | undefined): string {
-  return (value ?? "").trim().replace(/^["']|["']$/g, "").replace(/\s+/g, "");
+function envValue(name: string): string {
+  const value = process.env[name];
+  return typeof value === "string" ? value.trim() : "";
+}
+
+function smtpSecret(value: string): string {
+  return value.replace(/^["']|["']$/g, "").replace(/\s+/g, "");
 }
 
 function escapeHtml(value: string): string {
@@ -30,16 +36,16 @@ function industryLabel(value: string): string {
 }
 
 export async function sendInterestEmail(lead: InterestLead): Promise<void> {
-  const user = process.env.SMTP_USER?.trim() ?? "";
-  const pass = smtpSecret(process.env.SMTP_PASS);
+  const user = envValue("SMTP_USER");
+  const pass = smtpSecret(envValue("SMTP_PASS"));
   if (!user || !pass) {
     throw new Error("SMTP is not configured");
   }
 
-  const host = process.env.SMTP_HOST?.trim() || "smtp.gmail.com";
-  const port = Number(process.env.SMTP_PORT || 587);
-  const secure = process.env.SMTP_SECURE === "true" || port === 465;
-  const fromAddress = process.env.SMTP_FROM?.trim() || user;
+  const host = envValue("SMTP_HOST") || "smtp.gmail.com";
+  const port = Number(envValue("SMTP_PORT") || 587);
+  const secure = envValue("SMTP_SECURE") === "true" || port === 465;
+  const fromAddress = envValue("SMTP_FROM") || user;
   const industry = industryLabel(lead.industry);
   const rows: [string, string][] = [
     ["Name", lead.name],
@@ -73,11 +79,15 @@ export async function sendInterestEmail(lead: InterestLead): Promise<void> {
     </div>
   `;
 
+  dns.setDefaultResultOrder("ipv4first");
   const transporter = nodemailer.createTransport({
     host,
     port,
     secure,
     requireTLS: !secure && port === 587,
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 15_000,
     auth: { user, pass },
   });
 
