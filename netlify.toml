@@ -7,8 +7,11 @@
   SECRETS_SCAN_OMIT_PATHS = ".next/cache/**,.netlify/.next/cache/**"
   # DB_PORT is 1433, which is also a font metric in Next.
   # MASTER_DB_NAME is four characters and appears inside ordinary words on
-  # the public site. This site never reads it. Passwords and the host stay scanned.
-  SECRETS_SCAN_OMIT_KEYS = "DB_PORT,MASTER_DB_NAME"
+  # the public site. This site never reads it.
+  # SMTP_FROM and SMTP_USER are the public contact address printed on the
+  # legal pages. SMTP_HOST is smtp.gmail.com, also written in the mail client.
+  # Passwords stay scanned.
+  SECRETS_SCAN_OMIT_KEYS = "DB_PORT,MASTER_DB_NAME,SMTP_FROM,SMTP_USER,SMTP_HOST"
 
 [[headers]]
   for = "/downloads/syclops.apk"
