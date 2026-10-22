@@ -81,7 +81,7 @@ export default function ReferralManagementSoftwarePage() {
         eyebrow="Referral management software"
         title="Referral management software for the teams who get introduced."
         body="Syclops tracks every partner, member, alumni, clinic, and channel referral from the person who sent it to the invoice that paid them. Field visits and subscriptions stay on the same record."
-        scene="referral"
+        scene="portal"
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Product", path: "/product" },

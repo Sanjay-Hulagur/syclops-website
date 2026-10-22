@@ -187,7 +187,7 @@ export default async function IndustryPage({ params }: Props) {
         eyebrow={industry.eyebrow}
         title={industry.headline}
         body={industry.body}
-        scene="industry"
+        scene={industry.id}
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Industries", path: "/industries" },

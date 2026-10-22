@@ -21,7 +21,7 @@ export function HeroLoop() {
       viewBox="0 0 480 420"
       role="img"
       aria-label="A field visit becomes a referral, then a subscription that stays."
-      className="mx-auto w-full max-w-md lg:max-w-none"
+      className="mx-auto w-full"
     >
       <style>
         {`

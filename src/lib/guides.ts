@@ -123,7 +123,7 @@ export const guides = [
   {
     slug: "import-beat-list",
     title: "Import a field beat list from CSV",
-    scene: "field" as const,
+    scene: "import" as const,
     summary:
       "Upload accounts, campuses, clinics, or partners. Last-visit can be empty. The field app becomes the source of truth.",
     intro: [
@@ -166,7 +166,7 @@ export const guides = [
   {
     slug: "qualification-window",
     title: "Set a qualification window and block duplicate phones",
-    scene: "referral" as const,
+    scene: "qualify" as const,
     summary:
       "Rewards wait until the referred customer stays. The same phone cannot be referred twice into the same plan. Pending names sit in a queue.",
     intro: [

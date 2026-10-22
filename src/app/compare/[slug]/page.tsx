@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CtaBand, PageHero } from "@/components/page-hero";
+import { sceneForCompare } from "@/components/svg-scene";
 import { FeatureGrid, FaqList, Prose, Related, Section } from "@/components/interior";
 import { comparisons, getComparison } from "@/lib/compare";
 import { pageSeo } from "@/lib/seo";
@@ -34,7 +35,7 @@ export default async function ComparePage({ params }: Props) {
         eyebrow={page.eyebrow}
         title={page.title}
         body={page.summary}
-        scene="compare"
+        scene={sceneForCompare(page.slug)}
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Compare", path: "/compare" },

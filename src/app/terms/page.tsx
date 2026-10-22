@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/page-hero";
+import { CtaBand, PageHero } from "@/components/page-hero";
 import { LegalBody } from "@/components/legal-body";
 import { legalDocs } from "@/lib/legal";
 import { pageSeo } from "@/lib/seo";
@@ -19,14 +19,17 @@ export default function TermsPage() {
         eyebrow="Legal"
         title="Terms and conditions"
         body="Creating a workspace accepts these terms. Seats may not be shared."
-        scene="legal"
-        cta={false}
+        scene="terms"
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Terms", path: "/terms" },
         ]}
       />
       <LegalBody id="terms" />
+      <CtaBand
+        title="Accept the terms by creating a workspace."
+        body="The free trial does not need a card. Seats bill when you add them."
+      />
     </>
   );
 }

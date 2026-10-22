@@ -12,7 +12,7 @@ export function CtaBand({
   return (
     <section className="relative overflow-hidden border-t border-line bg-ink text-cream">
       <div className="pointer-events-none absolute -right-16 -top-20 w-72 opacity-25">
-        <SvgScene kind="loop" />
+        <SvgScene kind="loop" decorative />
       </div>
       <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-5 py-16 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-xl">
@@ -26,7 +26,7 @@ export function CtaBand({
             href="/start"
             className="rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
           >
-            Start for free
+            Start free trial
           </Link>
           <Link
             href="/pricing"
@@ -65,7 +65,7 @@ export function PageHero({
     <>
       {crumbs ? <Breadcrumbs items={crumbs} /> : null}
       <header className="border-b border-line bg-cream">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:py-20 lg:grid-cols-[1.15fr_0.85fr]">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 py-14 sm:py-20 lg:grid-cols-2 lg:gap-12">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
             {eyebrow}
@@ -75,19 +75,22 @@ export function PageHero({
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-muted">{body}</p>
           {cta ? (
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/start"
-                className="rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
-              >
-                Start for free
-              </Link>
-              <Link
-                href="/guides"
-                className="rounded-full border border-line px-5 py-2.5 text-sm hover:bg-paper"
-              >
-                Self-serve setup
-              </Link>
+            <div className="mt-8">
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/start"
+                  className="rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
+                >
+                  Start free trial
+                </Link>
+                <Link
+                  href="/guides"
+                  className="rounded-full border border-line px-5 py-2.5 text-sm hover:bg-paper"
+                >
+                  Self-serve setup
+                </Link>
+              </div>
+              <p className="mt-3 text-xs text-muted">No card. No sales call.</p>
             </div>
           ) : null}
         </div>

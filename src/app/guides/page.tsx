@@ -19,7 +19,7 @@ export default function GuidesPage() {
         eyebrow="Guides"
         title="Go live without a person on the other end."
         body="Create a workspace, invite seats, connect billing, share the portal. Each guide is a page. Docs also live in the product."
-        scene="start"
+        scene="guides"
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Guides", path: "/guides" },

@@ -24,18 +24,24 @@ export default function LoginPage() {
           Log in to your workspace.
         </h1>
         <p className="mt-5 max-w-xl text-base leading-7 text-muted">
-          No new workspace?{" "}
-          <Link href="/start" className="text-iris">
-            Start for free
-          </Link>
-          . Need the field app invite? See{" "}
+          Sign in to the workspace you already created. Need the field app
+          invite? See{" "}
           <Link href="/guides/invite-team" className="text-iris">
             invite seats
           </Link>
           .
         </p>
-        <div className="mt-10 max-w-sm">
-          <SvgScene kind="security" />
+        <div className="mt-8">
+          <Link
+            href="/start"
+            className="inline-flex rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
+          >
+            Start free trial
+          </Link>
+          <p className="mt-3 text-xs text-muted">No workspace yet. No card. No sales call.</p>
+        </div>
+        <div className="mt-10">
+          <SvgScene kind="login" />
         </div>
       </div>
       <LoginForm />

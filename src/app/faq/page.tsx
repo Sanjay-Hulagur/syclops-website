@@ -23,7 +23,7 @@ export default function FaqPage() {
         eyebrow="FAQ"
         title="Answers without a person attached."
         body="If it is not here, it is in Guides or in Settings after you create a workspace."
-        scene="blog"
+        scene="faq"
         crumbs={[
           { name: "Home", path: "/" },
           { name: "FAQ", path: "/faq" },

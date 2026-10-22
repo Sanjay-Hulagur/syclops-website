@@ -105,7 +105,7 @@ export default async function PricingPage() {
                   : "border border-line hover:bg-quiet"
               }`}
             >
-              Start {plan.name}
+              Start free trial
             </Link>
           </article>
         ))}

@@ -37,16 +37,20 @@ export default function InterestedPage() {
           <ul className="mt-6 max-w-xl space-y-2 text-sm leading-6 text-muted">
             <li>Gyms, campuses, clinics, sales teams, fintech, and medtech.</li>
             <li>The same loop: visit, referral, subscription.</li>
-            <li>
-              Ready to go yourself?{" "}
-              <Link href="/start" className="text-iris">
-                Create a workspace
-              </Link>
-              .
-            </li>
           </ul>
-          <div className="mt-10 max-w-sm">
-            <SvgScene kind="start" />
+          <div className="mt-8">
+            <Link
+              href="/start"
+              className="inline-flex rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
+            >
+              Start free trial
+            </Link>
+            <p className="mt-3 text-xs text-muted">
+              Ready now? No card. No sales call.
+            </p>
+          </div>
+          <div className="mt-10">
+            <SvgScene kind="interested" />
           </div>
         </div>
         <InterestForm />

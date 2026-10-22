@@ -47,7 +47,7 @@ const columns = [
   {
     title: "Account",
     links: [
-      { href: "/start", label: "Start for free" },
+      { href: "/start", label: "Start free trial" },
       { href: "/interested", label: "I'm interested" },
       { href: "/login", label: "Log in" },
       { href: "/guides", label: "Guides" },
@@ -73,6 +73,13 @@ export function Footer() {
             Referral management software for field teams. Partner and member
             referrals, visits, and subscriptions — create a workspace and go.
           </p>
+          <Link
+            href="/start"
+            className="mt-6 inline-flex rounded-full bg-iris px-4 py-2 text-sm font-medium text-cream hover:bg-iris-dark"
+          >
+            Start free trial
+          </Link>
+          <p className="mt-4 text-xs text-muted">No card. No sales call.</p>
           <p className="mt-6 text-sm text-muted">India</p>
         </div>
         {columns.map((column) => (

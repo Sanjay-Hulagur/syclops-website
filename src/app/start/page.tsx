@@ -52,7 +52,7 @@ export default async function StartPage() {
             .
           </li>
         </ul>
-        <div className="mt-10 max-w-sm">
+        <div className="mt-10">
           <SvgScene kind="start" />
         </div>
       </div>

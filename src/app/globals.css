@@ -139,6 +139,32 @@ body {
   animation: sy-dot 4.5s ease-in-out 2.6s infinite;
 }
 
+@keyframes scene-draw {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  42%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.scene-draw {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  animation: scene-draw 8.5s ease-in-out infinite;
+}
+
+.scene-spin {
+  transform-box: view-box;
+  animation: sy-orbit 22s linear infinite;
+}
+
+.scene-spin-rev {
+  transform-box: view-box;
+  animation: sy-orbit 28s linear infinite reverse;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

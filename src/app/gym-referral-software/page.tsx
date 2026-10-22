@@ -77,7 +77,7 @@ export default function GymReferralSoftwarePage() {
         eyebrow="Gym referral software"
         title="Gym referral software for member-get-member that still pays."
         body="Syclops tracks which member sent the join, holds the reward until they stay, and writes a trainer visit when the membership is at risk. Your floor ERP can keep classes and the door."
-        scene="referral"
+        scene="gym"
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Product", path: "/product" },

@@ -63,7 +63,7 @@ export default function HomePage() {
       <JsonLd data={jsonLdGraph([softwareNode])} />
       <section className="relative overflow-hidden border-b border-line">
         <div className="relative mx-auto max-w-6xl px-5 py-16 sm:py-24">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
             <div>
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
                 Field · Referrals · Subscriptions
@@ -96,7 +96,7 @@ export default function HomePage() {
                   href="/start"
                   className="rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
                 >
-                  Start for free
+                  Start free trial
                 </Link>
                 <a
                   href="#loop"
@@ -112,6 +112,7 @@ export default function HomePage() {
                   Download Android APK
                 </a>
               </div>
+              <p className="mt-3 text-xs text-muted">No card. No sales call.</p>
               <p className="mt-4 text-sm text-muted">
                 Android is ready to install. Google Play Store is coming very soon.{" "}
                 <a href="#interested" className="font-medium text-iris">

@@ -78,7 +78,7 @@ export default function TadaSoftwarePage() {
         eyebrow="TADA software"
         title="TADA software that writes mileage from the path, not the pin."
         body="Syclops TADA starts at GPS check-in and closes at checkout. Managers approve a sheet. The visit still belongs to a referral or a paying plan — not a live map."
-        scene="field"
+        scene="tada"
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Product", path: "/product" },

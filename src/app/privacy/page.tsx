@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/page-hero";
+import { CtaBand, PageHero } from "@/components/page-hero";
 import { LegalBody } from "@/components/legal-body";
 import { legalDocs } from "@/lib/legal";
 import { pageSeo } from "@/lib/seo";
@@ -20,14 +20,17 @@ export default function PrivacyPage() {
         eyebrow="Legal"
         title="Privacy policy"
         body={doc.summary}
-        scene="legal"
-        cta={false}
+        scene="privacy"
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Privacy", path: "/privacy" },
         ]}
       />
       <LegalBody id="privacy" />
+      <CtaBand
+        title="Read the policy. Start the trial when you are ready."
+        body="No card. The workspace is the same product the policy describes."
+      />
     </>
   );
 }

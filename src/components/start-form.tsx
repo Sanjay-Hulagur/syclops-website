@@ -137,7 +137,7 @@ export function StartForm({
         disabled={saving}
         className="rounded-full bg-iris px-5 py-3 text-sm font-medium text-cream hover:bg-iris-dark disabled:opacity-60"
       >
-        {saving ? "Saving…" : "Create workspace"}
+        {saving ? "Saving…" : "Start free trial"}
       </button>
       <p className="text-xs leading-5 text-muted">
         Free for {trialDays} days. {trialTerms}

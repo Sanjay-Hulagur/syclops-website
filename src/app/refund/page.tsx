@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/page-hero";
+import { CtaBand, PageHero } from "@/components/page-hero";
 import { LegalBody } from "@/components/legal-body";
 import { legalDocs } from "@/lib/legal";
 import { pageSeo } from "@/lib/seo";
@@ -19,14 +19,17 @@ export default function RefundPage() {
         eyebrow="Legal"
         title="Refund policy"
         body="Cancellations are considered within 7 days of the order. Approved refunds take 14 days."
-        scene="legal"
-        cta={false}
+        scene="refund"
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Refund", path: "/refund" },
         ]}
       />
       <LegalBody id="refund" />
+      <CtaBand
+        title="Start the trial. The refund window is written down."
+        body="No card to begin. Paid orders can be reviewed within 7 days."
+      />
     </>
   );
 }

@@ -37,36 +37,44 @@ export function Header() {
             </div>
           ))}
         </nav>
-        <div className="hidden items-center gap-3 lg:flex">
-          <Link href="/interested" className="text-sm text-muted hover:text-ink">
-            Interested
-          </Link>
-          <Link href={androidApp.page} className="text-sm text-muted hover:text-ink">
-            Android app
-          </Link>
-          <Link href="/login" className="text-sm text-muted hover:text-ink">
-            Log in
-          </Link>
+        <div className="flex items-center gap-2">
+          <div className="hidden items-center gap-3 lg:flex">
+            <Link href="/interested" className="text-sm text-muted hover:text-ink">
+              Interested
+            </Link>
+            <Link href={androidApp.page} className="text-sm text-muted hover:text-ink">
+              Android app
+            </Link>
+            <Link href="/login" className="text-sm text-muted hover:text-ink">
+              Log in
+            </Link>
+            <Link
+              href="/start"
+              className="rounded-full bg-iris px-4 py-2 text-sm font-medium text-cream hover:bg-iris-dark"
+            >
+              Start free trial
+            </Link>
+          </div>
           <Link
             href="/start"
-            className="rounded-full bg-iris px-4 py-2 text-sm font-medium text-cream hover:bg-iris-dark"
+            className="rounded-full bg-iris px-3 py-2 text-sm font-medium text-cream hover:bg-iris-dark lg:hidden"
           >
-            Start for free
+            Free trial
           </Link>
+          <button
+            type="button"
+            className="grid h-10 w-10 place-items-center rounded-full border border-line lg:hidden"
+            aria-expanded={open}
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span className="sr-only">Menu</span>
+            <span className="flex w-4 flex-col gap-1.5">
+              <span className="block h-px bg-ink" />
+              <span className="block h-px bg-ink" />
+            </span>
+          </button>
         </div>
-        <button
-          type="button"
-          className="grid h-10 w-10 place-items-center rounded-full border border-line lg:hidden"
-          aria-expanded={open}
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((value) => !value)}
-        >
-          <span className="sr-only">Menu</span>
-          <span className="flex w-4 flex-col gap-1.5">
-            <span className="block h-px bg-ink" />
-            <span className="block h-px bg-ink" />
-          </span>
-        </button>
       </div>
       {open ? (
         <div className="border-t border-line bg-paper px-5 py-4 lg:hidden">
@@ -120,7 +128,7 @@ export function Header() {
               className="rounded-full bg-iris px-4 py-2.5 text-center text-sm font-medium text-cream"
               onClick={() => setOpen(false)}
             >
-              Start for free
+              Start free trial
             </Link>
           </div>
         </div>
