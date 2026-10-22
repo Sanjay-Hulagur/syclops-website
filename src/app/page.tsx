@@ -5,8 +5,8 @@ import { InterestForm } from "@/components/interest-form";
 import { IndustryMorph } from "@/components/industry-morph";
 import { FaqList, JsonLd, Section } from "@/components/interior";
 import { LoopDiagram } from "@/components/loop-diagram";
+import { HeroLoop } from "@/components/hero-loop";
 import { CtaBand } from "@/components/page-hero";
-import { SvgScene } from "@/components/svg-scene";
 import { faqs } from "@/lib/guides";
 import { industries } from "@/lib/industries";
 import { jsonLdGraph, pageSeo, softwareNode } from "@/lib/seo";
@@ -62,64 +62,66 @@ export default function HomePage() {
     <>
       <JsonLd data={jsonLdGraph([softwareNode])} />
       <section className="relative overflow-hidden border-b border-line">
-        <div className="pointer-events-none absolute -right-10 top-6 hidden w-72 opacity-80 lg:block">
-          <SvgScene kind="loop" />
-        </div>
         <div className="relative mx-auto max-w-6xl px-5 py-16 sm:py-24">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
-            Field · Referrals · Subscriptions
-          </p>
-          <h1 className="display mt-5 max-w-3xl text-pretty text-4xl font-semibold tracking-tight sm:text-5xl sm:leading-[1.1] lg:text-[3.4rem]">
-            See the visit.
-            <br />
-            Trace the referral.
-            <br />
-            Keep the subscription.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-            Field tracking, referral management, and subscriptions in one
-            self-serve loop — for gyms, campuses, clinics, sales teams, fintech
-            and medtech. GPS proves the visit. The portal names the intro. The
-            plan still pays.
-          </p>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
-            <Link
-              href="/referral-management-software"
-              className="font-medium text-ink underline decoration-iris/50 underline-offset-4"
-            >
-              Referral management software
-            </Link>{" "}
-            for partner portals, member-get-member, and clinic or channel
-            referrals, with the visit and the plan on the same record.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/start"
-              className="rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
-            >
-              Start for free
-            </Link>
-            <a
-              href="#loop"
-              className="rounded-full border border-line px-5 py-2.5 text-sm text-ink hover:bg-quiet"
-            >
-              Watch the loop
-            </a>
-            <a
-              href={androidApp.href}
-              download={androidApp.filename}
-              className="rounded-full border border-line px-5 py-2.5 text-sm text-ink hover:bg-quiet"
-            >
-              Download Android APK
-            </a>
+          <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
+                Field · Referrals · Subscriptions
+              </p>
+              <h1 className="display mt-5 max-w-3xl text-pretty text-4xl font-semibold tracking-tight sm:text-5xl sm:leading-[1.1] lg:text-[3.4rem]">
+                See the visit.
+                <br />
+                Trace the referral.
+                <br />
+                Keep the subscription.
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
+                Field tracking, referral management, and subscriptions in one
+                self-serve loop — for gyms, campuses, clinics, sales teams, fintech
+                and medtech. GPS proves the visit. The portal names the intro. The
+                plan still pays.
+              </p>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
+                <Link
+                  href="/referral-management-software"
+                  className="font-medium text-ink underline decoration-iris/50 underline-offset-4"
+                >
+                  Referral management software
+                </Link>{" "}
+                for partner portals, member-get-member, and clinic or channel
+                referrals, with the visit and the plan on the same record.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  href="/start"
+                  className="rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
+                >
+                  Start for free
+                </Link>
+                <a
+                  href="#loop"
+                  className="rounded-full border border-line px-5 py-2.5 text-sm text-ink hover:bg-quiet"
+                >
+                  Watch the loop
+                </a>
+                <a
+                  href={androidApp.href}
+                  download={androidApp.filename}
+                  className="rounded-full border border-line px-5 py-2.5 text-sm text-ink hover:bg-quiet"
+                >
+                  Download Android APK
+                </a>
+              </div>
+              <p className="mt-4 text-sm text-muted">
+                Android is ready to install. Google Play Store is coming very soon.{" "}
+                <a href="#interested" className="font-medium text-iris">
+                  I&apos;m interested in using Syclops
+                </a>
+                .
+              </p>
+            </div>
+            <HeroLoop />
           </div>
-          <p className="mt-4 text-sm text-muted">
-            Android is ready to install. Google Play Store is coming very soon.{" "}
-            <a href="#interested" className="font-medium text-iris">
-              I&apos;m interested in using Syclops
-            </a>
-            .
-          </p>
           <div className="mt-14">
             <IndustryMorph />
           </div>
