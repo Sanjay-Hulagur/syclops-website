@@ -140,17 +140,17 @@ export function ReferralRecord({ compact = false }: { compact?: boolean }) {
 
 export function PerformanceBoard() {
   const rows: { label: string; detail: string; status: string; tone: "quiet" | "money" | "warn" }[] = [
-    { label: "Doctor-wise referrals", detail: "Grouped by referrer", status: "Growth", tone: "money" },
-    { label: "Territory", detail: "Grouped by region", status: "Growth", tone: "money" },
-    { label: "PRO visits", detail: "Planned and completed", status: "Team", tone: "quiet" },
-    { label: "Follow-up gaps", detail: "Doctors without a recent visit", status: "On record", tone: "warn" },
+    { label: "Doctor-wise", detail: "Grouped by the referring doctor", status: "Growth", tone: "money" },
+    { label: "Location-wise", detail: "Grouped by region", status: "Growth", tone: "money" },
+    { label: "Specialty", detail: "Stored on each doctor", status: "On record", tone: "quiet" },
+    { label: "OPD and IPD", detail: "Matched when HIS is connected", status: "Scale", tone: "warn" },
   ];
 
   return (
     <div
       className="overflow-hidden rounded-2xl border border-line bg-cream"
       role="img"
-      aria-label="Illustrative referral performance reports: doctor-wise referrals, territory, PRO visits, and follow-up gaps. Not a hospital result."
+      aria-label="Illustrative referral performance: doctor-wise and location-wise on Growth, specialty on each doctor, and OPD or IPD when an HIS connector is configured. Not a hospital result."
     >
       <div className="flex items-center justify-between border-b border-line px-4 py-3">
         <p className="text-sm font-medium">Referral performance</p>
@@ -168,7 +168,7 @@ export function PerformanceBoard() {
         ))}
       </ul>
       <p className="border-t border-line px-4 py-3 text-xs leading-5 text-muted">
-        Report names, not a hospital’s numbers. Visit or admission conversion appears where an HIS connector is configured.
+        Report names, not a hospital’s numbers. Specialty is on the doctor. An OPD or IPD match appears where an HIS connector is configured.
       </p>
     </div>
   );

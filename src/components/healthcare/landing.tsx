@@ -151,13 +151,49 @@ const syclopsItems = [
   "Referral performance analytics",
 ];
 
-const questions = [
-  "How many doctor visits were planned and completed?",
-  "Which doctors are actively referring patients?",
-  "Which referral relationships need follow-up?",
-  "Which territories are receiving sufficient field coverage?",
-  "Which referral sources contribute to hospital visits?",
-  "Which camps and outreach activities need further follow-up?",
+const day = [
+  {
+    kicker: "The field day",
+    title: "Twenty doctor visits, each with a GPS check-in.",
+    body: "A PRO can cover a full list in one day. Management sees which visits were planned, which were checked in, and the location recorded at each check-in. GPS runs on that working day, between check-in and check-out. A photo can be required. Mock locations are flagged. The record is the visit, the note, and the follow-up.",
+  },
+  {
+    kicker: "The referral",
+    title: "The patient is recorded against the doctor who sent them.",
+    body: "When a doctor refers a patient, that doctor stays on the referral with the date and the status. The same phone or email cannot be referred twice into the same plan. The source does not disappear when the patient reaches the desk.",
+  },
+  {
+    kicker: "OPD",
+    title: "An outpatient visit updates the referral when your HIS is connected.",
+    body: "On Scale, a connector built for the hospital system you already run matches the OPD visit back onto that referral. Staff do not retype the referring doctor. If no connector is in place, Syclops keeps the referral as recorded and does not invent the visit.",
+  },
+  {
+    kicker: "IPD",
+    title: "The admission is written on the same referral.",
+    body: "When the patient is admitted, the same connector records the IPD admission against that referral. The admission chart, clinical notes, and billing stay in the HIS. Syclops keeps the source and the outcome, not the chart.",
+  },
+  {
+    kicker: "Conversions",
+    title: "Doctor-wise and location-wise. Specialty on every doctor.",
+    body: "On Growth, management reviews visits, referrals, and plans by the referring doctor and by region. Specialty is stored on each doctor, so the same network can be read specialty by specialty. An OPD or IPD match is part of that view only where the connector has written it.",
+  },
+  {
+    kicker: "Your HIS",
+    title: "Syclops connects to the system the hospital already runs.",
+    body: "Patient registration, billing, clinical records, laboratory, and radiology stay in the HIS. HIS and ERP connectors are on Scale and are set up for that system. Syclops does not attach itself to every HIS on its own, and it does not replace hospital operations.",
+  },
+  {
+    kicker: "Confidential records",
+    title: "Field executives and outside clinics do not receive the chart.",
+    body: "Management can track who referred the patient and, where the HIS is connected, whether they reached OPD or IPD. A field executive sees the visits and referrals on their own day. On Growth, a referring clinic sees status for the patients they sent. They do not see another clinic’s book, GPS, diagnosis, or billing.",
+  },
+];
+
+const seen = [
+  "GPS check-in on each visit",
+  "Referral filed on the doctor",
+  "OPD and IPD when HIS is connected",
+  "Chart stays in the hospital",
 ];
 
 function healthcareFaqs(trialDays: number) {
@@ -260,9 +296,10 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
             Turn doctor referrals into measurable hospital growth.
           </h1>
           <p className="mt-5 max-w-md text-base leading-7 text-muted">
-            Manage referral doctors, track PRO visits, monitor patient referrals
-            and measure conversion — all in one connected platform. Keep your
-            existing HIS.
+            A PRO visits the doctors. Management sees the GPS check-in. The
+            referral stays on the doctor who sent the patient. When your HIS is
+            connected, OPD and IPD write back onto that referral. The chart
+            stays in the hospital.
           </p>
           <div id="healthcare-hero-cta" className="mt-8 flex flex-wrap gap-3">
             <HealthcareLink
@@ -274,12 +311,12 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
               Start your free trial
             </HealthcareLink>
             <HealthcareLink
-              href="#how-it-works"
+              href="#one-day"
               event="healthcare_workflow_demo_click"
               params={{ cta_location: "hero" }}
               className={`${secondary} ${healthcareFocus}`}
             >
-              See how it works
+              See a working day
             </HealthcareLink>
           </div>
           <ul className="mt-6 grid gap-2 text-sm text-muted sm:grid-cols-2">
@@ -297,6 +334,63 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
           className="h-auto w-full"
         />
       </header>
+
+      <section
+        id="one-day"
+        data-healthcare-section="day"
+        className="scroll-mt-24 border-b border-line"
+        aria-labelledby="healthcare-day"
+      >
+        <div className="mx-auto grid max-w-6xl items-start gap-10 px-5 py-16 lg:grid-cols-[minmax(0,1fr)_17rem]">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
+              One working day
+            </p>
+            <h2 id="healthcare-day" className="display mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
+              From the twentieth clinic to the admission, on one record.
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
+              This is the day hospital management asks about. Each step is what
+              Syclops records. An OPD visit or an IPD admission is written back
+              only where an HIS connector is configured.
+            </p>
+            <ol className="mt-10">
+              {day.map((step, index) => (
+                <li key={step.title} className="grid gap-3 border-t border-line py-6 sm:grid-cols-[9.5rem_1fr] sm:gap-8">
+                  <p className="text-sm font-medium text-iris">
+                    <span className="mr-2 tabular-nums text-muted">0{index + 1}</span>
+                    {step.kicker}
+                  </p>
+                  <div>
+                    <h3 className="text-lg font-medium leading-snug">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-muted">{step.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <aside className="rounded-3xl border border-line bg-cream p-5 lg:sticky lg:top-24">
+            <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
+              On the record
+            </p>
+            <ul className="mt-4 space-y-3 text-sm leading-6">
+              {seen.map((line) => (
+                <li key={line} className="border-b border-line pb-3 last:border-0 last:pb-0">
+                  {line}
+                </li>
+              ))}
+            </ul>
+            <HealthcareLink
+              href={startHref("hero")}
+              event="healthcare_hero_trial_click"
+              params={{ cta_location: "day" }}
+              className={`${primary} ${healthcareFocus} mt-6 w-full`}
+            >
+              Start your free trial
+            </HealthcareLink>
+          </aside>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-6xl px-5 py-16" aria-labelledby="healthcare-problem">
         <h2 id="healthcare-problem" className="display max-w-3xl text-3xl font-semibold tracking-tight">
@@ -413,12 +507,13 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
               PRO field tracking
             </p>
             <h2 id="healthcare-field" className="display mt-3 text-3xl font-semibold tracking-tight">
-              Know what your field team is doing outside the hospital.
+              A full day of doctor visits, with GPS on each check-in.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              A PRO day is a list of doctor visits with an owner, a check-in, and
-              a note. Managers see what was planned, what was completed, and what
-              is still pending.
+              Whether the list is eight clinics or twenty, management sees the
+              same record: planned, checked in, and still pending. Location is
+              taken at check-in. The field executive sees their own day. They do
+              not see another officer’s book or the clinical chart.
             </p>
             <FeatureList
               items={[
@@ -465,12 +560,13 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
               Patient referral tracking
             </p>
             <h2 id="healthcare-referrals" className="display mt-3 text-3xl font-semibold tracking-tight">
-              Trace every patient referral back to its source.
+              The referral stays on the doctor. OPD and IPD write back.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              The originating doctor stays on the referral as status changes. A
-              hospital visit or admission is linked only where an HIS connector
-              is configured.
+              The originating doctor is on the referral from the moment it is
+              recorded. When a Scale connector is in place, an OPD visit updates
+              that referral, and an IPD admission is recorded on it. Without a
+              connector, the referral stays as filed.
             </p>
             <FeatureList
               items={[
@@ -488,7 +584,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "HIS-linked outcome",
-                  body: "Where a Scale connector is in place, the referral can be matched to an outpatient visit or an inpatient admission. This is not automatic for every HIS.",
+                  body: "With a Scale connector, the OPD visit updates the referral and the IPD admission is recorded on it. Without a connector, that outcome is not invented.",
                 },
               ]}
             />
@@ -514,22 +610,27 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
               Hospital performance
             </p>
             <h2 id="healthcare-performance" className="display mt-3 text-3xl font-semibold tracking-tight">
-              See referral performance across your hospital.
+              Conversions by doctor and by location.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              On Growth, analytics groups visits, referrals, and plans by referrer
-              and region. The figures in your workspace are yours. This page does
-              not show another hospital’s results.
+              On Growth, analytics groups visits, referrals, and plans by the
+              referring doctor and by region. Specialty sits on each doctor, so
+              the network can be read specialty by specialty. The figures in
+              your workspace are yours.
             </p>
             <FeatureList
               items={[
                 {
-                  title: "Referral activity by doctor",
+                  title: "Doctor-wise",
                   body: "Referrers are ranked by the referrals and plans attached to them, not by kilometres.",
                 },
                 {
-                  title: "Territory performance",
-                  body: "Region drill uses the hierarchy you set, so coverage is visible by territory.",
+                  title: "Location-wise",
+                  body: "Region drill uses the hierarchy you set, so conversions are visible by location.",
+                },
+                {
+                  title: "Specialty-wise",
+                  body: "Specialty is on every doctor record, so management can read the same network by specialty.",
                 },
                 {
                   title: "PRO visits",
@@ -653,35 +754,12 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
             </article>
           </div>
           <p className="mt-6 max-w-3xl text-sm leading-7 text-muted">
-            Syclops complements the hospital software you already run. HIS and ERP
-            connectors are on Scale, and they are configured for a specific system.
-            Syclops does not connect to every HIS automatically, and it does not
-            replace clinical records.
-          </p>
-        </div>
-      </section>
-
-      <section className="border-t border-line" aria-labelledby="healthcare-management">
-        <div className="mx-auto max-w-6xl px-5 py-16">
-          <h2 id="healthcare-management" className="display max-w-3xl text-3xl font-semibold tracking-tight">
-            Give hospital management visibility beyond the hospital walls.
-          </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-            These are the questions the visit list, the doctor record, and Growth
-            analytics are built to answer. They are not a promised change in revenue.
-          </p>
-          <ol className="mt-8 grid gap-3 sm:grid-cols-2">
-            {questions.map((question, index) => (
-              <li key={question} className="rounded-2xl border border-line bg-cream px-5 py-4 text-sm leading-6">
-                <span className="mr-2 text-xs font-medium tabular-nums text-iris">0{index + 1}</span>
-                {question}
-              </li>
-            ))}
-          </ol>
-          <p className="mt-6 max-w-3xl text-sm leading-6 text-muted">
-            Visit completion is on the field record. Doctor and territory views are
-            on Growth. Camp follow-up uses leads tagged to that camp. A contribution
-            to hospital visits is visible where an HIS connector matches the referral.
+            HIS and ERP connectors are on Scale, and they are configured for the
+            system you already run. Where that connector is in place, an OPD visit
+            updates the referral and an IPD admission is recorded on it. Diagnosis,
+            notes, and billing stay in the HIS. A field executive sees their own
+            day. A referring clinic sees status for the patients they sent, not
+            another clinic’s book and not the chart.
           </p>
         </div>
       </section>
