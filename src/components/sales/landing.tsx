@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import heroArt from "../../../Images/Field Sales Partnership Dashboard.png";
 import { CtaBand } from "@/components/page-hero";
 import { Breadcrumbs, JsonLd, Related } from "@/components/interior";
 import {
@@ -12,7 +14,6 @@ import {
   AccountRecord,
   BeatList,
   CheckInPhone,
-  HeroBoard,
   LeadStatus,
   LoopHealth,
   PartnerPortal,
@@ -262,51 +263,56 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
         ]}
       />
 
-      <header className="border-b border-line">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:py-20 lg:grid-cols-2">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
-              <span className="whitespace-nowrap">For field sales</span>
-              {" · "}
-              <span className="whitespace-nowrap">Channel partners</span>
-              {" · "}
-              <span className="whitespace-nowrap">Sales & marketing teams</span>
-            </p>
-            <h1 className="display mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-              Turn field visits and partner referrals into revenue.
-            </h1>
-            <p className="mt-5 max-w-xl text-base leading-7 text-muted">
-              Plan sales visits, manage channel partners, track referred leads and
-              follow every opportunity through to conversion and renewal — in one
-              connected platform.
-            </p>
-            <div id="sales-hero-cta" className="mt-8 flex flex-wrap gap-3">
-              <SalesLink
-                href={startHref("hero")}
-                event="sales_hero_trial_click"
-                params={{ cta_location: "hero" }}
-                className={`${primary} ${salesFocus}`}
-              >
-                Start your free trial
-              </SalesLink>
-              <SalesLink
-                href="#how-it-works"
-                event="sales_demo_click"
-                params={{ cta_location: "hero" }}
-                className={`${secondary} ${salesFocus}`}
-              >
-                See how it works
-              </SalesLink>
-            </div>
-            <ul className="mt-6 grid gap-2 text-sm text-muted sm:grid-cols-2">
-              <li>{trialDays} days free</li>
-              <li>No credit card required</li>
-              <li>No sales call</li>
-              <li>Self-serve setup</li>
-            </ul>
+      <header className="grid items-center gap-6 overflow-hidden border-b border-line px-5 py-10 sm:py-12 lg:grid-cols-[max(1.25rem,calc((100%-72rem)/2+1.25rem))_minmax(0,32rem)_minmax(0,1fr)] lg:gap-0 lg:px-0 lg:py-2">
+        <div className="hidden lg:block" aria-hidden="true" />
+        <div className="lg:py-8 lg:pr-6">
+          <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
+            <span className="whitespace-nowrap">For field sales</span>
+            {" · "}
+            <span className="whitespace-nowrap">Channel partners</span>
+            {" · "}
+            <span className="whitespace-nowrap">Sales & marketing teams</span>
+          </p>
+          <h1 className="display mt-4 max-w-xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">
+            Turn field visits and partner referrals into revenue.
+          </h1>
+          <p className="mt-5 max-w-md text-base leading-7 text-muted">
+            Plan sales visits, manage channel partners, track referred leads and
+            follow every opportunity through to conversion and renewal — in one
+            connected platform.
+          </p>
+          <div id="sales-hero-cta" className="mt-8 flex flex-wrap gap-3">
+            <SalesLink
+              href={startHref("hero")}
+              event="sales_hero_trial_click"
+              params={{ cta_location: "hero" }}
+              className={`${primary} ${salesFocus}`}
+            >
+              Start your free trial
+            </SalesLink>
+            <SalesLink
+              href="#how-it-works"
+              event="sales_demo_click"
+              params={{ cta_location: "hero" }}
+              className={`${secondary} ${salesFocus}`}
+            >
+              See how it works
+            </SalesLink>
           </div>
-          <HeroBoard />
+          <ul className="mt-6 grid gap-2 text-sm text-muted sm:grid-cols-2">
+            <li>{trialDays} days free</li>
+            <li>No credit card required</li>
+            <li>No sales call</li>
+            <li>Self-serve setup</li>
+          </ul>
         </div>
+        <Image
+          src={heroArt}
+          alt="Field sales desk with today's partner visits, referred leads, revenue and renewals, and a phone check-in at Acme Industries."
+          priority
+          sizes="(min-width: 1024px) 55vw, 100vw"
+          className="h-auto w-full"
+        />
       </header>
 
       <section className="mx-auto max-w-6xl px-5 py-16" aria-labelledby="sales-problem">

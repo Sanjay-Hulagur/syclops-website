@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import heroArt from "../../../Images/Hospital Referral Network Dashboard.png";
 import { CtaBand } from "@/components/page-hero";
 import { Breadcrumbs, JsonLd, Related } from "@/components/interior";
 import {
@@ -12,7 +14,6 @@ import {
   CampRecord,
   DoctorRecord,
   FieldDay,
-  HeroBoard,
   PerformanceBoard,
   ReferralRecord,
 } from "@/components/healthcare/frames";
@@ -245,51 +246,56 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
         ]}
       />
 
-      <header className="border-b border-line">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:py-20 lg:grid-cols-2">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
-              <span className="whitespace-nowrap">Built for hospitals</span>
-              {" · "}
-              <span className="whitespace-nowrap">Healthcare networks</span>
-              {" · "}
-              <span className="whitespace-nowrap">Diagnostic centres</span>
-            </p>
-            <h1 className="display mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-              Turn doctor referrals into measurable hospital growth.
-            </h1>
-            <p className="mt-5 max-w-xl text-base leading-7 text-muted">
-              Manage referral doctors, track PRO visits, monitor patient referrals
-              and measure conversion — all in one connected platform. Keep your
-              existing HIS.
-            </p>
-            <div id="healthcare-hero-cta" className="mt-8 flex flex-wrap gap-3">
-              <HealthcareLink
-                href={startHref("hero")}
-                event="healthcare_hero_trial_click"
-                params={{ cta_location: "hero" }}
-                className={`${primary} ${healthcareFocus}`}
-              >
-                Start your free trial
-              </HealthcareLink>
-              <HealthcareLink
-                href="#how-it-works"
-                event="healthcare_workflow_demo_click"
-                params={{ cta_location: "hero" }}
-                className={`${secondary} ${healthcareFocus}`}
-              >
-                See how it works
-              </HealthcareLink>
-            </div>
-            <ul className="mt-6 grid gap-2 text-sm text-muted sm:grid-cols-2">
-              <li>{trialDays} days free</li>
-              <li>No credit card required</li>
-              <li>No sales call</li>
-              <li>Existing HIS stays</li>
-            </ul>
+      <header className="grid items-center gap-6 overflow-hidden border-b border-line px-5 py-10 sm:py-12 lg:grid-cols-[max(1.25rem,calc((100%-72rem)/2+1.25rem))_minmax(0,32rem)_minmax(0,1fr)] lg:gap-0 lg:px-0 lg:py-2">
+        <div className="hidden lg:block" aria-hidden="true" />
+        <div className="lg:py-8 lg:pr-6">
+          <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
+            <span className="whitespace-nowrap">Built for hospitals</span>
+            {" · "}
+            <span className="whitespace-nowrap">Healthcare networks</span>
+            {" · "}
+            <span className="whitespace-nowrap">Diagnostic centres</span>
+          </p>
+          <h1 className="display mt-4 max-w-xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">
+            Turn doctor referrals into measurable hospital growth.
+          </h1>
+          <p className="mt-5 max-w-md text-base leading-7 text-muted">
+            Manage referral doctors, track PRO visits, monitor patient referrals
+            and measure conversion — all in one connected platform. Keep your
+            existing HIS.
+          </p>
+          <div id="healthcare-hero-cta" className="mt-8 flex flex-wrap gap-3">
+            <HealthcareLink
+              href={startHref("hero")}
+              event="healthcare_hero_trial_click"
+              params={{ cta_location: "hero" }}
+              className={`${primary} ${healthcareFocus}`}
+            >
+              Start your free trial
+            </HealthcareLink>
+            <HealthcareLink
+              href="#how-it-works"
+              event="healthcare_workflow_demo_click"
+              params={{ cta_location: "hero" }}
+              className={`${secondary} ${healthcareFocus}`}
+            >
+              See how it works
+            </HealthcareLink>
           </div>
-          <HeroBoard />
+          <ul className="mt-6 grid gap-2 text-sm text-muted sm:grid-cols-2">
+            <li>{trialDays} days free</li>
+            <li>No credit card required</li>
+            <li>No sales call</li>
+            <li>Existing HIS stays</li>
+          </ul>
         </div>
+        <Image
+          src={heroArt}
+          alt="Hospital desk where a cardiologist reviews doctor visits, patient referrals, and outcomes while a field officer checks in and saves a new referral."
+          priority
+          sizes="(min-width: 1024px) 55vw, 100vw"
+          className="h-auto w-full"
+        />
       </header>
 
       <section className="mx-auto max-w-6xl px-5 py-16" aria-labelledby="healthcare-problem">

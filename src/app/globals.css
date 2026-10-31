@@ -108,6 +108,11 @@ body {
   animation: sy-dash 22s linear infinite;
 }
 
+.sy-dash-loop {
+  stroke-dasharray: 3 6;
+  animation: sy-dash 2.8s linear infinite;
+}
+
 .sy-breathe {
   transform-box: fill-box;
   transform-origin: center;
@@ -140,6 +145,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .industry-move {
+    display: none;
+  }
+
   html {
     scroll-behavior: auto;
   }

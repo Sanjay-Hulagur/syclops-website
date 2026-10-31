@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import heroArt from "../../../Images/Fintech Partnership Growth Meeting.png";
 import { CtaBand } from "@/components/page-hero";
 import { Breadcrumbs, JsonLd, Related } from "@/components/interior";
 import {
@@ -10,7 +12,6 @@ import {
 } from "@/components/fintech/client";
 import {
   AnalyticsSample,
-  HeroBoard,
   PortalPhone,
   PremiumList,
   PremiumRecord,
@@ -240,47 +241,52 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
         ]}
       />
 
-      <header className="border-b border-line">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:py-20 lg:grid-cols-2">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
-              For insurance · NBFC · wealth teams
-            </p>
-            <h1 className="display mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-              Turn agent visits into policies that keep paying.
-            </h1>
-            <p className="mt-5 max-w-xl text-base leading-7 text-muted">
-              Track doorstep check-ins, customer and DSA referrals, issued policies,
-              and lapsed premiums in one connected system. Keep your core policy or
-              loan system.
-            </p>
-            <div id="fintech-hero-cta" className="mt-8 flex flex-wrap gap-3">
-              <FintechLink
-                href={startHref("hero")}
-                event="fintech_hero_trial_click"
-                params={{ cta_location: "hero" }}
-                className={`${primary} ${fintechFocus}`}
-              >
-                Start your free trial
-              </FintechLink>
-              <FintechLink
-                href="#how-it-works"
-                event="fintech_demo_click"
-                params={{ cta_location: "hero" }}
-                className={`${secondary} ${fintechFocus}`}
-              >
-                See how it works
-              </FintechLink>
-            </div>
-            <ul className="mt-6 grid gap-2 text-sm text-muted sm:grid-cols-2">
-              <li>{trialDays} days free</li>
-              <li>No credit card required</li>
-              <li>No sales call</li>
-              <li>Core system stays</li>
-            </ul>
+      <header className="grid items-center gap-6 overflow-hidden border-b border-line px-5 py-10 sm:py-12 lg:grid-cols-[max(1.25rem,calc((100%-72rem)/2+1.25rem))_minmax(0,32rem)_minmax(0,1fr)] lg:gap-0 lg:px-0 lg:py-2">
+        <div className="hidden lg:block" aria-hidden="true" />
+        <div className="lg:py-8 lg:pr-6">
+          <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
+            For insurance · NBFC · wealth teams
+          </p>
+          <h1 className="display mt-4 max-w-xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">
+            Turn agent visits into policies that keep paying.
+          </h1>
+          <p className="mt-5 max-w-md text-base leading-7 text-muted">
+            Track doorstep check-ins, customer and DSA referrals, issued policies,
+            and lapsed premiums in one connected system. Keep your core policy or
+            loan system.
+          </p>
+          <div id="fintech-hero-cta" className="mt-8 flex flex-wrap gap-3">
+            <FintechLink
+              href={startHref("hero")}
+              event="fintech_hero_trial_click"
+              params={{ cta_location: "hero" }}
+              className={`${primary} ${fintechFocus}`}
+            >
+              Start your free trial
+            </FintechLink>
+            <FintechLink
+              href="#how-it-works"
+              event="fintech_demo_click"
+              params={{ cta_location: "hero" }}
+              className={`${secondary} ${fintechFocus}`}
+            >
+              See how it works
+            </FintechLink>
           </div>
-          <HeroBoard />
+          <ul className="mt-6 grid gap-2 text-sm text-muted sm:grid-cols-2">
+            <li>{trialDays} days free</li>
+            <li>No credit card required</li>
+            <li>No sales call</li>
+            <li>Core system stays</li>
+          </ul>
         </div>
+        <Image
+          src={heroArt}
+          alt="Partnership meeting with partner visits, referred loan leads, disbursements, and a phone check-in for today's NBFC visits."
+          priority
+          sizes="(min-width: 1024px) 55vw, 100vw"
+          className="h-auto w-full"
+        />
       </header>
 
       <section className="mx-auto max-w-6xl px-5 py-16" aria-labelledby="fintech-problem">

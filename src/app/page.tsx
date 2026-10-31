@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import rolesArt from "../../Images/Connected Teams, One Unified Dashboard.png";
 import { AndroidDownload } from "@/components/android-download";
 import { InterestForm } from "@/components/interest-form";
 import { IndustryMorph } from "@/components/industry-morph";
 import { FaqList, JsonLd, Section } from "@/components/interior";
 import { LoopDiagram } from "@/components/loop-diagram";
 import { HeroLoop } from "@/components/hero-loop";
+import { IndustryMark } from "@/components/industry-marks";
 import { CtaBand } from "@/components/page-hero";
 import { faqs } from "@/lib/guides";
 import { industries } from "@/lib/industries";
@@ -228,6 +231,12 @@ export default function HomePage() {
           <h2 className="display mt-3 text-3xl font-semibold tracking-tight">
             One platform for the people who move revenue.
           </h2>
+          <Image
+            src={rolesArt}
+            alt="Field staff check in on a visit, sales teams work the pipeline, referral partners track introductions, and management reviews growth on one dashboard."
+            sizes="(min-width: 1152px) 72rem, 100vw"
+            className="mt-8 h-auto w-full rounded-3xl"
+          />
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {roles.map((role) => (
               <Link
@@ -258,6 +267,7 @@ export default function HomePage() {
                 href={`/industries/${item.id}`}
                 className="rounded-2xl border border-line bg-paper p-5 hover:border-ink/30"
               >
+                <IndustryMark id={item.id} />
                 <p className="text-xs uppercase tracking-[0.14em] text-muted">
                   {item.eyebrow}
                 </p>
