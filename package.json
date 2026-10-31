@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "geoip-lite": "^1.4.10",
     "mssql": "^12.7.9",
     "next": "16.3.8",
     "nodemailer": "^10.1.7",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/geoip-lite": "^1.4.4",
     "@types/mssql": "^12.3.0",
     "@types/node": "^20",
     "@types/react": "^19",

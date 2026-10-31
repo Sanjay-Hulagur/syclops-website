@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { apiError } from "@/lib/api-error";
 import { isStartFormIndustry } from "@/lib/industries";
 import { getPool, sql } from "@/lib/db";
 import { sendInterestEmail } from "@/lib/mail";
@@ -31,7 +32,7 @@ export async function POST(request: Request) {
   try {
     body = (await request.json()) as Payload;
   } catch {
-    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+    return apiError("/api/interest", 400, "Invalid request.");
   }
 
   const name = text(body.name, 120);
@@ -41,31 +42,19 @@ export async function POST(request: Request) {
   const businessName = text(body.businessName, 200);
 
   if (!name || name.length < 2) {
-    return NextResponse.json({ error: "Enter your name." }, { status: 400 });
+    return apiError("/api/interest", 400, "Enter your name.");
   }
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return NextResponse.json(
-      { error: "Enter a valid email." },
-      { status: 400 },
-    );
+    return apiError("/api/interest", 400, "Enter a valid email.");
   }
   if (!phoneNumber) {
-    return NextResponse.json(
-      { error: "Enter a valid phone number." },
-      { status: 400 },
-    );
+    return apiError("/api/interest", 400, "Enter a valid phone number.");
   }
   if (!industry || !isStartFormIndustry(industry)) {
-    return NextResponse.json(
-      { error: "Choose an industry." },
-      { status: 400 },
-    );
+    return apiError("/api/interest", 400, "Choose an industry.");
   }
   if (!businessName || businessName.length < 2) {
-    return NextResponse.json(
-      { error: "Enter the business name." },
-      { status: 400 },
-    );
+    return apiError("/api/interest", 400, "Enter the business name.");
   }
 
   try {
@@ -83,10 +72,7 @@ export async function POST(request: Request) {
       `);
   } catch (error) {
     console.error("Failed to save interest lead", error);
-    return NextResponse.json(
-      { error: "Could not save that. Try again." },
-      { status: 500 },
-    );
+    return apiError("/api/interest", 500, "Could not save that. Try again.");
   }
 
   try {
@@ -99,10 +85,7 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("Failed to email interest lead", error);
-    return NextResponse.json(
-      { error: "Saved, but the email did not send. Try again." },
-      { status: 500 },
-    );
+    return apiError("/api/interest", 500, "Saved, but the email did not send. Try again.");
   }
 
   return NextResponse.json({ ok: true });

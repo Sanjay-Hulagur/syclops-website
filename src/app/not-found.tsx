@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { NotFoundReport } from "@/components/not-found-report";
 import { SvgScene } from "@/components/svg-scene";
 
 export const metadata: Metadata = {
@@ -9,7 +10,8 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="mx-auto max-w-xl px-5 py-24 text-center">
+    <div data-analytics-page="not-found" className="mx-auto max-w-xl px-5 py-24 text-center">
+      <NotFoundReport />
       <div className="mx-auto max-w-xs">
         <SvgScene kind="loop" />
       </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Geist, Syne } from "next/font/google";
 import { Analytics } from "@/components/analytics";
 import { Footer } from "@/components/footer";
@@ -105,7 +106,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <Analytics />
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
         <JsonLd data={jsonLdGraph([organizationNode, websiteNode])} />
         <Header />
         <main className="flex-1">{children}</main>

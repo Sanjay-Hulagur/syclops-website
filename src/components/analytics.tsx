@@ -1,8 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { track } from "@/lib/analytics";
+import {
+  bindCollectorLifecycle,
+  collectError,
+  collectPageView,
+  requestGpsOnce,
+} from "@/lib/collect";
 
 const SCROLL_MARKS = [25, 50, 75, 100] as const;
 
@@ -175,19 +181,59 @@ function onSelect(event: Event) {
   });
 }
 
+function onError(event: ErrorEvent) {
+  if (event.target !== window) return;
+  collectError({
+    status: 0,
+    kind: "client",
+    message: event.message || "Script error",
+    source: event.filename,
+    line: event.lineno,
+  });
+}
+
+function onRejection(event: PromiseRejectionEvent) {
+  const reason = event.reason;
+  const message = reason instanceof Error ? reason.message : "Unhandled rejection";
+  collectError({
+    status: 0,
+    kind: "unhandled_rejection",
+    message: message || "Unhandled rejection",
+  });
+}
+
 export function Analytics() {
   const pathname = usePathname();
+  const search = useSearchParams().toString();
 
   useEffect(() => {
     document.addEventListener("click", onActivate, true);
     document.addEventListener("auxclick", onActivate, true);
     document.addEventListener("change", onSelect, true);
+    window.addEventListener("error", onError);
+    window.addEventListener("unhandledrejection", onRejection);
+    const unbind = bindCollectorLifecycle();
+    requestGpsOnce();
     return () => {
       document.removeEventListener("click", onActivate, true);
       document.removeEventListener("auxclick", onActivate, true);
       document.removeEventListener("change", onSelect, true);
+      window.removeEventListener("error", onError);
+      window.removeEventListener("unhandledrejection", onRejection);
+      unbind();
     };
   }, []);
+
+  useEffect(() => {
+    if (
+      document.querySelector(
+        "[data-analytics-page='not-found'], [data-analytics-page='error']",
+      )
+    ) {
+      return;
+    }
+    collectPageView(pathname || "/", search);
+  }, [pathname, search]);
 
   useEffect(() => {
     const fired = new Set<number>();

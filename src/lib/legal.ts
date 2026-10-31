@@ -62,6 +62,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
               "Referrals and subscriptions: referrer identity, referral status, plan and invoice metadata, and the records needed to show whether a referred person converted and whether a plan still pays.",
               "Keys you connect: credentials you paste for WhatsApp, Razorpay, Stripe, or Maps, stored so those connections run inside your workspace.",
               "Usage and device: IP address, device and app identifiers, browser type, pages or screens used, timestamps, and diagnostic logs.",
+              "Marketing site analytics: a random visitor id and session id, pages viewed, URL parameters, clicks, the referring site, approximate location derived from the IP address, precise location only if you allow the browser location permission, and diagnostic errors (the status, path, and a short message). Form contents are not stored in these events. This is not used for advertising.",
               "Support: the content of messages you send to syclops.team@gmail.com.",
             ],
           },
@@ -76,7 +77,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
           },
           {
             kind: "p",
-            text: "Purpose is operating the loop you turned on. We do not use this data to build advertising profiles, and we do not sell it.",
+            text: "Purpose is operating the loop you turned on. We do not use this data to build advertising profiles, and we do not sell it. Marketing-site analytics are used to see which pages, sources, and errors need attention.",
           },
         ],
       },
@@ -152,7 +153,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "The marketing site and the application use cookies and similar storage as described in the Cookie policy. We do not use them for advertising. Device location and photo access are permissions requested by the operating system when a feature needs them. They are described above, and they are not cookies.",
+            text: "The marketing site and the application use cookies and similar storage as described in the Cookie policy. We do not use them for advertising. The marketing site keeps a first-party visitor id and session id so visits, clicks, and errors can be counted. Approximate location is derived from the IP address. Precise location is requested by the browser once and is stored only if you allow it. Device location and photo access in the application are permissions requested by the operating system when a feature needs them. They are described above, and they are not cookies.",
           },
         ],
       },
@@ -325,7 +326,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
     id: "cookies",
     title: "Cookie policy",
     summary:
-      "Syclops uses essential cookies and similar storage to run the site and the application. We do not use advertising cookies.",
+      "Syclops uses essential cookies and similar storage to run the site and the application, plus a first-party visitor id on the marketing site to count pages, clicks, and errors. We do not use advertising cookies.",
     intro: [
       "This Cookie policy explains how the Syclops website and application use cookies and similar storage, including local storage that keeps you signed in. It is part of the Privacy policy and applies to the same Platform.",
     ],
@@ -341,6 +342,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
             kind: "list",
             items: [
               "On the marketing site: security, load balancing, and remembering a choice required for the site to function.",
+              "On the marketing site: a visitor id kept for about a year and a session id kept until the browser session ends, so page views, URL parameters, clicks, referrers, and errors can be counted. Approximate location is derived from the IP address on the server and is not a cookie. Precise location is requested once by the browser and is stored only if you allow it. These are not advertising cookies.",
               "In the application: your session, authentication, and security.",
             ],
           },

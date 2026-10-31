@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   trailingSlash: false,
+  serverExternalPackages: ["geoip-lite", "mssql", "tedious"],
+  outputFileTracingIncludes: {
+    "/api/analytics": ["./node_modules/geoip-lite/data/**/*"],
+  },
   // Netlify builds start clean, so this cache is never reused. Turbopack
   // otherwise writes server env values into .next/cache and the secrets scan fails.
   experimental: {
@@ -17,6 +21,12 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/login",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
+      },
+      {
+        source: "/insights",
         headers: [
           { key: "X-Robots-Tag", value: "noindex, nofollow" },
         ],

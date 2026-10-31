@@ -2,7 +2,11 @@
  * Custom events for the Google tag already loaded by GTM (G-S2DH48NBP5).
  * `gtag('event', …)` is forwarded by that tag. Event values stay within
  * GA4's 100-character parameter limit and never include form fields.
+ * The same events, except scroll and section views, are also queued for
+ * the first-party collector.
  */
+
+import { collectEvent } from "@/lib/collect";
 
 export const GA_MEASUREMENT_ID = "G-S2DH48NBP5";
 
@@ -54,6 +58,7 @@ export function track(eventName: string, params: AnalyticsParams = {}) {
   }
 
   ensureGtag()("event", eventName.slice(0, 40), payload);
+  collectEvent(eventName, params);
 
   if (process.env.NODE_ENV !== "production") {
     console.info("[analytics]", eventName, payload);
