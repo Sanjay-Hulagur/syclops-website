@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { publicPlans } from "@/lib/plans";
 import { canonicalUrl } from "@/lib/routes";
 import { site } from "@/lib/site";
 
@@ -110,9 +111,9 @@ export const softwareNode = {
   offers: {
     "@type": "AggregateOffer",
     priceCurrency: "INR",
-    lowPrice: "1499",
-    highPrice: "4499",
-    offerCount: 3,
+    lowPrice: String(publicPlans[0].priceInr),
+    highPrice: String(publicPlans[publicPlans.length - 1].priceInr),
+    offerCount: publicPlans.length,
     url: `${site.url}/pricing`,
   },
   publisher: { "@id": organizationId },
@@ -140,32 +141,11 @@ export function jsonLdGraph(nodes: Record<string, unknown>[]) {
   };
 }
 
-export const pricingOfferNodes = [
-  {
-    "@type": "Offer",
-    name: "Team",
-    price: "1499",
-    priceCurrency: "INR",
-    url: `${site.url}/pricing`,
-    description:
-      "Field tracking, TADA, routes, referral workspace, up to 3 managers, WhatsApp and Maps. Per field seat per month.",
-  },
-  {
-    "@type": "Offer",
-    name: "Growth",
-    price: "2499",
-    priceCurrency: "INR",
-    url: `${site.url}/pricing`,
-    description:
-      "Team plus partner/member portal, subscription plans and dunning, referral rewards on invoices, analytics by referrer and region. Per field seat per month.",
-  },
-  {
-    "@type": "Offer",
-    name: "Scale",
-    price: "4499",
-    priceCurrency: "INR",
-    url: `${site.url}/pricing`,
-    description:
-      "Growth plus multi-brand / multi-city, SSO and audit logs, HIS/ERP connectors, India hosting region picker. Per field seat per month.",
-  },
-];
+export const pricingOfferNodes = publicPlans.map((plan) => ({
+  "@type": "Offer",
+  name: plan.name,
+  price: String(plan.priceInr),
+  priceCurrency: "INR",
+  url: `${site.url}/pricing`,
+  description: plan.offerDescription,
+}));

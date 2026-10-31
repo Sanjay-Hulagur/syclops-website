@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/interior";
 import { SvgScene, type SceneKind } from "@/components/svg-scene";
@@ -5,12 +7,21 @@ import { SvgScene, type SceneKind } from "@/components/svg-scene";
 export function CtaBand({
   title = "Create a workspace. Invite the field. Turn on a plan.",
   body = "No onboarding call. No specialist. You configure regions, roles, and billing in the product.",
+  id,
+  note,
+  actions,
 }: {
   title?: string;
   body?: string;
+  id?: string;
+  note?: string;
+  actions?: ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden border-t border-line bg-ink text-cream">
+    <section
+      id={id}
+      className="relative overflow-hidden border-t border-line bg-ink text-cream"
+    >
       <div className="pointer-events-none absolute -right-16 -top-20 w-72 opacity-25">
         <SvgScene kind="loop" />
       </div>
@@ -20,27 +31,30 @@ export function CtaBand({
             {title}
           </h2>
           <p className="mt-3 text-sm leading-6 text-cream/70">{body}</p>
+          {note ? <p className="mt-3 text-sm text-cream/70">{note}</p> : null}
         </div>
-        <div className="flex flex-wrap gap-3">
-          <Link
-            href="/start"
-            className="rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
-          >
-            Start for free
-          </Link>
-          <Link
-            href="/pricing"
-            className="rounded-full border border-cream/20 px-5 py-2.5 text-sm text-cream hover:bg-cream/5"
-          >
-            See pricing
-          </Link>
-          <Link
-            href="/interested"
-            className="rounded-full border border-cream/20 px-5 py-2.5 text-sm text-cream hover:bg-cream/5"
-          >
-            I&apos;m interested
-          </Link>
-        </div>
+        {actions ?? (
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/start"
+              className="rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
+            >
+              Start for free
+            </Link>
+            <Link
+              href="/pricing"
+              className="rounded-full border border-cream/20 px-5 py-2.5 text-sm text-cream hover:bg-cream/5"
+            >
+              See pricing
+            </Link>
+            <Link
+              href="/interested"
+              className="rounded-full border border-cream/20 px-5 py-2.5 text-sm text-cream hover:bg-cream/5"
+            >
+              I&apos;m interested
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -53,6 +67,7 @@ export function PageHero({
   scene = "loop",
   cta = true,
   crumbs,
+  image,
 }: {
   eyebrow: string;
   title: string;
@@ -60,6 +75,7 @@ export function PageHero({
   scene?: SceneKind;
   cta?: boolean;
   crumbs?: { name: string; path: string }[];
+  image?: { src: string; alt: string; width: number; height: number };
 }) {
   return (
     <>
@@ -91,7 +107,18 @@ export function PageHero({
             </div>
           ) : null}
         </div>
-        <SvgScene kind={scene} />
+        {image ? (
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            priority
+            className="mx-auto h-auto w-full max-w-lg"
+          />
+        ) : (
+          <SvgScene kind={scene} />
+        )}
       </div>
     </header>
     </>

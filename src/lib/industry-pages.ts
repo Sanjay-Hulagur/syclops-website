@@ -60,27 +60,27 @@ export const industryPages: Record<
     ],
   },
   healthcare: {
-    why: "Partner clinics ask for patient status every afternoon because referrals live in WhatsApp and plans live at the billing desk. Syclops is field outreach and care-plan software for clinics and care networks — not a hospital HIS.",
+    why: "Referral doctors, PRO visits, and patient referrals usually live in different places. Syclops connects that field work for hospitals and diagnostic centres. It is not a hospital HIS.",
     jobs: [
-      { title: "Partner clinic beats", body: "Health officers check in with geo and a visiting-card photo. Skip is a status, not silence." },
-      { title: "Clinic referral portal", body: "Partners send patients and see enroll vs lapse without calling your desk." },
-      { title: "Care plans that write tasks", body: "30/60/90-day plans. A lapse is a field task for the officer who owns that clinic." },
+      { title: "Referral doctors", body: "Specialty, territory, last visit, and the PRO who owns the relationship." },
+      { title: "PRO visits", body: "Planned visits, GPS check-in, notes, and TADA from the path." },
+      { title: "Patient referrals", body: "The originating doctor stays on the referral. An OP or IP match needs an HIS connector." },
     ],
     day: [
-      { title: "Partner clinics", body: "Health officers check in with geo and a visiting-card photo." },
-      { title: "Care-plan enroll", body: "The referred patient lands on a 30/60/90-day plan, not a one-off bill." },
-      { title: "Lapse", body: "A lapsed plan is a field task for the officer who owns that clinic." },
+      { title: "Doctor visit", body: "A PRO checks in at the clinic. Notes and the follow-up stay on that doctor." },
+      { title: "Patient referral", body: "The referral names the doctor who sent the patient." },
+      { title: "Outcome", body: "A hospital visit or admission is attached where an HIS connector supports it." },
     ],
     configure: [
-      "Clusters and clinic directory",
-      "Care plans and dunning",
-      "Clinic portal for referrals",
-      "Billing or HIS connector on Scale",
+      "Territories and the doctor directory",
+      "PRO field seats",
+      "Referral workspace, portal on Growth",
+      "HIS connector on Scale",
     ],
     faqs: [
-      { q: "Is this a hospital HIS?", a: "No. It is field, referral, and plan for clinics and care networks. HIS stays the system of record for clinical charts." },
-      { q: "What about patient data?", a: "Plan and referral status only. Retention and export live in Settings → Data." },
-      { q: "Diagnostics and collection networks?", a: "Yes. Partner sites as the beat, referred patients on a plan, lapses back on the officer’s list." },
+      { q: "Is this a hospital HIS?", a: "No. Clinical charts, billing, and OPD or IPD workflows stay in the HIS. Syclops is the referral and field layer." },
+      { q: "Can we track which doctor referred a patient?", a: "Yes. The originating doctor, date, and status stay on the referral." },
+      { q: "Diagnostic centres?", a: "Yes. Doctor outreach, field activity, and referral source reporting. Laboratory systems stay in place." },
     ],
   },
   sales: {
@@ -88,12 +88,12 @@ export const industryPages: Record<
     jobs: [
       { title: "Beat visits", body: "Reps check in at dealers and accounts. Last-visit dates stop skipped patches. TADA writes from the route." },
       { title: "Channel partner portal", body: "A forwarded lead becomes a named referral with status through won and paying." },
-      { title: "Retainers that renew", body: "At-risk contracts go back on the beat automatically instead of dying in a CRM stage." },
+      { title: "Retainers that renew", body: "At-risk contracts stay visible, with a follow-up after the retry schedule you set." },
     ],
     day: [
       { title: "Beat", body: "Reps check in at dealers and accounts. Last-visit dates stop skipped patches." },
       { title: "Partner lead", body: "A channel partner sends a lead. Won means a retainer, not a vanished WhatsApp forward." },
-      { title: "Renewal", body: "At-risk retainers go back on the beat automatically." },
+      { title: "Renewal", body: "At-risk retainers stay visible for the person who owns the account." },
     ],
     configure: [
       "Territories and account types",

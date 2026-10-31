@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaqList, JsonLd, Section } from "@/components/interior";
 import { CtaBand, PageHero } from "@/components/page-hero";
 import { getBillingConfig } from "@/lib/billing";
+import { formatInr, publicPlans } from "@/lib/plans";
 import { jsonLdGraph, pageSeo, pricingOfferNodes, softwareNode } from "@/lib/seo";
 
 export const metadata: Metadata = pageSeo({
@@ -16,46 +17,6 @@ export const metadata: Metadata = pageSeo({
     "Syclops plans",
   ],
 });
-
-const plans = [
-  {
-    name: "Team",
-    price: "₹1,499",
-    cadence: "per field seat / month",
-    items: [
-      "Field tracking, TADA, routes",
-      "Referral workspace",
-      "Up to 3 managers",
-      "WhatsApp + Maps",
-      "In-app help and guides",
-    ],
-  },
-  {
-    name: "Growth",
-    price: "₹2,499",
-    cadence: "per field seat / month",
-    featured: true,
-    items: [
-      "Everything in Team",
-      "Partner / member portal",
-      "Subscription plans & dunning",
-      "Referral rewards on invoices",
-      "Analytics by referrer and region",
-    ],
-  },
-  {
-    name: "Scale",
-    price: "₹4,499",
-    cadence: "per field seat / month",
-    items: [
-      "Everything in Growth",
-      "Multi-brand / multi-city",
-      "SSO and audit logs in Settings",
-      "HIS / ERP connectors",
-      "India hosting region picker",
-    ],
-  },
-];
 
 export default async function PricingPage() {
   const billing = await getBillingConfig();
@@ -80,7 +41,7 @@ export default async function PricingPage() {
         ]}
       />
       <section className="mx-auto grid max-w-6xl gap-4 px-5 py-16 lg:grid-cols-3">
-        {plans.map((plan) => (
+        {publicPlans.map((plan) => (
           <article
             key={plan.name}
             className={`flex flex-col rounded-3xl border p-6 ${
@@ -90,7 +51,7 @@ export default async function PricingPage() {
             }`}
           >
             <h2 className="display text-2xl font-semibold">{plan.name}</h2>
-            <p className="mt-4 text-3xl font-semibold">{plan.price}</p>
+            <p className="mt-4 text-3xl font-semibold">{formatInr(plan.priceInr)}</p>
             <p className="mt-1 text-sm text-muted">{plan.cadence}</p>
             <ul className="mt-6 flex-1 space-y-2 text-sm text-muted">
               {plan.items.map((item) => (

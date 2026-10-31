@@ -3,12 +3,18 @@ import { POST_UPDATED } from "@/lib/blog/types";
 
 export const post: Post = {
   slug: "gym-referral-programme-without-replacing-erp",
-  title: "Run a gym referral programme without replacing your gym ERP",
+  title: "Running a gym referral programme with existing software",
   date: "2026-10-04",
   updated: POST_UPDATED,
   category: "Referrals",
   excerpt:
-    "Keep classes, door access, and GST invoices where they work. Put origin, rewards, and trainer visits on the membership that still pays.",
+    "Learn how gyms can manage member referrals, track new memberships, reward existing members, and organise trainer follow-ups without replacing their current gym management software.",
+  hero: {
+    src: "/blog/gym-referral-programme.png",
+    alt: "Running a gym referral programme with existing software. A member sharing a referral at the desk, with rewards and trainer follow-ups.",
+    width: 1958,
+    height: 803,
+  },
   body: [
     {
       type: "p",

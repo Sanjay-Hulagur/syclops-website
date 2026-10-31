@@ -3,12 +3,18 @@ import { POST_UPDATED } from "@/lib/blog/types";
 
 export const post: Post = {
   slug: "tada-is-the-path-not-the-pin",
-  title: "TADA should be the path you walked, not a pin-to-pin guess",
+  title: "Calculating TADA for field employees",
   date: "2026-10-06",
   updated: POST_UPDATED,
   category: "Field",
   excerpt:
-    "Morning pin times evening pin is not a field day. Mileage has to be the route between check-in and checkout, on the same record as the visit.",
+    "Learn how businesses can track employee travel, calculate actual distance covered, manage TADA claims, and approve travel expenses based on field visits using Syclops.",
+  hero: {
+    src: "/blog/calculating-tada-field-employees.png",
+    alt: "Calculating TADA for field employees. A field officer's route from clinic to hospital, with distance, rate, and a claim to approve.",
+    width: 1958,
+    height: 803,
+  },
   body: [
     {
       type: "p",

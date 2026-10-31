@@ -9,6 +9,12 @@ export const post: Post = {
   category: "Referrals",
   excerpt:
     "Most teams do not lose referrals because staff are lazy. They lose them because the visit, the intro, and the plan live in three tools.",
+  hero: {
+    src: "/blog/referral-leakage-tracking.png",
+    alt: "Referral leakage is a systems problem. Patients leave a broken path from the referring doctor, while a tracked path reaches the hospital.",
+    width: 1958,
+    height: 803,
+  },
   body: [
     {
       type: "p",

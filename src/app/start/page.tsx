@@ -4,7 +4,14 @@ import { Breadcrumbs } from "@/components/interior";
 import { StartForm } from "@/components/start-form";
 import { SvgScene } from "@/components/svg-scene";
 import { getBillingConfig } from "@/lib/billing";
+import { startFormIndustries } from "@/lib/industries";
 import { pageSeo } from "@/lib/seo";
+
+const ctaLocations = new Set(["hero", "product", "pricing", "final", "mobile"]);
+
+type Props = {
+  searchParams: Promise<{ industry?: string; cta?: string }>;
+};
 
 export const metadata: Metadata = pageSeo({
   title: "Create a Syclops workspace",
@@ -14,7 +21,14 @@ export const metadata: Metadata = pageSeo({
   keywords: ["Syclops signup", "create workspace", "self-serve field tracking"],
 });
 
-export default async function StartPage() {
+export default async function StartPage({ searchParams }: Props) {
+  const params = await searchParams;
+  const industry =
+    params.industry && startFormIndustries.some((item) => item.id === params.industry)
+      ? params.industry
+      : "gyms";
+  const ctaLocation =
+    params.cta && ctaLocations.has(params.cta) ? params.cta : undefined;
   const billing = await getBillingConfig();
   return (
     <>
@@ -56,7 +70,12 @@ export default async function StartPage() {
           <SvgScene kind="start" />
         </div>
       </div>
-      <StartForm trialDays={billing.trial.days} trialTerms={billing.trial.terms} />
+      <StartForm
+        trialDays={billing.trial.days}
+        trialTerms={billing.trial.terms}
+        initialIndustry={industry}
+        ctaLocation={ctaLocation}
+      />
     </section>
     </>
   );

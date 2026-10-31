@@ -3,12 +3,18 @@ import { POST_UPDATED } from "@/lib/blog/types";
 
 export const post: Post = {
   slug: "clinic-referral-portal-vs-whatsapp",
-  title: "A clinic referral portal beats a WhatsApp status call",
+  title: "Clinic referral management and tracking",
   date: "2026-10-13",
   updated: POST_UPDATED,
   category: "Healthcare",
   excerpt:
-    "Partner clinics call the desk because status lives in a thread. A portal shows enroll vs lapse without another afternoon of “did they come?”",
+    "Learn how clinics can track patient referrals, share updates with referring doctors, monitor patient visits, and manage follow-ups without depending on WhatsApp messages.",
+  hero: {
+    src: "/blog/clinic-referral-tracking.png",
+    alt: "Clinic referral management and tracking. A coordinator reviewing patient referrals and visit status instead of a WhatsApp thread.",
+    width: 1958,
+    height: 803,
+  },
   body: [
     {
       type: "p",

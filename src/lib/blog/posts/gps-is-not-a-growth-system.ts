@@ -3,12 +3,18 @@ import { POST_UPDATED } from "@/lib/blog/types";
 
 export const post: Post = {
   slug: "gps-is-not-a-growth-system",
-  title: "GPS is not a growth system",
+  title: "Managing field sales teams beyond GPS tracking",
   date: "2026-08-28",
   updated: POST_UPDATED,
   category: "Field",
   excerpt:
-    "Live maps answer where someone was. They do not answer who they moved, or whether that person still pays.",
+    "Learn why tracking employee locations alone is not enough to improve field team performance. Understand how businesses can connect GPS tracking with planned visits, customer follow-ups, referral tracking, and sales outcomes.",
+  hero: {
+    src: "/blog/beyond-gps-field-sales.png",
+    alt: "Managing field sales teams beyond GPS tracking. A field officer's route connected to planned visits, follow-ups, referrals, and sales.",
+    width: 1958,
+    height: 803,
+  },
   body: [
     {
       type: "p",

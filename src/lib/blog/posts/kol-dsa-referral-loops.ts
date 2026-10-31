@@ -3,12 +3,18 @@ import { POST_UPDATED } from "@/lib/blog/types";
 
 export const post: Post = {
   slug: "kol-dsa-referral-loops",
-  title: "KOL visits and DSA beats are the same loop with different nouns",
+  title: "Managing referrals and field teams in medtech and fintech",
   date: "2026-10-10",
   updated: POST_UPDATED,
   category: "Industries",
   excerpt:
-    "Medtech KOLs and fintech DSAs both send someone, need status, and need a field day when the contract or policy lapses.",
+    "Learn how medtech and fintech teams can track referrals, manage field visits, monitor contracts and policies, and follow up on inactive accounts.",
+  hero: {
+    src: "/blog/medtech-fintech-referrals.png",
+    alt: "Managing referrals and field teams in medtech and fintech. A field officer reviewing doctor visits, referrals, and contract status.",
+    width: 1958,
+    height: 803,
+  },
   body: [
     {
       type: "p",

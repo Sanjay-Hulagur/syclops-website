@@ -4,17 +4,27 @@ import { useState, type FormEvent } from "react";
 import { track } from "@/lib/analytics";
 import { startFormIndustries } from "@/lib/industries";
 
+const ctaLocations = new Set(["hero", "product", "pricing", "final", "mobile"]);
+
 export function StartForm({
   trialDays,
   trialTerms,
+  initialIndustry = "gyms",
+  ctaLocation,
 }: {
   trialDays: number;
   trialTerms: string;
+  initialIndustry?: string;
+  ctaLocation?: string;
 }) {
   const [sent, setSent] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
-  const [industry, setIndustry] = useState("gyms");
+  const [industry, setIndustry] = useState(
+    startFormIndustries.some((item) => item.id === initialIndustry)
+      ? initialIndustry
+      : "gyms",
+  );
   const [otherIndustry, setOtherIndustry] = useState("");
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -53,6 +63,36 @@ export function StartForm({
         form_name: "start",
         industry,
       });
+      if (industry === "education") {
+        track("education_trial_signup", {
+          form_name: "start",
+          cta_location: ctaLocations.has(ctaLocation ?? "") ? ctaLocation : undefined,
+        });
+      }
+      if (industry === "healthcare") {
+        track("healthcare_trial_signup", {
+          form_name: "start",
+          cta_location: ctaLocations.has(ctaLocation ?? "") ? ctaLocation : undefined,
+        });
+      }
+      if (industry === "sales") {
+        track("sales_trial_signup", {
+          form_name: "start",
+          cta_location: ctaLocations.has(ctaLocation ?? "") ? ctaLocation : undefined,
+        });
+      }
+      if (industry === "fintech") {
+        track("fintech_trial_signup", {
+          form_name: "start",
+          cta_location: ctaLocations.has(ctaLocation ?? "") ? ctaLocation : undefined,
+        });
+      }
+      if (industry === "medtech") {
+        track("medtech_trial_signup", {
+          form_name: "start",
+          cta_location: ctaLocations.has(ctaLocation ?? "") ? ctaLocation : undefined,
+        });
+      }
       setSent(true);
     } catch {
       setError("Could not save that request. Try again.");

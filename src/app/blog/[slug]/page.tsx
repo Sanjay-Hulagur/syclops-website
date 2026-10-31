@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { BlogProse } from "@/components/blog-prose";
 import { Breadcrumbs, FaqList, JsonLd, Related } from "@/components/interior";
@@ -83,10 +84,24 @@ export default async function BlogPostPage({ params }: Props) {
           { name: post.title, path: `/blog/${post.slug}` },
         ]}
       />
-      <article className="mx-auto max-w-3xl px-5 py-16">
-        <div className="mb-10 max-w-sm">
-          <SvgScene kind="blog" />
+      {post.hero ? (
+        <div className="mx-auto max-w-6xl px-5 pt-10">
+          <Image
+            src={post.hero.src}
+            alt={post.hero.alt}
+            width={post.hero.width}
+            height={post.hero.height}
+            priority
+            className="h-auto w-full rounded-3xl border border-line"
+          />
         </div>
+      ) : null}
+      <article className={`mx-auto max-w-3xl px-5 ${post.hero ? "pt-10 pb-16" : "py-16"}`}>
+        {post.hero ? null : (
+          <div className="mb-10 max-w-sm">
+            <SvgScene kind="blog" />
+          </div>
+        )}
         <p className="text-xs tracking-[0.14em] text-iris">
           <span className="uppercase">{post.category}</span>
           {" · "}

@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { IndustryMorph } from "@/components/industry-morph";
-import { CtaBand, PageHero, Steps } from "@/components/page-hero";
-import { Checklist, FaqList, FeatureGrid, Prose, Related, Section } from "@/components/interior";
+import { EducationLanding } from "@/components/education/landing";
+import { FintechLanding } from "@/components/fintech/landing";
+import { GymLanding } from "@/components/gym/landing";
+import { SalesLanding } from "@/components/sales/landing";
+import { HealthcareLanding } from "@/components/healthcare/landing";
+import { MedtechLanding } from "@/components/medtech/landing";
+import { getBillingConfig } from "@/lib/billing";
 import { getIndustry, industries, type IndustryId } from "@/lib/industries";
-import { industryPages } from "@/lib/industry-pages";
 import { pageSeo } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -14,58 +17,65 @@ const industryMeta: Record<
   { title: string; keywords: string[] }
 > = {
   gyms: {
-    title: "Gym referral software and membership field tracking",
+    title: "Gym referral software for referrals, trainer visits, and renewals",
     keywords: [
       "gym referral software",
-      "gym membership software India",
+      "gym membership referral",
       "member get member",
       "trainer field tracking",
+      "gym subscription follow-up",
     ],
   },
   education: {
-    title: "Counselor visit tracking and alumni referral software",
+    title: "Turn student enquiries into admissions and collected fees",
     keywords: [
       "education field tracking",
+      "student referral software",
+      "counselor visit tracking",
       "alumni referral software",
-      "campus counselor CRM",
-      "semester fee plans",
+      "school admission follow-up",
+      "coaching institute admissions",
     ],
   },
   healthcare: {
-    title: "Clinic referral management and care plan field tracking",
+    title: "Turn doctor referrals into measurable hospital growth",
     keywords: [
       "healthcare referral management software",
-      "clinic referral software",
-      "care plan management",
-      "healthcare field tracking",
-      "partner clinic portal",
+      "hospital referral software",
+      "doctor referral tracking",
+      "PRO visit tracking",
+      "diagnostic centre referral software",
     ],
   },
   sales: {
-    title: "Field sales beat tracking and partner referral software",
+    title: "Turn field visits and partner referrals into revenue",
     keywords: [
       "field sales tracking India",
       "channel partner portal",
       "beat visit software",
-      "retainer CRM",
+      "partner referral software",
+      "field visit tracking",
+      "recurring contract follow-up",
     ],
   },
   fintech: {
-    title: "Insurance agent field tracking and policy referral software",
+    title: "Turn agent visits into policies that keep paying",
     keywords: [
       "insurance field tracking",
       "NBFC agent visits",
+      "DSA referral software",
       "policy referral software",
-      "premium lapse tasks",
+      "premium lapse follow-up",
     ],
   },
   medtech: {
-    title: "Medtech KOL visit tracking and device contract software",
+    title: "Turn KOL visits into device contracts that stay in service",
     keywords: [
       "medtech field tracking",
       "KOL visit software",
-      "device contract management",
+      "device contract follow-up",
       "hospital referral portal",
+      "diagnostics field tracking",
     ],
   },
 };
@@ -79,6 +89,60 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const industry = getIndustry(slug);
   if (!industry) return {};
   const meta = industryMeta[industry.id];
+  if (industry.id === "gyms") {
+    const billing = await getBillingConfig();
+    return pageSeo({
+      title: meta.title,
+      description: `Gym referral software for Indian gyms and studio chains. Track member referrals, trainer visits, and membership renewals without replacing your gym management software. ${billing.trial.days}-day free trial, no credit card.`,
+      path: "/industries/gyms",
+      keywords: meta.keywords,
+    });
+  }
+  if (industry.id === "education") {
+    const billing = await getBillingConfig();
+    return pageSeo({
+      title: meta.title,
+      description: `Syclops for schools, colleges, and coaching institutes. Track counselor visits, parent and alumni referrals, admissions, and pending fee installments without replacing your academic ERP. ${billing.trial.days}-day free trial, no credit card.`,
+      path: "/industries/education",
+      keywords: meta.keywords,
+    });
+  }
+  if (industry.id === "healthcare") {
+    const billing = await getBillingConfig();
+    return pageSeo({
+      title: meta.title,
+      description: `Referral management and field operations for hospitals and diagnostic centres. Track referral doctors, PRO visits, and patient referrals without replacing your HIS. ${billing.trial.days}-day free trial, no credit card.`,
+      path: "/industries/healthcare",
+      keywords: meta.keywords,
+    });
+  }
+  if (industry.id === "sales") {
+    const billing = await getBillingConfig();
+    return pageSeo({
+      title: meta.title,
+      description: `Plan sales visits, manage channel partners, track referred leads, and follow opportunities through conversion and renewal. Syclops complements your CRM. ${billing.trial.days}-day free trial, no credit card.`,
+      path: "/industries/sales",
+      keywords: meta.keywords,
+    });
+  }
+  if (industry.id === "fintech") {
+    const billing = await getBillingConfig();
+    return pageSeo({
+      title: meta.title,
+      description: `Syclops for insurance, NBFC, and wealth teams. Track agent visits, customer and DSA referrals, and lapsed premiums without replacing your core policy or loan system. ${billing.trial.days}-day free trial, no credit card.`,
+      path: "/industries/fintech",
+      keywords: meta.keywords,
+    });
+  }
+  if (industry.id === "medtech") {
+    const billing = await getBillingConfig();
+    return pageSeo({
+      title: meta.title,
+      description: `Syclops for device and diagnostics teams. Track KOL visits, hospital referrals, evaluations, and service-plan follow-ups without replacing your ERP or the hospital HIS. ${billing.trial.days}-day free trial, no credit card.`,
+      path: "/industries/medtech",
+      keywords: meta.keywords,
+    });
+  }
   return pageSeo({
     title: meta.title,
     description: `${industry.headline} ${industry.body}`,
@@ -87,159 +151,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-function industryNext(id: IndustryId, label: string) {
-  const start = {
-    href: "/start",
-    label: "Start",
-    body: `Create a ${label.toLowerCase()} workspace.`,
-  };
-  if (id === "gyms") {
-    return [
-      {
-        href: "/gym-referral-software",
-        label: "Gym referral software",
-        body: "Member-get-member: origin, rewards, trainer visits.",
-      },
-      {
-        href: "/compare/gym-software",
-        label: "vs gym management software",
-        body: "Keep the floor ERP. Put origin on the membership.",
-      },
-      {
-        href: "/blog/gym-referral-programme-without-replacing-erp",
-        label: "Keep your gym ERP",
-        body: "What stays on the floor, what moves to the loop.",
-      },
-    ];
-  }
-  if (id === "healthcare") {
-    return [
-      {
-        href: "/referral-management-software",
-        label: "Referral management software",
-        body: "Clinic and partner status the sender can see.",
-      },
-      {
-        href: "/blog/clinic-referral-portal-vs-whatsapp",
-        label: "Clinic portal vs WhatsApp",
-        body: "Status the partner can see without calling the desk.",
-      },
-      { href: "/product/referrals", label: "Referral product", body: "Portal, window, leakage." },
-    ];
-  }
-  if (id === "education") {
-    return [
-      {
-        href: "/product/referrals",
-        label: "Referral management",
-        body: "Alumni and parent intros with status.",
-      },
-      {
-        href: "/blog/counselor-beat-unpaid-fee-installment",
-        label: "Unpaid fees as a visit",
-        body: "Counselor beat plus alumni origin on the fee plan.",
-      },
-      { href: "/product/field", label: "Field tracking", body: "Campus check-in and last-visit dates." },
-    ];
-  }
-  if (id === "sales") {
-    return [
-      {
-        href: "/blog/channel-partner-portal-not-crm-source-field",
-        label: "Portal vs CRM source field",
-        body: "Partners need status. A picklist is not a portal.",
-      },
-      start,
-      { href: "/compare/crm", label: "vs CRM", body: "Deals vs beat, referrer, and plan." },
-    ];
-  }
-  if (id === "fintech" || id === "medtech") {
-    return [
-      {
-        href: "/product/field",
-        label: "Field tracking",
-        body: "Agent and KOL visits with TADA.",
-      },
-      {
-        href: "/blog/kol-dsa-referral-loops",
-        label: "KOL and DSA loops",
-        body: "Same record. Different nouns.",
-      },
-      { href: "/product/referrals", label: "Referral management", body: "Portal status for the sender." },
-    ];
-  }
-  return [
-    start,
-    { href: "/product", label: "Product", body: "Field, referrals, subscriptions." },
-    { href: "/guides", label: "Guides", body: "Go live the same day." },
-  ];
-}
-
 export default async function IndustryPage({ params }: Props) {
   const { slug } = await params;
   const industry = getIndustry(slug);
   if (!industry) notFound();
-  const extra = industryPages[industry.id];
+  if (industry.id === "gyms") {
+    const billing = await getBillingConfig();
+    return <GymLanding trialDays={billing.trial.days} />;
+  }
+  if (industry.id === "education") {
+    const billing = await getBillingConfig();
+    return <EducationLanding trialDays={billing.trial.days} />;
+  }
+  if (industry.id === "healthcare") {
+    const billing = await getBillingConfig();
+    return <HealthcareLanding trialDays={billing.trial.days} />;
+  }
+  if (industry.id === "sales") {
+    const billing = await getBillingConfig();
+    return <SalesLanding trialDays={billing.trial.days} />;
+  }
+  if (industry.id === "fintech") {
+    const billing = await getBillingConfig();
+    return <FintechLanding trialDays={billing.trial.days} />;
+  }
+  if (industry.id === "medtech") {
+    const billing = await getBillingConfig();
+    return <MedtechLanding trialDays={billing.trial.days} />;
+  }
 
-  return (
-    <>
-      <PageHero
-        eyebrow={industry.eyebrow}
-        title={industry.headline}
-        body={industry.body}
-        scene="industry"
-        crumbs={[
-          { name: "Home", path: "/" },
-          { name: "Industries", path: "/industries" },
-          { name: industry.label, path: `/industries/${industry.id}` },
-        ]}
-      />
-      <Section eyebrow="Why this loop" title={`Syclops for ${industry.label.toLowerCase()}.`}>
-        <Prose>
-          <p>{extra.why}</p>
-          <p>
-            Pain: {industry.pain} Outcome: {industry.outcome}
-          </p>
-        </Prose>
-      </Section>
-      <Section eyebrow="The three objects">
-        <div className="grid gap-4 sm:grid-cols-3">
-          <article className="rounded-2xl border border-line bg-cream p-5">
-            <p className="text-xs uppercase tracking-[0.14em] text-muted">Field</p>
-            <p className="mt-2 font-medium">{industry.visit}</p>
-            <p className="mt-2 text-sm text-muted">{industry.staff}</p>
-          </article>
-          <article className="rounded-2xl border border-line bg-cream p-5">
-            <p className="text-xs uppercase tracking-[0.14em] text-muted">
-              Referrer
-            </p>
-            <p className="mt-2 font-medium">{industry.referrer}</p>
-          </article>
-          <article className="rounded-2xl border border-line bg-cream p-5">
-            <p className="text-xs uppercase tracking-[0.14em] text-muted">Plan</p>
-            <p className="mt-2 font-medium">{industry.plan}</p>
-          </article>
-        </div>
-      </Section>
-      <Section eyebrow="What you run" title="Field, referrals, and the plan — named for this industry.">
-        <FeatureGrid items={extra.jobs} />
-      </Section>
-      <Section eyebrow="A typical day" title="Same loop as every other industry.">
-        <Steps items={extra.day} />
-      </Section>
-      <Section eyebrow="You configure">
-        <Checklist items={extra.configure} />
-      </Section>
-      <Section eyebrow="The loop in this industry">
-        <IndustryMorph initial={industry.id as IndustryId} />
-      </Section>
-      <Section eyebrow="FAQ">
-        <FaqList items={extra.faqs} />
-      </Section>
-      <Section eyebrow="Next">
-        <Related items={industryNext(industry.id, industry.label)} />
-      </Section>
-      <CtaBand />
-    </>
-  );
+  notFound();
 }

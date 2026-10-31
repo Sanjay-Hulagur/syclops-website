@@ -7,7 +7,7 @@ export const contentType = ogContentType;
 export default function Image() {
   return ogImage({
     eyebrow: "Blog",
-    title: "The loop, in writing",
-    kicker: "TADA, referrals, dunning, DPDP — without invented percentages.",
+    title: "The field day is the revenue system.",
+    kicker: "The visit, the intro, and the subscription on one record.",
   });
 }

@@ -3,7 +3,12 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/interior";
 import { InterestForm } from "@/components/interest-form";
 import { SvgScene } from "@/components/svg-scene";
+import { startFormIndustries } from "@/lib/industries";
 import { pageSeo } from "@/lib/seo";
+
+type Props = {
+  searchParams: Promise<{ industry?: string }>;
+};
 
 export const metadata: Metadata = pageSeo({
   title: "Interested in using Syclops",
@@ -13,7 +18,13 @@ export const metadata: Metadata = pageSeo({
   keywords: ["Syclops interest", "Syclops demo", "field tracking software India"],
 });
 
-export default function InterestedPage() {
+export default async function InterestedPage({ searchParams }: Props) {
+  const params = await searchParams;
+  const industry =
+    params.industry && startFormIndustries.some((item) => item.id === params.industry)
+      ? params.industry
+      : "gyms";
+
   return (
     <>
       <Breadcrumbs
@@ -49,7 +60,7 @@ export default function InterestedPage() {
             <SvgScene kind="start" />
           </div>
         </div>
-        <InterestForm />
+        <InterestForm initialIndustry={industry} />
       </section>
     </>
   );

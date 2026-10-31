@@ -3,12 +3,18 @@ import { POST_UPDATED } from "@/lib/blog/types";
 
 export const post: Post = {
   slug: "channel-partner-portal-not-crm-source-field",
-  title: "A channel partner portal is not a CRM source field",
+  title: "Field work, made simpler.",
   date: "2026-10-17",
   updated: POST_UPDATED,
   category: "Sales",
   excerpt:
-    "Field sales still paste “partner” into a CRM. The partner cannot see status, and the retainer has no memory of who sent it.",
+    "Practical ideas, systems and learnings from the field — covering visits, referrals, plans, TADA, partner portals, and more.",
+  hero: {
+    src: "/blog/field-work-made-simpler.png",
+    alt: "Field work, made simpler. A field officer riding a motorcycle toward a clinic and houses.",
+    width: 1958,
+    height: 803,
+  },
   body: [
     {
       type: "p",

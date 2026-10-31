@@ -3,12 +3,18 @@ import { POST_UPDATED } from "@/lib/blog/types";
 
 export const post: Post = {
   slug: "dpdp-employee-gps-retention",
-  title: "DPDP and employee GPS: retention is a setting, not a forever trail",
+  title: "Employee GPS tracking and data privacy in India",
   date: "2026-10-15",
   updated: POST_UPDATED,
   category: "Security",
   excerpt:
-    "Field GPS in India has to be purpose-limited. Working-day check-in, checkout that ends the trail, and retention you can actually change.",
+    "Understand how businesses can track employee visits, manage GPS location data, control access, and set data retention periods in line with India's DPDP Act.",
+  hero: {
+    src: "/blog/employee-gps-privacy-india.png",
+    alt: "Employee GPS tracking and data privacy in India. A field officer checking a location pin, with access control and a DPDP retention clock.",
+    width: 1958,
+    height: 803,
+  },
   body: [
     {
       type: "p",

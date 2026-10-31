@@ -5,11 +5,19 @@ import { useState, type FormEvent } from "react";
 import { track } from "@/lib/analytics";
 import { startFormIndustries } from "@/lib/industries";
 
-export function InterestForm() {
+export function InterestForm({
+  initialIndustry = "gyms",
+}: {
+  initialIndustry?: string;
+}) {
   const [sent, setSent] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
-  const [industry, setIndustry] = useState("gyms");
+  const [industry, setIndustry] = useState(
+    startFormIndustries.some((item) => item.id === initialIndustry)
+      ? initialIndustry
+      : "gyms",
+  );
   const [otherIndustry, setOtherIndustry] = useState("");
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {

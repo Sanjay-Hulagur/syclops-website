@@ -9,6 +9,12 @@ export const post: Post = {
   category: "Subscriptions",
   excerpt:
     "Dunning emails do not replace a visit. At-risk members, students, and policyholders still live in the real world.",
+  hero: {
+    src: "/blog/subscriptions-need-a-field-team.png",
+    alt: "Subscriptions need a field team. A field officer at a clinic desk, with outreach, new subscriptions, renewals, and active members.",
+    width: 1958,
+    height: 803,
+  },
   body: [
     {
       type: "p",
@@ -58,7 +64,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "The gateway-specific version of this handoff is [Razorpay memberships still need a field visit after retries fail](/blog/razorpay-memberships-field-dunning). The gateway is not the mistake. Stopping there is. Connect it. Define plans. Decide which failures are links and which failures are visits. Then stop reconciling the two in a spreadsheet.",
+      text: "The practical version of this handoff is [managing failed subscription payments with field visits](/blog/razorpay-memberships-field-dunning). The gateway is not the mistake. Stopping there is. Connect it. Define plans. Decide which failures are links and which failures are visits. Then stop reconciling the two in a spreadsheet.",
     },
     {
       type: "h2",

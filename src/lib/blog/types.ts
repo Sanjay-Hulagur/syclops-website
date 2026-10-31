@@ -5,6 +5,13 @@ export type Block =
 
 export type PostFaq = { q: string; a: string };
 
+export type PostHero = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
 export type Post = {
   slug: string;
   title: string;
@@ -16,6 +23,7 @@ export type Post = {
   excerpt: string;
   body: Block[];
   faqs: PostFaq[];
+  hero?: PostHero;
 };
 
 export const POST_UPDATED = "2026-10-17";

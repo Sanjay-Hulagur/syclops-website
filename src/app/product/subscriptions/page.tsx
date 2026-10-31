@@ -93,7 +93,7 @@ export default function SubscriptionsPage() {
       <Section eyebrow="Next">
         <Related
           items={[
-            { href: "/blog/razorpay-memberships-field-dunning", label: "Razorpay then a visit", body: "Retries first. Then the beat." },
+            { href: "/blog/razorpay-memberships-field-dunning", label: "Failed payments, then a visit", body: "Retries first. Then the beat." },
             { href: "/product/referrals", label: "Referral management", body: "Origin stays on the plan." },
             { href: "/product/analytics", label: "Analytics", body: "Which plans still pay." },
           ]}

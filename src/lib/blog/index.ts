@@ -91,7 +91,7 @@ const relatedBySlug: Record<
     { href: "/product/referrals", label: "Referral management", body: "Status the sender can see." },
   ],
   "clinic-referral-portal-vs-whatsapp": [
-    { href: "/industries/healthcare", label: "Healthcare", body: "Clinic portal and care plans." },
+    { href: "/industries/healthcare", label: "Healthcare", body: "Referral doctors, PRO visits, and patient referrals." },
     {
       href: "/referral-management-software",
       label: "Referral management software",
@@ -111,7 +111,7 @@ const relatedBySlug: Record<
   ],
   "razorpay-memberships-field-dunning": [
     { href: "/product/subscriptions", label: "Subscriptions", body: "Retries, then a field task." },
-    { href: "/integrations", label: "Integrations", body: "Razorpay and Stripe keys." },
+    { href: "/integrations", label: "Integrations", body: "Gateway keys, WhatsApp, and maps." },
     { href: "/guides/plans-billing", label: "Plans and billing guide", body: "Connect test keys first." },
   ],
   "kol-dsa-referral-loops": [
@@ -151,7 +151,7 @@ const relatedBySlug: Record<
   "subscriptions-need-a-field-team": [
     { href: "/product/subscriptions", label: "Subscriptions", body: "Dunning that creates a visit." },
     { href: "/product/field", label: "Field tracking", body: "The beat those tasks land on." },
-    { href: "/blog/razorpay-memberships-field-dunning", label: "Razorpay then a visit", body: "Retries first." },
+    { href: "/blog/razorpay-memberships-field-dunning", label: "Failed payments, then a visit", body: "Retries first." },
   ],
 };
 

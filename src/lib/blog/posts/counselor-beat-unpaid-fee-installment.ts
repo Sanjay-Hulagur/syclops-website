@@ -3,12 +3,18 @@ import { POST_UPDATED } from "@/lib/blog/types";
 
 export const post: Post = {
   slug: "counselor-beat-unpaid-fee-installment",
-  title: "An unpaid fee installment is a counselor visit, not only an SMS",
+  title: "Gym membership fee tracking and follow-ups",
   date: "2026-10-16",
   updated: POST_UPDATED,
-  category: "Education",
+  category: "Subscriptions",
   excerpt:
-    "Accounts can SMS a parent. Coverage still needs a counselor on a campus beat, with the alumni intro attached to the fee plan.",
+    "Manage gym counselor visits, track unpaid membership installments, and follow up on overdue payments with a clear plan.",
+  hero: {
+    src: "/blog/gym-membership-fee-tracking.png",
+    alt: "Gym membership fee tracking and follow-ups. A counselor reviewing unpaid installments with a member at a gym.",
+    width: 1958,
+    height: 803,
+  },
   body: [
     {
       type: "p",
