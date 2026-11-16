@@ -4,6 +4,10 @@
  * GA4's 100-character parameter limit and never include form fields.
  * The same events, except scroll and section views, are also queued for
  * the first-party collector.
+ *
+ * Page views are also pushed to the GTM data layer. The first view is
+ * already sent by the Google tag and the Meta Pixel in the document head,
+ * so later navigations are the ones forwarded again.
  */
 
 import { collectEvent } from "@/lib/collect";
@@ -18,6 +22,7 @@ declare global {
   interface Window {
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
+    fbq?: (...args: unknown[]) => void;
   }
 }
 
@@ -36,6 +41,49 @@ function ensureGtag() {
     };
   }
   return window.gtag;
+}
+
+function isLocalHost() {
+  const host = window.location.hostname;
+  return host === "localhost" || host === "127.0.0.1" || host.endsWith(".local");
+}
+
+let landingPageKey = "";
+let lastPageKey = "";
+let lastPageAt = 0;
+
+export function trackPageView(path: string, search = "") {
+  if (typeof window === "undefined") return;
+
+  const pageKey = `${path}?${search}`;
+  const now = Date.now();
+  if (lastPageKey === pageKey && now - lastPageAt < 1500) return;
+  const firstView = landingPageKey === "";
+  if (firstView) landingPageKey = pageKey;
+  lastPageKey = pageKey;
+  lastPageAt = now;
+
+  const page_path = clean(search ? `${path}?${search}` : path || "/");
+  const page_location = window.location.href.slice(0, 1000);
+  const page_title = clean(document.title || path || "/");
+  const page = { page_path, page_location, page_title };
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: "page_view", ...page });
+
+  // The head tags already sent this first view to GA4 and Meta.
+  if (!firstView) {
+    ensureGtag()("event", "page_view", {
+      send_to: GA_MEASUREMENT_ID,
+      ...page,
+      ...(isLocalHost() ? { debug_mode: true } : {}),
+    });
+    window.fbq?.("track", "PageView");
+  }
+
+  if (process.env.NODE_ENV !== "production") {
+    console.info("[analytics] page_view", { firstView, ...page });
+  }
 }
 
 export function track(eventName: string, params: AnalyticsParams = {}) {

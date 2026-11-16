@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { track } from "@/lib/analytics";
+import { track, trackPageView } from "@/lib/analytics";
 import {
   bindCollectorLifecycle,
   collectError,
@@ -232,7 +232,36 @@ export function Analytics() {
     ) {
       return;
     }
-    collectPageView(pathname || "/", search);
+    const path = pathname || "/";
+    collectPageView(path, search);
+
+    let sent = false;
+    const send = () => {
+      if (sent) return;
+      sent = true;
+      observer?.disconnect();
+      window.clearTimeout(timer);
+      trackPageView(path, search);
+    };
+    const title = document.querySelector("title");
+    const startingTitle = document.title;
+    const observer = title
+      ? new MutationObserver(() => {
+          if (document.title && document.title !== startingTitle) send();
+        })
+      : null;
+    observer?.observe(title as Element, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+    });
+    const timer = window.setTimeout(send, 400);
+
+    return () => {
+      sent = true;
+      observer?.disconnect();
+      window.clearTimeout(timer);
+    };
   }, [pathname, search]);
 
   useEffect(() => {
