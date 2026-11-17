@@ -105,10 +105,10 @@ export function StartForm({
   if (sent) {
     return (
       <div className="rounded-3xl border border-line bg-quiet p-8">
-        <p className="display text-2xl font-semibold">Request saved.</p>
+        <p className="display text-2xl font-semibold">Thank you.</p>
         <p className="mt-3 text-sm leading-6 text-muted">
-          We stored your work email, workspace name, and industry. No one will
-          call you.
+          Your workspace is ready. We emailed you a link to set your admin
+          password. After you set it, you can sign in and start using Syclops.
         </p>
       </div>
     );
@@ -177,7 +177,7 @@ export function StartForm({
         disabled={saving}
         className="rounded-full bg-iris px-5 py-3 text-sm font-medium text-cream hover:bg-iris-dark disabled:opacity-60"
       >
-        {saving ? "Saving…" : "Create workspace"}
+        {saving ? "Creating your workspace…" : "Create workspace"}
       </button>
       <p className="text-xs leading-5 text-muted">
         Free for {trialDays} days. {trialTerms}
