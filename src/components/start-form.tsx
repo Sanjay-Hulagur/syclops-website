@@ -1,10 +1,43 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { track } from "@/lib/analytics";
 import { startFormIndustries } from "@/lib/industries";
 
 const ctaLocations = new Set(["hero", "product", "pricing", "final", "mobile"]);
+
+export const START_CREATED_PATH = "/start/created";
+const START_CREATED_KEY = "syclops-start-created";
+
+function WorkspaceCreatedMessage() {
+  return (
+    <div className="rounded-3xl border border-line bg-quiet p-8">
+      <p className="display text-2xl font-semibold">Thank you.</p>
+      <p className="mt-3 text-sm leading-6 text-muted">
+        Your workspace is ready. We emailed you a link to set your admin
+        password. After you set it, you can sign in and start using Syclops.
+      </p>
+    </div>
+  );
+}
+
+export function WorkspaceCreatedPanel() {
+  const router = useRouter();
+  const [allowed, setAllowed] = useState(false);
+
+  useEffect(() => {
+    if (sessionStorage.getItem(START_CREATED_KEY) === "1") {
+      setAllowed(true);
+      return;
+    }
+    router.replace("/start");
+  }, [router]);
+
+  if (!allowed) return null;
+
+  return <WorkspaceCreatedMessage />;
+}
 
 export function StartForm({
   trialDays,
@@ -17,6 +50,7 @@ export function StartForm({
   initialIndustry?: string;
   ctaLocation?: string;
 }) {
+  const router = useRouter();
   const [sent, setSent] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
@@ -39,6 +73,7 @@ export function StartForm({
         : industry;
     setSaving(true);
     setError("");
+    let created = false;
 
     try {
       const response = await fetch("/api/start", {
@@ -93,25 +128,20 @@ export function StartForm({
           cta_location: ctaLocations.has(ctaLocation ?? "") ? ctaLocation : undefined,
         });
       }
+      created = true;
+      sessionStorage.setItem(START_CREATED_KEY, "1");
       setSent(true);
+      router.replace(START_CREATED_PATH);
     } catch {
       setError("Could not save that request. Try again.");
       track("form_error", { form_name: "start", industry });
     } finally {
-      setSaving(false);
+      if (!created) setSaving(false);
     }
   }
 
   if (sent) {
-    return (
-      <div className="rounded-3xl border border-line bg-quiet p-8">
-        <p className="display text-2xl font-semibold">Thank you.</p>
-        <p className="mt-3 text-sm leading-6 text-muted">
-          Your workspace is ready. We emailed you a link to set your admin
-          password. After you set it, you can sign in and start using Syclops.
-        </p>
-      </div>
-    );
+    return <WorkspaceCreatedMessage />;
   }
 
   return (

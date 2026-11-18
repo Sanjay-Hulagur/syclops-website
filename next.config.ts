@@ -32,6 +32,12 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/start/created",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
+      },
+      {
         source: "/downloads/syclops.apk",
         headers: [
           {
