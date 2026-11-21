@@ -8,6 +8,12 @@
  * Page views are also pushed to the GTM data layer. The first view is
  * already sent by the Google tag and the Meta Pixel in the document head,
  * so later navigations are the ones forwarded again.
+ *
+ * A finished workspace signup also fires `qualify_lead`. That event is a
+ * key event on the Syclops property, and the Google tag shares it with the
+ * linked Google Ads account so bidding can look for more people like the
+ * person who signed up. The email rides along as enhanced-conversion
+ * user data and is never copied into the event parameters.
  */
 
 import { collectEvent } from "@/lib/collect";
@@ -83,6 +89,40 @@ export function trackPageView(path: string, search = "") {
 
   if (process.env.NODE_ENV !== "production") {
     console.info("[analytics] page_view", { firstView, ...page });
+  }
+}
+
+export function trackWorkspaceConversion(input: {
+  email: string;
+  industry: string;
+}) {
+  if (typeof window === "undefined") return;
+
+  const email = input.email.trim().toLowerCase();
+  const industry = clean(input.industry);
+  const conversion = {
+    form_name: "start",
+    industry,
+  };
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "qualify_lead",
+    ...conversion,
+    // GTM reads this for the Google Ads conversion and for similar users.
+    ...(email ? { user_data: { email } } : {}),
+  });
+
+  const gtag = ensureGtag();
+  if (email) gtag("set", "user_data", { email });
+  gtag("event", "qualify_lead", {
+    send_to: GA_MEASUREMENT_ID,
+    ...conversion,
+    ...(isLocalHost() ? { debug_mode: true } : {}),
+  });
+
+  if (process.env.NODE_ENV !== "production") {
+    console.info("[analytics] qualify_lead", conversion);
   }
 }
 

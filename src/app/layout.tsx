@@ -80,17 +80,22 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${syne.variable} h-full antialiased`}
     >
       <head>
-        {/* Google tag (GTM-KBKZ4GTS) */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtm.js?id=GTM-KBKZ4GTS"
-        />
+        {/* Google tag. GTM receives data-layer events, including qualify_lead. */}
         <script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());`,
+gtag('js', new Date());
+gtag('config', 'G-S2DH48NBP5');`,
           }}
+        />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-S2DH48NBP5"
+        />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-KBKZ4GTS"
         />
         {/* Meta Pixel */}
         <script

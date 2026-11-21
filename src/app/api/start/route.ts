@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { apiError } from "@/lib/api-error";
 import { isStartFormIndustry } from "@/lib/industries";
 import { getPool, sql } from "@/lib/db";
+import { sendWorkspaceSignupEmail } from "@/lib/mail";
 
 type Payload = {
   email?: unknown;
@@ -98,6 +99,12 @@ export async function POST(request: Request) {
       `);
   } catch (error) {
     console.error("Workspace created but the request log was not saved", error);
+  }
+
+  try {
+    await sendWorkspaceSignupEmail({ email, workspace, industry });
+  } catch (error) {
+    console.error("Workspace created but the notice email was not sent", error);
   }
 
   return NextResponse.json({ ok: true });

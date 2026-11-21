@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { track } from "@/lib/analytics";
+import { track, trackWorkspaceConversion } from "@/lib/analytics";
 import { startFormIndustries } from "@/lib/industries";
 
 const ctaLocations = new Set(["hero", "product", "pricing", "final", "mobile"]);
@@ -64,6 +64,7 @@ export function StartForm({
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    const email = String(data.get("email") || "");
     const detail = otherIndustry.trim();
     const industryValue =
       industry === "others"
@@ -80,7 +81,7 @@ export function StartForm({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          email: data.get("email"),
+          email,
           workspace: data.get("workspace"),
           industry: industryValue,
         }),
@@ -128,6 +129,7 @@ export function StartForm({
           cta_location: ctaLocations.has(ctaLocation ?? "") ? ctaLocation : undefined,
         });
       }
+      trackWorkspaceConversion({ email, industry });
       created = true;
       sessionStorage.setItem(START_CREATED_KEY, "1");
       setSent(true);
