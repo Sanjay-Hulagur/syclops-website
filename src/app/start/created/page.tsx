@@ -1,27 +1,21 @@
 import type { Metadata } from "next";
-import { WorkspaceCreatedPanel } from "@/components/start-form";
-import { StartLayout } from "@/components/start-layout";
+import { CheckEmail } from "@/components/check-email";
 import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = {
   ...pageSeo({
-    title: "Your workspace is ready",
+    title: "Check your email",
     description:
-      "Your Syclops workspace is ready. Check your email for the link to set your admin password.",
+      "We emailed you a link to set your Syclops admin password. Open it to sign in to your new workspace.",
     path: "/start/created",
   }),
   robots: { index: false, follow: false },
 };
 
-export default function WorkspaceCreatedPage() {
+export default function CheckEmailPage() {
   return (
-    <StartLayout
-      breadcrumbs={[
-        { name: "Home", path: "/" },
-        { name: "Start", path: "/start" },
-        { name: "Ready", path: "/start/created" },
-      ]}
-      panel={<WorkspaceCreatedPanel />}
-    />
+    <section className="mx-auto max-w-xl px-4 pb-16 pt-8 sm:px-5 sm:pt-14">
+      <CheckEmail />
+    </section>
   );
 }

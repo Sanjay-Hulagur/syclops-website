@@ -19,17 +19,10 @@ export type CollectedLanding = {
   utmContent: string;
 };
 
-export type CollectedGps = {
-  latitude: number;
-  longitude: number;
-  accuracy: number;
-};
-
 export type CollectedBatch = {
   visitorId: string;
   sessionId: string;
   landing: CollectedLanding;
-  gps?: CollectedGps | null;
   events: CollectedEvent[];
 };
 

@@ -126,17 +126,6 @@ function cleanEvent(event: CollectedEvent) {
   };
 }
 
-function cleanGps(gps: CollectedBatch["gps"]) {
-  if (!gps) return null;
-  const latitude = Number(gps.latitude);
-  const longitude = Number(gps.longitude);
-  const accuracy = Number(gps.accuracy);
-  if (!Number.isFinite(latitude) || latitude < -90 || latitude > 90) return null;
-  if (!Number.isFinite(longitude) || longitude < -180 || longitude > 180) return null;
-  if (!Number.isFinite(accuracy) || accuracy < 0 || accuracy > 100_000) return null;
-  return { latitude, longitude, accuracy };
-}
-
 export function readIdsFromCookie(cookieHeader: string | null) {
   const header = cookieHeader || "";
   const read = (name: string) => {
@@ -165,8 +154,7 @@ export async function ingestAnalytics(batch: CollectedBatch, ip: string) {
     .slice(0, 20)
     .map(cleanEvent)
     .filter((event): event is NonNullable<typeof event> => event !== null);
-  const gps = cleanGps(batch.gps);
-  if (!events.length && !gps) return;
+  if (!events.length) return;
 
   const landing = batch.landing || {
     path: "/",
@@ -212,9 +200,6 @@ export async function ingestAnalytics(batch: CollectedBatch, ip: string) {
       .input("country", sql.NVarChar(100), geo.country)
       .input("region", sql.NVarChar(100), geo.region)
       .input("city", sql.NVarChar(100), geo.city)
-      .input("latitude", sql.Float, gps?.latitude ?? null)
-      .input("longitude", sql.Float, gps?.longitude ?? null)
-      .input("accuracy", sql.Float, gps?.accuracy ?? null)
       .input("ipHash", sql.NVarChar(64), ipHash)
       .query(`
         UPDATE dbo.SiteVisitors
@@ -222,9 +207,6 @@ export async function ingestAnalytics(batch: CollectedBatch, ip: string) {
             Country = COALESCE(Country, @country),
             Region = COALESCE(Region, @region),
             City = COALESCE(City, @city),
-            Latitude = COALESCE(Latitude, @latitude),
-            Longitude = COALESCE(Longitude, @longitude),
-            LocationAccuracy = COALESCE(LocationAccuracy, @accuracy),
             IpHash = COALESCE(IpHash, @ipHash)
         WHERE VisitorId = @visitorId;
 
@@ -232,13 +214,12 @@ export async function ingestAnalytics(batch: CollectedBatch, ip: string) {
         INSERT INTO dbo.SiteVisitors (
           VisitorId, FirstSeen, LastSeen, FirstPath, FirstQuery, FirstReferrer,
           FirstReferrerHost, FirstUtmSource, FirstUtmMedium, FirstUtmCampaign,
-          FirstUtmTerm, FirstUtmContent, Country, Region, City, Latitude,
-          Longitude, LocationAccuracy, IpHash
+          FirstUtmTerm, FirstUtmContent, Country, Region, City, IpHash
         )
         VALUES (
           @visitorId, @now, @now, @path, @query, @referrer, @referrerHost,
           @utmSource, @utmMedium, @utmCampaign, @utmTerm, @utmContent,
-          @country, @region, @city, @latitude, @longitude, @accuracy, @ipHash
+          @country, @region, @city, @ipHash
         );
       `);
 

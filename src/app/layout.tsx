@@ -5,6 +5,8 @@ import { Analytics } from "@/components/analytics";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/interior";
+import { FooterSwitch } from "@/components/landing-chrome";
+import { LandingFooter } from "@/components/landing-footer";
 import {
   jsonLdGraph,
   organizationNode,
@@ -80,12 +82,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${syne.variable} h-full antialiased`}
     >
       <head>
-        {/* Google tag. GTM receives data-layer events, including qualify_lead. */}
+        {/* Google tag. GTM receives data-layer events, including qualify_lead.
+            Paid landing pages tag every event on the page with their variant. */}
         <script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
+var lp = location.pathname.match(/^\\/lp\\/([a-z0-9-]+)/);
+if (lp) gtag('set', { landing_variant: lp[1] });
 gtag('config', 'G-S2DH48NBP5');`,
           }}
         />
@@ -96,21 +101,6 @@ gtag('config', 'G-S2DH48NBP5');`,
         <script
           async
           src="https://www.googletagmanager.com/gtm.js?id=GTM-KBKZ4GTS"
-        />
-        {/* Meta Pixel */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1449766009984481');
-fbq('track', 'PageView');`,
-          }}
         />
       </head>
       <body
@@ -127,22 +117,15 @@ fbq('track', 'PageView');`,
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1449766009984481&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
         <Suspense fallback={null}>
           <Analytics />
         </Suspense>
         <JsonLd data={jsonLdGraph([organizationNode, websiteNode])} />
         <Header />
         <main className="flex-1">{children}</main>
-        <Footer />
+        <FooterSwitch landing={<LandingFooter />}>
+          <Footer />
+        </FooterSwitch>
       </body>
     </html>
   );

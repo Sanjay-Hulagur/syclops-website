@@ -35,7 +35,7 @@ export function InsightsLogin() {
       <button
         type="submit"
         disabled={pending}
-        className="rounded-full bg-iris px-5 py-3 text-sm font-medium text-cream hover:bg-iris-dark disabled:opacity-60"
+        className="rounded-full bg-iris-dark px-5 py-3 text-sm font-medium text-cream hover:bg-iris-deep disabled:opacity-60"
       >
         {pending ? "Checking…" : "Open insights"}
       </button>

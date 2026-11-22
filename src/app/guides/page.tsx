@@ -28,8 +28,8 @@ export default function GuidesPage() {
       <Section>
         <Prose>
           <p>
-            Most teams turn on field and referrals the same day, then
-            subscriptions from Settings in the same week. There is no
+            Most teams turn on field visits and referrals the same day, then
+            add subscriptions once those are running. There is no
             implementation calendar.
           </p>
         </Prose>

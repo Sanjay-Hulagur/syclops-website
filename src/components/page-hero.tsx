@@ -3,10 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/interior";
 import { SvgScene, type SceneKind } from "@/components/svg-scene";
+import { getBillingConfig } from "@/lib/billing";
 
-export function CtaBand({
-  title = "Create a workspace. Invite the field. Turn on a plan.",
-  body = "No onboarding call. No specialist. You configure regions, roles, and billing in the product.",
+export async function CtaBand({
+  title = "Try Syclops with your own team.",
+  body,
   id,
   note,
   actions,
@@ -17,6 +18,9 @@ export function CtaBand({
   note?: string;
   actions?: ReactNode;
 }) {
+  const copy =
+    body ??
+    `${(await getBillingConfig()).trial.days} days free, no card and no sales call. Create your workspace with an email address and your business name.`;
   return (
     <section
       id={id}
@@ -30,28 +34,24 @@ export function CtaBand({
           <h2 className="display text-3xl font-semibold tracking-tight sm:text-4xl">
             {title}
           </h2>
-          <p className="mt-3 text-sm leading-6 text-cream/70">{body}</p>
+          <p className="mt-3 text-sm leading-6 text-cream/70">{copy}</p>
           {note ? <p className="mt-3 text-sm text-cream/70">{note}</p> : null}
         </div>
         {actions ?? (
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
-              href="/start"
-              className="rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
+              href="/start?cta=cta_band"
+              data-cta-id="cta_band_trial"
+              data-cta-location="cta_band"
+              className="flex h-12 items-center justify-center rounded-full bg-iris-dark px-6 text-base font-medium text-cream transition hover:bg-iris-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
             >
-              Start for free
+              Start free trial
             </Link>
             <Link
               href="/pricing"
-              className="rounded-full border border-cream/20 px-5 py-2.5 text-sm text-cream hover:bg-cream/5"
+              className="flex h-12 items-center justify-center rounded-full border border-cream/30 px-6 text-base text-cream hover:bg-cream/5"
             >
               See pricing
-            </Link>
-            <Link
-              href="/interested"
-              className="rounded-full border border-cream/20 px-5 py-2.5 text-sm text-cream hover:bg-cream/5"
-            >
-              I&apos;m interested
             </Link>
           </div>
         )}
@@ -91,18 +91,20 @@ export function PageHero({
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-muted">{body}</p>
           {cta ? (
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
-                href="/start"
-                className="rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
+                href="/start?cta=page_hero"
+                data-cta-id="page_hero_trial"
+                data-cta-location="page_hero"
+                className="flex h-12 items-center justify-center rounded-full bg-iris-dark px-6 text-base font-medium text-cream transition hover:bg-iris-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
               >
-                Start for free
+                Start free trial
               </Link>
               <Link
-                href="/guides"
-                className="rounded-full border border-line px-5 py-2.5 text-sm hover:bg-paper"
+                href="/pricing"
+                className="flex h-12 items-center justify-center rounded-full border border-line px-6 text-base hover:bg-paper"
               >
-                Self-serve setup
+                See pricing
               </Link>
             </div>
           ) : null}

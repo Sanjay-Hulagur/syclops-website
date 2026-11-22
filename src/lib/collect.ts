@@ -2,7 +2,6 @@ import {
   SESSION_COOKIE,
   VISITOR_COOKIE,
   type CollectedEvent,
-  type CollectedGps,
   type CollectedLanding,
 } from "@/lib/analytics-events";
 
@@ -14,13 +13,11 @@ const GA_ONLY = new Set(["page_scroll", "section_view"]);
 const IMMEDIATE = new Set(["page_view", "error"]);
 const SENSITIVE_KEY =
   /^(email|e-?mail|phone|tel|mobile|name|full_?name|first_?name|last_?name|password|passwd|token|secret|otp)$/i;
-const GPS_FLAG = "sy_gps";
 const LANDING_KEY = "sy_landing";
 
 const recentErrors = new Set<string>();
 let lastPageView = { key: "", at: 0 };
-let queue: CollectedEvent[] = [];
-let gpsPayload: CollectedGps | null = null;
+const queue: CollectedEvent[] = [];
 let flushTimer = 0;
 
 function clip(value: string, max: number) {
@@ -118,15 +115,12 @@ function clipParams(params: CollectParams) {
 
 function flush(beacon: boolean) {
   if (typeof window === "undefined") return;
-  if (!queue.length && !gpsPayload) return;
+  if (!queue.length) return;
   const events = queue.splice(0, 20);
-  const gps = gpsPayload;
-  gpsPayload = null;
   const body = JSON.stringify({
     visitorId: visitorId(),
     sessionId: sessionId(),
     landing: landing(),
-    gps,
     events,
   });
   if (beacon && navigator.sendBeacon) {
@@ -136,7 +130,6 @@ function flush(beacon: boolean) {
     );
     if (sent) return;
     queue.unshift(...events);
-    gpsPayload = gps;
     return;
   }
   void fetch("/api/analytics", {
@@ -236,43 +229,4 @@ export function bindCollectorLifecycle() {
   const onHide = () => flush(true);
   window.addEventListener("pagehide", onHide);
   return () => window.removeEventListener("pagehide", onHide);
-}
-
-export function requestGpsOnce() {
-  if (typeof window === "undefined" || !navigator.geolocation) return;
-  const flag = localStorage.getItem(GPS_FLAG);
-  if (flag === "denied" || flag === "sent") return;
-
-  const ask = () => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        localStorage.setItem(GPS_FLAG, "sent");
-        gpsPayload = {
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-          accuracy: position.coords.accuracy,
-        };
-        flush(false);
-      },
-      () => {
-        localStorage.setItem(GPS_FLAG, "denied");
-      },
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60_000 },
-    );
-  };
-
-  if (!navigator.permissions?.query) {
-    ask();
-    return;
-  }
-  navigator.permissions
-    .query({ name: "geolocation" })
-    .then((permission) => {
-      if (permission.state === "denied") {
-        localStorage.setItem(GPS_FLAG, "denied");
-        return;
-      }
-      ask();
-    })
-    .catch(ask);
 }

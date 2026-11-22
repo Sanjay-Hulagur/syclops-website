@@ -21,7 +21,7 @@ import { formatInr, publicPlans } from "@/lib/plans";
 import { faqJsonLd } from "@/lib/seo";
 
 const primary =
-  "inline-flex items-center justify-center rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark";
+  "inline-flex items-center justify-center rounded-full bg-iris-dark px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-deep";
 const secondary =
   "inline-flex items-center justify-center rounded-full border border-line px-5 py-2.5 text-sm text-ink hover:bg-quiet";
 const textLink = "font-medium text-iris hover:text-iris-dark";
@@ -237,7 +237,7 @@ function healthcareFaqs(trialDays: number) {
     },
     {
       q: "How much does Syclops cost?",
-      a: `Team is ${formatInr(team.priceInr)}, Growth is ${formatInr(growth.priceInr)}, and Scale is ${formatInr(scale.priceInr)}, each per field seat per month. Referrer logins are not billed as field seats. Annual terms discount 15% at checkout. The full comparison is on the pricing page.`,
+      a: `Team is ${formatInr(team.priceInr)}, Growth is ${formatInr(growth.priceInr)}, and Scale is ${formatInr(scale.priceInr)}, each per field seat per month. Referrer logins are not billed as field seats. The full comparison is on the pricing page.`,
     },
     {
       q: "Is there a free trial?",
@@ -308,7 +308,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
               params={{ cta_location: "hero" }}
               className={`${primary} ${healthcareFocus}`}
             >
-              Start your free trial
+              Start free trial
             </HealthcareLink>
             <HealthcareLink
               href="#one-day"
@@ -386,7 +386,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
               params={{ cta_location: "day" }}
               className={`${primary} ${healthcareFocus} mt-6 w-full`}
             >
-              Start your free trial
+              Start free trial
             </HealthcareLink>
           </aside>
         </div>
@@ -704,7 +704,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
             params={{ cta_location: "product" }}
             className={`${primary} ${healthcareFocus}`}
           >
-            Start your free trial
+            Start free trial
           </HealthcareLink>
         </div>
       </section>
@@ -792,7 +792,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="display text-2xl font-semibold">{plan.name}</h3>
                   {plan.featured ? (
-                    <p className="rounded-full bg-iris px-2.5 py-1 text-[11px] font-medium text-cream">
+                    <p className="rounded-full bg-iris-dark px-2.5 py-1 text-[11px] font-medium text-cream">
                       Recommended
                     </p>
                   ) : null}
@@ -812,11 +812,11 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
                   params={{ cta_location: "pricing", plan: plan.name.toLowerCase() }}
                   className={`mt-8 rounded-full px-4 py-2.5 text-center text-sm font-medium ${healthcareFocus} ${
                     plan.featured
-                      ? "bg-iris text-cream hover:bg-iris-dark"
+                      ? "bg-iris-dark text-cream hover:bg-iris-deep"
                       : "border border-line hover:bg-quiet"
                   }`}
                 >
-                  Start your free trial
+                  Start free trial
                 </HealthcareLink>
               </article>
             ))}
@@ -886,7 +886,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
               params={{ cta_location: "final" }}
               className={`${primary} ${healthcareFocus}`}
             >
-              Start your free trial
+              Start free trial
             </HealthcareLink>
             <HealthcareLink
               href="/interested?industry=healthcare"
@@ -902,7 +902,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
           </div>
         }
       />
-      <HealthcareStickyCta label="Start your free trial" />
+      <HealthcareStickyCta label="Start free trial" />
     </>
   );
 }

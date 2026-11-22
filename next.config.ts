@@ -15,10 +15,31 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   async redirects() {
-    return [{ source: "/demo", destination: "/start", permanent: true }];
+    // LANDING_PAGES_OFF=1 (then redeploy) sends ad traffic to /start instead.
+    // Query strings, including gclid and utm tags, carry over.
+    const landingPagesOff = process.env.LANDING_PAGES_OFF === "1";
+    return [
+      { source: "/demo", destination: "/start", permanent: true },
+      ...(landingPagesOff
+        ? [
+            {
+              source: "/lp/doctor-referral",
+              destination: "/start?industry=healthcare&workflow=doctor-referral",
+              permanent: false,
+            },
+            { source: "/lp/:path*", destination: "/start", permanent: false },
+          ]
+        : []),
+    ];
   },
   async headers() {
     return [
+      {
+        source: "/lp/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
+      },
       {
         source: "/login",
         headers: [

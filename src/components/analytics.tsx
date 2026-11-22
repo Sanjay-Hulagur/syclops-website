@@ -3,11 +3,11 @@
 import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { track, trackPageView } from "@/lib/analytics";
+import { rememberAttribution } from "@/lib/attribution";
 import {
   bindCollectorLifecycle,
   collectError,
   collectPageView,
-  requestGpsOnce,
 } from "@/lib/collect";
 
 const SCROLL_MARKS = [25, 50, 75, 100] as const;
@@ -153,6 +153,8 @@ function onActivate(event: MouseEvent) {
     element_type: el.tagName.toLowerCase(),
     outbound: isOutbound(el) ? "true" : "false",
     is_cta: isCta(el, url) ? "true" : "false",
+    cta_id: el.getAttribute("data-cta-id") || undefined,
+    cta_location: el.getAttribute("data-cta-location") || undefined,
   };
 
   track("button_click", params);
@@ -213,7 +215,6 @@ export function Analytics() {
     window.addEventListener("error", onError);
     window.addEventListener("unhandledrejection", onRejection);
     const unbind = bindCollectorLifecycle();
-    requestGpsOnce();
     return () => {
       document.removeEventListener("click", onActivate, true);
       document.removeEventListener("auxclick", onActivate, true);
@@ -233,6 +234,7 @@ export function Analytics() {
       return;
     }
     const path = pathname || "/";
+    rememberAttribution();
     collectPageView(path, search);
 
     let sent = false;

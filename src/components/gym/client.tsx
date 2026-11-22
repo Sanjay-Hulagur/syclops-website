@@ -195,7 +195,7 @@ export function GymStickyCta({ label }: { label: string }) {
         href="/start"
         event="gym_hero_start_trial"
         params={{ placement: "mobile_sticky" }}
-        className={`flex w-full items-center justify-center rounded-full bg-iris px-5 py-3 text-sm font-medium text-cream hover:bg-iris-dark ${focusRing}`}
+        className={`flex w-full items-center justify-center rounded-full bg-iris-dark px-5 py-3 text-sm font-medium text-cream hover:bg-iris-deep ${focusRing}`}
       >
         {label}
       </GymLink>

@@ -192,7 +192,7 @@ export function HealthcareStickyCta({ label }: { label: string }) {
         href="/start?industry=healthcare&cta=mobile"
         event="healthcare_hero_trial_click"
         params={{ cta_location: "mobile" }}
-        className={`flex w-full items-center justify-center rounded-full bg-iris px-5 py-3 text-sm font-medium text-cream hover:bg-iris-dark ${focusRing}`}
+        className={`flex w-full items-center justify-center rounded-full bg-iris-dark px-5 py-3 text-sm font-medium text-cream hover:bg-iris-deep ${focusRing}`}
       >
         {label}
       </HealthcareLink>

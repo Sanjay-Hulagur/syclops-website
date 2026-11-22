@@ -7,7 +7,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata: Metadata = pageSeo({
   title: "FAQ — seats, GPS, CRM, hosting, cancel",
   description:
-    "Self-serve answers for Syclops: who it is for, field seats vs partner portal, GPS vs CRM vs gym software, offline use, India hosting, and how to cancel.",
+    "Self-serve answers for Syclops: who it is for, field seats vs partner portal, GPS vs CRM vs gym software, offline use, data, and how to cancel.",
   path: "/faq",
   keywords: [
     "Syclops FAQ",

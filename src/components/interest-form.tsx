@@ -165,7 +165,7 @@ export function InterestForm({
       <button
         type="submit"
         disabled={saving}
-        className="rounded-full bg-iris px-5 py-3 text-sm font-medium text-cream hover:bg-iris-dark disabled:opacity-60"
+        className="rounded-full bg-iris-dark px-5 py-3 text-sm font-medium text-cream hover:bg-iris-deep disabled:opacity-60"
       >
         {saving ? "Saving…" : "I'm interested"}
       </button>

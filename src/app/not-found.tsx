@@ -31,7 +31,7 @@ export default function NotFound() {
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link
           href="/"
-          className="inline-flex rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream"
+          className="inline-flex rounded-full bg-iris-dark px-5 py-2.5 text-sm font-medium text-cream"
         >
           Back to syclops.in
         </Link>

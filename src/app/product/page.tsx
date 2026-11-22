@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand, PageHero, Steps } from "@/components/page-hero";
 import { Checklist, FaqList, FeatureGrid, Prose, Related, Section } from "@/components/interior";
+import { LoopDiagram } from "@/components/loop-diagram";
 import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = pageSeo({
@@ -103,6 +104,9 @@ export default function ProductPage() {
             },
           ]}
         />
+        <div className="mt-10">
+          <LoopDiagram />
+        </div>
       </Section>
       <Section eyebrow="Who it is for" title="Same three steps. Different everyday words.">
         <FeatureGrid
@@ -152,9 +156,8 @@ export default function ProductPage() {
         <Prose>
           <p>
             There is no onboarding call and no implementation manager. You
-            add regions, roles, and billing inside the product. Import a
-            spreadsheet if you already have accounts. The first route can
-            run the same day.
+            add regions and roles inside the product. Import a spreadsheet if
+            you already have accounts. The first route can run the same day.
           </p>
         </Prose>
         <div className="mt-8">
@@ -195,7 +198,7 @@ export default function ProductPage() {
             },
             {
               q: "Can I start small and add subscriptions later?",
-              a: "Yes. Start on Team. Move to Growth in Settings when you want plans, failed-payment follow-up, and rewards on the invoice. History stays.",
+              a: "Yes. Start on Team, and tell us when you want Growth for plans, failed-payment follow-up, and rewards on the invoice. History stays.",
             },
             {
               q: "What do field staff install?",
@@ -203,7 +206,7 @@ export default function ProductPage() {
             },
             {
               q: "Do you run the setup for us?",
-              a: "No. Guides walk through each hour. You configure regions, check-in rules, travel claims, and billing yourself.",
+              a: "You set it up yourself, and the guides walk through each step: regions, check-in rules and travel claims. If you get stuck, email us.",
             },
           ]}
         />
@@ -216,14 +219,11 @@ export default function ProductPage() {
             { href: "/compare", label: "Compare", body: "GPS apps, CRMs, Excel, and industry tools." },
             { href: "/pricing", label: "Pricing", body: "Rupees per field seat. No quote, no call." },
             { href: "/security", label: "Security", body: "Access, encryption, and how workspaces stay separate." },
-            { href: "/customers", label: "Customers", body: "The same product, already in use." },
+            { href: "/customers", label: "How teams use Syclops", body: "Example workflows, industry by industry." },
           ]}
         />
       </Section>
-      <CtaBand
-        title="Create a workspace and invite your team."
-        body="No setup call. You add regions, roles, and billing inside the product."
-      />
+      <CtaBand title="Create a workspace and invite your team." />
     </>
   );
 }

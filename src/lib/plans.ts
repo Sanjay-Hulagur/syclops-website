@@ -55,18 +55,18 @@ export const publicPlans: PublicPlan[] = [
     items: [
       "Everything in Growth",
       "Multi-brand / multi-city",
-      "SSO and audit logs in Settings",
-      "HIS / ERP connectors",
-      "India hosting region picker",
+      "Audit logs",
+      "HIS / ERP connector, set up for your system",
+      "Setup with our team on a call",
     ],
     gymItems: [
       "Everything in Growth",
       "Multi-brand and multi-city",
-      "SSO and audit logs",
-      "ERP connectors",
+      "Audit logs",
+      "Setup with our team",
     ],
     offerDescription:
-      "Growth plus multi-brand / multi-city, SSO and audit logs, HIS/ERP connectors, India hosting region picker. Per field seat per month.",
+      "Growth plus multi-brand / multi-city, audit logs, an HIS or ERP connector set up for your system, and setup with the Syclops team. Per field seat per month.",
   },
 ];
 

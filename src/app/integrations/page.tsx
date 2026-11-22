@@ -88,7 +88,7 @@ export default function IntegrationsPage() {
         <FaqList
           items={[
             { q: "Webhook docs?", a: "In the product after you create a workspace. Public API on Scale." },
-            { q: "On-prem?", a: "No. Multi-tenant cloud. India region on Scale." },
+            { q: "On-prem?", a: "No. Multi-tenant cloud, with each workspace kept apart." },
             { q: "Do you operate our WhatsApp number?", a: "No. You connect your own WhatsApp Business account." },
           ]}
         />

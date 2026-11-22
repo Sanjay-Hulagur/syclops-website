@@ -105,7 +105,7 @@ const relatedBySlug: Record<
     { href: "/product/subscriptions", label: "Subscriptions", body: "Unpaid installments as tasks." },
   ],
   "dpdp-employee-gps-retention": [
-    { href: "/security", label: "Security", body: "GPS retention, RBAC, India hosting." },
+    { href: "/security", label: "Security", body: "Working-day GPS, roles, tenant isolation." },
     { href: "/privacy", label: "Privacy", body: "What is processed, and where you export it." },
     { href: "/product/field", label: "Field tracking", body: "Working-day check-in, not CCTV." },
   ],

@@ -4,20 +4,20 @@ export const guides = [
     title: "Create a Syclops workspace",
     scene: "start" as const,
     summary:
-      "Pick an industry. Nouns for visits, referrers, and plans follow from that. No sales call.",
+      "Your email address and your business name. We email you a link to set your password. No card, no sales call.",
     intro: [
-      "A Syclops workspace is the tenant your field staff, managers, and referral partners share. You create it on the web in a few minutes. Nothing is billed until you add a paid field seat.",
-      "Industry is a label pack, not a fork of the product. Gyms get trainer visits, members, and memberships. Education gets counselor visits, alumni, and semester fees. You can rename objects later; history stays on the same records.",
+      "A Syclops workspace is the tenant your field staff, managers, and referral partners share. You create it on the web in about a minute, and nothing is billed during the free trial.",
+      "The signup asks for two things: your email address and your business name. Everything else, such as regions, staff, and the people who refer to you, is set up after you sign in.",
     ],
     steps: [
-      { title: "Use your work email", body: "That email becomes the owner. You can transfer ownership later in Settings → Team." },
-      { title: "Name the workspace", body: "Usually the brand, not a person. Members and partners will see this name on the portal." },
-      { title: "Pick an industry", body: "Gyms, education, healthcare, sales, fintech, medtech, or others. You can rename objects afterwards." },
-      { title: "Land in Settings", body: "Regions, roles, and the empty beat list are ready. Nothing is billed until you add a paid field seat." },
+      { title: "Enter your email address", body: "Use the address you want to sign in with. That email becomes the owner of the workspace." },
+      { title: "Name your business", body: "Usually the brand, not a person. The people you invite will see this name." },
+      { title: "Set your password", body: "We email you a link. It works for 72 hours. Open it, choose a password, and sign in to the admin console." },
+      { title: "Add your team", body: "Add regions, your field staff, and the people who refer to you, then record your first visit or referral." },
     ],
     faqs: [
-      { q: "Do I need a credit card to start?", a: "No. The free trial does not need a card. The current length and terms are on the pricing page. Seats bill when you add paid field or manager users." },
-      { q: "Can I change industry later?", a: "Yes. Object labels are editable in Settings. Records do not fork." },
+      { q: "Do I need a credit card to start?", a: "No. The free trial does not need a card. The current length and terms are on the pricing page. After the trial we send an invoice or a payment link for the seats you choose." },
+      { q: "The email didn’t arrive. What now?", a: "Check spam and promotions, then submit the signup form again with the same email. We send a fresh link. Still nothing? Write to syclops.team@gmail.com." },
     ],
   },
   {
@@ -263,11 +263,11 @@ export const faqs = [
   },
   {
     q: "Where is data hosted?",
-    a: "India region is the default on Scale. You pick it in Settings → Security after you upgrade.",
+    a: "Each workspace is kept apart from every other customer’s. If you need the hosting location in writing, email syclops.team@gmail.com.",
   },
   {
     q: "How do I cancel?",
-    a: "Settings → Billing stops future renewal. A cancellation is considered within 7 days of the order, and an approved refund takes 14 days, as set out in the refund policy. Write to syclops.team@gmail.com.",
+    a: "Write to syclops.team@gmail.com to stop future renewal. A cancellation is considered within 7 days of the order, and an approved refund takes 14 days, as set out in the refund policy.",
   },
   {
     q: "Can I change industry later?",

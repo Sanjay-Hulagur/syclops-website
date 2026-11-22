@@ -6,14 +6,15 @@
  * the first-party collector.
  *
  * Page views are also pushed to the GTM data layer. The first view is
- * already sent by the Google tag and the Meta Pixel in the document head,
- * so later navigations are the ones forwarded again.
+ * already sent by the Google tag in the document head, so later
+ * navigations are the ones forwarded again.
  *
- * A finished workspace signup also fires `qualify_lead`. That event is a
- * key event on the Syclops property, and the Google tag shares it with the
- * linked Google Ads account so bidding can look for more people like the
- * person who signed up. The email rides along as enhanced-conversion
- * user data and is never copied into the event parameters.
+ * A new workspace also fires `qualify_lead`, once, with the transaction ID
+ * the signup API returned, so Google Ads counts one conversion per
+ * workspace even if the event is sent twice. That event is a key event on
+ * the Syclops property, and the Google tag shares it with the linked Google
+ * Ads account. The email rides along as enhanced-conversion user data and
+ * is never copied into the event parameters.
  */
 
 import { collectEvent } from "@/lib/collect";
@@ -28,7 +29,6 @@ declare global {
   interface Window {
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
-    fbq?: (...args: unknown[]) => void;
   }
 }
 
@@ -43,6 +43,7 @@ function ensureGtag() {
   if (!window.gtag) {
     window.gtag = function gtag() {
       // The Google tag only treats an Arguments object as a command.
+      // eslint-disable-next-line prefer-rest-params
       window.dataLayer?.push(arguments);
     };
   }
@@ -77,14 +78,13 @@ export function trackPageView(path: string, search = "") {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event: "page_view", ...page });
 
-  // The head tags already sent this first view to GA4 and Meta.
+  // The head tag already sent this first view to GA4.
   if (!firstView) {
     ensureGtag()("event", "page_view", {
       send_to: GA_MEASUREMENT_ID,
       ...page,
       ...(isLocalHost() ? { debug_mode: true } : {}),
     });
-    window.fbq?.("track", "PageView");
   }
 
   if (process.env.NODE_ENV !== "production") {
@@ -94,16 +94,19 @@ export function trackPageView(path: string, search = "") {
 
 export function trackWorkspaceConversion(input: {
   email: string;
-  industry: string;
+  transactionId: string;
+  industry?: string;
+  workflow?: string;
 }) {
   if (typeof window === "undefined") return;
 
   const email = input.email.trim().toLowerCase();
-  const industry = clean(input.industry);
-  const conversion = {
+  const conversion: Record<string, string> = {
     form_name: "start",
-    industry,
+    transaction_id: clean(input.transactionId),
   };
+  if (input.industry) conversion.industry = clean(input.industry);
+  if (input.workflow) conversion.workflow = clean(input.workflow);
 
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({

@@ -1,5 +1,5 @@
 export const LEGAL_EMAIL = "syclops.team@gmail.com";
-export const LEGAL_UPDATED = "20 October 2026";
+export const LEGAL_UPDATED = "22 November 2026";
 
 export type LegalId = "privacy" | "terms" | "cookies" | "refund";
 
@@ -62,7 +62,8 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
               "Referrals and subscriptions: referrer identity, referral status, plan and invoice metadata, and the records needed to show whether a referred person converted and whether a plan still pays.",
               "Keys you connect: credentials you paste for WhatsApp, Razorpay, Stripe, or Maps, stored so those connections run inside your workspace.",
               "Usage and device: IP address, device and app identifiers, browser type, pages or screens used, timestamps, and diagnostic logs.",
-              "Marketing site analytics: a random visitor id and session id, pages viewed, URL parameters, clicks, the referring site, approximate location derived from the IP address, precise location only if you allow the browser location permission, and diagnostic errors (the status, path, and a short message). Form contents are not stored in these events. This is not used for advertising.",
+              "Marketing site analytics: a random visitor id and session id, pages viewed, URL parameters, clicks, the referring site, approximate location derived from the IP address, and diagnostic errors (the status, path, and a short message). The marketing site does not ask for your device location. Form contents are not stored in these events.",
+              "Ad measurement: when you create a workspace, we save the Google Ads click id and campaign tags from the link that brought you, so we can tell which of our ads lead to workspaces. Google’s tag also sends Google Ads an encoded (hashed) copy of the email address you signed up with, so Google can count the signup for our ads. Google calls this enhanced conversions.",
               "Support: the content of messages you send to syclops.team@gmail.com.",
             ],
           },
@@ -77,7 +78,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
           },
           {
             kind: "p",
-            text: "Purpose is operating the loop you turned on. We do not use this data to build advertising profiles, and we do not sell it. Marketing-site analytics are used to see which pages, sources, and errors need attention.",
+            text: "Purpose is operating the loop you turned on. We do not use this data to build advertising profiles, and we do not sell it. Marketing-site analytics are used to see which pages, sources, and errors need attention, and which of our ads lead to workspaces.",
           },
         ],
       },
@@ -86,7 +87,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "India hosting is available on the Scale plan. The organization chooses the region in Settings → Security after upgrading. Location is limited to the working day described above. Retention is a setting the organization controls.",
+            text: "Location is limited to the working day described above. An organization can write to syclops.team@gmail.com to learn where its data is hosted, or to ask for location records to be deleted.",
           },
           {
             kind: "p",
@@ -103,12 +104,13 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
               "Inside a workspace, according to the roles that organization sets. Partners do not see GPS or another partner’s book.",
               "With the payment, maps, and messaging providers that organization connects, under the keys it supplied. Their processing follows that provider and the workspace configuration.",
               "With the infrastructure used to host the Platform.",
+              "With Google Analytics and Google Ads, to measure the marketing site and our own ads, as described in section 2.",
               "When a law requires disclosure.",
             ],
           },
           {
             kind: "p",
-            text: "We do not sell personal data and we do not share it with advertisers.",
+            text: "We do not sell personal data, and we do not share workspace data with advertisers.",
           },
         ],
       },
@@ -117,7 +119,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "Workspace data stays for the life of the workspace, subject to the retention settings the organization chooses, including how long location points are kept. After a workspace ends, we keep what is needed to finish billing, honour an export, and meet legal duties, then delete or de-identify it. Export is available from Settings → Data while the workspace is open.",
+            text: "Workspace data stays for the life of the workspace, unless the organization asks us to delete it sooner, including location points. After a workspace ends, we keep what is needed to finish billing, honour an export, and meet legal duties, then delete or de-identify it. Export is available from Settings → Data while the workspace is open.",
           },
         ],
       },
@@ -153,7 +155,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "The marketing site and the application use cookies and similar storage as described in the Cookie policy. We do not use them for advertising. The marketing site keeps a first-party visitor id and session id so visits, clicks, and errors can be counted. Approximate location is derived from the IP address. Precise location is requested by the browser once and is stored only if you allow it. Device location and photo access in the application are permissions requested by the operating system when a feature needs them. They are described above, and they are not cookies.",
+            text: "The marketing site and the application use cookies and similar storage as described in the Cookie policy. We do not use them to show you ads. The marketing site keeps a first-party visitor id and session id so visits, clicks, and errors can be counted, and Google’s tag keeps the ad click id when you arrive from a Google ad. Approximate location is derived from the IP address. Device location and photo access in the application are permissions requested by the operating system when a feature needs them. They are described above, and they are not cookies.",
           },
         ],
       },
@@ -326,29 +328,30 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
     id: "cookies",
     title: "Cookie policy",
     summary:
-      "Syclops uses essential cookies and similar storage to run the site and the application, plus a first-party visitor id on the marketing site to count pages, clicks, and errors. We do not use advertising cookies.",
+      "Syclops uses essential cookies and similar storage to run the site and the application, a first-party visitor id on the marketing site to count pages, clicks, and errors, and Google’s measurement cookies to see which of our ads lead to workspaces. We do not use cookies to show you ads.",
     intro: [
       "This Cookie policy explains how the Syclops website and application use cookies and similar storage, including local storage that keeps you signed in. It is part of the Privacy policy and applies to the same Platform.",
     ],
     sections: [
       {
-        title: "1. Essential cookies",
+        title: "1. Cookies we use",
         blocks: [
           {
             kind: "p",
-            text: "We use cookies and similar storage that the Platform needs in order to work.",
+            text: "We use cookies and similar storage that the Platform needs in order to work, and to measure the marketing site.",
           },
           {
             kind: "list",
             items: [
               "On the marketing site: security, load balancing, and remembering a choice required for the site to function.",
-              "On the marketing site: a visitor id kept for about a year and a session id kept until the browser session ends, so page views, URL parameters, clicks, referrers, and errors can be counted. Approximate location is derived from the IP address on the server and is not a cookie. Precise location is requested once by the browser and is stored only if you allow it. These are not advertising cookies.",
+              "On the marketing site: a visitor id kept for about a year and a session id kept until the browser session ends, so page views, URL parameters, clicks, referrers, and errors can be counted. Approximate location is derived from the IP address on the server and is not a cookie. The marketing site does not ask for your device location.",
+              "On the marketing site: Google Analytics cookies, and, when you arrive from a Google ad, the ad click id, kept for up to 90 days so a workspace you create can be counted for that ad.",
               "In the application: your session, authentication, and security.",
             ],
           },
           {
             kind: "p",
-            text: "These are not used to advertise to you.",
+            text: "None of these are used to show you ads.",
           },
         ],
       },
@@ -357,7 +360,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "We do not set advertising cookies. We do not allow third-party advertising networks to track you across other sites from Syclops.",
+            text: "We do not use cookies to show you ads, on this site or on others. The Google ad click id described above is used only to count signups for our own ads.",
           },
         ],
       },

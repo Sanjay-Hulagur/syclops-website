@@ -17,6 +17,16 @@ export type WorkspaceSignupNotice = {
   email: string;
   workspace: string;
   industry: string;
+  outcome: "created" | "resent" | "pending";
+  workflow?: string | null;
+  plan?: string | null;
+  source?: string | null;
+};
+
+const OUTCOME_LABEL: Record<WorkspaceSignupNotice["outcome"], string> = {
+  created: "Workspace created, password link sent",
+  resent: "Signed up before, password link sent again",
+  pending: "Still being created when the website stopped waiting",
 };
 
 function envValue(name: string): string {
@@ -134,12 +144,15 @@ export async function sendInterestEmail(lead: InterestLead): Promise<void> {
 export async function sendWorkspaceSignupEmail(
   lead: WorkspaceSignupNotice,
 ): Promise<void> {
-  const industry = industryLabel(lead.industry);
   const rows: [string, string][] = [
     ["Email", lead.email],
     ["Workspace", lead.workspace],
-    ["Industry", industry],
+    ["Status", OUTCOME_LABEL[lead.outcome]],
   ];
+  if (lead.industry) rows.push(["Industry", industryLabel(lead.industry)]);
+  if (lead.workflow) rows.push(["Came for", lead.workflow]);
+  if (lead.plan) rows.push(["Plan picked", lead.plan]);
+  if (lead.source) rows.push(["Source", lead.source]);
 
   const text = [
     "Someone created a Syclops workspace.",
@@ -165,10 +178,16 @@ export async function sendWorkspaceSignupEmail(
     </div>
   `;
 
+  const suffix =
+    lead.outcome === "resent"
+      ? " (link re-sent)"
+      : lead.outcome === "pending"
+        ? " (still setting up)"
+        : "";
   await deliver({
     to: WORKSPACE_NOTIFY_EMAIL,
     replyTo: lead.email,
-    subject: `Syclops workspace — ${lead.workspace}`,
+    subject: `Syclops workspace — ${lead.workspace}${suffix}`,
     text,
     html,
   });

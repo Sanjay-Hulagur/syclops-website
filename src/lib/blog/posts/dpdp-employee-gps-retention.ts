@@ -60,7 +60,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "We do not publish SOC 2 or ISO badges on this site. Multi-tenant isolation, TLS, role-based access, and an India hosting region picker on the Scale plan are in the product. If a customer needs a questionnaire, they create a workspace and ask. A logo on a marketing page does not answer when the GPS trail stops.",
+      text: "We do not publish SOC 2 or ISO badges on this site. Multi-tenant isolation, TLS, and role-based access are in the product. If a customer needs a questionnaire, they create a workspace and ask. A logo on a marketing page does not answer when the GPS trail stops.",
     },
     {
       type: "p",

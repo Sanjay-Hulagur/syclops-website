@@ -25,7 +25,7 @@ export function AndroidDownload({
         <a
           href={androidApp.href}
           download={androidApp.filename}
-          className="rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
+          className="rounded-full bg-iris-dark px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-deep"
         >
           Download Android APK
         </a>

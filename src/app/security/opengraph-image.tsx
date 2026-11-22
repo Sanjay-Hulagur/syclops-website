@@ -7,7 +7,7 @@ export const contentType = ogContentType;
 export default function Image() {
   return ogImage({
     eyebrow: "Security",
-    title: "Working-day GPS. Retention you set.",
+    title: "Working-day GPS. Each workspace kept apart.",
     kicker: "DPDP-shaped field tracking. No fake audit badges.",
   });
 }

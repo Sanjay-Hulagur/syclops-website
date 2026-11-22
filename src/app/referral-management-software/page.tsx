@@ -165,8 +165,8 @@ export default function ReferralManagementSoftwarePage() {
           </p>
           <p>
             <strong className="font-medium">Referral management software in India</strong>
-            , with rupee pricing, WhatsApp, Maps, and an India hosting region on
-            Scale. Visits queue on the phone when the signal drops.
+            , with rupee pricing, WhatsApp, and Maps. Visits queue on the phone
+            when the signal drops.
           </p>
         </div>
       </Section>

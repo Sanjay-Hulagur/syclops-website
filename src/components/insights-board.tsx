@@ -52,7 +52,7 @@ export function InsightsBoard({ report }: { report: InsightsReport }) {
               href={range.id === "7d" ? "/insights" : `/insights?range=${range.id}`}
               className={
                 active
-                  ? "rounded-full bg-iris px-4 py-2 text-sm font-medium text-cream"
+                  ? "rounded-full bg-iris-dark px-4 py-2 text-sm font-medium text-cream"
                   : "rounded-full border border-line px-4 py-2 text-sm"
               }
             >

@@ -1,279 +1,136 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import rolesArt from "../../Images/Connected Teams, One Unified Dashboard.png";
-import { AndroidDownload } from "@/components/android-download";
-import { InterestForm } from "@/components/interest-form";
-import { IndustryMorph } from "@/components/industry-morph";
-import { FaqList, JsonLd, Section } from "@/components/interior";
-import { LoopDiagram } from "@/components/loop-diagram";
 import { HeroLoop } from "@/components/hero-loop";
-import { IndustryMark } from "@/components/industry-marks";
+import { FaqList, JsonLd } from "@/components/interior";
 import { CtaBand } from "@/components/page-hero";
-import { faqs } from "@/lib/guides";
-import { industries } from "@/lib/industries";
+import { getBillingConfig } from "@/lib/billing";
+import { formatInr, publicPlans } from "@/lib/plans";
 import { jsonLdGraph, pageSeo, softwareNode } from "@/lib/seo";
-import { androidApp, integrations, roles } from "@/lib/site";
-
-const leaks = [
-  { from: "Referrals in WhatsApp", to: "No status" },
-  { from: "Field updates on calls", to: "No proof" },
-  { from: "Members in Excel", to: "Stale tomorrow" },
-  { from: "Renewals in billing", to: "No field task" },
-];
+import { androidApp } from "@/lib/site";
 
 export const metadata: Metadata = pageSeo({
   title: "Syclops — Field Tracking, Referral Management & Subscription Software",
   description:
-    "Syclops is field tracking software, referral management, and subscription billing for gyms, campuses, clinics, sales teams, fintech and medtech in India. Self-serve — no sales call.",
+    "Track field visits, partner referrals and subscription renewals in one app. See where your team visited, who sent each referral and which plans are about to lapse. 14 days free, no card.",
   path: "/",
   keywords: [
     "field tracking software India",
     "referral management software",
     "referral tracking software",
     "partner referral software",
-    "gym referral software",
-    "clinic referral software",
+    "doctor referral tracking",
     "GPS field check-in",
-    "subscription dunning",
+    "subscription renewals",
   ],
 });
 
-const products = [
-  {
-    href: "/product/field",
-    title: "Field",
-    cta: "Field tracking",
-    body: "Geo check-in, visit photos, routes, daily reports, TADA. Evidence, not surveillance.",
-  },
+const workflows = [
   {
     href: "/product/referrals",
-    title: "Referrals",
-    cta: "Referral management",
-    body: "Partners, members, alumni, KOLs. One referrer object from intro to payout.",
+    title: "Track partner referrals",
+    body: "Doctors, members, alumni or channel partners send people your way. See who sent each one and what happened next.",
+  },
+  {
+    href: "/product/field",
+    title: "Manage field visits",
+    body: "Your team checks in with GPS and a photo at every visit, so you see where they went and when.",
   },
   {
     href: "/product/subscriptions",
-    title: "Subscriptions",
-    cta: "Subscription management",
-    body: "Plans, trials, renewals, failed payments. Churn becomes a visit, not an email.",
+    title: "Manage subscriptions",
+    body: "Keep plans, renewals and failed payments next to the person who referred the customer.",
   },
 ];
 
-export default function HomePage() {
+const startingPrice = Math.min(...publicPlans.map((plan) => plan.priceInr));
+
+const buyingQuestions = (days: number) => [
+  {
+    q: "How much does Syclops cost?",
+    a: `From ${formatInr(startingPrice)} per field seat a month. People who refer to you, such as doctors or members, are never billed as seats. Every plan is on the pricing page.`,
+  },
+  {
+    q: "Do I have to talk to sales first?",
+    a: `No. Create a workspace with your email address and business name, and we email you a link to set your password. ${days} days free, no card.`,
+  },
+  {
+    q: "What happens when the free trial ends?",
+    a: "Access stops until you choose a plan. There is no card on file, so nothing is charged automatically. We send an invoice or a payment link for the seats you need.",
+  },
+  {
+    q: "Does it work on my team’s phones?",
+    a: "Yes. Your team installs the Syclops Android app from this site (it isn’t on the Play Store yet), or opens app.syclops.in in any phone’s browser.",
+  },
+  {
+    q: "Is our data kept apart from other companies’ data?",
+    a: "Yes. Each workspace gets its own database, and personal details such as names and phone numbers are encrypted in it.",
+  },
+];
+
+export default async function HomePage() {
+  const days = (await getBillingConfig()).trial.days;
   return (
     <>
       <JsonLd data={jsonLdGraph([softwareNode])} />
-      <section className="relative overflow-hidden border-b border-line">
-        <div className="relative mx-auto max-w-6xl px-5 py-16 sm:py-24">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
-                Field · Referrals · Subscriptions
-              </p>
-              <h1 className="display mt-5 max-w-3xl text-pretty text-4xl font-semibold tracking-tight sm:text-5xl sm:leading-[1.1] lg:text-[3.4rem]">
-                See the visit.
-                <br />
-                Trace the referral.
-                <br />
-                Keep the subscription.
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-                Field tracking, referral management, and subscriptions in one
-                self-serve loop — for gyms, campuses, clinics, sales teams, fintech
-                and medtech. GPS proves the visit. The portal names the intro. The
-                plan still pays.
-              </p>
-              <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
-                <Link
-                  href="/referral-management-software"
-                  className="font-medium text-ink underline decoration-iris/50 underline-offset-4"
-                >
-                  Referral management software
-                </Link>{" "}
-                for partner portals, member-get-member, and clinic or channel
-                referrals, with the visit and the plan on the same record.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href="/start"
-                  className="rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark"
-                >
-                  Start for free
-                </Link>
-                <a
-                  href="#loop"
-                  className="rounded-full border border-line px-5 py-2.5 text-sm text-ink hover:bg-quiet"
-                >
-                  Watch the loop
-                </a>
-                <a
-                  href={androidApp.href}
-                  download={androidApp.filename}
-                  className="rounded-full border border-line px-5 py-2.5 text-sm text-ink hover:bg-quiet"
-                >
-                  Download Android APK
-                </a>
-              </div>
-              <p className="mt-4 text-sm text-muted">
-                Android is ready to install. Google Play Store is coming very soon.{" "}
-                <a href="#interested" className="font-medium text-iris">
-                  I&apos;m interested in using Syclops
-                </a>
-                .
-              </p>
+      <section className="border-b border-line">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-10 pt-8 sm:px-5 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:py-20">
+          <div>
+            <h1 className="display max-w-3xl text-pretty text-[2rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.4rem]">
+              Track field visits, referrals and renewals in one app.
+            </h1>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
+              See where your team visited, who sent each referral and which plans
+              are about to lapse. {days} days free, no card.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+              <Link
+                href="/start?cta=home_hero"
+                data-cta-id="home_hero_trial"
+                data-cta-location="home_hero"
+                className="flex h-12 items-center justify-center rounded-full bg-iris-dark px-6 text-base font-medium text-cream transition hover:bg-iris-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+              >
+                Start free trial
+              </Link>
+              <a
+                href="#how"
+                className="inline-flex min-h-11 items-center justify-center text-base font-medium text-ink underline underline-offset-4"
+              >
+                See how it works
+              </a>
             </div>
+            <p className="mt-6 text-sm text-muted">
+              Invited by your team?{" "}
+              <a
+                href={androidApp.href}
+                download={androidApp.filename}
+                className="font-medium text-ink underline underline-offset-2"
+              >
+                Get the Android app
+              </a>
+            </p>
+          </div>
+          <div className="hidden lg:block">
             <HeroLoop />
           </div>
-          <div className="mt-14">
-            <IndustryMorph />
-          </div>
         </div>
       </section>
 
-      <section className="border-b border-line">
-        <div className="mx-auto grid max-w-6xl gap-4 px-5 py-16 sm:grid-cols-3">
-          <article className="rounded-2xl border border-line bg-cream p-5">
-            <h2 className="text-sm font-medium">What is Syclops?</h2>
-            <p className="mt-2 text-sm leading-6 text-muted">
-              Software that keeps a field visit, a partner or member referral,
-              and a paying plan on one record — then writes a visit when the
-              plan is at risk.
-            </p>
-          </article>
-          <article className="rounded-2xl border border-line bg-cream p-5">
-            <h2 className="text-sm font-medium">Who it is for</h2>
-            <p className="mt-2 text-sm leading-6 text-muted">
-              Gyms, campuses, clinics, sales teams, fintech, and medtech in
-              India that grow through people who refer and staff who visit.
-            </p>
-          </article>
-          <article className="rounded-2xl border border-line bg-cream p-5">
-            <h2 className="text-sm font-medium">What it does not replace</h2>
-            <p className="mt-2 text-sm leading-6 text-muted">
-              Gym ERPs, academic systems, hospital HIS, payroll attendance, or
-              a CRM for long named deals.{" "}
-              <Link href="/compare" className="text-iris">
-                Compare the split
-              </Link>
-              .
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section className="border-b border-line bg-cream">
-        <div className="mx-auto max-w-6xl px-5 py-16">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
-            The broken loop
-          </p>
-          <h2 className="display mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-            Four tools. One leak.
+      <section id="how" className="scroll-mt-20 border-b border-line bg-cream">
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-5 sm:py-16">
+          <h2 className="display text-2xl font-semibold tracking-tight sm:text-3xl">
+            Three things Syclops does
           </h2>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {leaks.map((item) => (
-              <article
-                key={item.from}
-                className="rounded-2xl border border-line bg-paper p-5"
-              >
-                <p className="text-sm font-medium">{item.from}</p>
-                <p className="mt-2 text-sm text-leak">→ {item.to}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="loop" className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
-            The loop
-          </p>
-          <h2 className="display mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-            Visit → Referral → Subscription → Revenue
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
-            Not a hospital funnel. A cycle. When a plan lapses, the field team
-            goes back out.
-          </p>
-          <div className="mt-12">
-            <LoopDiagram />
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-line bg-cream">
-        <div className="mx-auto max-w-6xl px-5 py-16">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
-            Three products, one system
-          </p>
-          <div className="mt-8 grid gap-4 lg:grid-cols-3">
-            {products.map((item) => (
+          <div className="mt-6 grid gap-4 lg:grid-cols-3">
+            {workflows.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-3xl border border-line bg-paper p-6 hover:border-ink/30"
+                className="group flex flex-col rounded-2xl border border-line bg-paper p-5 transition hover:border-ink/40"
               >
-                <h3 className="display text-2xl font-semibold">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-muted">{item.body}</p>
-                <p className="mt-6 text-sm font-medium text-iris">{item.cta}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 py-16">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
-            Roles
-          </p>
-          <h2 className="display mt-3 text-3xl font-semibold tracking-tight">
-            One platform for the people who move revenue.
-          </h2>
-          <Image
-            src={rolesArt}
-            alt="Field staff check in on a visit, sales teams work the pipeline, referral partners track introductions, and management reviews growth on one dashboard."
-            sizes="(min-width: 1152px) 72rem, 100vw"
-            className="mt-8 h-auto w-full rounded-3xl"
-          />
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {roles.map((role) => (
-              <Link
-                key={role.title}
-                href={role.href}
-                className="rounded-3xl border border-line bg-cream p-6"
-              >
-                <h3 className="text-lg font-medium">{role.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-muted">{role.body}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-line bg-cream">
-        <div className="mx-auto max-w-6xl px-5 py-16">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
-            Industries
-          </p>
-          <h2 className="display mt-3 max-w-2xl text-3xl font-semibold tracking-tight">
-            Same loop. Different nouns.
-          </h2>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {industries.map((item) => (
-              <Link
-                key={item.id}
-                href={`/industries/${item.id}`}
-                className="rounded-2xl border border-line bg-paper p-5 hover:border-ink/30"
-              >
-                <IndustryMark id={item.id} />
-                <p className="text-xs uppercase tracking-[0.14em] text-muted">
-                  {item.eyebrow}
-                </p>
-                <h3 className="mt-2 text-lg font-medium">{item.label}</h3>
-                <p className="mt-2 text-sm text-muted">
-                  {item.visit} · {item.referrer} · {item.plan}
+                <h3 className="display text-xl font-semibold">{item.title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-6 text-muted">{item.body}</p>
+                <p className="mt-4 text-sm font-medium text-iris-dark group-hover:underline">
+                  How it works
                 </p>
               </Link>
             ))}
@@ -282,148 +139,38 @@ export default function HomePage() {
       </section>
 
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 py-16">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
-            Mobile
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-5 sm:py-16">
+          <h2 className="display text-2xl font-semibold tracking-tight sm:text-3xl">
+            Built inside a hospital, then opened up
+          </h2>
+          <p className="mt-3 max-w-2xl text-base leading-7 text-muted">
+            Syclops began as the in-house system of a hospital network in
+            Karnataka, where field staff used it every day to log doctor visits
+            and the patients those doctors referred. We turned it into a product
+            any team that grows through visits and referrals can set up on its
+            own.
           </p>
-          <div className="mt-8 grid items-center gap-10 lg:grid-cols-2">
-            <div>
-              <h2 className="display text-3xl font-semibold tracking-tight sm:text-4xl">
-                Field day, partner refer, member plan.
-              </h2>
-              <p className="mt-4 text-base leading-7 text-muted">
-                Three phones, one loop. Staff log the visit. Partners send the
-                person. The plan stays visible without a follow-up call.
-              </p>
-              <div className="mt-6">
-                <AndroidDownload compact />
-              </div>
-              <Link
-                href="/product/mobile"
-                className="mt-5 inline-flex text-sm font-medium text-iris"
-              >
-                Field force mobile app
-              </Link>
-            </div>
-            <div className="grid grid-cols-3 gap-3">
-              {["Visit", "Refer", "Plan"].map((label, index) => (
-                <div
-                  key={label}
-                  className="rounded-[1.6rem] border border-line bg-cream p-3"
-                >
-                  <div className="mx-auto mb-3 h-2 w-10 rounded-full bg-line" />
-                  <p className="text-[11px] uppercase tracking-[0.14em] text-muted">
-                    {label}
-                  </p>
-                  <div className="mt-3 space-y-2">
-                    <div className="h-16 rounded-xl bg-quiet" />
-                    <div className="h-8 rounded-lg bg-quiet/80" />
-                    <div
-                      className={`h-8 rounded-lg ${index === 1 ? "bg-iris/20" : "bg-quiet"}`}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
-      <section className="border-b border-line bg-cream">
-        <div className="mx-auto max-w-6xl px-5 py-16">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
-                Integrations
-              </p>
-              <h2 className="display mt-3 text-3xl font-semibold tracking-tight">
-                Named, not “integration ready.”
-              </h2>
-            </div>
-            <Link href="/integrations" className="text-sm font-medium text-iris">
-              Named integrations
-            </Link>
-          </div>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {integrations.map((item) => (
-              <article
-                key={item.name}
-                className="rounded-2xl border border-line bg-paper p-5"
-              >
-                <h3 className="font-medium">{item.name}</h3>
-                <p className="mt-2 text-sm text-muted">{item.use}</p>
-              </article>
-            ))}
-          </div>
+      <section className="mx-auto max-w-6xl px-4 py-10 sm:px-5 sm:py-16">
+        <h2 className="display text-2xl font-semibold tracking-tight sm:text-3xl">
+          Questions before you start
+        </h2>
+        <div className="mt-6">
+          <FaqList items={buyingQuestions(days)} />
         </div>
-      </section>
-
-      <Section
-        eyebrow="FAQ"
-        title="Referral management software, in short."
-      >
-        <FaqList items={faqs.slice(0, 6)} />
-        <p className="mt-6 text-sm text-muted">
-          More answers on the{" "}
-          <Link href="/faq" className="text-iris">
-            FAQ
-          </Link>
-          , or compare{" "}
-          <Link href="/compare/gps-trackers" className="text-iris">
-            GPS-only trackers
+        <p className="mt-4 text-sm text-muted">
+          See{" "}
+          <Link href="/pricing" className="font-medium text-ink underline underline-offset-2">
+            pricing
+          </Link>{" "}
+          or{" "}
+          <Link href="/faq" className="font-medium text-ink underline underline-offset-2">
+            more answers
           </Link>
           .
         </p>
-      </Section>
-
-      <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 py-16">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
-            Still comparing?
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/compare/whatsapp-excel"
-              className="rounded-full border border-line px-4 py-2 text-sm hover:bg-quiet"
-            >
-              vs WhatsApp + Excel
-            </Link>
-            <Link
-              href="/compare/gps-trackers"
-              className="rounded-full border border-line px-4 py-2 text-sm hover:bg-quiet"
-            >
-              vs GPS-only
-            </Link>
-            <Link
-              href="/compare/crm"
-              className="rounded-full border border-line px-4 py-2 text-sm hover:bg-quiet"
-            >
-              vs CRM
-            </Link>
-          </div>
-          <p className="mt-10 text-sm text-muted">
-            Create a workspace today. Invite seats when you are ready. There is
-            no implementation calendar.
-          </p>
-        </div>
-      </section>
-
-      <section id="interested" className="scroll-mt-24 border-b border-line">
-        <div className="mx-auto grid max-w-6xl items-start gap-12 px-5 py-16 lg:grid-cols-[1fr_0.9fr]">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
-              Interested
-            </p>
-            <h2 className="display mt-3 max-w-xl text-3xl font-semibold tracking-tight sm:text-4xl">
-              Tell us you want to use Syclops.
-            </h2>
-            <p className="mt-4 max-w-xl text-base leading-7 text-muted">
-              Name, email, phone, industry, and business name. We reach you
-              about the field app, referrals, and plans.
-            </p>
-          </div>
-          <InterestForm />
-        </div>
       </section>
 
       <CtaBand />

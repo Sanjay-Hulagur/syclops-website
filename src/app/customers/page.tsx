@@ -1,57 +1,58 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CtaBand, PageHero } from "@/components/page-hero";
 import { FaqList, Related, Section } from "@/components/interior";
 import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = pageSeo({
-  title: "Customer patterns — gyms, campuses, field sales",
+  title: "How teams use Syclops — example workflows",
   description:
-    "How gyms, coaching institutes, clinics, NBFCs, agencies, and medtech teams run field visits, referrals, and plans on Syclops. Patterns, not a logo wall.",
+    "Example Syclops workflows for hospitals, gyms, coaching institutes, lenders, agencies and medtech teams: who visits, who refers, and what gets tracked.",
   path: "/customers",
 });
 
-const stories = [
+const workflows = [
   {
-    title: "80-centre gym chain",
-    industry: "Gyms",
-    quote:
-      "Member referrals used to live on a whiteboard at reception. Now a join is a membership with a referrer, and churn writes a trainer visit.",
-    loop: "Trainer visit → member intro → Gold annual",
-  },
-  {
-    title: "Regional coaching institute",
-    industry: "Education",
-    quote:
-      "Counselors covered 40 campuses. Accounts collected fees. Nobody could say which alumni intro still paid. That is the first report we look at.",
-    loop: "Campus visit → alumni intro → term fee",
-  },
-  {
-    title: "Medtech clinical team",
-    industry: "Medtech",
-    quote:
-      "KOL visits were in a field app. Contracts were in email. Service plans were somewhere else. The loop is why finance trusts the pipeline.",
-    loop: "KOL visit → department referral → service plan",
-  },
-  {
-    title: "NBFC field force",
-    industry: "Fintech",
-    quote:
-      "Lapses hid in the insurer portal. Agents reported on a call. Family referrals now keep the premium and the original agent on the same record.",
-    loop: "Home visit → family referral → monthly premium",
-  },
-  {
-    title: "Agency retainers",
-    industry: "Sales",
-    quote:
-      "Channel partners forwarded leads in WhatsApp. Won deals never paid the partner. The retainer now carries the intro.",
-    loop: "Dealer visit → partner lead → monthly retainer",
-  },
-  {
-    title: "Diagnostic collection",
     industry: "Healthcare",
-    quote:
-      "Partner clinics asked for patient status every afternoon. The portal ended the calls. Lapsed plans go back on the officer’s beat.",
-    loop: "Clinic visit → patient referral → care plan",
+    title: "Hospital doctor referrals",
+    body: "PROs visit referring doctors and log each visit with GPS and a photo. Each referred patient is recorded against the doctor, and the status moves as the patient arrives, is admitted and is discharged. Syclops was first built for this workflow.",
+    flow: ["Doctor visit", "Patient referral", "Admission"],
+    href: "/industries/healthcare",
+  },
+  {
+    industry: "Gyms",
+    title: "Member referrals at a gym",
+    body: "Trainers log visits to corporate partners. Members refer friends, and each join keeps the member who sent them, so you can see which referrals became memberships that renew.",
+    flow: ["Trainer visit", "Member intro", "Membership"],
+    href: "/industries/gyms",
+  },
+  {
+    industry: "Education",
+    title: "Admissions at a coaching institute",
+    body: "Counselors visit schools and centres. Alumni and parents refer students, and each admission keeps the person who referred it next to the fee plan.",
+    flow: ["Campus visit", "Alumni intro", "Term fee"],
+    href: "/industries/education",
+  },
+  {
+    industry: "Fintech",
+    title: "Field agents at a lender or insurer",
+    body: "Agents log home visits with GPS. Family referrals keep the original agent on the record, and a missed payment can become the next visit.",
+    flow: ["Home visit", "Family referral", "Monthly premium"],
+    href: "/industries/fintech",
+  },
+  {
+    industry: "Sales",
+    title: "Channel partners at an agency",
+    body: "Sales staff visit dealers. Each partner lead is recorded with the partner who sent it, so a won deal still shows where it came from.",
+    flow: ["Dealer visit", "Partner lead", "Monthly retainer"],
+    href: "/industries/sales",
+  },
+  {
+    industry: "Medtech",
+    title: "Clinical teams and hospital departments",
+    body: "Representatives log visits to hospitals and doctors. Department referrals and the service plan that follows stay on one record.",
+    flow: ["Hospital visit", "Department referral", "Service plan"],
+    href: "/industries/medtech",
   },
 ];
 
@@ -59,42 +60,57 @@ export default function CustomersPage() {
   return (
     <>
       <PageHero
-        eyebrow="Customers"
-        title="The loop, in the wild."
-        body="Shapes of teams running field work, referrals, and plans together — without a CSM in Slack. Names are pattern, not a logo wall."
+        eyebrow="Examples"
+        title="How teams use Syclops"
+        body="Example setups, industry by industry: who visits, who refers, and what gets tracked. These are examples, not named customers."
         scene="customers"
         crumbs={[
           { name: "Home", path: "/" },
-          { name: "Customers", path: "/customers" },
+          { name: "How teams use Syclops", path: "/customers" },
         ]}
       />
       <Section>
         <div className="grid gap-4 lg:grid-cols-3">
-          {stories.map((story) => (
-            <blockquote
-              key={story.title}
-              className="rounded-3xl border border-line bg-cream p-6"
+          {workflows.map((item) => (
+            <article
+              key={item.title}
+              className="flex flex-col rounded-3xl border border-line bg-cream p-6"
             >
-              <p className="text-xs uppercase tracking-[0.14em] text-iris">
-                {story.industry}
+              <p className="text-xs font-medium uppercase tracking-[0.14em] text-iris-dark">
+                {item.industry}
               </p>
-              <p className="mt-2 font-medium">{story.title}</p>
-              <p className="mt-4 text-sm leading-7">{story.quote}</p>
-              <p className="mt-4 text-xs text-muted">{story.loop}</p>
-            </blockquote>
+              <h2 className="mt-2 text-lg font-semibold">{item.title}</h2>
+              <p className="mt-3 flex-1 text-sm leading-6 text-muted">{item.body}</p>
+              <ol className="mt-4 flex flex-wrap items-center gap-1.5 text-xs text-ink">
+                {item.flow.map((step, index) => (
+                  <li key={step} className="flex items-center gap-1.5">
+                    {index > 0 ? <span aria-hidden="true" className="text-muted">→</span> : null}
+                    <span className="rounded-full border border-line bg-paper px-2.5 py-1">
+                      {step}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+              <Link
+                href={item.href}
+                className="mt-5 text-sm font-medium text-ink underline underline-offset-2"
+              >
+                {item.industry} in detail
+              </Link>
+            </article>
           ))}
-          </div>
+        </div>
       </Section>
       <Section eyebrow="FAQ">
         <FaqList
           items={[
             {
-              q: "Are these named customers?",
-              a: "No. They are shapes of teams running the loop. This site does not publish a logo wall.",
+              q: "Are these real customers?",
+              a: "No. They are example setups, not named customers. Syclops itself began as the in-house system of a hospital network’s referral team.",
             },
             {
-              q: "Can I run the same loop?",
-              a: "Yes. Create a workspace, pick the industry, invite seats. The product is the same one they use.",
+              q: "Can I set up the same workflow?",
+              a: "Yes. Start a free trial with your email address and business name, then add your team and the people who refer to you.",
             },
           ]}
         />
@@ -102,8 +118,8 @@ export default function CustomersPage() {
       <Section eyebrow="Next">
         <Related
           items={[
-            { href: "/industries", label: "Industries", body: "Pick your nouns." },
-            { href: "/start", label: "Start", body: "Same product they use." },
+            { href: "/industries", label: "Industries", body: "The same product in your industry’s words." },
+            { href: "/start?cta=customers", label: "Start free trial", body: "No card and no sales call." },
             { href: "/compare", label: "Compare", body: "Why not GPS-only." },
           ]}
         />

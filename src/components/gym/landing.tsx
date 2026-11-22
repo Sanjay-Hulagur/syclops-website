@@ -18,7 +18,7 @@ import { formatInr, publicPlans } from "@/lib/plans";
 import { faqJsonLd } from "@/lib/seo";
 
 const primary =
-  "inline-flex items-center justify-center rounded-full bg-iris px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-dark";
+  "inline-flex items-center justify-center rounded-full bg-iris-dark px-5 py-2.5 text-sm font-medium text-cream hover:bg-iris-deep";
 const textLink = "font-medium text-iris hover:text-iris-dark";
 
 const problems: {
@@ -110,11 +110,11 @@ function gymFaqs(trialDays: number) {
     },
     {
       q: "How much does Syclops cost for gyms?",
-      a: `Team is ${formatInr(team.priceInr)}, Growth is ${formatInr(growth.priceInr)}, and Scale is ${formatInr(scale.priceInr)}, each per field seat per month. Member and referrer logins are not billed as field seats. Annual terms discount 15% at checkout. The full comparison is on the pricing page.`,
+      a: `Team is ${formatInr(team.priceInr)}, Growth is ${formatInr(growth.priceInr)}, and Scale is ${formatInr(scale.priceInr)}, each per field seat per month. Member and referrer logins are not billed as field seats. The full comparison is on the pricing page.`,
     },
     {
       q: "Can I start with field tracking and add referrals later?",
-      a: "Yes. Team includes field tracking, TADA, and a referral workspace. Move to Growth in Settings when you want the member portal, subscription plans, dunning, and referral rewards. History stays.",
+      a: "Yes. Team includes field tracking, TADA, and a referral workspace. Tell us when you want Growth for the member portal, subscription plans, dunning, and referral rewards. History stays.",
     },
     {
       q: "How long does setup take?",
@@ -176,7 +176,7 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
                 params={{ placement: "hero" }}
                 className={`${primary} gap-2 px-5 py-3 ${gymFocus}`}
               >
-                Start your free trial
+                Start free trial
                 <span aria-hidden="true">→</span>
               </GymLink>
               <GymLink
@@ -538,7 +538,7 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="display text-2xl font-semibold">{plan.name}</h3>
                   {plan.featured ? (
-                    <p className="rounded-full bg-iris px-2.5 py-1 text-[11px] font-medium text-cream">
+                    <p className="rounded-full bg-iris-dark px-2.5 py-1 text-[11px] font-medium text-cream">
                       Recommended
                     </p>
                   ) : null}
@@ -558,11 +558,11 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
                   params={{ plan: plan.name.toLowerCase() }}
                   className={`mt-8 rounded-full px-4 py-2.5 text-center text-sm font-medium ${gymFocus} ${
                     plan.featured
-                      ? "bg-iris text-cream hover:bg-iris-dark"
+                      ? "bg-iris-dark text-cream hover:bg-iris-deep"
                       : "border border-line hover:bg-quiet"
                   }`}
                 >
-                  Start your free trial
+                  Start free trial
                 </GymLink>
               </article>
             ))}

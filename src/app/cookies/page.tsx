@@ -18,7 +18,7 @@ export default function CookiesPage() {
       <PageHero
         eyebrow="Legal"
         title="Cookie policy"
-        body="Essential cookies, a first-party visitor id, and no advertising cookies."
+        body="Essential cookies, a first-party visitor id, and Google’s ad measurement. Nothing here is used to show you ads."
         scene="legal"
         cta={false}
         crumbs={[
