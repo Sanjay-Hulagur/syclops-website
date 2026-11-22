@@ -47,7 +47,7 @@ export default async function DoctorReferralLandingPage() {
     },
     {
       q: "Does it work on our PROs’ Android phones?",
-      a: "Yes. PROs install the Syclops Android app from our website (it isn’t on the Play Store yet), or open app.syclops.in in the phone’s browser. Visits use the phone’s GPS and camera.",
+      a: "Yes. PROs install the Syclops Android app from our website, or open app.syclops.in in the phone’s browser. Visits use the phone’s GPS and camera.",
     },
     {
       q: `What happens after ${days} days?`,
@@ -107,7 +107,7 @@ export default async function DoctorReferralLandingPage() {
         </h2>
         <p className="mt-3 max-w-2xl text-base leading-7 text-muted">
           Syclops began as the in-house system of a hospital network in
-          Karnataka, where PROs used it every day to log doctor visits and the
+          India, where PROs used it every day to log doctor visits and the
           patients those doctors referred. We turned it into a product any
           hospital can set up on its own.
         </p>

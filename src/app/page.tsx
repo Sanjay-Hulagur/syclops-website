@@ -59,7 +59,7 @@ const buyingQuestions = (days: number) => [
   },
   {
     q: "Does it work on my team’s phones?",
-    a: "Yes. Your team installs the Syclops Android app from this site (it isn’t on the Play Store yet), or opens app.syclops.in in any phone’s browser.",
+    a: "Yes. Your team installs the Syclops Android app from this site, or opens app.syclops.in in any phone’s browser.",
   },
   {
     q: "Is our data kept apart from other companies’ data?",
@@ -72,8 +72,8 @@ export default async function HomePage() {
   return (
     <>
       <JsonLd data={jsonLdGraph([softwareNode])} />
-      <section className="border-b border-line">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-10 pt-8 sm:px-5 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:py-20">
+      <section className="border-b border-line lg:flex lg:min-h-[calc(100svh-65px)] lg:items-center">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-10 pt-8 sm:px-5 sm:py-16 lg:w-full lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:py-20">
           <div>
             <h1 className="display max-w-3xl text-pretty text-[2rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.4rem]">
               Track field visits, referrals and renewals in one app.
@@ -145,7 +145,7 @@ export default async function HomePage() {
           </h2>
           <p className="mt-3 max-w-2xl text-base leading-7 text-muted">
             Syclops began as the in-house system of a hospital network in
-            Karnataka, where field staff used it every day to log doctor visits
+            India, where field staff used it every day to log doctor visits
             and the patients those doctors referred. We turned it into a product
             any team that grows through visits and referrals can set up on its
             own.

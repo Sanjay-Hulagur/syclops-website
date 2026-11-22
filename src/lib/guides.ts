@@ -32,7 +32,7 @@ export const guides = [
     steps: [
       { title: "Copy the invite", body: "Settings → Team → Invite. One link per role, or unique emails." },
       { title: "Managers see the loop", body: "They get analytics, TADA approval, and plan settings. They do not need a beat." },
-      { title: "Field installs the app", body: "Download the Android APK from the site. Google Play Store is coming very soon. The invite carries the tenant." },
+      { title: "Field installs the app", body: "Download the Android APK from the site. The invite carries the tenant." },
       { title: "Partners stay free", body: "Share the portal URL. They never consume a seat." },
     ],
     faqs: [
@@ -247,7 +247,7 @@ export const faqs = [
   },
   {
     q: "Where is the Android app?",
-    a: "Download the APK from the mobile app page. Google Play Store is coming very soon. Partners can also use the mobile web portal.",
+    a: "Download the APK from the mobile app page. Partners can also use the mobile web portal.",
   },
   {
     q: "How is this different from GPS tracking?",

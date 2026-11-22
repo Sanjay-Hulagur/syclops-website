@@ -7,7 +7,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata: Metadata = pageSeo({
   title: "Field force mobile app for visits, referrals, and plans",
   description:
-    "Download the Syclops Android APK for field check-in, TADA, and referrals. Google Play Store is coming very soon. Offline-tolerant for rural routes and clinic basements.",
+    "Download the Syclops Android APK for field check-in, TADA, and referrals. Offline-tolerant for rural routes and clinic basements.",
   path: "/product/mobile",
   keywords: [
     "field force mobile app",
@@ -42,8 +42,8 @@ export default function MobilePage() {
             GPS — they send, they see status, they get paid.
           </p>
           <p>
-            Android installs from the APK on this page. Google Play Store is
-            coming very soon. Partners can also use the mobile web portal. BYOD
+            Android installs from the APK on this page. Partners can also use
+            the mobile web portal. BYOD
             is expected: device GPS is used only on a checked-in working day.
             Languages follow the labels you set for visit, referrer, and plan.
           </p>
@@ -53,7 +53,7 @@ export default function MobilePage() {
         <Steps
           items={[
             { title: "Create the workspace", body: "On the web. Then invite." },
-            { title: "Install the APK", body: "Download Android now. Play Store is coming very soon." },
+            { title: "Install the APK", body: "Download the Android app from this page and open your invite." },
             { title: "Open the invite", body: "The link carries the tenant. No typing a company code." },
             { title: "Work offline", body: "Queue visits and photos. Sync when the radio returns." },
           ]}
@@ -88,7 +88,7 @@ export default function MobilePage() {
           items={[
             {
               q: "Where is the Android app?",
-              a: "Download the APK on this page. Google Play Store is coming very soon. Partners can also use the mobile web portal.",
+              a: "Download the APK on this page. Partners can also use the mobile web portal.",
             },
             { q: "BYOD?", a: "Yes. Device GPS is used only on a checked-in day." },
             { q: "Does the partner app track location?", a: "No. Partners send referrals and see payouts. They never consume a field seat." },

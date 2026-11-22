@@ -42,7 +42,7 @@ const pillars = [
   {
     href: "/product/mobile",
     title: "Mobile app",
-    body: "Field staff install the Android app today. Google Play Store is coming very soon. Managers stay on the web.",
+    body: "Field staff install the Android app today. Managers stay on the web.",
   },
   {
     href: "/integrations",
@@ -202,7 +202,7 @@ export default function ProductPage() {
             },
             {
               q: "What do field staff install?",
-              a: "The Android app is ready to install now. Google Play Store is coming very soon. Managers use the website.",
+              a: "The Android app is ready to install now. Managers use the website.",
             },
             {
               q: "Do you run the setup for us?",
