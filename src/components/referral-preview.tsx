@@ -18,7 +18,7 @@ export function ReferralPreview() {
             Sample data
           </span>
         </div>
-        <p className="display mt-3 text-xl font-semibold">R.K., 54</p>
+        <p className="display mt-3 text-xl font-semibold">R. Kumar, 54</p>
         <p className="text-sm text-muted">Knee pain · preferred visit 11 Nov</p>
         <dl className="mt-4 grid gap-2 text-sm">
           <div className="grid grid-cols-[5.5rem_1fr] gap-2">

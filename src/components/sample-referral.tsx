@@ -4,7 +4,7 @@ import { useId, useState } from "react";
 
 const ROWS: [string, string][] = [
   ["Referred by", "Dr S. Rao, general physician, Kukatpally"],
-  ["Patient", "R.K., 54"],
+  ["Patient", "R. Kumar, 54"],
   ["Logged by", "Asha (PRO)"],
 ];
 
