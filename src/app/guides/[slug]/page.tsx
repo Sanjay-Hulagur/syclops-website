@@ -49,7 +49,7 @@ const guideProductLinks: Record<
   ],
   "plans-billing": [
     { href: "/product/subscriptions", label: "Subscriptions", body: "Plans, dunning, field tasks." },
-    { href: "/integrations", label: "Integrations", body: "Razorpay, Stripe, WhatsApp, Maps." },
+    { href: "/integrations", label: "Integrations", body: "Razorpay, WhatsApp, Maps." },
   ],
   reports: [
     { href: "/product/analytics", label: "Analytics", body: "Loop health and people." },

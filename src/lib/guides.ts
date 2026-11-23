@@ -27,7 +27,7 @@ export const guides = [
     summary: "Paid seats are field and managers. Partners use a free portal link.",
     intro: [
       "Field seats check in, log visits, and appear on TADA. Managers see the loop, approve expenses, and change plans. Referral partners never consume a seat — they get a portal URL.",
-      "The invite carries the tenant. Staff do not type a company code. iOS and Android both open the same workspace.",
+      "The invite carries the tenant. Staff do not type a company code. The Android app and the web app open the same workspace.",
     ],
     steps: [
       { title: "Copy the invite", body: "Settings → Team → Invite. One link per role, or unique emails." },
@@ -84,7 +84,7 @@ export const guides = [
     slug: "plans-billing",
     title: "Set up plans, Razorpay, and dunning",
     scene: "subscription" as const,
-    summary: "Connect Razorpay or Stripe. Plans, dunning, and rewards attach to those payments.",
+    summary: "Connect Razorpay. Plans, dunning, and rewards attach to those payments.",
     intro: [
       "Subscriptions in Syclops remember who referred them and which visit closed. A failed debit is not only a retry email — after your retry schedule, it can write a field task for the owner of that beat.",
       "Cash and UPI collections marked by staff still attach to the plan and the referrer. If you already bill in another tool, connect the gateway or import invoices; origin still lives here.",
@@ -97,7 +97,7 @@ export const guides = [
     ],
     faqs: [
       { q: "Can we collect cash at the desk?", a: "Yes. Staff mark the collection. It still attaches to the plan and the referrer." },
-      { q: "Which gateways?", a: "Razorpay and Stripe. Tax labels and who can void live in Settings." },
+      { q: "Which gateways?", a: "Razorpay for online payments. Staff can also record cash, UPI and EMI payments." },
     ],
   },
   {

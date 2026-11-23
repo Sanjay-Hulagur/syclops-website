@@ -192,7 +192,7 @@ function medtechFaqs(trialDays: number) {
     },
     {
       q: "Can we track service windows and lapsed contracts?",
-      a: "On Growth, a service plan shows the amount, the interval, and whether it is paid, failed, or due soon. After the retry schedule you set, a failed payment can become a follow-up for the rep who owns that hospital. You can connect Razorpay or Stripe, or mark a collection in the workspace. Syclops does not replace your ERP invoices, and it does not collect fees unless a gateway is connected.",
+      a: "On Growth, a service plan shows the amount, the interval, and whether it is paid, failed, or due soon. After the retry schedule you set, a failed payment can become a follow-up for the rep who owns that hospital. You can connect Razorpay, or mark a collection in the workspace. Syclops does not replace your ERP invoices, and it does not collect fees unless a gateway is connected.",
     },
     {
       q: "Are KOL and department logins billed?",
@@ -449,7 +449,7 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Payment status",
-                  body: "Paid, failed, and due soon stay on the record after you connect Razorpay or Stripe, or when staff mark a collection.",
+                  body: "Paid, failed, and due soon stay on the record after you connect Razorpay, or when staff mark a collection.",
                 },
                 {
                   title: "Pending amount",

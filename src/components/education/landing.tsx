@@ -188,7 +188,7 @@ function educationFaqs(trialDays: number) {
     },
     {
       q: "Can we track fee installments and pending payments?",
-      a: "On Growth, a fee plan shows the amount, the interval, and whether it is paid, failed, or due soon. After the retry schedule you set, a failed payment can become a follow-up for the counselor who owns that student. You can connect Razorpay or Stripe, or mark cash and UPI in the workspace. Syclops does not replace your accounts system, and it does not collect fees unless a gateway is connected.",
+      a: "On Growth, a fee plan shows the amount, the interval, and whether it is paid, failed, or due soon. After the retry schedule you set, a failed payment can become a follow-up for the counselor who owns that student. You can connect Razorpay, or mark cash and UPI in the workspace. Syclops does not replace your accounts system, and it does not collect fees unless a gateway is connected.",
     },
     {
       q: "Are parent and alumni accounts billed?",
@@ -449,7 +449,7 @@ export function EducationLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Payment status",
-                  body: "Paid, failed, and due soon stay on the record after you connect Razorpay or Stripe, or when staff mark cash or UPI.",
+                  body: "Paid, failed, and due soon stay on the record after you connect Razorpay, or when staff mark cash or UPI.",
                 },
                 {
                   title: "Pending amount",

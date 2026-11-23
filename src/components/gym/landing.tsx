@@ -102,7 +102,7 @@ function gymFaqs(trialDays: number) {
     },
     {
       q: "Can I track failed membership payments?",
-      a: "Yes, on Growth. Subscription plans show paid, failed, and due soon. After the retry schedule you configure, a failed payment can become a follow-up task for the trainer who owns that member. Syclops connects Razorpay or Stripe. It does not replace invoices in your gym software.",
+      a: "Yes, on Growth. Subscription plans show paid, failed, and due soon. After the retry schedule you configure, a failed payment can become a follow-up task for the trainer who owns that member. Syclops connects Razorpay. It does not replace invoices in your gym software.",
     },
     {
       q: "Can trainers check in using GPS?",
@@ -436,7 +436,7 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Failed payment visibility",
-                  body: "Paid, failed, and due soon stay on the membership after you connect Razorpay or Stripe.",
+                  body: "Paid, failed, and due soon stay on the membership after you connect Razorpay.",
                 },
                 {
                   title: "Follow-up task management",

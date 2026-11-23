@@ -60,7 +60,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Cash and desk collections still happen in India. Staff mark the collection. It attaches to the plan and the referrer. Origin does not die because the money did not come through Razorpay or Stripe. A renewal taken at a gym reception, a fee taken at a campus window, a programme fee taken at a clinic — each one should leave the introduction intact. Otherwise finance books an organic renewal and the referrer, correctly, feels cheated.",
+      text: "Cash and desk collections still happen in India. Staff mark the collection. It attaches to the plan and the referrer. Origin does not die because the money did not come through Razorpay. A renewal taken at a gym reception, a fee taken at a campus window, a programme fee taken at a clinic — each one should leave the introduction intact. Otherwise finance books an organic renewal and the referrer, correctly, feels cheated.",
     },
     {
       type: "p",

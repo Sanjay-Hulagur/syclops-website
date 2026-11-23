@@ -1,5 +1,5 @@
 export const LEGAL_EMAIL = "syclops.team@gmail.com";
-export const LEGAL_UPDATED = "22 November 2026";
+export const LEGAL_UPDATED = "23 November 2026";
 
 export type LegalId = "privacy" | "terms" | "cookies" | "refund";
 
@@ -60,7 +60,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
               "Field work: check-in and check-out, routes, visit notes, optional photos, travel and allowance (TADA) sheets, and the accounts those visits belong to.",
               "Location: collected for check-in, routes, and TADA while staff are on a working day, between check-in and check-out. Referral partners do not see GPS. A field seat sees their own day unless the organization grants a manager role. How long location is kept is a setting in the workspace.",
               "Referrals and subscriptions: referrer identity, referral status, plan and invoice metadata, and the records needed to show whether a referred person converted and whether a plan still pays.",
-              "Keys you connect: credentials you paste for WhatsApp, Razorpay, Stripe, or Maps, stored so those connections run inside your workspace.",
+              "Keys you connect: credentials you paste for WhatsApp, Razorpay, or Maps, stored so those connections run inside your workspace.",
               "Usage and device: IP address, device and app identifiers, browser type, pages or screens used, timestamps, and diagnostic logs.",
               "Marketing site analytics: a random visitor id and session id, pages viewed, URL parameters, clicks, the referring site, approximate location derived from the IP address, and diagnostic errors (the status, path, and a short message). The marketing site does not ask for your device location. Form contents are not stored in these events.",
               "Ad measurement: when you create a workspace, we save the Google Ads click id and campaign tags from the link that brought you, so we can tell which of our ads lead to workspaces. Google’s tag also sends Google Ads an encoded (hashed) copy of the email address you signed up with, so Google can count the signup for our ads. Google calls this enhanced conversions.",
@@ -264,7 +264,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "WhatsApp, Razorpay, Stripe, Maps, and similar tools run when you connect them. Their terms, and the fees they charge, are theirs. Syclops is not responsible for an outage or a charge that originates with a provider you connected.",
+            text: "WhatsApp, Razorpay, Maps, and similar tools run when you connect them. Their terms, and the fees they charge, are theirs. Syclops is not responsible for an outage or a charge that originates with a provider you connected.",
           },
         ],
       },

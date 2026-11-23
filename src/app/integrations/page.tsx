@@ -5,14 +5,13 @@ import { pageSeo } from "@/lib/seo";
 import { integrations } from "@/lib/site";
 
 export const metadata: Metadata = pageSeo({
-  title: "Integrations — WhatsApp, Razorpay, Stripe, Maps",
+  title: "Integrations — WhatsApp, Razorpay, Maps",
   description:
-    "Connect WhatsApp Business, Razorpay, Stripe, Google Maps, and billing or HIS on Scale. Paste keys in Settings. No partner engineer.",
+    "Connect WhatsApp Business, Razorpay, Google Maps, and billing or HIS on Scale. Paste keys in Settings. No partner engineer.",
   path: "/integrations",
   keywords: [
     "Razorpay gym software",
     "WhatsApp Business API field",
-    "Stripe subscriptions India",
     "Google Maps field routes",
   ],
 });
@@ -35,8 +34,8 @@ export default function IntegrationsPage() {
         <Prose>
           <p>
             WhatsApp Business for referral status and failed-payment templates —
-            you own the WABA. Razorpay and Stripe for plan enrollments,
-            retries, and referral credits. Google Maps for geocoding, routes,
+            you own the WABA. Razorpay for online plan payments. Google Maps
+            for geocoding, routes,
             and visit map PDFs. Billing, HIS, or ERP connectors on Scale so
             invoices can flow in while origin stays here.
           </p>
@@ -68,7 +67,7 @@ export default function IntegrationsPage() {
         <FeatureGrid
           items={[
             { title: "WhatsApp Business", body: "Templates for referral status and failed payments. You own the WABA." },
-            { title: "Razorpay & Stripe", body: "Plans, retries, referral credits on the next invoice." },
+            { title: "Razorpay", body: "Online payments for membership plans." },
             { title: "Maps", body: "Geocode accounts, draw routes, export visit map PDFs." },
             { title: "HIS / ERP", body: "Scale. Invoices and admissions in, origin stays here." },
           ]}
@@ -96,7 +95,7 @@ export default function IntegrationsPage() {
       <Section eyebrow="Next">
         <Related
           items={[
-            { href: "/guides/plans-billing", label: "Billing guide", body: "Razorpay / Stripe first." },
+            { href: "/guides/plans-billing", label: "Billing guide", body: "Razorpay first." },
             { href: "/security", label: "Security", body: "Where keys and GPS live." },
             { href: "/start", label: "Start", body: "You need a workspace before keys." },
           ]}

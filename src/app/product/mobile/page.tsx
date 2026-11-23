@@ -12,7 +12,7 @@ export const metadata: Metadata = pageSeo({
   keywords: [
     "field force mobile app",
     "offline field tracking",
-    "iOS Android field app",
+    "Android field app",
     "partner referral app",
   ],
 });

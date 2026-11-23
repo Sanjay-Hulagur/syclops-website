@@ -188,7 +188,7 @@ function fintechFaqs(trialDays: number) {
     },
     {
       q: "Can we track lapsed premiums and pending payments?",
-      a: "On Growth, a plan shows the amount, the interval, and whether it is paid, failed, or due soon. After the retry schedule you set, a failed payment can become a follow-up for the agent who owns that customer. You can connect Razorpay or Stripe, or mark cash and UPI. Syclops does not replace core accounting, and it does not collect money unless a gateway is connected.",
+      a: "On Growth, a plan shows the amount, the interval, and whether it is paid, failed, or due soon. After the retry schedule you set, a failed payment can become a follow-up for the agent who owns that customer. You can connect Razorpay, or mark cash and UPI. Syclops does not replace core accounting, and it does not collect money unless a gateway is connected.",
     },
     {
       q: "Are customer and DSA accounts billed?",
@@ -449,7 +449,7 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Payment status",
-                  body: "Paid, failed, and due soon stay on the record after you connect Razorpay or Stripe, or when staff mark cash or UPI.",
+                  body: "Paid, failed, and due soon stay on the record after you connect Razorpay, or when staff mark cash or UPI.",
                 },
                 {
                   title: "Pending amount",

@@ -6,7 +6,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata: Metadata = pageSeo({
   title: "Subscription management with dunning that creates field visits",
   description:
-    "Syclops subscription software for memberships, fees, retainers, and policies. Razorpay or Stripe retries, then at-risk plans become a beat — not only a dunning email.",
+    "Syclops subscription software for memberships, fees, retainers, and policies. Razorpay retries, then at-risk plans become a beat — not only a dunning email.",
   path: "/product/subscriptions",
   keywords: [
     "subscription management software",
@@ -63,7 +63,7 @@ export default function SubscriptionsPage() {
             { title: "Trials and freezes", body: "Rules you set. No spreadsheet of exceptions." },
             { title: "Dunning", body: "Retry schedule, then a field task if it still fails." },
             { title: "Rewards", body: "Referrer credit on the next successful invoice." },
-            { title: "Cash and UPI", body: "Razorpay, Stripe, or a desk collection marked by staff." },
+            { title: "Cash and UPI", body: "Razorpay, or a desk collection marked by staff." },
             { title: "Export", body: "For accounts. Tally-friendly CSV on Scale." },
           ]}
         />
@@ -86,7 +86,7 @@ export default function SubscriptionsPage() {
             { q: "Can we collect cash?", a: "Yes. Staff mark the collection. It still attaches to the plan and the referrer." },
             { q: "What if we already bill in another tool?", a: "Connect the gateway or import invoices. Origin still lives in Syclops." },
             { q: "Does this replace gym or school billing?", a: "Not the operational ERP. Syclops is the plan tied to visits and referrers, with dunning that can create field work." },
-            { q: "Which payment gateways?", a: "Razorpay and Stripe. Test keys first in Settings → Integrations." },
+            { q: "Which payment gateways?", a: "Razorpay. Test keys first in Settings → Integrations." },
           ]}
         />
       </Section>

@@ -100,8 +100,8 @@ export function Footer() {
         <div className="border-b border-line pb-6 sm:border-0 sm:pb-0 lg:col-span-2">
           <Logo />
           <p className="mt-4 max-w-xs text-sm leading-6 text-muted">
-            Field visits, partner referrals and subscription renewals in one
-            app. Made in India.
+            Field visits, partner referrals and membership plans in one app.
+            Made in India.
           </p>
           <p className="mt-4 text-sm text-muted">
             Support:{" "}

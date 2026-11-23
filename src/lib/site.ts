@@ -87,7 +87,7 @@ export const roles = [
 
 export const integrations = [
   { name: "WhatsApp Business", use: "Templates, campaigns, and conversation logs" },
-  { name: "Razorpay & Stripe", use: "Plan enrollments, renewals, and referral rewards" },
+  { name: "Razorpay", use: "Online payments for plan enrollments" },
   { name: "Google Maps", use: "Geocoding, routes, and visit map PDFs" },
   { name: "Billing / HIS / ERP", use: "Admissions, invoices, and membership ledgers" },
   { name: "Accounting", use: "TADA, collections, and payout exports" },

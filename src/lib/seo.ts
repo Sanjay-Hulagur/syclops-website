@@ -98,14 +98,14 @@ export const softwareNode = {
   url: site.url,
   applicationCategory: "BusinessApplication",
   applicationSubCategory: "Referral Management Software",
-  operatingSystem: "Web, iOS, Android",
+  operatingSystem: "Web, Android",
   description: site.description,
   featureList: [
     "GPS field check-in, routes, and TADA",
     "Partner and member referral portal",
     "Referral status from sent to paying",
-    "Referral rewards on invoices",
-    "Subscription plans and dunning that create field tasks",
+    "Referral payouts calculated from uploaded bills",
+    "Membership plans with online, cash, UPI and EMI payments",
     "Loop health analytics",
   ],
   offers: {

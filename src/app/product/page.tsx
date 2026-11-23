@@ -47,7 +47,7 @@ const pillars = [
   {
     href: "/integrations",
     title: "Integrations",
-    body: "WhatsApp, Razorpay, Stripe, maps, and billing. You paste the keys in Settings. Nothing is wired by a specialist.",
+    body: "WhatsApp, Razorpay, maps, and billing. You paste the keys in Settings. Nothing is wired by a specialist.",
   },
 ];
 
@@ -81,8 +81,8 @@ export default function ProductPage() {
           </p>
           <p>
             Syclops is for that missing picture. You create a workspace,
-            invite field staff, share a partner page, and connect Razorpay or
-            Stripe. Field visits and referrals are enough on the Team plan.
+            invite field staff, share a partner page, and connect Razorpay.
+            Field visits and referrals are enough on the Team plan.
             Subscriptions open on Growth.
           </p>
         </Prose>
@@ -167,7 +167,7 @@ export default function ProductPage() {
               "Invite field staff and managers",
               "Add accounts from a spreadsheet",
               "Share the partner page by link or QR code",
-              "Connect WhatsApp, maps, and Razorpay or Stripe",
+              "Connect WhatsApp, maps, and Razorpay",
               "Turn on plans when you are ready for subscriptions",
             ]}
           />

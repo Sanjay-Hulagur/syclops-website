@@ -206,7 +206,7 @@ function salesFaqs(trialDays: number) {
     },
     {
       q: "Can we manage recurring contracts and renewals?",
-      a: "On Growth, a plan shows the account, the referrer, the amount, the next date, and whether it is paid, failed, or due soon after you connect Razorpay or Stripe, or when staff mark cash or UPI. Syclops does not replace your accounting system, and it does not recover a renewal by itself. After the retry schedule you set, a failed payment can become a follow-up for the person who owns that account.",
+      a: "On Growth, a plan shows the account, the referrer, the amount, the next date, and whether it is paid, failed, or due soon after you connect Razorpay, or when staff mark cash or UPI. Syclops does not replace your accounting system, and it does not recover a renewal by itself. After the retry schedule you set, a failed payment can become a follow-up for the person who owns that account.",
     },
     {
       q: "Can managers approve TADA?",
@@ -501,7 +501,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Payment status, where supported",
-                  body: "Paid, failed, and due soon appear after you connect Razorpay or Stripe, or when staff mark cash or UPI.",
+                  body: "Paid, failed, and due soon appear after you connect Razorpay, or when staff mark cash or UPI.",
                 },
                 {
                   title: "Follow-up status",
