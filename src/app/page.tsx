@@ -58,8 +58,8 @@ const workflows = [
 ];
 
 const extras = [
-  "TADA claims",
-  "WhatsApp reminders",
+  "TA/DA from GPS distance",
+  "WhatsApp campaigns",
   "PDF visit reports",
   "Android app and web",
   "Razorpay payments",

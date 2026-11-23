@@ -7,7 +7,7 @@ import { industries } from "@/lib/industries";
 
 const title = "Referral management software";
 const description =
-  "Referral management software for clinics, gyms, campuses, and field teams. Track partner and member referrals from intro to payout, with status, rewards, and leakage in one loop.";
+  "Referral management software for clinics, gyms, campuses, and field teams. Track partner and member referrals from intro to payout, with status, rewards, and the field visits behind them.";
 
 export const metadata: Metadata = {
   ...pageSeo({ title, description, path: "/referral-management-software" }),
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is referral management software?",
-    a: "Software that records who sent a customer, what happened next, and whether that person paid. Syclops keeps that as one object: sent, accepted, converted, paying, or churned — with a portal the sender can open.",
+    a: "Software that records who sent a customer, what happened next, and what the sender is owed. In Syclops, every referral keeps the name of who sent it and a status, from sent to converted or lost, and the sender can follow it on your referral page.",
   },
   {
     q: "Who is referral management software for?",
@@ -35,42 +35,42 @@ const faqs = [
   },
   {
     q: "Does Syclops work as healthcare referral management software?",
-    a: "Yes. Clinics and KOLs send through the same portal as a gym member or a channel partner. Status updates when a plan is created and when the first invoice clears, so the clinic does not call the desk.",
+    a: "Yes. It was built for hospitals first. Doctors and clinics send patients through your referral page, each referral shows whether the patient arrived and converted, and payouts can be worked out from hospital bills. The clinic does not have to call the desk.",
   },
   {
     q: "Can members and B2B partners use the same system?",
-    a: "Yes. Member-get-member and partner referrals are the same object. Reward rules can differ. Referrers sign in with phone or email and never consume a paid seat.",
+    a: "Yes. Member referrals and partner referrals follow the same steps. Referrers sign in to your referral page with a one-time code sent to their email, and they never use a paid seat.",
   },
   {
     q: "How do referral rewards get paid?",
-    a: "Credit, extra days, or a percent of the invoice. You set a qualification window and a cap in Settings → Referrals. Nothing pays until the customer stays past that window.",
+    a: "Record the reward on the referral, or work out a payout from the bills. Payouts move from pending to approved to paid, so nothing is paid before someone approves it. Settlement reports and thank-you letters can be downloaded.",
   },
   {
     q: "How is this different from a CRM or a spreadsheet?",
-    a: "A CRM stores a source field. A spreadsheet stores a name. Syclops stores the visit, the referrer, and the plan together, including leakage: intros that never converted, and conversions that never paid.",
+    a: "A CRM stores a source field. A spreadsheet stores a name. Syclops keeps the referrer on every referral, the field visits behind them, and what each referrer is owed, including the partners who were visited but never referred.",
   },
   {
-    q: "Is there a free referrer portal?",
-    a: "Referrer logins are not billed. The portal itself is included on Growth (₹2,499 per field seat / month) and Scale. Team includes the referral workspace.",
+    q: "Is the referral page free for referrers?",
+    a: "Referrer logins are not billed. The referral page is included on Growth (₹2,499 per field seat / month) and Scale, and our team sets it up with you. Team includes the referral workspace.",
   },
 ];
 
 const searches = [
   {
     title: "Referral tracking software",
-    body: "Status is the product. Sent, accepted, converted when a plan exists, paying when the first invoice clears, churned when it does not renew.",
+    body: "Status is the product. Each referral shows where it stands, from sent to arrived and converted, or why it was lost.",
   },
   {
     title: "Partner referral software",
-    body: "One URL or QR per workspace. Clinics, KOLs, alumni, and channel partners see their own pipeline without a seat on your plan.",
+    body: "One referral page per workspace, set up with our team. Clinics, KOLs, alumni, and channel partners see their own referrals without a seat on your plan.",
   },
   {
     title: "Member referral programs",
-    body: "Member-get-member uses the same record as a B2B intro. Reward type and cap can be different. Duplicate phone or email is blocked.",
+    body: "Member referrals follow the same steps as a partner intro. A second open referral for the same mobile number is blocked.",
   },
   {
     title: "Referral management for field teams",
-    body: "A visit can open the referral. Mileage and TADA come from that day, not from a second app that only proves a pin.",
+    body: "Your field team visits the partners who refer. Analytics show who was visited and never referred, and TA/DA comes from the same working day.",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function ReferralManagementSoftwarePage() {
       <PageHero
         eyebrow="Referral management software"
         title="Referral management software for the teams who get introduced."
-        body="Syclops tracks every partner, member, alumni, clinic, and channel referral from the person who sent it to the invoice that paid them. Field visits and subscriptions stay on the same record."
+        body="Syclops tracks every partner, member, alumni, clinic, and channel referral from the person who sent it to the payout they are owed. Field visits and membership plans are in the same app."
         scene="referral"
         crumbs={[
           { name: "Home", path: "/" },
@@ -109,7 +109,7 @@ export default function ReferralManagementSoftwarePage() {
 
       <Section
         eyebrow="Industries"
-        title="Same referral system. The nouns change."
+        title="Same referral system, in every industry."
       >
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((item) => (
@@ -132,8 +132,8 @@ export default function ReferralManagementSoftwarePage() {
         <div className="max-w-3xl space-y-6 text-base leading-7 text-ink/90">
           <p>
             <strong className="font-medium">Healthcare referral management software</strong>{" "}
-            and clinic referral software, when a doctor or centre needs proof the
-            patient was accepted and then paid — without a WhatsApp thread as the
+            and clinic referral software, when a doctor or centre needs to see
+            whether the patient arrived — without a WhatsApp thread as the
             system of record. See{" "}
             <Link href="/industries/healthcare" className="text-iris">
               healthcare
@@ -146,8 +146,8 @@ export default function ReferralManagementSoftwarePage() {
           </p>
           <p>
             <strong className="font-medium">Gym referral software</strong> and
-            member-get-member, when a membership must still know who sent the
-            friend — without replacing class booking or the door. See{" "}
+            member-get-member, when you need to know who sent each new member and
+            what they are owed — without replacing class booking or the door. See{" "}
             <Link href="/gym-referral-software" className="text-iris">
               gym referral software
             </Link>{" "}
@@ -159,14 +159,14 @@ export default function ReferralManagementSoftwarePage() {
           </p>
           <p>
             <strong className="font-medium">B2B referral management</strong> and
-            channel partner portals, when the sender is a firm rather than a
-            friend. Rewards sit on the next invoice. Leakage is the list of
-            intros that never converted, and conversions that never paid.
+            channel partner referral pages, when the sender is a firm rather than
+            a friend. Payouts are approved before they are paid, and a lost
+            referral keeps the reason it was lost.
           </p>
           <p>
             <strong className="font-medium">Referral management software in India</strong>
-            , with rupee pricing, WhatsApp, and Maps. Visits queue on the phone
-            when the signal drops.
+            , with rupee pricing, WhatsApp, Razorpay, and Maps, and an Android app
+            for the field team.
           </p>
         </div>
       </Section>
@@ -182,12 +182,12 @@ export default function ReferralManagementSoftwarePage() {
             {
               href: "/compare/crm",
               label: "vs a CRM",
-              body: "A referrer and a plan, not an empty source field.",
+              body: "A named referrer, not an empty source field.",
             },
             {
               href: "/compare/vertical-software",
               label: "vs vertical software",
-              body: "Billing plus a partner portal and a field team.",
+              body: "Beside your billing: a referral page and a field team.",
             },
           ]}
         />
@@ -198,8 +198,8 @@ export default function ReferralManagementSoftwarePage() {
       </Section>
 
       <CtaBand
-        title="Turn on a referral portal this week."
-        body="Create a workspace, set the reward and the qualification window, and share one link. No onboarding call."
+        title="Start your referral page this week."
+        body="Create a workspace, add your team, and we set up your referral page with you."
       />
     </>
   );

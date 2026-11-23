@@ -7,7 +7,7 @@ export const contentType = ogContentType;
 export default function Image() {
   return ogImage({
     eyebrow: "Gym referral software",
-    title: "Member-get-member that still pays",
-    kicker: "Origin on the membership. Floor ERP keeps classes and the door.",
+    title: "Member-get-member that pays",
+    kicker: "Who sent each member, and rewards you approve. Keep your gym software.",
   });
 }

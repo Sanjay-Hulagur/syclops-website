@@ -27,13 +27,13 @@ export function PortalPhone() {
     <div
       className="rounded-[1.6rem] border border-line bg-paper p-3"
       role="img"
-      aria-label="Sample member referral portal showing a new referral and two existing referrals with status"
+      aria-label="Sample member referral page showing a new referral and two existing referrals with status"
     >
       <div className="rounded-2xl border border-line bg-cream p-3">
-        <p className="text-[11px] text-muted">Member referral portal</p>
+        <p className="text-[11px] text-muted">Member referral page</p>
         <p className="mt-1 text-sm font-medium">Refer a friend</p>
         <p className="mt-3 rounded-xl border border-dashed border-line bg-quiet px-3 py-4 text-center text-xs text-muted">
-          QR at reception
+          Link shared on WhatsApp
         </p>
         <ul className="mt-3 space-y-2 text-xs">
           <li className="flex items-center justify-between gap-2">
@@ -42,10 +42,10 @@ export function PortalPhone() {
           </li>
           <li className="flex items-center justify-between gap-2">
             <span>Friend · Gold annual</span>
-            <Status tone="money">Paying</Status>
+            <Status tone="money">Joined</Status>
           </li>
           <li className="flex items-center justify-between gap-2">
-            <span>Same phone blocked</span>
+            <span>Same mobile blocked</span>
             <Status tone="warn">Duplicate</Status>
           </li>
         </ul>
@@ -71,9 +71,9 @@ export function ReferralDesk() {
         <span>Status</span>
       </div>
       {[
-        ["Member A", "Gold annual", "Paying", "money"],
-        ["Member B", "Pending match", "Pending", "warn"],
-        ["Member C", "Same phone", "Duplicate", "warn"],
+        ["Member A", "Gold annual", "Joined", "money"],
+        ["Member B", "Awaiting visit", "Pending", "warn"],
+        ["Member C", "Same mobile", "Duplicate", "warn"],
       ].map(([sender, plan, status, tone]) => (
         <div
           key={sender}
@@ -93,7 +93,7 @@ export function VisitRecord({ compact = false }: { compact?: boolean }) {
     <div
       className="rounded-2xl border border-line bg-paper p-4"
       role="img"
-      aria-label="Sample trainer visit record with GPS check-in, duration, and a follow-up task"
+      aria-label="Sample trainer visit record with GPS check-in, a photo, and a visit reason"
     >
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium">Trainer check-in</p>
@@ -103,11 +103,11 @@ export function VisitRecord({ compact = false }: { compact?: boolean }) {
       <dl className="mt-3 grid grid-cols-2 gap-2 text-xs">
         <div className="rounded-xl bg-cream px-3 py-2">
           <dt className="text-muted">Visit</dt>
-          <dd className="mt-1 font-medium">18 min · photo</dd>
+          <dd className="mt-1 font-medium">09:40 · photo</dd>
         </div>
         <div className="rounded-xl bg-cream px-3 py-2">
-          <dt className="text-muted">Follow-up</dt>
-          <dd className="mt-1 font-medium">Failed renewal</dd>
+          <dt className="text-muted">Reason</dt>
+          <dd className="mt-1 font-medium">PT intro</dd>
         </div>
       </dl>
     </div>
@@ -150,27 +150,27 @@ export function MembershipRecord({ compact = false }: { compact?: boolean }) {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Sample membership with a failed payment and a trainer follow-up"
+      aria-label="Sample membership with a payment due and the trainer who sold it"
     >
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium">Gold annual</p>
-        {compact ? <Status tone="leak">Failed</Status> : <SampleCaption>Sample data</SampleCaption>}
+        {compact ? <Status tone="leak">Payment due</Status> : <SampleCaption>Sample data</SampleCaption>}
       </div>
-      <p className="mt-2 text-xs text-muted">Referred by Member A · renews this week</p>
+      <p className="mt-2 text-xs text-muted">Family plan · EMI due this week</p>
       <div className="mt-3 flex flex-wrap gap-2">
-        <Status tone="leak">Payment failed</Status>
-        <Status>Follow-up task</Status>
+        <Status tone="leak">Payment Due</Status>
+        <Status>Enrolled by Trainer B</Status>
       </div>
     </div>
   );
 }
 
-export function RenewalList() {
+export function MembershipList() {
   return (
     <div
       className="overflow-hidden rounded-2xl border border-line bg-cream"
       role="img"
-      aria-label="Sample subscription list with an upcoming renewal, a failed payment, and reward credit"
+      aria-label="Sample membership list with an instalment due, a cash payment, and an approved referral reward"
     >
       <div className="flex items-center justify-between border-b border-line px-4 py-3">
         <p className="text-sm font-medium">Memberships</p>
@@ -179,24 +179,24 @@ export function RenewalList() {
       <ul className="divide-y divide-line text-sm">
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">Due soon</span>
-            <span className="text-xs text-muted">Renewal this week</span>
+            <span className="block font-medium">EMI instalment</span>
+            <span className="text-xs text-muted">Due this week</span>
           </span>
-          <Status tone="warn">Due soon</Status>
+          <Status tone="warn">Payment Due</Status>
         </li>
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">Failed debit</span>
-            <span className="text-xs text-muted">Trainer task after retries</span>
+            <span className="block font-medium">Cash at the desk</span>
+            <span className="text-xs text-muted">Recorded by reception</span>
           </span>
-          <Status tone="leak">Failed</Status>
+          <Status tone="money">Paid</Status>
         </li>
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">Reward credit</span>
-            <span className="text-xs text-muted">After qualification window</span>
+            <span className="block font-medium">Referral reward</span>
+            <span className="text-xs text-muted">For Member A</span>
           </span>
-          <Status tone="money">On invoice</Status>
+          <Status tone="money">Approved</Status>
         </li>
       </ul>
     </div>
@@ -208,17 +208,17 @@ export function AnalyticsSample() {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Sample loop health view from visits to referrals to memberships. Not a customer result."
+      aria-label="Sample view from visits to referrals to new members. Not a customer result."
     >
       <div className="flex items-center justify-between">
-        <p className="text-sm font-medium">Loop health</p>
+        <p className="text-sm font-medium">Visits to members</p>
         <SampleCaption>Sample data</SampleCaption>
       </div>
       <ol className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
         {[
           ["Visits", "12"],
           ["Referrals", "4"],
-          ["Paying", "2"],
+          ["Joined", "2"],
         ].map(([label, value]) => (
           <li key={label} className="rounded-xl bg-quiet px-2 py-3">
             <p className="text-lg font-semibold tabular-nums">{value}</p>
@@ -233,7 +233,7 @@ export function AnalyticsSample() {
   );
 }
 
-export function ProblemIcon({ kind }: { kind: "referral" | "trainer" | "renewal" }) {
+export function ProblemIcon({ kind }: { kind: "referral" | "trainer" | "payment" }) {
   const common = "h-8 w-8 text-iris";
   if (kind === "referral") {
     return (

@@ -175,7 +175,7 @@ export function SvgScene({ kind }: { kind: SceneKind }) {
 
   if (kind === "pricing") {
     return (
-      <Frame label="Self-serve plans">
+      <Frame label="Three pricing plans">
         <rect x="12" y="18" width="296" height="184" rx="28" fill="#fbf7f0" stroke="#ddd4c4" />
         <rect x="40" y="58" width="70" height="108" rx="16" fill="#efe8dc" className="sy-float" />
         <rect x="124" y="42" width="78" height="132" rx="16" fill="#fbf7f0" stroke="#c45c26" className="sy-float-d" />

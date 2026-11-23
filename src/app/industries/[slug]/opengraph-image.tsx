@@ -19,9 +19,9 @@ export default async function Image({
   if (slug === "gyms") {
     return ogImage({
       eyebrow: "Gyms",
-      title: "Turn gym referrals into paying, renewing members.",
+      title: "Turn gym referrals into paying members.",
       kicker:
-        "Track member referrals, trainer visits, and renewals. Keep your gym software.",
+        "Track member referrals, trainer visits, and memberships. Keep your gym software.",
     });
   }
   if (slug === "education") {
@@ -43,13 +43,13 @@ export default async function Image({
     return ogImage({
       eyebrow: "Sales",
       title: "Turn field visits and partner referrals into revenue.",
-      kicker: "Field visits, partner leads, and renewals. Keep your CRM.",
+      kicker: "Field visits, partner leads, and recurring plans. Keep your CRM.",
     });
   }
   if (slug === "fintech") {
     return ogImage({
       eyebrow: "Fintech",
-      title: "Turn agent visits into policies that keep paying.",
+      title: "Turn agent visits into policies that get paid.",
       kicker: "Agent visits, DSA referrals, and premium follow-ups. Keep your core.",
     });
   }

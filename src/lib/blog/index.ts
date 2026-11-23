@@ -76,7 +76,7 @@ const defaultRelated = [
   {
     href: "/referral-management-software",
     label: "Referral management software",
-    body: "Status from sent to paying.",
+    body: "Status from sent to converted.",
   },
   { href: "/faq", label: "FAQ", body: "Seats, GPS, CRM, hosting." },
 ];
@@ -86,8 +86,8 @@ const relatedBySlug: Record<
   { href: string; label: string; body: string }[]
 > = {
   "channel-partner-portal-not-crm-source-field": [
-    { href: "/compare/crm", label: "vs traditional CRM", body: "A portal is not a source field." },
-    { href: "/industries/sales", label: "Sales & marketing", body: "Beat, partner intro, retainer." },
+    { href: "/compare/crm", label: "vs traditional CRM", body: "A referral page is not a source field." },
+    { href: "/industries/sales", label: "Sales & marketing", body: "Dealer visits, partner intros, retainers." },
     { href: "/product/referrals", label: "Referral management", body: "Status the sender can see." },
   ],
   "clinic-referral-portal-vs-whatsapp": [
@@ -101,26 +101,26 @@ const relatedBySlug: Record<
   ],
   "counselor-beat-unpaid-fee-installment": [
     { href: "/industries/education", label: "Education", body: "Counselor visits and fee plans." },
-    { href: "/product/field", label: "Field tracking", body: "Campus check-in and last-visit dates." },
-    { href: "/product/subscriptions", label: "Subscriptions", body: "Unpaid installments as tasks." },
+    { href: "/product/field", label: "Field tracking", body: "Campus check-in and visit plans." },
+    { href: "/product/subscriptions", label: "Subscriptions", body: "Fee plans with every instalment due date." },
   ],
   "dpdp-employee-gps-retention": [
     { href: "/security", label: "Security", body: "Working-day GPS, roles, tenant isolation." },
-    { href: "/privacy", label: "Privacy", body: "What is processed, and where you export it." },
+    { href: "/privacy", label: "Privacy", body: "What is processed, and how to request an export." },
     { href: "/product/field", label: "Field tracking", body: "Working-day check-in, not CCTV." },
   ],
   "razorpay-memberships-field-dunning": [
-    { href: "/product/subscriptions", label: "Subscriptions", body: "Retries, then a field task." },
-    { href: "/integrations", label: "Integrations", body: "Gateway keys, WhatsApp, and maps." },
-    { href: "/guides/plans-billing", label: "Plans and billing guide", body: "Connect test keys first." },
+    { href: "/product/subscriptions", label: "Subscriptions", body: "Payment Due, and who sold the plan." },
+    { href: "/integrations", label: "Integrations", body: "Razorpay, WhatsApp, and maps, connected with our team." },
+    { href: "/guides/plans-billing", label: "Plans and billing guide", body: "Plans, EMI, and payments." },
   ],
   "kol-dsa-referral-loops": [
     { href: "/industries/medtech", label: "Medtech", body: "KOL visits and device contracts." },
     { href: "/industries/fintech", label: "Fintech", body: "Agent visits and policy referrals." },
-    { href: "/product/referrals", label: "Referral management", body: "Same object, different nouns." },
+    { href: "/product/referrals", label: "Referral management", body: "Same steps, different nouns." },
   ],
   "tada-is-the-path-not-the-pin": [
-    { href: "/tada-software", label: "TADA software", body: "Mileage from the path." },
+    { href: "/tada-software", label: "TADA software", body: "TA/DA from the road distance." },
     { href: "/product/field", label: "Field tracking", body: "Check-in to checkout." },
     { href: "/compare/gps-trackers", label: "vs GPS-only trackers", body: "The pin is not the product." },
   ],
@@ -135,13 +135,13 @@ const relatedBySlug: Record<
       label: "Referral management software",
       body: "What the category has to hold.",
     },
-    { href: "/product/referrals", label: "Referral product", body: "Portal, window, leakage." },
+    { href: "/product/referrals", label: "Referral product", body: "Referral page, status, payouts." },
     { href: "/faq", label: "FAQ", body: "Seats, GPS, CRM, cancel." },
   ],
   "referral-leakage-is-a-systems-problem": [
-    { href: "/product/referrals", label: "Referral management", body: "Leakage as a view, not a paste." },
+    { href: "/product/referrals", label: "Referral management", body: "Status as a view, not a paste." },
     { href: "/compare/whatsapp-excel", label: "vs WhatsApp + Excel", body: "Where intros go to die." },
-    { href: "/guides/qualification-window", label: "Qualification window", body: "Rewards after they stay." },
+    { href: "/guides/referral-payouts", label: "Referral payouts guide", body: "Approve before you pay." },
   ],
   "gps-is-not-a-growth-system": [
     { href: "/product/field", label: "Field tracking", body: "GPS as evidence, not the scoreboard." },
@@ -149,8 +149,8 @@ const relatedBySlug: Record<
     { href: "/tada-software", label: "TADA software", body: "Path, not pin-to-pin." },
   ],
   "subscriptions-need-a-field-team": [
-    { href: "/product/subscriptions", label: "Subscriptions", body: "Dunning that creates a visit." },
-    { href: "/product/field", label: "Field tracking", body: "The beat those tasks land on." },
+    { href: "/product/subscriptions", label: "Subscriptions", body: "Payments due, with the person who sold the plan." },
+    { href: "/product/field", label: "Field tracking", body: "Where the follow-up visit happens." },
     { href: "/blog/razorpay-memberships-field-dunning", label: "Failed payments, then a visit", body: "Retries first." },
   ],
 };

@@ -18,7 +18,7 @@ export const post: Post = {
   body: [
     {
       type: "p",
-      text: "Referral leakage is a systems problem, not a people problem. A field visit that never becomes a named referral is wasted mileage. A referral that never becomes a paying plan is wasted trust. A plan that churns without a task for the field team is wasted revenue. Most teams do not lose those joins because staff are lazy. They lose them because the visit, the intro, and the plan live in three tools that never meet.",
+      text: "Referral leakage is a systems problem, not a people problem. A field visit that never becomes a named referral is wasted mileage. A referral that never becomes a paying plan is wasted trust. A plan with a payment due that nobody follows up is wasted revenue. Most teams do not lose those joins because staff are lazy. They lose them because the visit, the intro, and the plan live in three tools that never meet.",
     },
     {
       type: "h2",
@@ -30,7 +30,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "The speed is the trap. A chat does not refuse a duplicate. A sheet does not know that this phone was already referred into this plan. Billing does not know the visit that produced the name. When you [compare WhatsApp and Excel](/compare/whatsapp-excel) with a single record, the honest difference is not “modern versus old.” It is whether the joins survive the week they were made.",
+      text: "The speed is the trap. A chat does not refuse a duplicate. A sheet does not know that this mobile number was already referred. Billing does not know the visit that produced the name. When you [compare WhatsApp and Excel](/compare/whatsapp-excel) with one app, the honest difference is not “modern versus old.” It is whether the joins survive the week they were made.",
     },
     {
       type: "h2",
@@ -38,21 +38,21 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Gym referral programmes, alumni intros, clinic partners, and channel leads fail the same way. The sender has no status. The field team has no proof the visit happened on the same object as the intro. Finance has a plan that looks organic. Leakage is booked as “marketing did not convert,” which sends the next quarter’s budget at the wrong problem.",
+      text: "Gym referral programmes, alumni intros, clinic partners, and channel leads fail the same way. The sender has no status. The field team has no proof the visit happened. Finance has a plan that looks organic. Leakage is booked as “marketing did not convert,” which sends the next quarter’s budget at the wrong problem.",
     },
     {
       type: "ul",
       items: [
         "The visit is in a GPS app or a personal note. It never becomes a named referral.",
-        "The intro is in a chat. The sender cannot see sent, accepted, converted, or paying.",
-        "The plan is in billing. It has no referrer, so a reward and a save visit have nobody to attach to.",
-        "The reward pays on a rumour, before anyone knows whether the customer stayed.",
-        "Churn arrives as a list, not as a task for the person who owns the account.",
+        "The intro is in a chat. The sender cannot see whether the person arrived or converted.",
+        "The plan is in billing, with nobody named as the person who sold it.",
+        "The reward pays on a rumour, before anyone has approved it.",
+        "Payments due arrive as a list, not as a follow-up for the person who owns the account.",
       ],
     },
     {
       type: "p",
-      text: "Blaming the front desk, the counselor, or the rep trains people to type harder into the same three tools. The next hire inherits the leak on day one. If you want a worked example in one industry, [a gym referral programme beside the ERP](/blog/gym-referral-programme-without-replacing-erp) is the same failure with a reception QR and a membership. The structure does not change when the logo on the door does.",
+      text: "Blaming the front desk, the counselor, or the rep trains people to type harder into the same three tools. The next hire inherits the leak on day one. If you want a worked example in one industry, [a gym referral programme beside the ERP](/blog/gym-referral-programme-without-replacing-erp) is the same failure with a referral page and a membership. The structure does not change when the logo on the door does.",
     },
     {
       type: "h2",
@@ -60,11 +60,11 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "[Referral management](/product/referrals) is those joins: visit, referrer, subscriber, and the next action when the loop breaks. Member-get-member and B2B partners are the same referrer object with different reward rules if you want them. Duplicate phone or email cannot be referred twice into the same plan. The sender sees status without a paid seat. You see whether the customer paid without a month-end paste.",
+      text: "[Referral management](/product/referrals) is those joins: who sent each person, what happened next, and what the sender is owed. Member referrals and B2B partners follow the same steps. A second open referral for the same mobile number is blocked. The sender sees status without a paid seat. Plans sit in the same app, so you see who paid without a month-end paste.",
     },
     {
       type: "p",
-      text: "Rewards should not fire on a rumour. A [qualification window](/guides/qualification-window), a cap, and credit on the next invoice are how you avoid paying for joins that bounce. Pending name matches sit in a queue until a manager assigns them, instead of a phone call to the sender asking them to repeat a spelling you already lost. The window is not bureaucracy. It is the difference between a programme and a discount you cannot audit.",
+      text: "Rewards should not pay on a rumour. Record the reward on the referral, or work out payouts from the bills, and approve each one before it is paid — the [referral payouts guide](/guides/referral-payouts) walks through it. Different spellings of a referrer’s name can be linked to one person, instead of a phone call to the sender asking them to repeat a spelling you already lost. Approval is not bureaucracy. It is the difference between a programme and a discount you cannot audit.",
     },
     {
       type: "h2",
@@ -72,33 +72,33 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "If you only track GPS, you will get better attendance and the same leakage. If you only track CRM stages, you will get a prettier pipeline and the same no-shows. If you only run gym or school software, you will bill well and still not know which intro still pays. Each team can be competent inside its tool. The customer still falls through the gap between tools.",
+      text: "If you only track GPS, you will get better attendance and the same leakage. If you only track CRM stages, you will get a prettier pipeline and the same no-shows. If you only run gym or school software, you will bill well and still not know which intro became a paying customer. Each team can be competent inside its tool. The customer still falls through the gap between tools.",
     },
     {
       type: "p",
-      text: "Fixing leakage by hiring a coordinator to reconcile the three exports is a permanent job you did not mean to create. The coordinator becomes the integration. When they are on leave, the leak returns the same day. A record does not take leave from the join. The visit, the referrer, and the plan are either the same object or they are a project someone has to remember.",
+      text: "Fixing leakage by hiring a coordinator to reconcile the three exports is a permanent job you did not mean to create. The coordinator becomes the integration. When they are on leave, the leak returns the same day. Software does not take leave. The visit, the referrer, and the plan are either in one system or they are a project someone has to remember.",
     },
     {
       type: "h2",
-      text: "One object, then a view",
+      text: "One system, then a view",
     },
     {
       type: "p",
-      text: "The loop has to be one object before it can be a dashboard. Turn the portal on, share a QR or a URL, and watch sent, converted, paying, and churned as a leakage view rather than a month-end paste. The view is not the fix. It is what you can see after the fix. If the underlying records still live apart, the chart will be a picture of the paste.",
+      text: "The loop has to live in one system before it can be a dashboard. Set up your referral page with our team, share the link, and watch referrals move from sent to converted, or lost with a reason, instead of a month-end paste. The view is not the fix. It is what you can see after the fix. If the underlying records still live apart, the chart will be a picture of the paste.",
     },
     {
       type: "p",
-      text: "Start with one motion you already run. One partner type, one plan, one field seat who owns the accounts. Prove the sender can see status and a failed plan can see a person. Then add the next noun. Leakage shrinks when the joins are stored, not when the team is told to care more.",
+      text: "Start with one motion you already run. One partner type, one plan, one field seat who owns the accounts. Prove the sender can see status and a payment due has a person. Then add the next noun. Leakage shrinks when the joins are stored, not when the team is told to care more.",
     },
   ],
   faqs: [
     {
       q: "Is leakage just a training problem?",
-      a: "Training helps people use a record. It does not create one. If the visit, the introduction, and the plan are in three tools, a careful team still loses the joins.",
+      a: "Training helps people use a system. It does not create one. If the visit, the introduction, and the plan are in three tools, a careful team still loses the joins.",
     },
     {
       q: "When should a reward be paid?",
-      a: "After the customer stays past a qualification window you set, and within a cap. A forwarded name is not proof they paid or stayed.",
+      a: "After someone has checked that the referral converted and approved the payout. A forwarded name is not proof the customer joined or paid.",
     },
   ],
 };

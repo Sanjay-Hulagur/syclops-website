@@ -47,13 +47,13 @@ export function PortalPhone() {
     <div
       className="rounded-[1.6rem] border border-line bg-paper p-3"
       role="img"
-      aria-label="Illustrative parent referral portal. A parent sees two students and their admission status. Sample workspace, not a customer result."
+      aria-label="Illustrative parent referral page. A parent sees two students and their admission status. Sample workspace, not a customer result."
     >
       <div className="rounded-2xl border border-line bg-cream p-3">
-        <p className="text-[11px] text-muted">Parent and alumni portal</p>
+        <p className="text-[11px] text-muted">Parent and alumni referral page</p>
         <p className="mt-1 text-sm font-medium">Refer a student</p>
         <p className="mt-3 rounded-xl border border-dashed border-line bg-quiet px-3 py-4 text-center text-xs text-muted">
-          Link or QR · no app
+          Link in the browser · no app
         </p>
         <ul className="mt-3 space-y-2 text-xs">
           <li className="flex items-center justify-between gap-2">
@@ -62,10 +62,10 @@ export function PortalPhone() {
           </li>
           <li className="flex items-center justify-between gap-2">
             <span>Aditi S. · Term 1</span>
-            <Status tone="money">Paying</Status>
+            <Status tone="money">Joined</Status>
           </li>
           <li className="flex items-center justify-between gap-2">
-            <span>Same phone blocked</span>
+            <span>Same mobile blocked</span>
             <Status tone="warn">Duplicate</Status>
           </li>
         </ul>
@@ -93,7 +93,7 @@ export function ReferralDesk() {
       {[
         ["Class of 2022", "NEET crash", "Converted", "money"],
         ["Parent · North", "PU science", "Sent", "quiet"],
-        ["Alumni · same phone", "Degree", "Duplicate", "warn"],
+        ["Alumni · same mobile", "Degree", "Duplicate", "warn"],
       ].map(([referrer, programme, status, tone]) => (
         <div
           key={referrer}
@@ -113,7 +113,7 @@ export function VisitRecord({ compact = false }: { compact?: boolean }) {
     <div
       className="rounded-2xl border border-line bg-paper p-4"
       role="img"
-      aria-label="Illustrative counselor visit with GPS check-in, notes, and a follow-up. Sample workspace, not a customer result."
+      aria-label="Illustrative counselor visit with GPS check-in, notes, and the next fee date. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium">Counselor check-in</p>
@@ -123,7 +123,7 @@ export function VisitRecord({ compact = false }: { compact?: boolean }) {
       <dl className="mt-3 grid grid-cols-2 gap-2 text-xs">
         <div className="rounded-xl bg-cream px-3 py-2">
           <dt className="text-muted">Visit</dt>
-          <dd className="mt-1 font-medium">28 min · notes</dd>
+          <dd className="mt-1 font-medium">10:15 · notes</dd>
         </div>
         <div className="rounded-xl bg-cream px-3 py-2">
           <dt className="text-muted">Follow-up</dt>
@@ -170,21 +170,21 @@ export function FeePlanRecord({ compact = false }: { compact?: boolean }) {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Illustrative fee plan for a NEET crash course, with a due installment and a counselor follow-up. Sample workspace, not a customer result."
+      aria-label="Illustrative fee plan for a NEET crash course, with a due installment and the counselor who enrolled the student. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium">NEET crash · Term 1</p>
-        {compact ? <Status tone="warn">Due soon</Status> : <SampleCaption>Illustrative sample workspace</SampleCaption>}
+        {compact ? <Status tone="warn">Payment Due</Status> : <SampleCaption>Illustrative sample workspace</SampleCaption>}
       </div>
-      <p className="mt-2 text-xs text-muted">Aditi S. · referred by Class of 2022</p>
+      <p className="mt-2 text-xs text-muted">Aditi S. · 3 instalments</p>
       <dl className="mt-3 grid grid-cols-2 gap-2 text-xs">
         <div className="rounded-xl bg-paper px-3 py-2">
           <dt className="text-muted">Installment</dt>
           <dd className="mt-1 font-medium">₹42,500 · 01 Dec</dd>
         </div>
         <div className="rounded-xl bg-paper px-3 py-2">
-          <dt className="text-muted">Follow-up</dt>
-          <dd className="mt-1 font-medium">Counselor task</dd>
+          <dt className="text-muted">Enrolled by</dt>
+          <dd className="mt-1 font-medium">Counselor R.</dd>
         </div>
       </dl>
     </div>
@@ -196,7 +196,7 @@ export function InstallmentList() {
     <div
       className="overflow-hidden rounded-2xl border border-line bg-cream"
       role="img"
-      aria-label="Illustrative fee-plan list with a paid installment, one due soon, and one failed payment. Sample workspace, not a customer result."
+      aria-label="Illustrative fee-plan list with a paid installment, one due, and one paid by UPI at the desk. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between border-b border-line px-4 py-3">
         <p className="text-sm font-medium">Fee plans</p>
@@ -206,23 +206,23 @@ export function InstallmentList() {
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
             <span className="block font-medium">PU science · Term 1</span>
-            <span className="text-xs text-muted">Paid · referrer still attached</span>
+            <span className="text-xs text-muted">Paid online · Razorpay</span>
           </span>
           <Status tone="money">Paid</Status>
         </li>
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
             <span className="block font-medium">NEET crash · 01 Dec</span>
-            <span className="text-xs text-muted">₹42,500 due · counselor task</span>
+            <span className="text-xs text-muted">₹42,500 due · enrolled by Counselor R.</span>
           </span>
-          <Status tone="warn">Due soon</Status>
+          <Status tone="warn">Payment Due</Status>
         </li>
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">Degree · failed debit</span>
-            <span className="text-xs text-muted">Follow-up after retries</span>
+            <span className="block font-medium">Degree · Term 2</span>
+            <span className="text-xs text-muted">UPI recorded at the desk</span>
           </span>
-          <Status tone="leak">Failed</Status>
+          <Status tone="money">Paid</Status>
         </li>
       </ul>
     </div>
@@ -234,10 +234,10 @@ export function AnalyticsSample() {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Illustrative loop health counts from campus visits to admitted referrals to fee plans. Not a customer result."
+      aria-label="Illustrative counts from campus visits to admitted referrals to fee plans. Not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
-        <p className="text-sm font-medium">Loop health</p>
+        <p className="text-sm font-medium">Visits to admissions</p>
         <SampleCaption>Illustrative sample workspace</SampleCaption>
       </div>
       <ol className="mt-4 grid grid-cols-2 gap-2 text-center text-xs sm:grid-cols-4">

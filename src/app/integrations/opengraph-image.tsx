@@ -7,7 +7,7 @@ export const contentType = ogContentType;
 export default function Image() {
   return ogImage({
     eyebrow: "Integrations",
-    title: "WhatsApp, Razorpay, Maps — your keys",
-    kicker: "Paste credentials in Settings. Syclops does not run your WABA.",
+    title: "WhatsApp, Razorpay, and Maps",
+    kicker: "Set up with our team. No keys to paste.",
   });
 }

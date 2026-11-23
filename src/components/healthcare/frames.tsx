@@ -118,7 +118,7 @@ export function ReferralRecord({ compact = false }: { compact?: boolean }) {
     >
       <div className="flex items-center justify-between border-b border-line px-4 py-3">
         <p className="text-sm font-medium">Patient referral</p>
-        {compact ? <Status>Sent</Status> : <SampleCaption>Illustrative sample workspace</SampleCaption>}
+        {compact ? <Status>Pending</Status> : <SampleCaption>Illustrative sample workspace</SampleCaption>}
       </div>
       <dl className="grid gap-px bg-line text-xs sm:grid-cols-2">
         <div className="bg-cream px-4 py-3">

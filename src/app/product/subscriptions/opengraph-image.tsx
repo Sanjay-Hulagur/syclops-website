@@ -7,7 +7,7 @@ export const contentType = ogContentType;
 export default function Image() {
   return ogImage({
     eyebrow: "Subscriptions",
-    title: "Dunning that writes a field visit",
-    kicker: "Retry the mandate. Then send a person.",
+    title: "Sell membership plans from the phone",
+    kicker: "Cash, UPI, EMI or Razorpay. A status for every plan.",
   });
 }

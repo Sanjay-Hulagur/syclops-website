@@ -7,11 +7,11 @@ import { pageSeo } from "@/lib/seo";
 export const metadata: Metadata = pageSeo({
   title: "Field force mobile app for visits, referrals, and plans",
   description:
-    "Download the Syclops Android APK for field check-in, TADA, and referrals. Offline-tolerant for rural routes and clinic basements.",
+    "Download the Syclops Android app for field check-in with GPS and photos, TA/DA, plan enrollment and referrals. Staff sign in with their email and a one-time code.",
   path: "/product/mobile",
   keywords: [
     "field force mobile app",
-    "offline field tracking",
+    "GPS visit check-in app",
     "Android field app",
     "partner referral app",
   ],
@@ -22,8 +22,8 @@ export default function MobilePage() {
     <>
       <PageHero
         eyebrow="Mobile app"
-        title="The day lives on the phone. The loop lives in Syclops."
-        body="One tenant, three surfaces: field, sales, partner. The invite you send from Settings is how the app knows which workspace to open."
+        title="The field day lives on the phone."
+        body="Field staff, sales staff and referrers each get their own screens in one Android app. Managers work on the web."
         scene="mobile"
         crumbs={[
           { name: "Home", path: "/" },
@@ -34,52 +34,49 @@ export default function MobilePage() {
       <Section>
         <AndroidDownload />
       </Section>
-      <Section eyebrow="Three phones" title="Staff log the visit. Partners send the person. The plan stays visible.">
+      <Section eyebrow="Three kinds of user" title="Staff log the visit. Referrers send the person. The plan stays visible.">
         <Prose>
           <p>
-            Field seats check in, walk a beat, and queue photos when the signal
-            drops. Sales seats convert a visit to a plan. Partners never get
-            GPS — they send, they see status, they get paid.
+            Field staff start their working day, check in at visits with GPS
+            and photos, and see their TA/DA. Sales staff log calls and leads.
+            Referrers send people and follow their status, and never share
+            their location.
           </p>
           <p>
-            Android installs from the APK on this page. Partners can also use
-            the mobile web portal. BYOD
-            is expected: device GPS is used only on a checked-in working day.
-            Languages follow the labels you set for visit, referrer, and plan.
+            Install the Android app from the APK on this page. Staff can use
+            their own phones: location is recorded only during the working
+            day. Everyone signs in with their email and a one-time code.
           </p>
         </Prose>
       </Section>
       <Section eyebrow="Install">
         <Steps
           items={[
-            { title: "Create the workspace", body: "On the web. Then invite." },
-            { title: "Install the APK", body: "Download the Android app from this page and open your invite." },
-            { title: "Open the invite", body: "The link carries the tenant. No typing a company code." },
-            { title: "Work offline", body: "Queue visits and photos. Sync when the radio returns." },
+            { title: "Create the workspace", body: "On the web, with your email and business name." },
+            { title: "Add your staff", body: "Add each person with their email, or upload a list from Excel." },
+            { title: "Install the APK", body: "Staff download the Android app from this page." },
+            { title: "Sign in", body: "Email and a one-time code. No company code to type." },
           ]}
         />
       </Section>
       <Section>
         <FeatureGrid
           items={[
-            { title: "Field", body: "Check-in, beat, visit photo, TADA, at-risk overlay." },
-            { title: "Sales", body: "Queue, notes, follow-ups, conversion to a plan." },
-            { title: "Partners", body: "Send, status, rewards. No beat, no GPS." },
-            { title: "Managers", body: "Approve TADA, see loop health, ping a seat." },
-            { title: "Low signal", body: "Designed for rural routes and clinic basements." },
-            { title: "Languages", body: "English plus the labels you set for visit / referrer / plan." },
+            { title: "Field", body: "Start the day, check in at visits with GPS and photos, and see TA/DA." },
+            { title: "Sales", body: "Log calls and leads, and record conversions." },
+            { title: "Referrers", body: "Send referrals and follow their status. No GPS." },
+            { title: "Plans", body: "Enroll customers in membership plans and record their payments." },
+            { title: "Announcements", body: "Push updates to the whole team, or only to referrers." },
+            { title: "Managers", body: "Reports, coverage and staff calendars on the web." },
           ]}
         />
       </Section>
-      <Section eyebrow="You configure">
+      <Section eyebrow="You set">
         <Checklist
           items={[
-            "Which roles get the field app",
-            "Photo required",
-            "Background GPS on working day only",
-            "Partner portal as PWA or native",
-            "Announcement push",
-            "App timeout",
+            "Which roles use which parts of the app",
+            "Who is on the field team",
+            "Announcements for staff and referrers",
           ]}
         />
       </Section>
@@ -88,17 +85,17 @@ export default function MobilePage() {
           items={[
             {
               q: "Where is the Android app?",
-              a: "Download the APK on this page. Partners can also use the mobile web portal.",
+              a: "Download the APK on this page. Referrers can also use your referral page in a browser.",
             },
-            { q: "BYOD?", a: "Yes. Device GPS is used only on a checked-in day." },
-            { q: "Does the partner app track location?", a: "No. Partners send referrals and see payouts. They never consume a field seat." },
+            { q: "Can staff use their own phones?", a: "Yes. Location is recorded only during the working day." },
+            { q: "Does the referrer app track location?", a: "No. Referrers send people and follow their status. They are never billed as field seats." },
           ]}
         />
       </Section>
       <Section eyebrow="Next">
         <Related
           items={[
-            { href: "/guides/invite-team", label: "Invite guide", body: "Seats vs portal." },
+            { href: "/guides/invite-team", label: "Team guide", body: "Staff, managers and referrers." },
             { href: "/product/field", label: "Field", body: "What the day looks like." },
             { href: "/start", label: "Start", body: "Create the workspace first." },
           ]}

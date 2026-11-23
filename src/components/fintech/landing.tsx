@@ -58,7 +58,7 @@ const journey = [
   },
   {
     title: "Customer or DSA referral",
-    body: "The person who made the introduction stays attached as the plan moves forward.",
+    body: "The referral keeps the name of the person who made the introduction.",
   },
   {
     title: "Policy or plan",
@@ -66,11 +66,11 @@ const journey = [
   },
   {
     title: "Premium due",
-    body: "The plan shows the amount, the next date, and whether it is paid, failed, or due soon.",
+    body: "The plan shows the amount, the next date, and whether it is paid or has a payment due.",
   },
   {
     title: "Follow-up",
-    body: "After the retry schedule you set, a lapse can become a task for the agent who owns that customer.",
+    body: "A payment that is due shows on the plan, so the agent who sold it knows to go back.",
   },
 ];
 
@@ -84,7 +84,7 @@ const audiences = [
       "Family referrals",
       "Policy status",
       "Premium due dates",
-      "Lapse follow-ups",
+      "Follow-ups on payments due",
     ],
   },
   {
@@ -92,22 +92,22 @@ const audiences = [
     problem:
       "A DSA introduction is easy to lose once the plan sits in the core, and a missed debit may never return to the branch that owns it.",
     items: [
-      "Branch beats",
+      "Agent visit plans",
       "DSA referrals",
       "Customer introductions",
-      "EMI or loan plan visibility",
-      "Missed-debit follow-ups",
+      "EMI schedules with due dates",
+      "Follow-ups on missed EMIs",
     ],
   },
   {
     title: "Wealth and SIP teams",
     problem:
-      "A family referral and a failed SIP debit are rarely on the same record as the last client visit.",
+      "A family referral, a missed SIP payment, and the last client visit usually sit in three different places.",
     items: [
       "Client visits",
       "Family referrals",
       "SIP plans",
-      "Failed debit visibility",
+      "Payments due, by customer",
       "Advisor follow-ups",
     ],
   },
@@ -123,42 +123,42 @@ const coreItems = [
 
 const syclopsItems = [
   "Agent field visits",
-  "Branch and territory coverage",
+  "Area and territory coverage",
   "Customer and DSA referrals",
   "Referral tracking",
   "Field follow-ups",
-  "Plan visibility and supported subscription workflows",
+  "Plans with EMI schedules and payment status",
 ];
 
 const proofs = [
   {
     title: "See which homes and branches were covered",
-    body: "A visit list shows check-ins, planned stops, and patches that have gone quiet.",
+    body: "A visit list shows check-ins, planned stops, and accounts nobody has visited.",
     frame: <VisitHistory />,
   },
   {
     title: "Check in from the agent’s phone",
-    body: "GPS, notes, and an optional photo stay on the visit, with the follow-up named.",
+    body: "GPS, notes, and photos stay on the visit.",
     frame: <VisitRecord />,
   },
   {
     title: "Let customers and DSAs refer without an app",
-    body: "A link or QR opens in the browser. The sender sees status. They are not a field seat.",
+    body: "Your referral page opens in the browser. The sender sees status. They are not a field seat.",
     frame: <PortalPhone />,
   },
   {
-    title: "Keep the referrer on the plan",
-    body: "Family or DSA origin stays attached from the introduction to the premium.",
+    title: "Know who introduced each customer",
+    body: "Each referral keeps the family member or DSA who sent the customer, and shows whether they came on board.",
     frame: <ReferralDesk />,
   },
   {
-    title: "Show a due or failed premium to the field team",
-    body: "Paid, due soon, and failed stay on the plan, with a follow-up when you configure one.",
+    title: "Show a due premium to the field team",
+    body: "Paid and due payments stay on the plan, with their due dates.",
     frame: <PremiumList />,
   },
   {
     title: "Read the loop, not a vanity chart",
-    body: "On Growth, analytics groups visits, referrals, and plans by referrer and region.",
+    body: "Analytics show visits and referrals by person, referrer, and region.",
     frame: <AnalyticsSample />,
   },
 ];
@@ -168,27 +168,27 @@ function fintechFaqs(trialDays: number) {
   return [
     {
       q: "Does Syclops replace our policy admin or loan system?",
-      a: "No. Underwriting, the KYC of record, policy admin, loan origination, and regulatory reporting stay in the core you already run. Syclops is the field layer: agent visits, customer and DSA referrals, and whether the plan still pays.",
+      a: "No. Underwriting, the KYC of record, policy admin, loan origination, and regulatory reporting stay in the core you already run. Syclops is the field layer: agent visits, customer and DSA referrals, and whether the customer has paid.",
     },
     {
       q: "Can we manage multiple branches?",
-      a: "Yes. Branches are regions in one workspace on Team and Growth. Agents check in on the patch they are covering. Multi-brand or multi-city is on Scale.",
+      a: "Yes. Set up each branch as a region in one workspace. Agents check in on the patch they are covering.",
     },
     {
       q: "Can agents check in at customer homes?",
-      a: "Yes. Check-in records location. GPS runs on a working day between check-in and check-out, and a photo can be required. Mock locations are flagged. The record is the visit, not a live map of the evening.",
+      a: "Yes. Each visit is checked in with GPS and photos, and location is recorded only during the working day. The record is the visit, not a live map of the evening.",
     },
     {
       q: "Can customers and DSAs refer without installing an app?",
-      a: "Yes. They open a portal link or a QR code in the browser. They do not install the field app, and a referrer login is not billed as a field seat. The portal is included on Growth and Scale.",
+      a: "Yes. They open your referral page in the browser and sign in with a one-time code sent to their email. They do not install the field app, and referrer logins are not billed as field seats. The referral page is included on Growth and Scale.",
     },
     {
       q: "Can we import an existing agent beat?",
-      a: "Yes. Import a CSV of accounts — name, phone, email, and area. Last-visit can be empty. After import, check-ins and referrals attach to those rows.",
+      a: "Agents and areas upload from an Excel template. Customers are added from the phone or in the admin console. Talk to us about bringing older lists across.",
     },
     {
       q: "Can we track lapsed premiums and pending payments?",
-      a: "On Growth, a plan shows the amount, the interval, and whether it is paid, failed, or due soon. After the retry schedule you set, a failed payment can become a follow-up for the agent who owns that customer. You can connect Razorpay, or mark cash and UPI. Syclops does not replace core accounting, and it does not collect money unless a gateway is connected.",
+      a: "On Growth, a plan shows the amount, the due dates, and whether it is paid or has a payment due. Payments can be recorded as cash, UPI, or EMI, or paid online through Razorpay, which our team connects with you. Syclops does not replace core accounting.",
     },
     {
       q: "Are customer and DSA accounts billed?",
@@ -196,7 +196,11 @@ function fintechFaqs(trialDays: number) {
     },
     {
       q: "Is this a legal collections system?",
-      a: "No. Syclops covers enrollment, referral origin, and renewal follow-ups. It does not issue legal notices or replace a collections stack.",
+      a: "No. Syclops covers enrollment, referral origin, and follow-up visits for payments due. It does not issue legal notices or replace a collections stack.",
+    },
+    {
+      q: "Does the app use our words?",
+      a: "Not yet. Syclops was built for hospitals, so some screens say doctors and patients where you would say partners and customers. The steps are the same.",
     },
     {
       q: "How much does Syclops cost?",
@@ -248,12 +252,11 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
             For insurance · NBFC · wealth teams
           </p>
           <h1 className="display mt-4 max-w-xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">
-            Turn agent visits into policies that keep paying.
+            Turn agent visits into policies that get paid.
           </h1>
           <p className="mt-5 max-w-md text-base leading-7 text-muted">
             Track doorstep check-ins, customer and DSA referrals, issued policies,
-            and lapsed premiums in one connected system. Keep your core policy or
-            loan system.
+            and premiums due in one place. Keep your core policy or loan system.
           </p>
           <div id="fintech-hero-cta" className="mt-8 flex flex-wrap gap-3">
             <FintechLink
@@ -328,19 +331,19 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
               items={[
                 {
                   title: "Planned visits",
-                  body: "The day is a beat with last-visit dates, so a skipped home or branch shows up as a gap.",
+                  body: "A visit plan for the week, and a list of accounts nobody has visited.",
                 },
                 {
                   title: "GPS check-in",
-                  body: "Location is recorded at check-in. GPS runs on a working day between check-in and check-out.",
+                  body: "Location is recorded at check-in, and only during the working day.",
                 },
                 {
                   title: "Visit history",
-                  body: "Duration, notes, and an optional photo — including a KYC photo — stay on the account.",
+                  body: "Notes and photos stay on the account. ID proof is captured when a plan is sold.",
                 },
                 {
                   title: "Notes and follow-ups",
-                  body: "A visit can name the next action, including a premium follow-up after your retry schedule.",
+                  body: "A visit records why the agent went and what was said, so the next visit starts there.",
                 },
                 {
                   title: "Branch and territory coverage",
@@ -348,7 +351,7 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "TADA where agents travel",
-                  body: "Mileage is the path they walked. A manager approves it against your rate card.",
+                  body: "TA/DA is worked out from the distance travelled, using the amounts you set.",
                 },
               ]}
             />
@@ -380,8 +383,8 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
               Know who introduced every customer.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              Connect family and DSA introductions to the customer, the issued plan,
-              and whether that plan still pays.
+              Track family and DSA introductions, issued plans, and whether each
+              customer has paid, in one place.
             </p>
             <FeatureList
               items={[
@@ -391,19 +394,19 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Customer details",
-                  body: "Name and phone or email stay on the referral. The same phone or email cannot be referred twice into the same plan.",
+                  body: "Name and mobile number stay on the referral. The referral page blocks a second open referral for the same mobile number.",
                 },
                 {
                   title: "Referral source",
-                  body: "Family, DSA, or another sender you enable. Team includes the referral workspace. The browser portal is on Growth.",
+                  body: "Family, DSAs, or other referrers. Team includes the referral workspace. The referral page is on Growth.",
                 },
                 {
-                  title: "Status through paying",
-                  body: "Status moves from sent to converted when a plan is created, then to paying when the first invoice clears.",
+                  title: "Status through conversion",
+                  body: "Each referral shows whether the customer came on board, or why not.",
                 },
                 {
-                  title: "Plan association",
-                  body: "The policy, SIP, or EMI plan keeps who referred it when a premium is paid, due, or failed.",
+                  title: "Referrals and plans together",
+                  body: "Referrals and plans sit in the same workspace, so the agent sees both.",
                 },
               ]}
             />
@@ -413,7 +416,7 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
               </Link>
               {" · "}
               <Link href="/guides/referral-portal" className={textLink}>
-                Portal guide
+                Referral page guide
               </Link>
             </p>
           </div>
@@ -431,39 +434,39 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
               Premium and plan follow-ups
             </p>
             <h2 id="fintech-premiums" className="display mt-3 text-3xl font-semibold tracking-tight">
-              Make a lapsed premium visible to the agent.
+              Make a premium due visible to the agent.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              Connect policies, SIPs, and EMI plans with follow-up workflows, so the
-              right person knows which customer needs attention.
+              Every policy, SIP, or EMI plan shows which payments are made and which
+              are due, so the right person knows which customer needs a visit.
             </p>
             <FeatureList
               items={[
                 {
                   title: "Customer and plan",
-                  body: "The plan is the policy, SIP, or EMI. The referrer stays on it.",
+                  body: "The plan is the policy, SIP, or EMI, with the agent who sold it.",
                 },
                 {
                   title: "Premium due date",
-                  body: "Due soon is a status on the plan, with the amount and the next date.",
+                  body: "EMI plans list every instalment with its amount and due date.",
                 },
                 {
                   title: "Payment status",
-                  body: "Paid, failed, and due soon stay on the record after you connect Razorpay, or when staff mark cash or UPI.",
+                  body: "Paid or Payment Due stays on the record, whether the payment came in online through Razorpay or staff recorded cash or UPI.",
                 },
                 {
                   title: "Pending amount",
                   body: "The plan amount is what the follow-up is about. This is not a replacement for core accounts.",
                 },
                 {
-                  title: "Follow-up status",
-                  body: "After the retry schedule you set, a failed payment can become a task for the agent who owns that customer.",
+                  title: "Who sold the plan",
+                  body: "Each plan keeps the agent who enrolled the customer, so follow-ups have an owner.",
                 },
               ]}
             />
             <p className="mt-6 text-sm leading-6 text-muted">
-              Subscription plans and dunning are on Growth. Syclops does not replace
-              your core, and it is not a legal-notice collections system.{" "}
+              Plans and payments are on Growth. Syclops does not replace your core,
+              and it is not a legal-notice collections system.{" "}
               <Link href="/product/subscriptions" className={textLink}>
                 Subscriptions
               </Link>
@@ -503,8 +506,8 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
             From the first home visit to the next premium.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-            These steps share one record. Syclops is the connection between them,
-            not another place to retype the same customer.
+            These steps happen in one app, so nobody retypes the same customer in
+            three places.
           </p>
           <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-6 lg:gap-4">
             {journey.map((step, index) => (
@@ -568,7 +571,8 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             These layouts use sample fintech data so you can see a visit, a referral,
-            a premium, and loop health. They are not a customer result.
+            a premium, and visits turning into customers. They are not a
+            customer result.
           </p>
           <div className="mt-8 grid gap-8 md:grid-cols-2">
             {proofs.map((proof) => (
@@ -595,8 +599,8 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             Prices match the pricing page and are per field seat per month. Customer
-            and DSA logins are not billed as field seats. The referrer portal and
-            plan follow-ups are on Growth. {trialDays} days free · No credit card
+            and DSA logins are not billed as field seats. The referral page and
+            plans are on Growth. {trialDays} days free · No credit card
             required.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -679,12 +683,12 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
                 {
                   href: "/blog/kol-dsa-referral-loops",
                   label: "DSA and KOL loops",
-                  body: "The same record for a policy and a device contract.",
+                  body: "One way of working for agents and medical reps.",
                 },
                 {
-                  href: "/guides/import-beat-list",
-                  label: "Import a beat list",
-                  body: "CSV of accounts. Last-visit can be empty.",
+                  href: "/guides/import-from-excel",
+                  label: "Upload from Excel",
+                  body: "Staff and areas from an Excel template.",
                 },
               ]}
             />
@@ -694,8 +698,8 @@ export function FintechLanding({ trialDays }: { trialDays: number }) {
 
       <CtaBand
         id="fintech-final"
-        title="Bring your beats, referrals, and premiums into one system."
-        body="Create your workspace, invite your agents, and start tracking the customer from the visit to the next premium."
+        title="Bring your visits, referrals, and premiums into one system."
+        body="Create your workspace, add your agents, and start tracking the customer from the visit to the next premium."
         actions={
           <div className="flex flex-col items-start gap-3">
             <FintechLink

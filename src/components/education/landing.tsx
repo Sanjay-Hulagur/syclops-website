@@ -58,7 +58,7 @@ const journey = [
   },
   {
     title: "Parent / alumni referral",
-    body: "The person who made the introduction stays attached as the student moves forward.",
+    body: "The referral keeps the name of the person who made the introduction.",
   },
   {
     title: "Admission",
@@ -66,11 +66,11 @@ const journey = [
   },
   {
     title: "Fee plan",
-    body: "The plan shows the amount, the next due date, and whether it is paid, failed, or due soon.",
+    body: "The plan shows the amount, the next due date, and whether it is paid or has a payment due.",
   },
   {
     title: "Follow-up",
-    body: "A pending or failed installment can become a task for the counselor who owns that student.",
+    body: "An instalment that is due shows on the plan, so the counselor knows whom to call.",
   },
 ];
 
@@ -127,38 +127,38 @@ const syclopsItems = [
   "Parent and alumni referrals",
   "Referral tracking",
   "Field follow-ups",
-  "Fee-plan visibility and supported subscription workflows",
+  "Fee plans with EMI instalments",
 ];
 
 const proofs = [
   {
     title: "See which campuses were covered",
-    body: "A visit list shows check-ins, planned stops, and campuses that have gone quiet.",
+    body: "A visit list shows check-ins, planned stops, and campuses nobody has visited.",
     frame: <VisitHistory />,
   },
   {
     title: "Check in from the counselor’s phone",
-    body: "GPS, duration, and notes stay on the visit, with the follow-up named.",
+    body: "GPS, photos, and notes stay on the visit.",
     frame: <VisitRecord />,
   },
   {
     title: "Let parents refer without an app",
-    body: "A link or QR opens in the browser. The sender sees enquiry and admission status.",
+    body: "Your referral page opens in the browser. The sender sees whether the student joined.",
     frame: <PortalPhone />,
   },
   {
-    title: "Keep the referrer on the student",
-    body: "Parent or alumni origin stays attached from enquiry to the fee plan.",
+    title: "Know who referred each student",
+    body: "Each referral keeps the parent or alum who sent the student, and shows whether they joined.",
     frame: <ReferralDesk />,
   },
   {
     title: "Show the next installment to the field team",
-    body: "Paid, due soon, and failed stay on the fee plan, with a follow-up when you configure one.",
+    body: "Paid and due instalments stay on the fee plan, with their due dates.",
     frame: <InstallmentList />,
   },
   {
     title: "Read the loop, not a vanity chart",
-    body: "On Growth, analytics groups visits, referrals, and plans by referrer and region.",
+    body: "Analytics show visits and referrals by person, referrer, and region.",
     frame: <AnalyticsSample />,
   },
 ];
@@ -172,23 +172,23 @@ function educationFaqs(trialDays: number) {
     },
     {
       q: "Can we manage multiple campuses?",
-      a: "Yes. Campuses are regions in one workspace on Team and Growth. Counselors check in at the campus they are covering. Multi-brand or multi-city is on Scale.",
+      a: "Yes. Set up each campus as a region in one workspace. Counselors check in at the campus they are covering.",
     },
     {
       q: "Can we track counselor visits outside our institution?",
-      a: "Yes. The beat is the schools, colleges, and tuition centres your counselors visit, not only your own building. Check-in records location. GPS runs on a working day between check-in and check-out, and a photo can be required. The record is the visit, not a live map of the evening.",
+      a: "Yes. Counselors check in with GPS and photos at the schools, colleges, and tuition centres they visit, not only your own building. Location is recorded only during the working day. The record is the visit, not a live map of the evening.",
     },
     {
       q: "Can parents and alumni refer students without installing an app?",
-      a: "Yes. They open a portal link or a QR code in the browser. They do not install the field app, and a referrer login is not billed as a field seat. The portal is included on Growth and Scale.",
+      a: "Yes. They open your referral page in the browser and sign in with a one-time code sent to their email. They do not install the field app, and referrer logins are not billed as field seats. The referral page is included on Growth and Scale.",
     },
     {
       q: "Can we import existing student enquiry data?",
-      a: "Yes. Import a CSV of campuses and students — name, phone, email, and area. Last-visit can be empty. After import, check-ins and referrals attach to those rows. See the beat-list import guide.",
+      a: "Staff and areas upload from an Excel template. Talk to us about bringing older enquiry lists across.",
     },
     {
       q: "Can we track fee installments and pending payments?",
-      a: "On Growth, a fee plan shows the amount, the interval, and whether it is paid, failed, or due soon. After the retry schedule you set, a failed payment can become a follow-up for the counselor who owns that student. You can connect Razorpay, or mark cash and UPI in the workspace. Syclops does not replace your accounts system, and it does not collect fees unless a gateway is connected.",
+      a: "On Growth, a fee plan shows the amount, the due dates, and whether it is paid or has a payment due. Fees can be recorded as cash, UPI, or EMI, or paid online through Razorpay, which our team connects with you. Syclops does not replace your accounts system.",
     },
     {
       q: "Are parent and alumni accounts billed?",
@@ -196,7 +196,11 @@ function educationFaqs(trialDays: number) {
     },
     {
       q: "Can coaching institutes use Syclops?",
-      a: "Yes. Coaching institutes use the same loop: student enquiries, counselor visits, parent or alumni referrals, and a course fee plan with a due or failed installment.",
+      a: "Yes. Coaching institutes use the same loop: student enquiries, counselor visits, parent or alumni referrals, and a course fee plan with instalments.",
+    },
+    {
+      q: "Does the app use education words?",
+      a: "Not yet. Syclops was built for hospitals, so some screens say doctors and patients where you would say schools and students. The steps are the same.",
     },
     {
       q: "How much does Syclops cost?",
@@ -328,19 +332,19 @@ export function EducationLanding({ trialDays }: { trialDays: number }) {
               items={[
                 {
                   title: "Planned visits",
-                  body: "The day is a beat with last-visit dates, so skipped campuses show up as a gap.",
+                  body: "A visit plan for the week, and a list of campuses nobody has visited.",
                 },
                 {
                   title: "GPS check-in",
-                  body: "Location is recorded at check-in. GPS runs on a working day between check-in and check-out.",
+                  body: "Location is recorded at check-in, and only during the working day.",
                 },
                 {
                   title: "Visit history",
-                  body: "Duration, notes, and an optional photo stay on the campus.",
+                  body: "Notes and photos stay on the campus.",
                 },
                 {
                   title: "Notes and follow-ups",
-                  body: "A visit can name the next action, including a fee-plan follow-up after your retry schedule.",
+                  body: "A visit records why the counselor went and what was said, so the next visit starts there.",
                 },
                 {
                   title: "Campus and territory coverage",
@@ -348,7 +352,7 @@ export function EducationLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Activity you can review",
-                  body: "Managers see the visit list. On Growth, analytics can be filtered by region.",
+                  body: "Managers see the visit list, and analytics can be filtered by region.",
                 },
               ]}
             />
@@ -380,8 +384,8 @@ export function EducationLanding({ trialDays }: { trialDays: number }) {
               Know who referred every student.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              Connect parent and alumni introductions to student enquiries, admission
-              status and the resulting fee plan.
+              Track parent and alumni introductions, admission status, and fee
+              plans in one place.
             </p>
             <FeatureList
               items={[
@@ -391,19 +395,19 @@ export function EducationLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Student details",
-                  body: "Name and phone or email stay on the referral. The same phone or email cannot be referred twice into the same plan.",
+                  body: "Name and mobile number stay on the referral. The referral page blocks a second open referral for the same mobile number.",
                 },
                 {
                   title: "Referral source",
-                  body: "Parent, alumni, or another sender you enable. Team includes the referral workspace. The browser portal is on Growth.",
+                  body: "Parents, alumni, or other referrers. Team includes the referral workspace. The referral page is on Growth.",
                 },
                 {
                   title: "Enquiry and admission status",
-                  body: "Status moves from sent to converted when a fee plan is created, then to paying when the first invoice clears.",
+                  body: "Each referral shows whether the student came in and joined, or why not.",
                 },
                 {
-                  title: "Fee-plan association",
-                  body: "The plan keeps who referred the student when the installment is paid, due, or failed.",
+                  title: "Referrals and fee plans together",
+                  body: "Referrals and fee plans sit in the same workspace, so the counselor sees both.",
                 },
               ]}
             />
@@ -413,7 +417,7 @@ export function EducationLanding({ trialDays }: { trialDays: number }) {
               </Link>
               {" · "}
               <Link href="/guides/referral-portal" className={textLink}>
-                Portal guide
+                Referral page guide
               </Link>
             </p>
           </div>
@@ -434,8 +438,8 @@ export function EducationLanding({ trialDays }: { trialDays: number }) {
               Make pending installments visible to the field team.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              Connect fee plans and pending installments with follow-up workflows, so
-              the right person knows which student needs attention.
+              Every fee plan shows which instalments are paid and which are due,
+              so the right person knows which student needs a call.
             </p>
             <FeatureList
               items={[
@@ -445,25 +449,25 @@ export function EducationLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Installment due date",
-                  body: "Due soon is a status on the plan, with the amount and the next date.",
+                  body: "EMI plans list every instalment with its amount and due date.",
                 },
                 {
                   title: "Payment status",
-                  body: "Paid, failed, and due soon stay on the record after you connect Razorpay, or when staff mark cash or UPI.",
+                  body: "Paid or Payment Due stays on the record, whether the fee came in online through Razorpay or staff recorded cash or UPI.",
                 },
                 {
                   title: "Pending amount",
                   body: "The plan amount is what the follow-up is about. This is not a replacement accounts ledger.",
                 },
                 {
-                  title: "Follow-up status",
-                  body: "After the retry schedule you set, a failed payment can become a task for the counselor who owns that student.",
+                  title: "Who enrolled the student",
+                  body: "Each fee plan keeps the counselor who enrolled the student, so follow-ups have an owner.",
                 },
               ]}
             />
             <p className="mt-6 text-sm leading-6 text-muted">
-              Subscription plans and dunning are on Growth. Syclops does not replace
-              your accounts system.{" "}
+              Fee plans are on Growth. Syclops does not replace your accounts
+              system.{" "}
               <Link href="/product/subscriptions" className={textLink}>
                 Subscriptions
               </Link>
@@ -503,8 +507,8 @@ export function EducationLanding({ trialDays }: { trialDays: number }) {
             From the first campus visit to the last installment.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-            These steps share one record. Syclops is the connection between them,
-            not another place to retype the same student.
+            These steps happen in one app, so nobody retypes the same student in
+            three places.
           </p>
           <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-6 lg:gap-4">
             {journey.map((step, index) => (
@@ -568,7 +572,8 @@ export function EducationLanding({ trialDays }: { trialDays: number }) {
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             These layouts use sample education data so you can see a visit, a referral,
-            a fee plan, and loop health. They are not a customer result.
+            a fee plan, and visits turning into admissions. They are not a
+            customer result.
           </p>
           <div className="mt-8 grid gap-8 md:grid-cols-2">
             {proofs.map((proof) => (
@@ -595,8 +600,8 @@ export function EducationLanding({ trialDays }: { trialDays: number }) {
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             Prices match the pricing page and are per field seat per month. Parent
-            and alumni logins are not billed as field seats. Fee plans, the referrer
-            portal, and dunning are on Growth. {trialDays} days free · No credit card
+            and alumni logins are not billed as field seats. Fee plans and the
+            referral page are on Growth. {trialDays} days free · No credit card
             required.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -679,12 +684,12 @@ export function EducationLanding({ trialDays }: { trialDays: number }) {
                 {
                   href: "/blog/counselor-beat-unpaid-fee-installment",
                   label: "Unpaid fees as a visit",
-                  body: "Counselor beat plus alumni origin on the fee plan.",
+                  body: "Counselor visits for fees that are due.",
                 },
                 {
-                  href: "/guides/import-beat-list",
-                  label: "Import a beat list",
-                  body: "CSV of campuses and students. Last-visit can be empty.",
+                  href: "/guides/import-from-excel",
+                  label: "Upload from Excel",
+                  body: "Staff and areas from an Excel template.",
                 },
               ]}
             />

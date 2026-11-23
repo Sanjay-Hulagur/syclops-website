@@ -59,7 +59,7 @@ const industryMeta: Record<
     ],
   },
   fintech: {
-    title: "Turn agent visits into policies that keep paying",
+    title: "Turn agent visits into policies that get paid",
     keywords: [
       "insurance field tracking",
       "NBFC agent visits",

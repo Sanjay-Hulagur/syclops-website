@@ -18,7 +18,8 @@ export function AndroidDownload({
         </h2>
       )}
       <p className={`text-sm leading-6 text-muted ${compact ? "" : "mt-4 max-w-xl"}`}>
-        Download the Android APK and open your workspace invite.
+        Download the Android APK, then sign in with your work email and a
+        one-time code.
       </p>
       <div className={`flex flex-wrap items-center gap-3 ${compact ? "mt-5" : "mt-6"}`}>
         <a
@@ -31,8 +32,8 @@ export function AndroidDownload({
       </div>
       {compact ? null : (
         <p className="mt-4 max-w-xl text-xs leading-5 text-muted">
-          If Android asks, allow install from this browser. Partners can keep
-          using the mobile web portal.
+          If Android asks, allow install from this browser. Referrers use the
+          referral page in their browser instead.
         </p>
       )}
     </div>

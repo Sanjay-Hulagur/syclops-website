@@ -8,6 +8,6 @@ export default function Image() {
   return ogImage({
     eyebrow: "Blog",
     title: "The field day is the revenue system.",
-    kicker: "The visit, the intro, and the subscription on one record.",
+    kicker: "The visit, the intro, and the subscription in one app.",
   });
 }

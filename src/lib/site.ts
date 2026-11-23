@@ -71,24 +71,24 @@ export const roles = [
   {
     title: "Sales teams",
     href: "/product/analytics",
-    body: "Hot leads, call notes, conversions, and a pipeline that actually connects to the field.",
+    body: "Leads, call notes, and conversions, in the same app as the field visits.",
   },
   {
     title: "Referral partners",
     href: "/product/referrals",
-    body: "A portal for members, alumni, KOLs, clinics, or channel partners. They send. They see status. They get paid.",
+    body: "A referral page for members, alumni, KOLs, clinics, or channel partners. They send. They see status. They get paid.",
   },
   {
     title: "Management",
     href: "/product/analytics",
-    body: "Who visited, who referred, who still pays. MRR, leakage, and at-risk accounts in one lens.",
+    body: "Who visited, who referred, and who has paid. Coverage, referrals by referrer and region, and Excel exports.",
   },
 ];
 
 export const integrations = [
-  { name: "WhatsApp Business", use: "Templates, campaigns, and conversation logs" },
+  { name: "WhatsApp Business", use: "Templates, campaigns, a shared inbox and delivery reports" },
   { name: "Razorpay", use: "Online payments for plan enrollments" },
-  { name: "Google Maps", use: "Geocoding, routes, and visit map PDFs" },
-  { name: "Billing / HIS / ERP", use: "Admissions, invoices, and membership ledgers" },
-  { name: "Accounting", use: "TADA, collections, and payout exports" },
+  { name: "Google Maps", use: "Locations and routes for the field day" },
+  { name: "Hospital billing (HIS)", use: "Admissions and bills, matched to referrals for payouts" },
+  { name: "Excel exports", use: "TA/DA, visit, sales and referral payout reports" },
 ];

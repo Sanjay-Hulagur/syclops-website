@@ -20,7 +20,7 @@ function cardHero(post: Post) {
 
 const title = "The field day is the revenue system.";
 const description =
-  "TADA, partner portals, gym and clinic referrals, and the visit after a failed debit. Syclops puts the visit, the intro, and the subscription on one record.";
+  "TADA, referral pages, gym and clinic referrals, and the visit after a missed payment. Syclops puts the visit, the intro, and the subscription in one app.";
 
 export const metadata: Metadata = pageSeo({
   title,

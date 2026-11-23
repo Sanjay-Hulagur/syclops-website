@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: guide.title,
     description: guide.summary,
     path: `/guides/${guide.slug}`,
-    keywords: ["Syclops setup", "self-serve", guide.title],
+    keywords: ["Syclops setup", "setup guide", guide.title],
   });
 }
 
@@ -29,18 +29,18 @@ const guideProductLinks: Record<
 > = {
   "create-workspace": [
     { href: "/start", label: "Create a workspace", body: "The form this guide describes." },
-    { href: "/industries", label: "Industries", body: "Nouns follow the industry you pick." },
+    { href: "/industries", label: "Industries", body: "How Syclops fits your kind of business." },
   ],
   "invite-team": [
-    { href: "/product/mobile", label: "Mobile app", body: "How field seats install." },
+    { href: "/product/mobile", label: "Mobile app", body: "How field staff install it." },
     { href: "/pricing", label: "Pricing", body: "What a field seat costs." },
   ],
   "field-day": [
-    { href: "/product/field", label: "Field tracking", body: "Check-in, beat, checkout." },
-    { href: "/tada-software", label: "TADA software", body: "Mileage from the path." },
+    { href: "/product/field", label: "Field tracking", body: "Check-in, photos, and visit plans." },
+    { href: "/tada-software", label: "TADA software", body: "TA/DA from the distance travelled." },
   ],
   "referral-portal": [
-    { href: "/product/referrals", label: "Referral management", body: "Portal, status, rewards." },
+    { href: "/product/referrals", label: "Referral management", body: "Referrer login, status, and payouts." },
     {
       href: "/referral-management-software",
       label: "Referral management software",
@@ -48,20 +48,20 @@ const guideProductLinks: Record<
     },
   ],
   "plans-billing": [
-    { href: "/product/subscriptions", label: "Subscriptions", body: "Plans, dunning, field tasks." },
+    { href: "/product/subscriptions", label: "Subscriptions", body: "Plans, EMI, and payment status." },
     { href: "/integrations", label: "Integrations", body: "Razorpay, WhatsApp, Maps." },
   ],
   reports: [
-    { href: "/product/analytics", label: "Analytics", body: "Loop health and people." },
+    { href: "/product/analytics", label: "Analytics", body: "Coverage, people, and referrers." },
     { href: "/product/field", label: "Field tracking", body: "The visits behind the report." },
   ],
-  "import-beat-list": [
-    { href: "/product/field", label: "Field tracking", body: "The beat those rows become." },
-    { href: "/compare/whatsapp-excel", label: "vs WhatsApp + Excel", body: "Stop dual-running the sheet." },
+  "import-from-excel": [
+    { href: "/product/field", label: "Field tracking", body: "What staff do after the upload." },
+    { href: "/compare/whatsapp-excel", label: "vs WhatsApp + Excel", body: "Stop running the team from a sheet." },
   ],
-  "qualification-window": [
-    { href: "/product/referrals", label: "Referral management", body: "Rewards and duplicate guard." },
-    { href: "/guides/referral-portal", label: "Referral portal guide", body: "Turn the link on first." },
+  "referral-payouts": [
+    { href: "/product/referrals", label: "Referral management", body: "Rewards, payouts, and the duplicate check." },
+    { href: "/guides/referral-portal", label: "Referral page guide", body: "Set up the referral page first." },
   ],
 };
 
@@ -99,7 +99,7 @@ export default async function GuidePage({ params }: Props) {
           ))}
         </Prose>
       </Section>
-      <Section eyebrow="Steps" title="Do this in the product. There is no specialist on the call.">
+      <Section eyebrow="Steps" title="What to do, in order.">
         <Steps items={guide.steps} />
       </Section>
       <Section eyebrow="FAQ">

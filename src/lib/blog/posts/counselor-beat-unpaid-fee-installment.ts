@@ -3,22 +3,16 @@ import { POST_UPDATED } from "@/lib/blog/types";
 
 export const post: Post = {
   slug: "counselor-beat-unpaid-fee-installment",
-  title: "Gym membership fee tracking and follow-ups",
+  title: "Unpaid fee installments need a counselor visit",
   date: "2026-10-16",
   updated: POST_UPDATED,
-  category: "Subscriptions",
+  category: "Education",
   excerpt:
-    "Manage gym counselor visits, track unpaid membership installments, and follow up on overdue payments with a clear plan.",
-  hero: {
-    src: "/blog/gym-membership-fee-tracking.png",
-    alt: "Gym membership fee tracking and follow-ups. A counselor reviewing unpaid installments with a member at a gym.",
-    width: 1958,
-    height: 803,
-  },
+    "Plan counselor visits around unpaid fee installments, keep alumni and parent referrals named, and stop running enquiries, calls, and fees in three lists.",
   body: [
     {
       type: "p",
-      text: "An unpaid fee installment is a counselor visit, not only an SMS. Campus growth teams keep three memories that never agree: an enquiry Excel, a counselor call log, and the accounts list of unpaid term fees. Alumni intros live in a parent WhatsApp group. By the time someone asks which introduction still pays, the sheet is a week old and the parent has already heard a different story from the bus route.",
+      text: "An unpaid fee installment is a counselor visit, not only an SMS. Campus growth teams keep three memories that never agree: an enquiry Excel, a counselor call log, and the accounts list of unpaid term fees. Alumni intros live in a parent WhatsApp group. By the time someone asks which introduction became a paying student, the sheet is a week old and the parent has already heard a different story from the bus route.",
     },
     {
       type: "h2",
@@ -26,7 +20,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "An accounts office can send a reminder. In India the parent is often waiting on a counselor, a hostel doubt, or a rumour about the programme, not on a payment link. Retrying a mandate does not replace a visit at the school, college, or tuition centre that owns that family. The SMS is a notice. The visit is the work.",
+      text: "An accounts office can send a reminder. In India the parent is often waiting on a counselor, a hostel doubt, or a rumour about the programme, not on a payment link. Another link does not replace a visit at the school, college, or tuition centre that owns that family. The SMS is a notice. The visit is the work.",
     },
     {
       type: "p",
@@ -34,37 +28,37 @@ export const post: Post = {
     },
     {
       type: "h2",
-      text: "Treat the counselor day as a beat",
+      text: "Treat the counselor day as a field day",
     },
     {
       type: "p",
-      text: "A counselor day is a field day. Check in at the campus. Log the enquiry as a visit on an account, with a last-visit date, so a skipped block is a status and not silence. Import last year’s Excel if you must — an empty last-visit is fine — then stop dual-running the sheet. The phone becomes the list. The sheet becomes a souvenir.",
+      text: "A counselor day is a field day. Check in at the campus with GPS. Log each visit with notes and a photo, so a skipped school shows up on the list of places nobody has visited instead of as silence. Upload your counselors and areas from the Excel template, then stop dual-running the sheet. The phone becomes the list. The sheet becomes a souvenir.",
     },
     {
       type: "p",
-      text: "[Field tracking](/product/field) is how that day stays honest. Geo is required at check-in. Checkout closes the route. Visits attach to the family or the campus account, not to a personal note that dies with the counselor’s phone. When a term fee fails, the task lands on the person who owns that campus, with the last visit already on the record.",
+      text: "[Field tracking](/product/field) is how that day stays honest. Location is recorded at check-in, and only during the working day. Visits stay on the account, not in a personal note that dies with the counselor’s phone. When a term fee is still due, the fee plan shows it, along with the counselor who enrolled the student.",
     },
     {
       type: "ul",
       items: [
         "Check in at the campus before the first conversation, so the day has a start.",
-        "Attach every enquiry to an account, even when last year’s sheet had no owner.",
-        "Treat a skip as a logged status. An untouched block should not look like a finished block.",
-        "When a fee fails, write the task to the counselor who owns that campus, not to a shared inbox.",
-        "Keep the alumni or parent referrer on the account. They are often the adult who can save the seat.",
+        "Log every visit, even when last year’s sheet had no owner.",
+        "Look at the list of schools nobody has visited. An untouched block should not look like a finished block.",
+        "When a fee is still due, give the follow-up to the counselor who enrolled the student, not to a shared inbox.",
+        "Check who referred the student. An alumni or parent referrer is often the adult who can save the seat.",
       ],
     },
     {
       type: "h2",
-      text: "The alumni intro has to sit on the fee plan",
+      text: "The alumni intro needs a record too",
     },
     {
       type: "p",
-      text: "Alumni and parent referrals need the same object as any other introduction. Status is admitted and on a fee plan, not a rumour in a group. A qualification window stops you paying for a join that leaves before the term settles. A duplicate-phone rule stops two alumni claiming the same student. Name mismatches sit in Pending until a manager assigns them, instead of a counselor guessing in a corridor.",
+      text: "Alumni and parent referrals need the same record as any other introduction. Each referral keeps the name of who sent it, and a status from sent to converted, or lost with a reason, not a rumour in a group. The referral page blocks a second open referral for the same mobile number, so two alumni cannot claim the same student. Different spellings of a referrer’s name can be linked to one person, instead of a counselor guessing in a corridor.",
     },
     {
       type: "p",
-      text: "That attachment matters the day the installment fails. The referrer is not a marketing source you file and forget. They are often the person the parent will take a call from. If the fee plan has forgotten them, the counselor walks in without the one relationship that could keep the seat. An [education](/industries/education) workspace keeps counselor coverage, alumni origin, and the semester plan on one record.",
+      text: "That record matters the day the installment is due. The referrer is not a marketing source you file and forget. They are often the person the parent will take a call from. Before the counselor walks in, they should know who sent the family. An [education](/industries/education) workspace keeps counselor visits, alumni referrals, and fee plans in one app.",
     },
     {
       type: "h2",
@@ -72,29 +66,29 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Syclops does not replace the academic ERP. Marks, timetable, and attendance registers stay there. The loop you are missing is different: who walked the campus, which intro still pays, and which unpaid installment became a visit instead of another accounts SMS. Buying a second student-information system to get that loop is how campuses end up with two logins and the same leak.",
+      text: "Syclops does not replace the academic ERP. Marks, timetable, and attendance registers stay there. The loop you are missing is different: who walked the campus, which intro became an admission, and which unpaid installment became a visit instead of another accounts SMS. Buying a second student-information system to get that loop is how campuses end up with two logins and the same leak.",
     },
     {
       type: "p",
-      text: "Cash at the accounts window still happens. When a parent pays at the desk, the counselor or the clerk marks the collection. It attaches to the plan and to the referrer. Origin does not die because the money did not come through a mandate. You configure when a failed debit or a quiet plan writes the next beat. You do not rebuild the list by hand every Monday.",
+      text: "Cash at the accounts window still happens. When a parent pays at the desk, the counselor or the clerk records the payment on the fee plan, as cash, UPI, or an EMI instalment. The plan shows it as paid even though the money did not come through the gateway. Review the plans with a payment due each week, and put the follow-ups on each counselor’s visit plan. You do not rebuild the list by hand every Monday.",
     },
     {
       type: "h2",
-      text: "Dunning is the notice. The beat is the recovery",
+      text: "The reminder is the notice. The visit is the recovery",
     },
     {
       type: "p",
-      text: "Gateway retries and reminder texts belong in the billing tool. They recover the parent who only needed a new UPI pin. They do not recover the parent who is waiting to see a person. Read [why subscriptions need a field team](/blog/subscriptions-need-a-field-team) if the argument still sounds like a gym problem. On a campus it is the same loop with a counselor and a term fee. Create an education workspace, import the beat, and let the unpaid installment name the next visit.",
+      text: "Gateway retries and reminder texts belong in the billing tool. They recover the parent who only needed a new UPI pin. They do not recover the parent who is waiting to see a person. Read [why subscriptions need a field team](/blog/subscriptions-need-a-field-team) if the argument still sounds like a gym problem. On a campus it is the same loop with a counselor and a term fee. Create an education workspace, upload your counselors and areas, and let the unpaid installment decide the next visit.",
     },
   ],
   faqs: [
     {
       q: "Does this replace our academic ERP?",
-      a: "No. Marks and timetable stay in the ERP. Counselor coverage, alumni origin, and whether the semester plan still pays are the records this loop holds.",
+      a: "No. Marks and timetable stay in the ERP. Counselor visits, alumni referrals, and whether each fee plan is paid are what Syclops holds.",
     },
     {
       q: "Should every unpaid SMS become a campus visit?",
-      a: "No. Let the gateway retry first. Write a counselor task when the retries are exhausted, or when you already know the family is waiting on a person rather than a link.",
+      a: "No. Let the gateway retry first. Plan a counselor visit when the fee is still due after that, or when you already know the family is waiting on a person rather than a link.",
     },
   ],
 };

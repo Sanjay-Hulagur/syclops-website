@@ -3,22 +3,16 @@ import { POST_UPDATED } from "@/lib/blog/types";
 
 export const post: Post = {
   slug: "channel-partner-portal-not-crm-source-field",
-  title: "Field work, made simpler.",
+  title: "A channel partner referral page is not a CRM source field",
   date: "2026-10-17",
   updated: POST_UPDATED,
   category: "Sales",
   excerpt:
-    "Practical ideas, systems and learnings from the field — covering visits, referrals, plans, TADA, partner portals, and more.",
-  hero: {
-    src: "/blog/field-work-made-simpler.png",
-    alt: "Field work, made simpler. A field officer riding a motorcycle toward a clinic and houses.",
-    width: 1958,
-    height: 803,
-  },
+    "Why a CRM source dropdown cannot tell a channel partner what happened to their intro, and what a partner referral page records instead.",
   body: [
     {
       type: "p",
-      text: "A channel partner portal is not a CRM source field. Indian field sales teams still buy a CRM because the board asked for a pipeline, then keep the beat in WhatsApp. The partner who sent the account asks what happened to that intro. Someone pastes “Partner” into a dropdown. That picklist is a rumour. It does not tell the sender whether the account was accepted, converted, or is still paying, and it does not tell the retainer who introduced it.",
+      text: "A channel partner referral page is not a CRM source field. Indian field sales teams still buy a CRM because the board asked for a pipeline, then keep the field day in WhatsApp. The partner who sent the account asks what happened to that intro. Someone pastes “Partner” into a dropdown. That picklist is a rumour. It does not tell the sender whether the account was accepted or converted, and it does not tell your team who introduced it.",
     },
     {
       type: "h2",
@@ -26,11 +20,11 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "CRM source fields were built for your team. A manager filters opportunities by how they arrived. The partner is not in that filter. They do not have a Salesforce or Zoho seat, and they should not. They want a read-only answer: I sent this company, you accepted it, a contract started, the retainer is still live. A dropdown cannot be that answer. It only records what your rep remembered to type after the call.",
+      text: "CRM source fields were built for your team. A manager filters opportunities by how they arrived. The partner is not in that filter. They do not have a Salesforce or Zoho seat, and they should not. They want a read-only answer: I sent this company, you worked it, it converted. A dropdown cannot be that answer. It only records what your rep remembered to type after the call.",
     },
     {
       type: "p",
-      text: "The same gap shows up the week a partner chases a reward. Finance asks which opportunity the credit belongs to. The source field says Partner. It does not say which partner, which phone, or whether that account is still inside a qualification window. The desk calls the partner to reconstruct a thread. That call is the product failing in public.",
+      text: "The same gap shows up the week a partner chases a reward. Finance asks which opportunity the credit belongs to. The source field says Partner. It does not say which partner, which phone, or whether anyone approved the payout. The desk calls the partner to reconstruct a thread. That call is the product failing in public.",
     },
     {
       type: "h2",
@@ -38,11 +32,11 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "A deal pipeline answers whether a named opportunity moved stage. A partner referral answers whether the sender can see sent, accepted, converted, and paying, and whether a retainer or AMC still renews. Those are different objects. Bending a CRM into a beat usually means a customization ticket, a second object, and an empty source field the week the admin who built it leaves.",
+      text: "A deal pipeline answers whether a named opportunity moved stage. A partner referral answers whether the sender can see what happened to the account they sent, and what they are owed for it. Those are different objects. Bending a CRM into a field app usually means a customization ticket, a second object, and an empty source field the week the admin who built it leaves.",
     },
     {
       type: "p",
-      text: "Stage names also lie about coverage. “Proposal sent” can be true while the partner who opened the door has no idea the proposal exists. “Closed won” can be true while the first invoice never mentions them. If you [compare a traditional CRM](/compare/crm) with a portal, the test is not how many stages you can draw. The test is whether the person outside your company can see the loop without calling your desk.",
+      text: "Stage names also lie about coverage. “Proposal sent” can be true while the partner who opened the door has no idea the proposal exists. “Closed won” can be true while nobody records who introduced the account. If you [compare a traditional CRM](/compare/crm) with a referral page, the test is not how many stages you can draw. The test is whether the person outside your company can see the status without calling your desk.",
     },
     {
       type: "h2",
@@ -50,33 +44,33 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Give partners one URL. They are not paid field seats. They sign in with a phone or an email, see the accounts they sent, and stop there. They do not see other partners, GPS, or your rate card. [Referral management](/product/referrals) is that shared record: status the sender can open, a reward that waits, and a duplicate rule so the same phone cannot be referred twice into the same plan.",
+      text: "Give partners one link. They are not paid field seats. They sign in with a one-time code sent to their email, see the accounts they sent, and stop there. They do not see other partners or GPS. [Referral management](/product/referrals) is that shared view: status the sender can open, a reward that is approved before it is paid, and a rule that blocks a second open referral for the same mobile number.",
     },
     {
       type: "ul",
       items: [
-        "Sent, accepted, converted, and paying — the four states a partner will ask about on a Monday.",
-        "A qualification window before any credit, so a bounced intro does not become a payout.",
-        "One phone or email per plan, so two partners cannot claim the same account.",
-        "Name mismatches held in Pending until a manager assigns them, instead of a guess in a source field.",
-        "The partner still attached when a retainer is at risk, because they are often the person who can save it.",
+        "Sent, converted, or lost with a reason — the states a partner will ask about on a Monday.",
+        "A reward that is approved before it is paid, so a bounced intro does not become a payout.",
+        "One open referral per mobile number, so two partners cannot claim the same account.",
+        "Different spellings of a partner’s name linked to one person, instead of a guess in a source field.",
+        "Analytics by referrer, so you can see which partners actually send business.",
       ],
     },
     {
       type: "p",
-      text: "Rewards wait on that window. A percentage of the first invoice, a credit, or a fixed fee — the shape can differ by partner tier. The rule does not. Nothing pays because someone forwarded a visiting card. Something pays because the account stayed.",
+      text: "Rewards wait on approval. A fixed fee, a share of the bill, or a credit — the shape can differ by partner. The rule does not. Nothing pays because someone forwarded a visiting card. Something pays because a manager checked that the account converted.",
     },
     {
       type: "h2",
-      text: "Field seats, retainers, and the visit when a contract is at risk",
+      text: "Field seats, retainers, and the visit when a payment is due",
     },
     {
       type: "p",
-      text: "The portal does not replace the beat. Field seats still check in, walk the patch, and write TADA from the path between check-in and checkout. When a retainer or AMC is at risk, the visit belongs to the owner of that account, with the partner still on the record. The partner is not dispatched as a free field seat. They are the context the visit needs.",
+      text: "The referral page does not replace the field day. Field seats still check in, cover their area, and get TA/DA from the distance travelled. When a retainer has a payment due, the visit belongs to the person who sold it — the plan names them. Check who referred the account before you go. The partner is not dispatched as a free field seat. They are the context the visit needs.",
     },
     {
       type: "p",
-      text: "That split is what a [sales and marketing](/industries/sales) workspace is for. Regions are territories. Visits attach to accounts. The intro that opened the account stays visible after the opportunity stage has been forgotten. Coverage, partner status, and a renewal visit live on one object instead of a CRM, a WhatsApp group, and a billing export that do not know each other.",
+      text: "That split is what a [sales and marketing](/industries/sales) workspace is for. Regions are territories. Visits stay on accounts. The partner who opened the account stays on the lead after the opportunity stage has been forgotten. Coverage, partner status, and plans live in one app instead of a CRM, a WhatsApp group, and a billing export that do not know each other.",
     },
     {
       type: "h2",
@@ -88,17 +82,17 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "If you are still deciding what “referral software” has to hold before you pick a vendor, start with [how to choose referral management software](/blog/how-to-choose-referral-management-software). The short version for channel sales: import the beat, share one portal URL, and stop treating a source dropdown as a relationship. The partner can see what happened. The retainer remembers who sent it. Your reps stop reconstructing both from a chat.",
+      text: "If you are still deciding what “referral software” has to hold before you pick a vendor, start with [how to choose referral management software](/blog/how-to-choose-referral-management-software). The short version for channel sales: upload your team and areas, share one referral page link, and stop treating a source dropdown as a relationship. The partner can see what happened. The lead remembers who sent it. Your reps stop reconstructing both from a chat.",
     },
   ],
   faqs: [
     {
       q: "Do channel partners need a paid field seat?",
-      a: "No. Partners use a portal link. Paid seats are the people who check in, log visits, and appear on TADA. A partner who only needs status should not consume a seat.",
+      a: "No. Partners use your referral page in the browser. Paid seats are the people who check in, log visits, and get TA/DA. A partner who only needs status should not use a seat.",
     },
     {
       q: "Can we keep Salesforce or Zoho for named deals?",
-      a: "Yes, if those deals are real pipeline. Use the portal for partner status, the beat, and the retainer. Do not expect a source field to do that second job.",
+      a: "Yes, if those deals are real pipeline. Use Syclops for partner status, field visits, and recurring plans. Do not expect a source field to do that second job.",
     },
   ],
 };

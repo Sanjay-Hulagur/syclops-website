@@ -17,8 +17,8 @@ import {
   LeadStatus,
   LoopHealth,
   PartnerPortal,
+  PlanList,
   PlanRecord,
-  RenewalList,
 } from "@/components/sales/frames";
 import { formatInr, publicPlans } from "@/lib/plans";
 import { faqJsonLd } from "@/lib/seo";
@@ -55,30 +55,30 @@ const workflow = [
   },
   {
     title: "Partner referral",
-    body: "A channel partner submits a lead in the portal. The person who sent it stays named.",
+    body: "A channel partner submits a lead on your referral page. The referral keeps their name.",
   },
   {
     title: "Lead qualification",
-    body: "Status moves from sent to accepted while the team works the opportunity.",
+    body: "The lead stays open while the team works the opportunity.",
   },
   {
     title: "Won customer",
-    body: "Converted means a plan exists, so the win is not a stage that disappears after close.",
+    body: "Converted is a status on the referral, so the win does not disappear after close.",
   },
   {
     title: "Recurring plan",
-    body: "The plan keeps the referrer, the amount, and whether it is paid, failed, or due soon.",
+    body: "The plan keeps the amount, the end date, and whether it is paid or has a payment due.",
   },
   {
     title: "Renewal follow-up",
-    body: "A due or failed plan stays visible to the person who owns that account.",
+    body: "A plan with a payment due stays visible, with its end date, to the person who sold it.",
   },
 ];
 
 const audiences = [
   {
     title: "B2B field sales teams",
-    body: "Coverage of dealers and accounts is the job. The beat, the visit, and the next follow-up stay on the account.",
+    body: "Coverage of dealers and accounts is the job. The visit plan, the visit, and the notes stay on the account.",
     items: [
       "Sales representative visits",
       "Dealer and account coverage",
@@ -95,29 +95,29 @@ const audiences = [
       "Partner-submitted leads",
       "Referral attribution",
       "Lead status visibility",
-      "Partner performance on Growth",
+      "Referrals by partner",
     ],
   },
   {
     title: "Agencies and service businesses",
-    body: "Account visits and referred customers sit on the same recurring plan, with the renewal date in view.",
+    body: "Account visits, referred customers, and recurring plans sit in one workspace, with each plan’s end date in view.",
     items: [
       "Account visits",
       "Referred customers",
       "Recurring service contracts",
-      "Renewal follow-ups",
+      "Plan end dates and payments due",
       "Customer relationship visibility",
     ],
   },
   {
     title: "Multi-location sales organisations",
-    body: "Territories are regions in one workspace. Managers see visits and, on Growth, results by region.",
+    body: "Territories are regions in one workspace. Managers see visits and results by region.",
     items: [
       "Multiple territories",
       "Field representatives",
       "Manager visibility",
       "Visit performance",
-      "Reporting by region on Growth",
+      "Reporting by region",
     ],
   },
 ];
@@ -136,43 +136,43 @@ const syclopsItems = [
   "Channel partner referrals",
   "Partner attribution",
   "Recurring plan visibility",
-  "Field follow-up workflows",
+  "Field follow-ups",
 ];
 
 const proofs = [
   {
-    title: "See the day’s beat",
+    title: "See the day’s visits",
     body: "Planned stops and completed check-ins sit on one list, including accounts that have not been visited.",
     frame: <BeatList />,
   },
   {
     title: "Check in from the phone",
-    body: "GPS, notes, and an optional photo stay on the visit. Location runs for the working day only.",
+    body: "GPS, notes, and photos stay on the visit. Location is recorded only during the working day.",
     frame: <CheckInPhone />,
   },
   {
     title: "Open the account",
-    body: "The dealer or customer keeps last visit, owner, and the partner who introduced them.",
+    body: "The dealer or customer keeps its visit history and the rep who owns it.",
     frame: <AccountRecord />,
   },
   {
     title: "Let partners submit a lead",
-    body: "A portal link in the browser. Partners see their own leads. They are not billed as field seats.",
+    body: "Your referral page opens in the browser. Partners see their own leads. They are not billed as field seats.",
     frame: <PartnerPortal />,
   },
   {
     title: "Keep status on the referral",
-    body: "Sent, accepted, converted, and paying stay on the lead. Converted means a plan was created.",
+    body: "Each lead shows where it stands, from sent to converted, or why it was lost.",
     frame: <LeadStatus />,
   },
   {
     title: "See the renewal before it is forgotten",
-    body: "The plan shows the referrer, the due date, and paid, failed, or due soon where billing is connected.",
+    body: "The plan shows the end date, the amount, and whether a payment is due.",
     frame: <PlanRecord />,
   },
   {
     title: "Read visits, leads, and plans together",
-    body: "On Growth, analytics groups activity by referrer and region. The counts below are a sample layout.",
+    body: "Analytics show activity by person, referrer, and region. The counts below are a sample layout.",
     frame: <LoopHealth />,
   },
 ];
@@ -186,31 +186,31 @@ function salesFaqs(trialDays: number) {
     },
     {
       q: "Can we track our field representatives using GPS?",
-      a: "Yes. Check-in records location. GPS runs on a working day between check-in and check-out, a photo can be required, and mock locations are flagged. Managers can see location during that working day. Retention is a setting. It is visit evidence, not a live map of the evening.",
+      a: "Yes. Each visit is checked in with GPS and photos, and location is recorded only during the working day. Managers see each person’s visits and route for that day. It is visit evidence, not a live map of the evening.",
     },
     {
       q: "Can we plan daily beat visits?",
-      a: "Yes. The beat is the accounts in a territory, with last-visit dates. Representatives see planned stops, log a visit or a skip, and managers see which accounts have not been covered. You can import a beat list from CSV.",
+      a: "Yes. Reps get a visit plan for the week and a route for the day, and log each visit when they check in. Managers see which accounts nobody has visited. Reps and areas upload from an Excel template.",
     },
     {
       q: "Can channel partners submit leads?",
-      a: "Yes, on Growth and Scale. Partners open a portal link in the browser, submit a lead, and see status for what they sent. They do not install the field app, and a partner login is not billed as a field seat. Team includes the referral workspace. The portal itself is on Growth.",
+      a: "Yes, on Growth and Scale. Partners open your referral page in the browser, sign in with a one-time code sent to their email, submit a lead, and see status for what they sent. They do not install the field app, and a partner login is not billed as a field seat. Team includes the referral workspace. The referral page itself is on Growth.",
     },
     {
       q: "Can we track which partner referred a customer?",
-      a: "Yes. The referrer stays on the lead and on the plan created from it. Your team sees who sent the account. The partner sees their own submissions, not other partners, GPS, or your rate card.",
+      a: "Yes. The partner stays on the lead they sent, and your team sees who sent each account. The partner sees their own submissions, not other partners or GPS.",
     },
     {
       q: "Can we track leads through conversion?",
-      a: "Yes. Status moves from sent to accepted, to converted when a plan is created, and to paying when the first invoice clears. Churned is a status too. The same phone or email cannot be referred twice into the same plan.",
+      a: "Yes. Each lead shows its status until it converts, or records why it was lost. Your referral page blocks a second open referral for the same mobile number.",
     },
     {
       q: "Can we manage recurring contracts and renewals?",
-      a: "On Growth, a plan shows the account, the referrer, the amount, the next date, and whether it is paid, failed, or due soon after you connect Razorpay, or when staff mark cash or UPI. Syclops does not replace your accounting system, and it does not recover a renewal by itself. After the retry schedule you set, a failed payment can become a follow-up for the person who owns that account.",
+      a: "On Growth, a plan shows the customer, the amount, the end date, and whether it is paid or has a payment due. Payments can be recorded as cash, UPI, or EMI, or paid online through Razorpay, which our team connects with you. Syclops does not replace your accounting system, and it does not renew a contract by itself.",
     },
     {
-      q: "Can managers approve TADA?",
-      a: "Yes. Mileage is the path between check-in and check-out. You set a rate card and a daily cap in Settings. Approval is a queue in the workspace. TADA is included on Team.",
+      q: "How does TADA work?",
+      a: "TA/DA is worked out from the distance travelled during the working day, using the allowance you set for each distance range. Reps see their daily and monthly totals in the app. TADA is included on Team.",
     },
     {
       q: "Is Syclops an FMCG distributor management system?",
@@ -218,7 +218,11 @@ function salesFaqs(trialDays: number) {
     },
     {
       q: "Can we manage multiple territories?",
-      a: "Yes. Territories are regions in one workspace on Team and Growth. Representatives check in on the territory they cover. Multi-brand or multi-city is on Scale. Analytics by region is on Growth.",
+      a: "Yes. Territories are regions in one workspace. Representatives check in on the territory they cover, and analytics can be filtered by region.",
+    },
+    {
+      q: "Does the app use sales words?",
+      a: "Not yet. Syclops was built for hospitals, so some screens say doctors and patients where you would say dealers and customers. The steps are the same.",
     },
     {
       q: "How much does Syclops cost?",
@@ -277,9 +281,9 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
             Turn field visits and partner referrals into revenue.
           </h1>
           <p className="mt-5 max-w-md text-base leading-7 text-muted">
-            Plan sales visits, manage channel partners, track referred leads and
-            follow every opportunity through to conversion and renewal — in one
-            connected platform.
+            Plan sales visits, manage channel partners, track referred leads, and
+            follow every opportunity through to conversion and a paying plan — in
+            one place.
           </p>
           <div id="sales-hero-cta" className="mt-8 flex flex-wrap gap-3">
             <SalesLink
@@ -303,7 +307,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
             <li>{trialDays} days free</li>
             <li>No credit card required</li>
             <li>No sales call</li>
-            <li>Self-serve setup</li>
+            <li>Set up in the browser</li>
           </ul>
         </div>
         <Image
@@ -331,8 +335,8 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
           ))}
         </ol>
         <p className="mt-8 max-w-3xl text-base leading-7">
-          Syclops connects the field visit, the partner introduction, the opportunity
-          and the recurring customer relationship.
+          Syclops puts the field visit, the partner introduction, the opportunity,
+          and the recurring plan in one place.
         </p>
       </section>
 
@@ -358,19 +362,19 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
               items={[
                 {
                   title: "Planned visits",
-                  body: "The day is a beat with last-visit dates, so a skipped dealer shows up as a gap.",
+                  body: "A visit plan for the week, and a list of accounts nobody has visited.",
                 },
                 {
-                  title: "Daily beat",
-                  body: "Representatives see the accounts on their route, log a visit, or mark a skip.",
+                  title: "Daily route",
+                  body: "Representatives see the day’s route on the phone and check in at each stop.",
                 },
                 {
                   title: "GPS check-in",
-                  body: "Location is recorded at check-in. GPS runs on a working day between check-in and check-out.",
+                  body: "Location is recorded at check-in, and only during the working day.",
                 },
                 {
                   title: "Account visit history",
-                  body: "Duration, notes, and an optional photo stay on the dealer or customer.",
+                  body: "Notes and photos stay on the dealer or customer.",
                 },
                 {
                   title: "Visit notes and follow-up",
@@ -378,7 +382,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "TADA and travel tracking",
-                  body: "Mileage is the path walked. A manager approves it against the rate card you set.",
+                  body: "TA/DA is worked out from the distance travelled, using the amounts you set.",
                 },
               ]}
             />
@@ -415,14 +419,14 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
               Give every partner lead a clear identity and status.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              Let partners submit referred leads through a portal and track their
-              progress through the sales process.
+              Let partners submit referred leads on your referral page and follow
+              their progress through the sales process.
             </p>
             <FeatureList
               items={[
                 {
-                  title: "Partner portal",
-                  body: "One link in the browser. Partners sign in with a phone or email. They are not billed as field seats.",
+                  title: "Partner referral page",
+                  body: "One link in the browser. Partners sign in with a one-time code sent to their email. They are not billed as field seats.",
                 },
                 {
                   title: "Partner profile",
@@ -430,19 +434,19 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Lead submission",
-                  body: "The partner submits the account they introduced. Team includes the referral workspace. The portal is on Growth.",
+                  body: "The partner submits the account they introduced. Team includes the referral workspace. The referral page is on Growth.",
                 },
                 {
                   title: "Referrer attribution",
-                  body: "The partner stays on the lead and on the plan created from it.",
+                  body: "The partner stays on the lead they sent.",
                 },
                 {
                   title: "Lead status",
-                  body: "Sent, accepted, converted, paying, and churned. The partner sees their own rows.",
+                  body: "Open, converted, or lost with a reason. The partner sees their own rows.",
                 },
                 {
-                  title: "Won and converted",
-                  body: "Converted when a plan is created. Paying when the first invoice clears.",
+                  title: "Partner payouts",
+                  body: "Record a reward for each converted lead, and approve it before it is paid.",
                 },
               ]}
             />
@@ -452,7 +456,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
               </Link>
               {" · "}
               <Link href="/guides/referral-portal" className={textLink}>
-                Portal guide
+                Referral page guide
               </Link>
             </p>
           </div>
@@ -478,39 +482,39 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
               Keep recurring customers from slipping through the cracks.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              Connect referred customers and recurring plans with renewal visibility
-              and the follow-up activity required to retain them.
+              Every recurring plan shows its end date and whether a payment is due,
+              so the person who sold it knows when to go back.
             </p>
             <FeatureList
               items={[
                 {
                   title: "Customer and account",
-                  body: "The plan belongs to the dealer or customer the team already visits.",
+                  body: "Each plan names the customer it was sold to.",
                 },
                 {
-                  title: "Linked referral source",
-                  body: "The partner who opened the account stays on the plan when it renews or fails.",
+                  title: "Who sold it",
+                  body: "The plan keeps the rep who enrolled the customer, so follow-ups have an owner.",
                 },
                 {
                   title: "Plan or contract",
-                  body: "A retainer is a plan: price, interval, and the rules you set. This is on Growth.",
+                  body: "A retainer is a plan: price, duration, and what it includes. This is on Growth.",
                 },
                 {
                   title: "Renewal date",
-                  body: "Due soon is a status on the plan, with the amount and the next date.",
+                  body: "Each plan has an end date, and EMI plans list every instalment with its due date.",
                 },
                 {
-                  title: "Payment status, where supported",
-                  body: "Paid, failed, and due soon appear after you connect Razorpay, or when staff mark cash or UPI.",
+                  title: "Payment status",
+                  body: "Paid or Payment Due, whether the payment came in online through Razorpay or staff recorded cash or UPI.",
                 },
                 {
-                  title: "Follow-up status",
-                  body: "After the retry schedule you set, a failed payment can become a follow-up for the owner of that account. Syclops does not recover the renewal by itself.",
+                  title: "Follow-up",
+                  body: "A payment due is visible to the person who owns the account. Syclops does not renew the contract by itself.",
                 },
               ]}
             />
             <p className="mt-6 text-sm leading-6 text-muted">
-              Subscription plans and dunning are on Growth.{" "}
+              Plans and payments are on Growth.{" "}
               <Link href="/product/subscriptions" className={textLink}>
                 Subscriptions
               </Link>
@@ -518,7 +522,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
           </div>
           <div className="grid gap-3">
             <PlanRecord />
-            <RenewalList />
+            <PlanList />
           </div>
         </div>
       </section>
@@ -534,8 +538,8 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
             From the first field visit to the next renewal.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-            These steps share one record. Syclops connects the visit, the partner,
-            the opportunity, and the plan. It is not another place to store contacts.
+            These steps happen in one app: the visit, the partner, the opportunity,
+            and the plan. It is not another place to store contacts.
           </p>
           <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-6 lg:gap-4">
             {workflow.map((step, index) => (
@@ -602,8 +606,9 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
             The records a sales workspace actually keeps.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-            These layouts use sample sales data so you can see a beat, a check-in,
-            an account, a partner lead, a plan, and loop health. They are not a
+            These layouts use sample sales data so you can see a visit plan, a
+            check-in, an account, a partner lead, a plan, and visits turning into
+            customers. They are not a
             captured customer screen and not a verified result.
           </p>
           <div className="mt-8 grid gap-8 md:grid-cols-2">
@@ -628,7 +633,8 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             A pipeline still answers whether a named opportunity moved stage.
             Syclops answers whether the account was visited, who introduced it,
-            and whether the plan still pays. There is no CRM integration to switch on.
+            and whether the customer has paid. There is no CRM integration to
+            switch on.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <article className="rounded-3xl border border-line bg-quiet p-6">
@@ -667,7 +673,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
               <ul className="mt-4 space-y-2 text-sm text-muted">
                 <li>Field visits to dealers, customers, and accounts</li>
                 <li>Channel partners who submit referred leads</li>
-                <li>Recurring contracts with a renewal date and an owner</li>
+                <li>Recurring contracts with an end date and an owner</li>
               </ul>
             </article>
             <article className="rounded-3xl border border-line bg-paper p-6">
@@ -694,8 +700,8 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             Managers can review planned and completed visits, territory coverage,
             account history, partner-submitted leads, conversion status, and plans
-            that are due or failed. On Growth, the same activity can be grouped by
-            referrer and region. The figures use sample labels.
+            with a payment due. The same activity can be filtered by referrer and
+            region. The figures use sample labels.
           </p>
           <p className="mt-3 text-xs font-medium uppercase tracking-[0.14em] text-muted">
             Illustrative sample workspace
@@ -703,7 +709,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             <BeatList />
             <LeadStatus />
-            <RenewalList />
+            <PlanList />
             <LoopHealth />
           </div>
           <p className="mt-6 text-sm leading-6 text-muted">
@@ -730,7 +736,8 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             Prices match the pricing page and are per field seat per month. Referrer
             logins are not billed as field seats. Growth is the plan that adds the
-            partner portal, subscription plans, and analytics by referrer and region.
+            partner referral page, recurring plans, and analytics by referrer and
+            region.
             {" "}
             {trialDays} days free, without a credit card.
           </p>
@@ -808,8 +815,8 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
               items={[
                 {
                   href: "/blog/channel-partner-portal-not-crm-source-field",
-                  label: "Portal vs CRM source field",
-                  body: "Partners need status. A picklist is not a portal.",
+                  label: "Referral page vs CRM source field",
+                  body: "Partners need status. A picklist is not a referral page.",
                 },
                 {
                   href: "/start?industry=sales",
@@ -819,7 +826,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
                 {
                   href: "/compare/crm",
                   label: "vs CRM",
-                  body: "Deals vs beat, referrer, and plan.",
+                  body: "Deals vs visits, referrers, and plans.",
                 },
               ]}
             />
@@ -830,7 +837,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
       <CtaBand
         id="sales-final"
         title="Connect your field team, partners and customers."
-        body="Create your workspace, invite your field team and start tracking visits and referrals."
+        body="Create your workspace, add your field team and start tracking visits and referrals."
         actions={
           <div className="flex flex-col items-start gap-3">
             <SalesLink

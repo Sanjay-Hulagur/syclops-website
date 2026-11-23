@@ -59,8 +59,8 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
               "Interest form on this website: name, email, phone, industry, and business name, used to contact you about using Syclops.",
               "Field work: check-in and check-out, routes, visit notes, optional photos, travel and allowance (TADA) sheets, and the accounts those visits belong to.",
               "Location: collected for check-in, routes, and TADA while staff are on a working day, between check-in and check-out. Referral partners do not see GPS. A field seat sees their own day unless the organization grants a manager role. How long location is kept is a setting in the workspace.",
-              "Referrals and subscriptions: referrer identity, referral status, plan and invoice metadata, and the records needed to show whether a referred person converted and whether a plan still pays.",
-              "Keys you connect: credentials you paste for WhatsApp, Razorpay, or Maps, stored so those connections run inside your workspace.",
+              "Referrals and subscriptions: referrer identity, referral status, plan and invoice metadata, and the records needed to show whether a referred person converted and whether a plan has been paid.",
+              "Connection details: credentials for WhatsApp, Razorpay, or Maps that are set up for your workspace, stored so those connections run inside it.",
               "Usage and device: IP address, device and app identifiers, browser type, pages or screens used, timestamps, and diagnostic logs.",
               "Marketing site analytics: a random visitor id and session id, pages viewed, URL parameters, clicks, the referring site, approximate location derived from the IP address, and diagnostic errors (the status, path, and a short message). The marketing site does not ask for your device location. Form contents are not stored in these events.",
               "Ad measurement: when you create a workspace, we save the Google Ads click id and campaign tags from the link that brought you, so we can tell which of our ads lead to workspaces. Google’s tag also sends Google Ads an encoded (hashed) copy of the email address you signed up with, so Google can count the signup for our ads. Google calls this enhanced conversions.",
@@ -91,7 +91,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
           },
           {
             kind: "p",
-            text: "Access, correction, and deletion of workspace records run from Settings → Data, so the organization can answer a request about data it holds. A request that is about Syclops itself, including a grievance under the Digital Personal Data Protection Act, 2023, can be sent to syclops.team@gmail.com.",
+            text: "Access, correction, and deletion of workspace records are handled by the organization that runs the workspace, with our help when it asks, so it can answer a request about data it holds. A request that is about Syclops itself, including a grievance under the Digital Personal Data Protection Act, 2023, can be sent to syclops.team@gmail.com.",
           },
         ],
       },
@@ -102,7 +102,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
             kind: "list",
             items: [
               "Inside a workspace, according to the roles that organization sets. Partners do not see GPS or another partner’s book.",
-              "With the payment, maps, and messaging providers that organization connects, under the keys it supplied. Their processing follows that provider and the workspace configuration.",
+              "With the payment, maps, and messaging providers set up for that workspace. Their processing follows that provider and the workspace configuration.",
               "With the infrastructure used to host the Platform.",
               "With Google Analytics and Google Ads, to measure the marketing site and our own ads, as described in section 2.",
               "When a law requires disclosure.",
@@ -119,7 +119,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "Workspace data stays for the life of the workspace, unless the organization asks us to delete it sooner, including location points. After a workspace ends, we keep what is needed to finish billing, honour an export, and meet legal duties, then delete or de-identify it. Export is available from Settings → Data while the workspace is open.",
+            text: "Workspace data stays for the life of the workspace, unless the organization asks us to delete it sooner, including location points. After a workspace ends, we keep what is needed to finish billing, honour an export, and meet legal duties, then delete or de-identify it. Reports can be exported to Excel from the dashboard, and a full export can be requested from syclops.team@gmail.com while the workspace is open.",
           },
         ],
       },
@@ -128,7 +128,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "Workspaces are isolated from each other. Access is role-based. Connection secrets are stored so the integration you configured can run. No method of transmission or storage is perfectly secure. If you believe an account or a workspace has been compromised, write to syclops.team@gmail.com.",
+            text: "Workspaces are isolated from each other. Access is role-based. Connection secrets are stored so the integrations set up for a workspace can run. No method of transmission or storage is perfectly secure. If you believe an account or a workspace has been compromised, write to syclops.team@gmail.com.",
           },
         ],
       },
@@ -137,7 +137,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "Depending on applicable law, including India’s Digital Personal Data Protection Act, 2023, you may ask to access, correct, or erase personal data, or to raise a grievance. Data an organization entered is handled by that organization from Settings → Data. Requests to Syclops go to syclops.team@gmail.com. We may need to confirm that you are the person the data is about, or that you act for the workspace.",
+            text: "Depending on applicable law, including India’s Digital Personal Data Protection Act, 2023, you may ask to access, correct, or erase personal data, or to raise a grievance. Data an organization entered is handled by that organization, with our help when it asks. Requests to Syclops go to syclops.team@gmail.com. We may need to confirm that you are the person the data is about, or that you act for the workspace.",
           },
         ],
       },
@@ -194,7 +194,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "Syclops provides field tracking, referral management, and subscription tooling as a multi-tenant cloud service. Features depend on the plan selected on the pricing page and in the workspace. Guides and in-app Settings are how the product is configured.",
+            text: "Syclops provides field tracking, referral management, and subscription tooling as a multi-tenant cloud service. Features depend on the plan selected on the pricing page and in the workspace. The product is configured in the workspace, following our guides, and with our team where a guide says so.",
           },
           {
             kind: "p",
@@ -238,11 +238,11 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "Paid plans and seats are billed as shown at checkout and in Settings → Billing. An annual term may include the discount shown on the pricing page. You authorize charges through the payment method you provide for fees payable to Syclops.",
+            text: "Paid plans and seats are billed at the prices on the pricing page, as shown on your invoice. An annual term may include the discount shown on the pricing page. You authorize charges through the payment method you provide for fees payable to Syclops.",
           },
           {
             kind: "p",
-            text: "Fees your organization collects from its own subscribers, through payment keys it connects, are between that organization and those subscribers. This agreement does not make Syclops the seller of those subscriptions.",
+            text: "Fees your organization collects from its own subscribers, through a payment account set up for it, are between that organization and those subscribers. This agreement does not make Syclops the seller of those subscriptions.",
           },
         ],
       },
@@ -251,7 +251,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "You can stop future renewal in Settings → Billing. Refunds of fees paid to Syclops follow the Refund policy. A cancellation is considered only in the cases that policy describes.",
+            text: "You can stop future renewal by writing to syclops.team@gmail.com. Refunds of fees paid to Syclops follow the Refund policy. A cancellation is considered only in the cases that policy describes.",
           },
           {
             kind: "p",
@@ -264,7 +264,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "WhatsApp, Razorpay, Maps, and similar tools run when you connect them. Their terms, and the fees they charge, are theirs. Syclops is not responsible for an outage or a charge that originates with a provider you connected.",
+            text: "WhatsApp, Razorpay, Maps, and similar tools run when they are set up for your workspace. Their terms, and the fees they charge, are theirs. Syclops is not responsible for an outage or a charge that originates with one of those providers.",
           },
         ],
       },
@@ -291,7 +291,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "You may stop using the Platform and cancel as described in the Refund policy. We may suspend or end access if these terms are broken, if the law requires it, or if fees payable to Syclops remain unpaid. Export of workspace data is available from Settings → Data while the workspace is open, and as described in the Privacy policy after you leave.",
+            text: "You may stop using the Platform and cancel as described in the Refund policy. We may suspend or end access if these terms are broken, if the law requires it, or if fees payable to Syclops remain unpaid. Export of workspace data is available on request while the workspace is open, and as described in the Privacy policy after you leave.",
           },
         ],
       },
@@ -365,11 +365,11 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         ],
       },
       {
-        title: "3. Services you connect",
+        title: "3. Connected services",
         blocks: [
           {
             kind: "p",
-            text: "If a workspace opens a payment, maps, or messaging page from a provider it connected, that provider may set its own cookies under its own policy. Those cookies are controlled by that provider, not by this Cookie policy.",
+            text: "If a workspace opens a payment, maps, or messaging page from a provider set up for it, that provider may set its own cookies under its own policy. Those cookies are controlled by that provider, not by this Cookie policy.",
           },
         ],
       },
@@ -409,7 +409,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
       "How to cancel a Syclops order and when a refund of fees paid to Syclops is considered. Approved refunds are processed in 14 days.",
     intro: [
       "This refund and cancellation policy outlines how you can cancel or seek a refund for a subscription or other fee you have paid to Syclops through the Platform. Under this policy:",
-      "It covers fees paid to Syclops. It does not govern fees your organization collects from its own customers through payment keys it connects. Those charges are handled by that organization.",
+      "It covers fees paid to Syclops. It does not govern fees your organization collects from its own customers through a payment account set up for it. Those charges are handled by that organization.",
     ],
     sections: [
       {
@@ -421,7 +421,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
           },
           {
             kind: "p",
-            text: "A cancellation request may not be entertained once the subscription has been activated in the workspace, seats have been assigned, or the service has otherwise been made available and use has started. At that point the order has moved past cancellation. You may still stop future renewal in Settings → Billing. The current paid period then runs to its end.",
+            text: "A cancellation request may not be entertained once the subscription has been activated in the workspace, seats have been assigned, or the service has otherwise been made available and use has started. At that point the order has moved past cancellation. You may still stop future renewal by writing to syclops.team@gmail.com. The current paid period then runs to its end.",
           },
           {
             kind: "p",
@@ -429,7 +429,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
           },
           {
             kind: "p",
-            text: "Send a cancellation request from Settings → Billing, or by email to syclops.team@gmail.com with the workspace name, the order date, and the fee you want cancelled.",
+            text: "Send a cancellation request by email to syclops.team@gmail.com with the workspace name, the order date, and the fee you want cancelled.",
           },
         ],
       },
@@ -451,7 +451,7 @@ export const legalDocs: Record<LegalId, LegalDocument> = {
         blocks: [
           {
             kind: "p",
-            text: "Payments, maps, messaging, and other products you connect are provided under their own terms. Complaints about those products, including a fee charged by that provider, should be referred to them. A charge that did not come from Syclops is not refunded by Syclops.",
+            text: "Payments, maps, messaging, and other products set up for your workspace are provided under their own terms. Complaints about those products, including a fee charged by that provider, should be referred to them. A charge that did not come from Syclops is not refunded by Syclops.",
           },
         ],
       },

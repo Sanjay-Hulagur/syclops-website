@@ -56,7 +56,7 @@ export default function CompareIndexPage() {
       <Section eyebrow="FAQ">
         <FaqList
           items={[
-            { q: "Can I keep Excel for a month?", a: "Import CSV, then stop. Dual running is how leakage returns." },
+            { q: "Can I keep Excel for a month?", a: "Upload your staff and areas from the Excel template, then stop. Dual running is how leakage returns." },
             { q: "We already bought a GPS app.", a: "Use it until the contract ends if you must. Syclops replaces the pin-as-product story." },
           ]}
         />

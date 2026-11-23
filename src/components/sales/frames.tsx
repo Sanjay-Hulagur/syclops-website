@@ -50,10 +50,10 @@ export function BeatList({ compact = false }: { compact?: boolean }) {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Illustrative daily beat with one GPS check-in and one planned account. Sample workspace, not a customer result."
+      aria-label="Illustrative daily visit plan with one GPS check-in and one planned account. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
-        <p className="text-sm font-medium">Daily beat · West</p>
+        <p className="text-sm font-medium">Today’s visits · West</p>
         {compact ? (
           <Status tone="money">Checked in</Status>
         ) : (
@@ -71,14 +71,14 @@ export function BeatList({ compact = false }: { compact?: boolean }) {
         <li className="flex items-start justify-between gap-3">
           <span>
             <span className="block font-medium">Next account · West</span>
-            <span className="text-xs text-muted">Planned · last visit empty</span>
+            <span className="text-xs text-muted">Planned · not visited yet</span>
           </span>
           <Status>Planned</Status>
         </li>
       </ol>
       {compact ? null : (
         <p className="mt-3 text-xs text-muted">
-          TADA is the path after checkout. A manager approves the sheet.
+          TA/DA is worked out from the day’s distance.
         </p>
       )}
     </div>
@@ -90,7 +90,7 @@ export function CheckInPhone() {
     <div
       className="rounded-[1.6rem] border border-line bg-paper p-3"
       role="img"
-      aria-label="Illustrative mobile check-in with GPS, duration, and notes. Sample workspace, not a customer result."
+      aria-label="Illustrative mobile check-in with GPS, a photo, and notes. Sample workspace, not a customer result."
     >
       <div className="rounded-2xl border border-line bg-cream p-3">
         <p className="text-[11px] text-muted">Field app · working day</p>
@@ -102,7 +102,7 @@ export function CheckInPhone() {
           </div>
           <div className="flex items-center justify-between gap-2 rounded-xl bg-paper px-3 py-2">
             <dt className="text-muted">Visit</dt>
-            <dd className="font-medium">Notes · optional photo</dd>
+            <dd className="font-medium">Notes · photo</dd>
           </div>
           <div className="flex items-center justify-between gap-2 rounded-xl bg-paper px-3 py-2">
             <dt className="text-muted">Day</dt>
@@ -112,7 +112,7 @@ export function CheckInPhone() {
           </div>
         </dl>
         <p className="mt-3 text-[11px] leading-5 text-muted">
-          GPS runs between check-in and check-out. Not a live map of the evening.
+          Location is recorded only during the working day. Not a live map of the evening.
         </p>
       </div>
     </div>
@@ -124,7 +124,7 @@ export function AccountRecord({ compact = false }: { compact?: boolean }) {
     <div
       className="rounded-2xl border border-line bg-paper p-4"
       role="img"
-      aria-label="Illustrative dealer account with territory, last visit, referring partner, and retainer. Sample workspace, not a customer result."
+      aria-label="Illustrative dealer account with territory, last visit, the rep who owns it, and visits this month. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium">Account</p>
@@ -141,8 +141,8 @@ export function AccountRecord({ compact = false }: { compact?: boolean }) {
           <dd className="mt-1 font-medium">Vikram Sethi</dd>
         </div>
         <div className="col-span-2 rounded-xl bg-cream px-3 py-2">
-          <dt className="text-muted">Referred by</dt>
-          <dd className="mt-1 font-medium">Orbit Media · still attached</dd>
+          <dt className="text-muted">Visits</dt>
+          <dd className="mt-1 font-medium">3 this month · notes on each</dd>
         </div>
       </dl>
     </div>
@@ -154,10 +154,10 @@ export function PartnerPortal() {
     <div
       className="rounded-[1.6rem] border border-line bg-paper p-3"
       role="img"
-      aria-label="Illustrative channel partner portal. The partner sees leads they submitted and status. Sample workspace, not a customer result."
+      aria-label="Illustrative channel partner referral page. The partner sees leads they submitted and status. Sample workspace, not a customer result."
     >
       <div className="rounded-2xl border border-line bg-cream p-3">
-        <p className="text-[11px] text-muted">Partner portal · not a field seat</p>
+        <p className="text-[11px] text-muted">Partner referral page · not a field seat</p>
         <p className="mt-1 text-sm font-medium">Orbit Media</p>
         <p className="mt-3 rounded-xl border border-dashed border-line bg-quiet px-3 py-4 text-center text-xs text-muted">
           Submit a lead · link in the browser
@@ -169,10 +169,10 @@ export function PartnerPortal() {
           </li>
           <li className="flex items-center justify-between gap-2">
             <span>Northwind Retail</span>
-            <Status tone="money">Paying</Status>
+            <Status tone="money">Converted</Status>
           </li>
           <li className="flex items-center justify-between gap-2">
-            <span>Same phone blocked</span>
+            <span>Same mobile blocked</span>
             <Status tone="warn">Duplicate</Status>
           </li>
         </ul>
@@ -207,7 +207,7 @@ export function LeadStatus({ compact = false }: { compact?: boolean }) {
         </div>
         <div className="flex items-center justify-between gap-3">
           <dt className="text-muted">Status</dt>
-          <dd>Sent → converted → paying</dd>
+          <dd>Sent → in progress → converted</dd>
         </div>
       </dl>
     </div>
@@ -219,41 +219,41 @@ export function PlanRecord({ compact = false }: { compact?: boolean }) {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Illustrative retainer with referrer, renewal date, and payment status. Sample workspace, not a customer result."
+      aria-label="Illustrative retainer with end date, amount, payment status, and the rep who sold it. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium">Growth retainer</p>
         {compact ? (
-          <Status tone="warn">Due soon</Status>
+          <Status tone="warn">Payment Due</Status>
         ) : (
           <SampleCaption>Illustrative sample workspace</SampleCaption>
         )}
       </div>
-      <p className="mt-2 text-xs text-muted">Northwind Retail · referred by Orbit Media</p>
+      <p className="mt-2 text-xs text-muted">Northwind Retail · 12 months</p>
       <dl className="mt-3 grid grid-cols-2 gap-2 text-xs">
         <div className="rounded-xl bg-paper px-3 py-2">
-          <dt className="text-muted">Renewal</dt>
-          <dd className="mt-1 font-medium">Invoice due 5th</dd>
+          <dt className="text-muted">Plan ends</dt>
+          <dd className="mt-1 font-medium">31 March</dd>
         </div>
         <div className="rounded-xl bg-paper px-3 py-2">
           <dt className="text-muted">Amount</dt>
           <dd className="mt-1 font-medium">₹75,000</dd>
         </div>
         <div className="col-span-2 rounded-xl bg-paper px-3 py-2">
-          <dt className="text-muted">Follow-up</dt>
-          <dd className="mt-1 font-medium">Visible to the account owner</dd>
+          <dt className="text-muted">Sold by</dt>
+          <dd className="mt-1 font-medium">Vikram Sethi</dd>
         </div>
       </dl>
     </div>
   );
 }
 
-export function RenewalList() {
+export function PlanList() {
   return (
     <div
       className="overflow-hidden rounded-2xl border border-line bg-cream"
       role="img"
-      aria-label="Illustrative plan list with a paying retainer, one due soon, and one failed payment. Sample workspace, not a customer result."
+      aria-label="Illustrative plan list with a paid retainer, a payment due, and an instalment paid by UPI. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between border-b border-line px-4 py-3">
         <p className="text-sm font-medium">Recurring plans</p>
@@ -263,23 +263,23 @@ export function RenewalList() {
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
             <span className="block font-medium">12-month retainer</span>
-            <span className="text-xs text-muted">Paying · referrer still attached</span>
+            <span className="text-xs text-muted">Paid online · Razorpay</span>
           </span>
-          <Status tone="money">Paying</Status>
+          <Status tone="money">Paid</Status>
         </li>
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">Invoice due 5th</span>
-            <span className="text-xs text-muted">₹75,000 · owner named</span>
+            <span className="block font-medium">Instalment due 5th</span>
+            <span className="text-xs text-muted">₹75,000 · sold by Vikram Sethi</span>
           </span>
-          <Status tone="warn">Due soon</Status>
+          <Status tone="warn">Payment Due</Status>
         </li>
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">Failed debit</span>
-            <span className="text-xs text-muted">Follow-up after your retry schedule</span>
+            <span className="block font-medium">Service retainer · EMI 4 of 6</span>
+            <span className="text-xs text-muted">UPI recorded by staff</span>
           </span>
-          <Status tone="leak">Failed</Status>
+          <Status tone="money">Paid</Status>
         </li>
       </ul>
     </div>
@@ -291,10 +291,10 @@ export function LoopHealth() {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Illustrative loop health counts for visits, partner leads, retainers, and at-risk accounts. Sample workspace, not a customer result."
+      aria-label="Illustrative counts for visits, partner leads, retainers, and payments due. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
-        <p className="text-sm font-medium">Loop health</p>
+        <p className="text-sm font-medium">Visits to customers</p>
         <SampleCaption>Illustrative sample workspace</SampleCaption>
       </div>
       <ol className="mt-4 grid grid-cols-2 gap-2 text-center text-xs sm:grid-cols-4">
@@ -302,7 +302,7 @@ export function LoopHealth() {
           ["Visits", "54"],
           ["Partner leads", "16"],
           ["Retainers", "₹9.2L"],
-          ["At risk", "5"],
+          ["Payment due", "5"],
         ].map(([label, value]) => (
           <li key={label} className="rounded-xl bg-quiet px-2 py-3">
             <p className="text-lg font-semibold tabular-nums">{value}</p>

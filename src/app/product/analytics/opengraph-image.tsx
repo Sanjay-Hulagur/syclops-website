@@ -7,7 +7,7 @@ export const contentType = ogContentType;
 export default function Image() {
   return ogImage({
     eyebrow: "Analytics",
-    title: "Loop health, not kilometres",
-    kicker: "Visits that became referrals that still pay.",
+    title: "See which visits lead to referrals",
+    kicker: "Coverage, people, and referrers, with Excel exports.",
   });
 }

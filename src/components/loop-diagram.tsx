@@ -19,13 +19,13 @@ const nodes = [
   {
     id: "subscription",
     label: "Subscription",
-    copy: "The referred person is on a plan. Renewals and failed payments are visible.",
+    copy: "The referred person is on a plan. Payments, and anything still due, are visible.",
     href: "/product/subscriptions",
   },
   {
     id: "revenue",
     label: "Revenue",
-    copy: "MRR attributed to the visit and the referrer. Churn sends the field team back out.",
+    copy: "See which referrers send the most, and which staff member sold each plan. A payment due is easy to spot.",
     href: "/product/analytics",
   },
 ] as const;
@@ -120,9 +120,8 @@ export function LoopDiagram() {
           {current.copy}
         </p>
         <p className="mt-4 text-sm leading-6 text-muted">
-          If a subscription churns, the loop does not end. It becomes a field
-          task for the person who owns the relationship — often the original
-          referrer.
+          If a payment is due, the loop does not end. The plan shows who sold
+          it, so that person can call or visit.
         </p>
         <Link
           href={current.href}

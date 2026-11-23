@@ -8,6 +8,6 @@ export default function Image() {
   return ogImage({
     eyebrow: "Product",
     title: "Field, referrals, subscriptions",
-    kicker: "One self-serve loop. No onboarding call.",
+    kicker: "Visits, referrals, and plans in one app.",
   });
 }

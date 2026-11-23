@@ -102,11 +102,11 @@ export const softwareNode = {
   description: site.description,
   featureList: [
     "GPS field check-in, routes, and TADA",
-    "Partner and member referral portal",
-    "Referral status from sent to paying",
+    "Partner and member referral page",
+    "Referral status from sent to converted",
     "Referral payouts calculated from uploaded bills",
     "Membership plans with online, cash, UPI and EMI payments",
-    "Loop health analytics",
+    "Coverage and referral analytics with Excel export",
   ],
   offers: {
     "@type": "AggregateOffer",

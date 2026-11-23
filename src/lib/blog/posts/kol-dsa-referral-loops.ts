@@ -30,7 +30,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Teams then buy a tool for the noun they say out loud. Medtech buys a CRM for hospital accounts. A lender buys a loan origination screen. An insurer buys a policy admin view. Each of those can be the right system for its own job. None of them, by default, show the sender whether the account converted and whether it still pays. That missing screen is why the loop looks like three industries and behaves like one.",
+      text: "Teams then buy a tool for the noun they say out loud. Medtech buys a CRM for hospital accounts. A lender buys a loan origination screen. An insurer buys a policy admin view. Each of those can be the right system for its own job. None of them, by default, show the sender whether the account converted. That missing screen is why the loop looks like three industries and behaves like one.",
     },
     {
       type: "h2",
@@ -38,21 +38,21 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "A KOL who sends a department wants to know whether the account converted to a contract, not whether your rep’s pin was inside a geofence. A DSA who sent a borrower or a policyholder wants to know whether that plan still pays. [Referral management](/product/referrals) is that status: sent, accepted, converted, paying. Rewards wait on a qualification window. The same phone or email cannot be referred twice into the same plan.",
+      text: "A KOL who sends a department wants to know whether the account converted to a contract, not whether your rep’s pin was inside a geofence. A DSA who sent a borrower or a policyholder wants to know whether that plan went through. [Referral management](/product/referrals) is that status: sent, converted, or lost with a reason. Rewards are approved before they are paid. A second open referral for the same mobile number is blocked.",
     },
     {
       type: "ul",
       items: [
-        "One portal URL for the KOL or the DSA. They are not a paid field seat.",
+        "One referral page link for the KOL or the DSA. They are not a paid field seat.",
         "Conversion means a contract or a policy, not a meeting that felt promising.",
-        "A lapse writes a visit for the owner of that beat, not only an SMS from collections.",
-        "Duplicate phone or email is rejected for the same plan, so two agents cannot claim one customer.",
-        "Name mismatches wait in Pending until a manager assigns them.",
+        "A payment due is visible on the plan, with the person who sold it, so the follow-up has an owner.",
+        "A second open referral for the same mobile number is blocked, so two agents cannot claim one customer.",
+        "Different spellings of a referrer’s name can be linked to one person.",
       ],
     },
     {
       type: "p",
-      text: "The window matters more in these motions than in a casual member intro. A device can be installed and returned. A policy can be booked and cancelled inside the free-look period. Paying on the rumour of a meeting is how incentive plans teach people to inflate intros. Pay when the contract or the policy has stayed.",
+      text: "Approval matters more in these motions than in a casual member intro. A device can be installed and returned. A policy can be booked and cancelled inside the free-look period. Paying on the rumour of a meeting is how incentive plans teach people to inflate intros. Approve the payout when the contract or the policy has stayed.",
     },
     {
       type: "h2",
@@ -60,7 +60,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Check in at the hospital or on the agent’s patch. TADA comes from the path between check-in and checkout, not from a morning pin and an evening pin. When a device contract goes quiet or a premium lapses, write a visit for the person who owns that beat. The sender stays on the record. They are often the only relationship the account still answers.",
+      text: "Check in at the hospital or on the agent’s patch. TA/DA comes from the road distance through the working day, not from a morning pin and an evening pin. When a device contract or a premium has a payment due, plan a visit for the person who sold it. Check who referred the account first. They are often the only relationship the account still answers.",
     },
     {
       type: "p",
@@ -68,29 +68,29 @@ export const post: Post = {
     },
     {
       type: "h2",
-      text: "Rename the nouns. Keep the object",
+      text: "Different nouns. Same steps",
     },
     {
       type: "p",
-      text: "Pick medtech or fintech at signup. Rename visit, referrer, and plan if your words differ. A “KOL” and a “DSA” do not need two products. They need labels your team will actually say, on the same record. The portal is still one URL. Referrers are still not paid seats. Field staff are. That split keeps a hospital professor and a neighbourhood agent out of your seat count while the people who walk the day stay on it.",
+      text: "Pick medtech or fintech at signup. A “KOL” and a “DSA” do not need two products. They need the same steps: a visit, a referral with a sender, and a plan with an owner. Some screens still use hospital words, such as doctors and patients, because Syclops was built for hospitals first. The referral page is still one link. Referrers are still not paid seats. Field staff are. That split keeps a hospital professor and a neighbourhood agent out of your seat count while the people who walk the day stay on it.",
     },
     {
       type: "p",
-      text: "Channel sales hits the same wall with a retainer instead of a device contract. [A channel partner portal is not a CRM source field](/blog/channel-partner-portal-not-crm-source-field) is that version of the argument. If your team is still running three partial memories for one introduction, create the workspace, import the beat, and stop translating the same leak into a new noun every time the industry changes.",
+      text: "Channel sales hits the same wall with a retainer instead of a device contract. [A channel partner referral page is not a CRM source field](/blog/channel-partner-portal-not-crm-source-field) is that version of the argument. If your team is still running three partial memories for one introduction, create the workspace, upload your team and areas, and stop translating the same leak into a new noun every time the industry changes.",
     },
     {
       type: "p",
-      text: "Start with the beat you already run this week. A hospital list or an agent list, last-visit dates even when some are blank, and the contracts or policies that went quiet. Share the portal with the people who send accounts. Leave the core system alone. The test after a month is dull and sufficient: the sender can see status, and a lapse has a name on the visit. If both are true, the nouns were never the hard part.",
+      text: "Start with the field day you already run this week. A hospital list or an agent list, and the contracts or policies with a payment due. Share the referral page with the people who send accounts. Leave the core system alone. The test after a month is dull and sufficient: the sender can see status, and a payment due has a name on the visit. If both are true, the nouns were never the hard part.",
     },
   ],
   faqs: [
     {
       q: "Do KOLs or DSAs need a paid seat?",
-      a: "No. They use the portal to see status. Paid seats are the field people who check in, log the visit, and take the lapse call.",
+      a: "No. They use the referral page to see status. Paid seats are the field people who check in, log the visit, and follow up a payment due.",
     },
     {
       q: "Will this replace our policy admin system or HIS?",
-      a: "No. Those systems keep the contract, the chart, or the policy. This loop keeps who sent the account and which visit happens when it goes quiet.",
+      a: "No. Those systems keep the contract, the chart, or the policy. Syclops keeps who sent the account, who sold the plan, and which visit happens when a payment is due.",
     },
   ],
 };

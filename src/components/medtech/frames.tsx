@@ -47,13 +47,13 @@ export function PortalPhone() {
     <div
       className="rounded-[1.6rem] border border-line bg-paper p-3"
       role="img"
-      aria-label="Illustrative department referral portal. A department sees two introductions and their status. Sample workspace, not a customer result."
+      aria-label="Illustrative department referral page. A department sees two introductions and their status. Sample workspace, not a customer result."
     >
       <div className="rounded-2xl border border-line bg-cream p-3">
-        <p className="text-[11px] text-muted">Department portal</p>
+        <p className="text-[11px] text-muted">Department referral page</p>
         <p className="mt-1 text-sm font-medium">Refer a hospital</p>
         <p className="mt-3 rounded-xl border border-dashed border-line bg-quiet px-3 py-4 text-center text-xs text-muted">
-          Link or QR · no app
+          Link in the browser · no app
         </p>
         <ul className="mt-3 space-y-2 text-xs">
           <li className="flex items-center justify-between gap-2">
@@ -62,10 +62,10 @@ export function PortalPhone() {
           </li>
           <li className="flex items-center justify-between gap-2">
             <span>City Heart · service</span>
-            <Status tone="money">Paying</Status>
+            <Status tone="money">Converted</Status>
           </li>
           <li className="flex items-center justify-between gap-2">
-            <span>Same account blocked</span>
+            <span>Same mobile blocked</span>
             <Status tone="warn">Duplicate</Status>
           </li>
         </ul>
@@ -92,8 +92,8 @@ export function ReferralDesk() {
       </div>
       {[
         ["Cardiology", "Analyzer + service", "Converted", "money"],
-        ["Lab head", "Pending match", "Sent", "quiet"],
-        ["Same account", "Service plan", "Duplicate", "warn"],
+        ["Lab head", "Awaiting visit", "Sent", "quiet"],
+        ["Same mobile", "Service plan", "Duplicate", "warn"],
       ].map(([referrer, plan, status, tone]) => (
         <div
           key={referrer}
@@ -113,21 +113,21 @@ export function VisitRecord({ compact = false }: { compact?: boolean }) {
     <div
       className="rounded-2xl border border-line bg-paper p-4"
       role="img"
-      aria-label="Illustrative KOL visit with a badge photo, duration, and a service follow-up. Sample workspace, not a customer result."
+      aria-label="Illustrative KOL visit with GPS check-in, a photo, and the next service date. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium">Department check-in</p>
         {compact ? <Status tone="money">Checked in</Status> : <SampleCaption>Illustrative sample workspace</SampleCaption>}
       </div>
-      <p className="mt-2 text-xs text-muted">Cath lab · GPS · badge photo</p>
+      <p className="mt-2 text-xs text-muted">Cath lab · GPS · photo</p>
       <dl className="mt-3 grid grid-cols-2 gap-2 text-xs">
         <div className="rounded-xl bg-cream px-3 py-2">
           <dt className="text-muted">Visit</dt>
-          <dd className="mt-1 font-medium">41 min · notes</dd>
+          <dd className="mt-1 font-medium">11:05 · notes</dd>
         </div>
         <div className="rounded-xl bg-cream px-3 py-2">
           <dt className="text-muted">Follow-up</dt>
-          <dd className="mt-1 font-medium">Q3 service window</dd>
+          <dd className="mt-1 font-medium">Q3 service payment</dd>
         </div>
       </dl>
     </div>
@@ -139,7 +139,7 @@ export function VisitHistory() {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Illustrative hospital beat with one completed department visit and one planned account. Sample workspace, not a customer result."
+      aria-label="Illustrative hospital visit plan with one completed department visit and one planned account. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium">Hospital coverage</p>
@@ -170,21 +170,21 @@ export function ContractRecord({ compact = false }: { compact?: boolean }) {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Illustrative analyzer and service contract with a service window and a rep follow-up. Sample workspace, not a customer result."
+      aria-label="Illustrative analyzer and service contract with a payment due and the rep who sold it. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium">Analyzer + service</p>
-        {compact ? <Status tone="warn">Due soon</Status> : <SampleCaption>Illustrative sample workspace</SampleCaption>}
+        {compact ? <Status tone="warn">Payment Due</Status> : <SampleCaption>Illustrative sample workspace</SampleCaption>}
       </div>
-      <p className="mt-2 text-xs text-muted">City Heart Centre · referred by Cardiology</p>
+      <p className="mt-2 text-xs text-muted">City Heart Centre · 3-year service</p>
       <dl className="mt-3 grid grid-cols-2 gap-2 text-xs">
         <div className="rounded-xl bg-paper px-3 py-2">
           <dt className="text-muted">Service</dt>
           <dd className="mt-1 font-medium">₹4.2L · Q3</dd>
         </div>
         <div className="rounded-xl bg-paper px-3 py-2">
-          <dt className="text-muted">Follow-up</dt>
-          <dd className="mt-1 font-medium">Rep task</dd>
+          <dt className="text-muted">Sold by</dt>
+          <dd className="mt-1 font-medium">Rep A.</dd>
         </div>
       </dl>
     </div>
@@ -196,7 +196,7 @@ export function ContractList() {
     <div
       className="overflow-hidden rounded-2xl border border-line bg-cream"
       role="img"
-      aria-label="Illustrative contract list with an active service plan, one due window, and one lapsed plan. Sample workspace, not a customer result."
+      aria-label="Illustrative contract list with a paid service plan, a payment due, and an instalment paid by UPI. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between border-b border-line px-4 py-3">
         <p className="text-sm font-medium">Device contracts</p>
@@ -206,23 +206,23 @@ export function ContractList() {
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
             <span className="block font-medium">Implant + service</span>
-            <span className="text-xs text-muted">Paying · department still attached</span>
+            <span className="text-xs text-muted">Paid online · Razorpay</span>
           </span>
           <Status tone="money">Paid</Status>
         </li>
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">Analyzer · Q3 window</span>
-            <span className="text-xs text-muted">₹4.2L due · rep task</span>
+            <span className="block font-medium">Analyzer · Q3 instalment</span>
+            <span className="text-xs text-muted">₹4.2L due · sold by Rep A.</span>
           </span>
-          <Status tone="warn">Due soon</Status>
+          <Status tone="warn">Payment Due</Status>
         </li>
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">Service plan lapsed</span>
-            <span className="text-xs text-muted">Follow-up after retries</span>
+            <span className="block font-medium">Service plan · year 2</span>
+            <span className="text-xs text-muted">UPI recorded by staff</span>
           </span>
-          <Status tone="leak">Failed</Status>
+          <Status tone="money">Paid</Status>
         </li>
       </ul>
     </div>
@@ -234,17 +234,17 @@ export function AnalyticsSample() {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Illustrative loop health from KOL visits to conversions to service lapses. Not a customer result."
+      aria-label="Illustrative counts from KOL visits to conversions to payments due. Not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
-        <p className="text-sm font-medium">Loop health</p>
+        <p className="text-sm font-medium">Visits to contracts</p>
         <SampleCaption>Illustrative sample workspace</SampleCaption>
       </div>
       <ol className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
         {[
           ["Visits", "19"],
           ["Converted", "6"],
-          ["Lapses", "3"],
+          ["Payment due", "3"],
         ].map(([label, value]) => (
           <li key={label} className="rounded-xl bg-quiet px-2 py-3">
             <p className="text-lg font-semibold tabular-nums">{value}</p>

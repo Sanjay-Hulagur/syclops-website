@@ -47,13 +47,13 @@ export function PortalPhone() {
     <div
       className="rounded-[1.6rem] border border-line bg-paper p-3"
       role="img"
-      aria-label="Illustrative customer referral portal. A customer sees two introductions and their status. Sample workspace, not a customer result."
+      aria-label="Illustrative customer referral page. A customer sees two introductions and their status. Sample workspace, not a customer result."
     >
       <div className="rounded-2xl border border-line bg-cream p-3">
-        <p className="text-[11px] text-muted">Customer and DSA portal</p>
+        <p className="text-[11px] text-muted">Customer and DSA referral page</p>
         <p className="mt-1 text-sm font-medium">Refer a customer</p>
         <p className="mt-3 rounded-xl border border-dashed border-line bg-quiet px-3 py-4 text-center text-xs text-muted">
-          Link or QR · no app
+          Link in the browser · no app
         </p>
         <ul className="mt-3 space-y-2 text-xs">
           <li className="flex items-center justify-between gap-2">
@@ -62,10 +62,10 @@ export function PortalPhone() {
           </li>
           <li className="flex items-center justify-between gap-2">
             <span>Nandini I. · term</span>
-            <Status tone="money">Paying</Status>
+            <Status tone="money">Converted</Status>
           </li>
           <li className="flex items-center justify-between gap-2">
-            <span>Same phone blocked</span>
+            <span>Same mobile blocked</span>
             <Status tone="warn">Duplicate</Status>
           </li>
         </ul>
@@ -93,7 +93,7 @@ export function ReferralDesk() {
       {[
         ["Suresh I.", "Term + health", "Converted", "money"],
         ["DSA · North", "SIP", "Sent", "quiet"],
-        ["Same phone", "EMI", "Duplicate", "warn"],
+        ["Same mobile", "EMI", "Duplicate", "warn"],
       ].map(([referrer, plan, status, tone]) => (
         <div
           key={referrer}
@@ -113,7 +113,7 @@ export function VisitRecord({ compact = false }: { compact?: boolean }) {
     <div
       className="rounded-2xl border border-line bg-paper p-4"
       role="img"
-      aria-label="Illustrative agent visit with GPS check-in, a photo, and a premium follow-up. Sample workspace, not a customer result."
+      aria-label="Illustrative agent visit with GPS check-in, a photo, and the next premium date. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium">Agent check-in</p>
@@ -123,7 +123,7 @@ export function VisitRecord({ compact = false }: { compact?: boolean }) {
       <dl className="mt-3 grid grid-cols-2 gap-2 text-xs">
         <div className="rounded-xl bg-cream px-3 py-2">
           <dt className="text-muted">Visit</dt>
-          <dd className="mt-1 font-medium">KYC photo · notes</dd>
+          <dd className="mt-1 font-medium">Photo · notes</dd>
         </div>
         <div className="rounded-xl bg-cream px-3 py-2">
           <dt className="text-muted">Follow-up</dt>
@@ -139,10 +139,10 @@ export function VisitHistory() {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Illustrative agent beat with one completed home visit and one planned branch. Sample workspace, not a customer result."
+      aria-label="Illustrative agent visit plan with one completed home visit and one planned branch. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
-        <p className="text-sm font-medium">Today’s beat</p>
+        <p className="text-sm font-medium">Today’s visits</p>
         <SampleCaption>Illustrative sample workspace</SampleCaption>
       </div>
       <ol className="mt-3 space-y-3 text-sm">
@@ -170,21 +170,21 @@ export function PremiumRecord({ compact = false }: { compact?: boolean }) {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Illustrative term and health plan with a premium due and an agent follow-up. Sample workspace, not a customer result."
+      aria-label="Illustrative term and health plan with a premium due and the agent who sold it. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium">Term + health bundle</p>
-        {compact ? <Status tone="warn">Due soon</Status> : <SampleCaption>Illustrative sample workspace</SampleCaption>}
+        {compact ? <Status tone="warn">Payment Due</Status> : <SampleCaption>Illustrative sample workspace</SampleCaption>}
       </div>
-      <p className="mt-2 text-xs text-muted">Nandini I. · referred by Suresh I.</p>
+      <p className="mt-2 text-xs text-muted">Nandini I. · annual premium</p>
       <dl className="mt-3 grid grid-cols-2 gap-2 text-xs">
         <div className="rounded-xl bg-paper px-3 py-2">
           <dt className="text-muted">Premium</dt>
           <dd className="mt-1 font-medium">₹2,140 · 18 Nov</dd>
         </div>
         <div className="rounded-xl bg-paper px-3 py-2">
-          <dt className="text-muted">Follow-up</dt>
-          <dd className="mt-1 font-medium">Agent task</dd>
+          <dt className="text-muted">Sold by</dt>
+          <dd className="mt-1 font-medium">Agent K.</dd>
         </div>
       </dl>
     </div>
@@ -196,7 +196,7 @@ export function PremiumList() {
     <div
       className="overflow-hidden rounded-2xl border border-line bg-cream"
       role="img"
-      aria-label="Illustrative plan list with a paid premium, one due soon, and one failed debit. Sample workspace, not a customer result."
+      aria-label="Illustrative plan list with a paid SIP, a premium due, and an EMI paid in cash. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between border-b border-line px-4 py-3">
         <p className="text-sm font-medium">Policies and plans</p>
@@ -206,23 +206,23 @@ export function PremiumList() {
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
             <span className="block font-medium">SIP · monthly</span>
-            <span className="text-xs text-muted">Paid · referrer still attached</span>
+            <span className="text-xs text-muted">Paid online · Razorpay</span>
           </span>
           <Status tone="money">Paid</Status>
         </li>
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
             <span className="block font-medium">Term + health · 18 Nov</span>
-            <span className="text-xs text-muted">₹2,140 due · agent task</span>
+            <span className="text-xs text-muted">₹2,140 due · sold by Agent K.</span>
           </span>
-          <Status tone="warn">Due soon</Status>
+          <Status tone="warn">Payment Due</Status>
         </li>
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">EMI · failed debit</span>
-            <span className="text-xs text-muted">Follow-up after retries</span>
+            <span className="block font-medium">EMI · instalment 3 of 12</span>
+            <span className="text-xs text-muted">Cash recorded on the visit</span>
           </span>
-          <Status tone="leak">Failed</Status>
+          <Status tone="money">Paid</Status>
         </li>
       </ul>
     </div>
@@ -234,17 +234,17 @@ export function AnalyticsSample() {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Illustrative loop health from agent visits to referrals to lapsed premiums. Not a customer result."
+      aria-label="Illustrative counts from agent visits to referrals to payments due. Not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
-        <p className="text-sm font-medium">Loop health</p>
+        <p className="text-sm font-medium">Visits to customers</p>
         <SampleCaption>Illustrative sample workspace</SampleCaption>
       </div>
       <ol className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
         {[
           ["Visits", "73"],
           ["Referrals", "22"],
-          ["Lapsed", "14"],
+          ["Payment due", "14"],
         ].map(([label, value]) => (
           <li key={label} className="rounded-xl bg-quiet px-2 py-3">
             <p className="text-lg font-semibold tabular-nums">{value}</p>

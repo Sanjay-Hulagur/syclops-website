@@ -123,12 +123,12 @@ const useCases = [
   },
   {
     title: "Hospital chains",
-    body: "More than one location can be a region. Multi-brand or multi-city reporting is on Scale, not on every plan.",
+    body: "Each location can be a region, so managers see visits and referrals location by location.",
     items: [
       "Locations as regions",
       "Territory-wise field operations",
       "Region reporting on Growth",
-      "Multi-brand or multi-city on Scale",
+      "Regions and territories for large teams on Scale",
     ],
   },
 ];
@@ -155,17 +155,17 @@ const day = [
   {
     kicker: "The field day",
     title: "Twenty doctor visits, each with a GPS check-in.",
-    body: "A PRO can cover a full list in one day. Management sees which visits were planned, which were checked in, and the location recorded at each check-in. GPS runs on that working day, between check-in and check-out. A photo can be required. Mock locations are flagged. The record is the visit, the note, and the follow-up.",
+    body: "A PRO can cover a full list in one day. Management sees which visits were planned, which were checked in, and the location recorded at each check-in. Location is recorded only during the working day, and each visit can carry a photo and notes.",
   },
   {
     kicker: "The referral",
     title: "The patient is recorded against the doctor who sent them.",
-    body: "When a doctor refers a patient, that doctor stays on the referral with the date and the status. The same phone or email cannot be referred twice into the same plan. The source does not disappear when the patient reaches the desk.",
+    body: "When a doctor refers a patient, that doctor stays on the referral with the date and the status. The referral page blocks a second open referral for the same mobile number. The source does not disappear when the patient reaches the desk.",
   },
   {
     kicker: "OPD",
     title: "An outpatient visit updates the referral when your HIS is connected.",
-    body: "On Scale, a connector built for the hospital system you already run matches the OPD visit back onto that referral. Staff do not retype the referring doctor. If no connector is in place, Syclops keeps the referral as recorded and does not invent the visit.",
+    body: "On Scale, a connector built for the hospital system you already run matches the OPD visit back onto that referral. Staff do not retype the referring doctor. If no connector is in place, staff update the referral by hand, and Syclops does not invent the visit.",
   },
   {
     kicker: "IPD",
@@ -175,7 +175,7 @@ const day = [
   {
     kicker: "Conversions",
     title: "Doctor-wise and location-wise. Specialty on every doctor.",
-    body: "On Growth, management reviews visits, referrals, and plans by the referring doctor and by region. Specialty is stored on each doctor, so the same network can be read specialty by specialty. An OPD or IPD match is part of that view only where the connector has written it.",
+    body: "On Growth, management reviews visits by PRO, and referrals by the referring doctor and by region. Specialty is stored on each doctor, so the same network can be read specialty by specialty. An OPD or IPD match is part of that view only where the connector has written it.",
   },
   {
     kicker: "Your HIS",
@@ -213,23 +213,23 @@ function healthcareFaqs(trialDays: number) {
     },
     {
       q: "Can we track PRO visits using GPS?",
-      a: "Yes. Check-in records location. GPS runs on a working day between check-in and check-out, and a photo can be required. Mock locations are flagged. The record is the visit, the notes, and the follow-up. TADA is the path walked, approved against your rate card. It is not a live map of the evening.",
+      a: "Yes. Each visit is checked in with GPS, notes, and photos, and location is recorded only during the working day. TA/DA is worked out from the distance travelled, using the allowance you set for each distance range. It is not a live map of the evening.",
     },
     {
       q: "Can we track which doctor referred a patient?",
-      a: "Yes. A patient referral keeps the originating doctor, the referral date, and a status. The same phone or email cannot be referred twice into the same plan. On Growth, the referring doctor can open a portal and see their own status. They are not billed as a field seat.",
+      a: "Yes. A patient referral keeps the referring doctor, the referral date, and a status. The referral page blocks a second open referral for the same mobile number. On Growth, the referring doctor can sign in to the referral page and see their own referrals. They are not billed as a field seat.",
     },
     {
       q: "Can we measure referral doctor performance?",
-      a: "The doctor record shows visit history and referral activity. On Growth, analytics groups visits, referrals, and plans by referrer and region, including relationships that have gone quiet. A hospital visit or admission match appears where an HIS connector is configured. Syclops does not invent a revenue lift.",
+      a: "The doctor record shows visit history and referral activity. On Growth, analytics groups referrals by referrer and region, and lists doctors who were visited but never referred, or never visited at all. A hospital visit or admission match appears where an HIS connector is configured. Syclops does not invent a revenue lift.",
     },
     {
       q: "Can we manage health camps?",
-      a: "Yes. A camp has a name, type, dates, location, expected participants, and assigned in-house doctors, nurses, and supporting staff, plus promotion and logistics. Leads can be tagged to the camp so follow-up stays attached, and a camp report can be written when it closes. Syclops does not replace an on-site attendance register, and it does not turn attendance into an admission unless that referral is recorded.",
+      a: "Yes. A camp has a name, type, dates, location, expected participants, and assigned in-house doctors, nurses, and supporting staff, plus promotion and logistics. Leads can be tagged to the camp, and the camp report counts the leads and referrals it produced. Syclops does not replace an on-site attendance register, and it does not turn attendance into an admission unless that referral is recorded.",
     },
     {
       q: "Can we manage multiple hospital branches?",
-      a: "Regions cover more than one location in one workspace on Team and Growth. Multi-brand or multi-city is on Scale. Analytics by region is on Growth. Not every multi-location control is on every plan.",
+      a: "Yes. Each branch can be a region in one workspace, with the PROs and doctors who belong to it. Analytics by region is on Growth.",
     },
     {
       q: "Can Syclops integrate with our existing HIS?",
@@ -245,7 +245,7 @@ function healthcareFaqs(trialDays: number) {
     },
     {
       q: "Are referral-user accounts billed?",
-      a: "No. Referral doctors and other referrers are not billed as field seats. You pay for field seats and manager seats. Team includes up to 3 managers. The referrer portal is on Growth and Scale. Team includes the referral workspace.",
+      a: "No. Referral doctors and other referrers are not billed as field seats. You pay for field seats and manager seats. Team includes up to 3 managers. The referral page is on Growth and Scale. Team includes the referral workspace.",
     },
   ];
 }
@@ -347,7 +347,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
               One working day
             </p>
             <h2 id="healthcare-day" className="display mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
-              From the twentieth clinic to the admission, on one record.
+              From the twentieth clinic to the admission, in one place.
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
               This is the day hospital management asks about. Each step is what
@@ -423,8 +423,8 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
             From a doctor&apos;s clinic visit to a patient&apos;s hospital visit.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-            These steps share one record. A hospital visit or admission is attached
-            when an HIS connector supports it. Syclops does not create that outcome
+            These steps stay linked to the referring doctor. A hospital visit or
+            admission is attached when an HIS connector supports it. Syclops does not create that outcome
             by itself.
           </p>
           <ol className="mt-10 grid gap-8 md:grid-cols-5 md:gap-4">
@@ -511,7 +511,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
               Whether the list is eight clinics or twenty, management sees the
-              same record: planned, checked in, and still pending. Location is
+              same list: planned, checked in, and still pending. Location is
               taken at check-in. The field executive sees their own day. They do
               not see another officer’s book or the clinical chart.
             </p>
@@ -519,19 +519,19 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
               items={[
                 {
                   title: "Planned visits and today’s list",
-                  body: "The beat shows last-visit dates, so a skipped clinic is a gap rather than silence.",
+                  body: "A visit plan for the week and a list of doctors nobody has visited, so a skipped clinic is a gap rather than silence.",
                 },
                 {
                   title: "GPS check-in",
-                  body: "Location is recorded at check-in. GPS runs on a working day between check-in and check-out.",
+                  body: "Location is recorded at check-in, and only during the working day.",
                 },
                 {
                   title: "Visit notes and follow-ups",
-                  body: "Duration, notes, and an optional photo stay on the doctor visit.",
+                  body: "Notes and photos stay on the doctor visit.",
                 },
                 {
                   title: "Completed, pending, and TADA",
-                  body: "Checkout closes the route. Mileage is the path walked, and a manager approves it against your rate card.",
+                  body: "Checking out ends the working day. TA/DA is worked out from the distance travelled, using the amounts you set.",
                 },
               ]}
             />
@@ -566,7 +566,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
               The originating doctor is on the referral from the moment it is
               recorded. When a Scale connector is in place, an OPD visit updates
               that referral, and an IPD admission is recorded on it. Without a
-              connector, the referral stays as filed.
+              connector, your staff update the status by hand.
             </p>
             <FeatureList
               items={[
@@ -576,15 +576,15 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Referral record and date",
-                  body: "Patient details and the referral date stay on the same object. The same phone or email cannot be referred twice into the same plan.",
+                  body: "Patient details and the referral date stay on the referral. The referral page blocks a second open referral for the same mobile number.",
                 },
                 {
                   title: "Status",
-                  body: "Sent, accepted, converted when a plan exists, and paying when the first invoice clears. Team includes the referral workspace. The doctor portal is on Growth.",
+                  body: "Each referral shows where the patient is: pending, waiting for arrival, arrived, admitted, or discharged. If the patient did not come, the status says why, such as going to another hospital. Team includes the referral workspace. The doctor referral page is on Growth.",
                 },
                 {
                   title: "HIS-linked outcome",
-                  body: "With a Scale connector, the OPD visit updates the referral and the IPD admission is recorded on it. Without a connector, that outcome is not invented.",
+                  body: "With a Scale connector, the OPD visit updates the referral and the IPD admission is recorded on it. Without one, the outcome is what your staff record, not a guess.",
                 },
               ]}
             />
@@ -613,8 +613,8 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
               Conversions by doctor and by location.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              On Growth, analytics groups visits, referrals, and plans by the
-              referring doctor and by region. Specialty sits on each doctor, so
+              On Growth, analytics groups referrals by the referring doctor and by
+              region, and visits by PRO. Specialty sits on each doctor, so
               the network can be read specialty by specialty. The figures in
               your workspace are yours.
             </p>
@@ -622,7 +622,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
               items={[
                 {
                   title: "Doctor-wise",
-                  body: "Referrers are ranked by the referrals and plans attached to them, not by kilometres.",
+                  body: "Referrers are ranked by the referrals they send, not by kilometres.",
                 },
                 {
                   title: "Location-wise",
@@ -682,7 +682,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Assigned team",
-                  body: "In-house doctors, nurses, and supporting staff are named on the camp. Reminders go to the field team.",
+                  body: "In-house doctors, nurses, and supporting staff are named on the camp.",
                 },
                 {
                   title: "Follow-up",
@@ -690,7 +690,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Camp report",
-                  body: "Promotion, logistics, and a written report sit on the camp. A hospital visit is a separate referral, matched through an HIS connector only where one is configured.",
+                  body: "Promotion, logistics, and chief guests sit on the camp, and the camp report counts the leads and referrals it produced. A hospital visit is a separate referral, matched through an HIS connector only where one is configured.",
                 },
               ]}
             />
@@ -776,10 +776,10 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             Prices match the pricing page and are per field seat per month. You
             also pay for manager seats. Team includes up to 3 managers. Referrer
-            logins are not billed as field seats. The doctor portal, subscription
-            plans, and analytics by referrer and region are on Growth. HIS and ERP
-            connectors, and multi-brand or multi-city, are on Scale. {trialDays}{" "}
-            days free · No credit card required.
+            logins are not billed as field seats. The doctor referral page,
+            membership plans, and analytics by referrer and region are on Growth.
+            HIS and ERP connectors are on Scale. {trialDays} days free · No credit
+            card required.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {publicPlans.map((plan) => (
@@ -860,7 +860,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   href: "/blog/clinic-referral-portal-vs-whatsapp",
-                  label: "Clinic portal vs WhatsApp",
+                  label: "Clinic referral page vs WhatsApp",
                   body: "Status without calling the desk.",
                 },
                 {

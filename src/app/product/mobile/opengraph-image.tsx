@@ -7,7 +7,7 @@ export const contentType = ogContentType;
 export default function Image() {
   return ogImage({
     eyebrow: "Mobile",
-    title: "Field app that queues offline",
-    kicker: "Check-in, visits, photos — sync when the radio returns.",
+    title: "The field day, on the phone",
+    kicker: "Check-in, visits, photos, and plans on Android.",
   });
 }

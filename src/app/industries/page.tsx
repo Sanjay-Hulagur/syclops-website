@@ -8,7 +8,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata: Metadata = pageSeo({
   title: "Industries — gyms, education, healthcare, sales, fintech, medtech",
   description:
-    "Syclops for gyms, campuses, clinics, field sales, fintech, and medtech. Same growth loop — field visit, referral, subscription — with industry nouns.",
+    "Syclops for gyms, campuses, clinics, field sales, fintech, and medtech. Same growth loop — field visit, referral, subscription — in every industry.",
   path: "/industries",
   keywords: [
     "gym referral software",
@@ -24,7 +24,7 @@ export default function IndustriesPage() {
       <PageHero
         eyebrow="Industries"
         title="Horizontal on purpose."
-        body="The nouns change. The loop does not. Pick the industry when you create the workspace — visit, referrer, and plan labels follow."
+        body="The words change from industry to industry. The steps do not: a field visit, a referral, and a plan the customer pays."
         scene="industry"
         crumbs={[
           { name: "Home", path: "/" },
@@ -66,8 +66,8 @@ export default function IndustriesPage() {
       <Section eyebrow="FAQ">
         <FaqList
           items={[
-            { q: "Wrong industry at signup?", a: "Change labels in Settings. History stays on the same records." },
-            { q: "Multiple brands?", a: "Separate workspaces, or Scale multi-city in one tenant." },
+            { q: "Wrong industry at signup?", a: "Nothing breaks. Every workspace gets the same features, whichever industry you picked." },
+            { q: "Multiple brands?", a: "Use a separate workspace for each brand, or set up each location as a region in one workspace." },
           ]}
         />
       </Section>

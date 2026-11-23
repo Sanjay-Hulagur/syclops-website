@@ -7,7 +7,7 @@ export const contentType = ogContentType;
 export default function Image() {
   return ogImage({
     eyebrow: "Guides",
-    title: "Go live without a person on the call",
-    kicker: "Workspace, beat import, portal, billing.",
+    title: "Set up most of it yourself",
+    kicker: "Workspace, team, Excel upload, referral page, plans.",
   });
 }

@@ -6,9 +6,9 @@ import { guides } from "@/lib/guides";
 import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = pageSeo({
-  title: "Self-serve setup guides",
+  title: "Setup guides",
   description:
-    "Go live on Syclops without an onboarding call: create a workspace, invite field seats, import a beat list from CSV, run a field day, turn on the referral portal, connect billing, export reports.",
+    "Set up Syclops step by step: create a workspace, add your team, upload staff and areas from Excel, run a field day, set up your referral page and membership plans, and export reports.",
   path: "/guides",
 });
 
@@ -17,8 +17,8 @@ export default function GuidesPage() {
     <>
       <PageHero
         eyebrow="Guides"
-        title="Go live without a person on the other end."
-        body="Create a workspace, invite seats, connect billing, share the portal. Each guide is a page. Docs also live in the product."
+        title="Set up most of it yourself."
+        body="Create a workspace, add your team, upload your lists from Excel, and run a field day. Our team sets up the referral page and online payments with you."
         scene="start"
         crumbs={[
           { name: "Home", path: "/" },
@@ -28,9 +28,8 @@ export default function GuidesPage() {
       <Section>
         <Prose>
           <p>
-            Most teams turn on field visits and referrals the same day, then
-            add subscriptions once those are running. There is no
-            implementation calendar.
+            Start with field visits and referrals, then add membership plans
+            once those are running. There is no implementation calendar.
           </p>
         </Prose>
       </Section>

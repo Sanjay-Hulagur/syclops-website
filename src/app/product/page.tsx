@@ -22,22 +22,22 @@ const pillars = [
   {
     href: "/product/field",
     title: "Field tracking",
-    body: "Staff check in on the phone. A photo and the route stay on the account. Travel claims are calculated from the path they actually walked.",
+    body: "Staff check in with GPS and photos at each visit. TA/DA is worked out from the distance they travel each day.",
   },
   {
     href: "/product/referrals",
     title: "Referral management",
-    body: "Each person who sends a customer has one record, a page they can open, and a reward that shows up on the invoice.",
+    body: "Each person who sends a customer has their own login, sees what happened next, and can be paid a reward you approve.",
   },
   {
     href: "/product/subscriptions",
     title: "Subscription management",
-    body: "Plans, renewals, and failed payments live here. When someone is about to stop paying, that becomes a visit, not only an email.",
+    body: "Sell membership plans from the phone, record cash, UPI and EMI payments, and see who has a payment due.",
   },
   {
     href: "/product/analytics",
     title: "Analytics",
-    body: "See which visit and which referrer brought the monthly revenue. Region and partner views sit on the same numbers.",
+    body: "See which partners your team never visits, which ones are visited but never refer, and how each person’s visits add up.",
   },
   {
     href: "/product/mobile",
@@ -47,7 +47,7 @@ const pillars = [
   {
     href: "/integrations",
     title: "Integrations",
-    body: "WhatsApp, Razorpay, maps, and billing. You paste the keys in Settings. Nothing is wired by a specialist.",
+    body: "WhatsApp, Razorpay, maps and hospital billing systems. We connect them with you during setup.",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function ProductPage() {
       <PageHero
         eyebrow="Product"
         title="One place for visits, referrals, and paid plans."
-        body="GPS apps stop at the map pin. CRMs stop at the deal. Industry software stops at the invoice. Syclops keeps the visit, the person who sent the customer, and the plan they pay for together. You turn it on yourself."
+        body="GPS apps stop at the map pin. CRMs stop at the deal. Industry software stops at the invoice. Syclops keeps the visit, the person who sent the customer, and the plan they pay for together. You create the workspace yourself."
         scene="loop"
         crumbs={[
           { name: "Home", path: "/" },
@@ -75,15 +75,14 @@ export default function ProductPage() {
           </p>
           <p>
             Ask a simple question and the answer is split across tools. Which
-            visit led to this customer? Who sent them? Are they still paying?
-            If a payment fails, who should go back? Most stacks cannot answer
-            that without a spreadsheet and a phone call.
+            visit led to this customer? Who sent them? Have they paid? Most
+            stacks cannot answer that without a spreadsheet and a phone call.
           </p>
           <p>
-            Syclops is for that missing picture. You create a workspace,
-            invite field staff, share a partner page, and connect Razorpay.
-            Field visits and referrals are enough on the Team plan.
-            Subscriptions open on Growth.
+            Syclops is for that missing picture. You create a workspace, add
+            field staff and share a referral page. We connect WhatsApp and
+            Razorpay with you. Field visits and referrals are enough on the
+            Team plan. Membership plans open on Growth.
           </p>
         </Prose>
       </Section>
@@ -92,15 +91,15 @@ export default function ProductPage() {
           items={[
             {
               title: "The visit is recorded",
-              body: "A field person checks in. The photo and the route stay on the account, so the visit is proof, not a message that disappears in a group chat.",
+              body: "A field person checks in with GPS and a photo, so the visit is proof, not a message that disappears in a group chat.",
             },
             {
               title: "The referral is named",
-              body: "A partner, member, parent, or alumni sends someone. You can see who sent them, where that person is, and whether they started paying. The sender can check status without calling the office.",
+              body: "A partner, member, parent, or alumni sends someone. You can see who sent them and where that person is. The sender can check status without calling the office.",
             },
             {
               title: "The plan is paid",
-              body: "The new customer is on a subscription. If a payment fails, or they are about to leave, that shows up as the next visit. The loop does not end at the first invoice.",
+              body: "The new customer joins a plan and pays by cash, UPI, EMI or online. If a payment is due, the plan shows it, so someone knows to go back.",
             },
           ]}
         />
@@ -113,7 +112,7 @@ export default function ProductPage() {
           items={[
             {
               title: "Gyms",
-              body: "Trainers visit. Members refer friends. A membership renews, or someone is about to leave and needs a visit.",
+              body: "Trainers visit. Members refer friends. Each membership shows what has been paid and what is still due.",
             },
             {
               title: "Campuses",
@@ -121,19 +120,19 @@ export default function ProductPage() {
             },
             {
               title: "Clinics",
-              body: "Representatives visit doctors. A clinic refers a patient. The care plan stays attached to the visit and the person who sent them.",
+              body: "Representatives visit doctors. A clinic refers a patient, and the referral keeps the doctor who sent them.",
             },
             {
               title: "Sales teams",
-              body: "The day’s route, the partner who made the introduction, and the retainer sit on one record instead of three tools.",
+              body: "The day’s route, the partner who made the introduction, and the retainer live in one app instead of three tools.",
             },
             {
               title: "Fintech",
-              body: "Field visits and partner channels stay tied to the account that pays. A failed payment can become a visit, not only a reminder.",
+              body: "Agents visit customers and partners. Each referral keeps who sent it, and instalments show their due dates, so agents know whom to visit.",
             },
             {
               title: "Medtech",
-              body: "Hospital and clinic visits, the people who refer, and the contract that follows are one story. Managers see the region, not a pile of chats.",
+              body: "Hospital and clinic visits, the people who refer, and the contract that follows are in one app. Managers see the region, not a pile of chats.",
             },
           ]}
         />
@@ -155,20 +154,21 @@ export default function ProductPage() {
       <Section eyebrow="How you start" title="An afternoon, not a rollout.">
         <Prose>
           <p>
-            There is no onboarding call and no implementation manager. You
-            add regions and roles inside the product. Import a spreadsheet if
-            you already have accounts. The first route can run the same day.
+            You do not need an implementation project. Add your regions and
+            your team inside the product, or upload them from an Excel
+            template. Field staff can start their first working day the same
+            day.
           </p>
         </Prose>
         <div className="mt-8">
           <Checklist
             items={[
-              "Create a workspace and pick your industry",
-              "Invite field staff and managers",
-              "Add accounts from a spreadsheet",
-              "Share the partner page by link or QR code",
-              "Connect WhatsApp, maps, and Razorpay",
-              "Turn on plans when you are ready for subscriptions",
+              "Create a workspace with your email and business name",
+              "Add field staff and managers",
+              "Upload staff and areas from Excel if you have many",
+              "Get your referral page link from our team",
+              "Connect WhatsApp and Razorpay with our team",
+              "Set up membership plans when you are ready",
             ]}
           />
         </div>
@@ -178,15 +178,19 @@ export default function ProductPage() {
           items={[
             {
               q: "Do I need every part of the product?",
-              a: "No. Field visits and referrals are enough on Team. Subscriptions, the partner page rewards, and deeper reports open on Growth.",
+              a: "No. Field visits and referrals are enough on Team. Membership plans, the referral page, referral payouts and deeper reports open on Growth.",
             },
             {
               q: "How long does it take to go live?",
-              a: "A workspace takes minutes. If you import a spreadsheet of accounts, the first route can run the same day.",
+              a: "A workspace takes minutes. Add your staff, or upload them from Excel, and they can start their first working day the same day.",
             },
             {
               q: "Is Syclops a CRM?",
               a: "No. A CRM is built around deals. Syclops is built around a visit, the person who referred the customer, and the plan they pay.",
+            },
+            {
+              q: "Will the app use my industry’s words?",
+              a: "Not yet. Syclops was built for hospitals, so some screens say doctors and patients where you might say partners and customers. The steps are the same.",
             },
             {
               q: "Is this GPS tracking software?",
@@ -198,7 +202,7 @@ export default function ProductPage() {
             },
             {
               q: "Can I start small and add subscriptions later?",
-              a: "Yes. Start on Team, and tell us when you want Growth for plans, failed-payment follow-up, and rewards on the invoice. History stays.",
+              a: "Yes. Start on Team, and tell us when you want Growth for membership plans, the referral page and referral payouts. History stays.",
             },
             {
               q: "What do field staff install?",
@@ -206,7 +210,7 @@ export default function ProductPage() {
             },
             {
               q: "Do you run the setup for us?",
-              a: "You set it up yourself, and the guides walk through each step: regions, check-in rules and travel claims. If you get stuck, email us.",
+              a: "You set up the workspace yourself, and the guides walk through each step. We connect WhatsApp and Razorpay with you. If you get stuck, email us.",
             },
           ]}
         />

@@ -4,16 +4,16 @@ import { Checklist, FaqList, FeatureGrid, Prose, Related, Section } from "@/comp
 import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = pageSeo({
-  title: "Field tracking software with GPS check-in, routes, and TADA",
+  title: "Field tracking software with GPS check-in, visit photos, and TADA",
   description:
-    "Syclops field tracking for Indian teams: geo check-in, visit photos, beat lists, offline queue, and TADA — proof of work tied to referrals and paying plans.",
+    "Syclops field tracking for Indian teams: start the working day in the app, check in at each visit with GPS and photos, plan visits, and get TA/DA worked out from the distance travelled.",
   path: "/product/field",
   keywords: [
     "field tracking software India",
     "GPS check-in",
     "TADA software",
     "field force tracking",
-    "beat list",
+    "visit plan app",
   ],
 });
 
@@ -22,8 +22,8 @@ export default function FieldPage() {
     <>
       <PageHero
         eyebrow="Field tracking"
-        title="Prove the visit. Then attach it to revenue."
-        body="Syclops is field tracking software for Indian teams — not a live-map product. Location is evidence inside the loop: this visit opened a referral, sold a plan, or was sent because a subscription is at risk."
+        title="Prove the visit. Then see what it led to."
+        body="Syclops is field tracking software for Indian teams, not a live-map product. Each visit is checked in with GPS and photos, and stays tied to the partner and the referrals that followed."
         scene="field"
         crumbs={[
           { name: "Home", path: "/" },
@@ -31,74 +31,69 @@ export default function FieldPage() {
           { name: "Field tracking", path: "/product/field" },
         ]}
       />
-      <Section eyebrow="Not attendance software" title="GPS trackers stop at the pin. Growth does not.">
+      <Section eyebrow="Not attendance software" title="GPS trackers stop at the pin.">
         <Prose>
           <p>
-            Geo-fenced selfie apps and live maps answer where someone was.
-            Field tracking software for gyms, campuses, clinics, and sales
-            teams in India has to answer who they moved, and whether that person still
-            pays. Search “field tracking software India” and you will find live maps.
-            This page is the other job: the pin as evidence on a referral and a plan.
+            Geo-tagged selfie apps and live maps answer where someone was. A
+            team that grows through visits and referrals also needs to know
+            whom they met, and whether that partner ever sent anyone.
           </p>
           <p>
-            Check-in starts the working day. Visits attach to accounts. Checkout
-            closes the route so mileage is the path you walked. Mock locations
-            are flagged. Photo EXIF can be required. The scoreboard is still
-            paying outcomes — not attendance %.
+            In Syclops, staff start their working day in the app, and location
+            is recorded only during the working day. Each visit is checked in
+            with GPS and photos, and the distance travelled becomes the day’s
+            TA/DA.
           </p>
         </Prose>
       </Section>
-      <Section eyebrow="How a day runs" title="Check in. Cover the beat. Check out.">
+      <Section eyebrow="How a day runs" title="Start the day. Visit. See the report.">
         <Steps
           items={[
-            { title: "Check in", body: "Geo + optional photo. The day clock starts. Mock locations are flagged." },
-            { title: "Log the account", body: "Visit notes attach to the partner or member. Skip is a status, not silence." },
-            { title: "TADA writes itself", body: "Mileage is the path. You approve the sheet in the web app." },
+            { title: "Start the working day", body: "One tap in the app. Location is recorded from here until the day ends." },
+            { title: "Check in at each visit", body: "GPS and photos, with a note on whom they met and why." },
+            { title: "TA/DA adds itself up", body: "The day’s distance becomes TA/DA. Daily and monthly totals show in the app." },
           ]}
         />
       </Section>
-      <Section eyebrow="In the product" title="What field seats actually get.">
+      <Section eyebrow="In the product" title="What field staff and managers get.">
         <FeatureGrid
           items={[
-            { title: "Beat list", body: "Accounts in range, last-visit date, and whether they still pay." },
-            { title: "Visit proof", body: "Photo, duration, notes. Not a gallery dump in WhatsApp." },
-            { title: "Routes", body: "Suggested order for the day. Map PDF for managers." },
-            { title: "Offline queue", body: "Rural and basement visits sync when the radio returns." },
-            { title: "New accounts", body: "Add a partner from the phone. Geo stamps the door." },
-            { title: "At-risk overlay", body: "Churned or failed plans sit on top of the beat so the day is not random." },
+            { title: "Visit plans", body: "Plan the week’s visits and see the day’s route in the app." },
+            { title: "Visit proof", body: "GPS check-in, photos and notes on every visit. Not a gallery dump in WhatsApp." },
+            { title: "TA/DA", body: "Worked out from the distance travelled each day, with daily and monthly totals." },
+            { title: "New partners from the phone", body: "Staff add a partner they met for the first time, right after the visit." },
+            { title: "Coverage", body: "See which partners have never been visited, and which are visited but never refer." },
+            { title: "Leave and shifts", body: "Leave requests and shift plans sit in the same workspace." },
           ]}
         />
       </Section>
-      <Section eyebrow="You configure" title="No implementation manager.">
+      <Section eyebrow="You set" title="No implementation project.">
         <Checklist
           items={[
-            "Regions and beat lists in Settings",
-            "Check-in geofence radius",
-            "TADA rate card (per km, daily cap)",
-            "Photo required or optional",
-            "Working hours for GPS",
-            "Who can approve TADA",
+            "Regions and areas, or upload them from Excel",
+            "Who is on the field team",
+            "Visit reasons staff can pick from",
+            "Visit plans for each person",
           ]}
         />
       </Section>
       <Section eyebrow="FAQ" title="Field tracking questions teams actually search.">
         <FaqList
           items={[
-            { q: "What is field tracking software in India?", a: "Software that proves a field day — check-in, beat, checkout, TADA — and, in Syclops, attaches that day to a referral and a paying plan. Live GPS alone is attendance software." },
-            { q: "Is GPS always on?", a: "Only between check-in and check-out on a working day. Retention is a setting. The security page covers DPDP and GPS retention." },
-            { q: "Can staff fake a pin?", a: "Mock locations are flagged. Photo EXIF can be required. The product still cares more about the referral that followed." },
-            { q: "Who sees live location?", a: "Managers, for the working day. History is the route, not a forever trail unless you extend retention." },
-            { q: "Does TADA replace payroll?", a: "Mileage writes from the route. You approve the sheet. Statutory attendance can stay in HR software." },
-            { q: "How is this different from GeoProof-style trackers?", a: "Those products prove presence. Syclops uses the pin as evidence that a referral opened or a plan was saved." },
+            { q: "What is field tracking software in India?", a: "Software that records a field day: when it starts, each visit with GPS and photos, and the distance travelled for TA/DA. In Syclops, each visit also stays tied to the partner and the referrals that followed." },
+            { q: "Is GPS always on?", a: "No. Location is recorded only during the working day, from the moment staff start their day in the app." },
+            { q: "Who sees where staff went?", a: "Managers see each person’s visits and route for the working day." },
+            { q: "Does TA/DA replace payroll?", a: "No. Syclops works out TA/DA from the distance travelled. Pay it through your payroll or accounts as you do today." },
+            { q: "How is this different from GPS-only trackers?", a: "Those prove presence. Syclops keeps each visit tied to the partner, so you can see which visits led to referrals." },
           ]}
         />
       </Section>
       <Section eyebrow="Next">
         <Related
           items={[
-            { href: "/tada-software", label: "TADA software", body: "Mileage from the path, rate cards, approval." },
-            { href: "/product/referrals", label: "Referral management", body: "The intro the visit can open." },
-            { href: "/security", label: "Security and GPS retention", body: "Working-day evidence, DPDP, RBAC." },
+            { href: "/tada-software", label: "TADA software", body: "TA/DA from the distance travelled." },
+            { href: "/product/referrals", label: "Referral management", body: "The referral a visit can lead to." },
+            { href: "/security", label: "Security and working-day GPS", body: "When location is recorded, and who sees it." },
           ]}
         />
       </Section>

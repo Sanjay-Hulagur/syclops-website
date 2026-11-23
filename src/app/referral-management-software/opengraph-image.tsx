@@ -8,6 +8,6 @@ export default function Image() {
   return ogImage({
     eyebrow: "Category",
     title: "Referral management software",
-    kicker: "From intro to payout — with the visit and the plan on the same record.",
+    kicker: "From intro to payout — with the field visits in the same app.",
   });
 }

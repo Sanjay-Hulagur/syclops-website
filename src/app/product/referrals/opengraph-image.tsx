@@ -7,7 +7,7 @@ export const contentType = ogContentType;
 export default function Image() {
   return ogImage({
     eyebrow: "Referrals",
-    title: "A portal the sender can actually open",
-    kicker: "Status from sent to paying. Rewards after the window.",
+    title: "Every referral keeps the name of who sent it",
+    kicker: "A login for referrers. Payouts you approve.",
   });
 }

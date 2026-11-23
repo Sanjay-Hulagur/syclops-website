@@ -101,9 +101,9 @@ export default async function ComparePage({ params }: Props) {
               : page.slug === "whatsapp-excel"
                 ? [
                     {
-                      href: "/guides/import-beat-list",
-                      label: "Import a beat list",
-                      body: "CSV in, then the field app is the source of truth.",
+                      href: "/guides/import-from-excel",
+                      label: "Upload from Excel",
+                      body: "Staff and areas in, then Syclops replaces the sheet.",
                     },
                     {
                       href: "/product/referrals",
@@ -138,13 +138,13 @@ export default async function ComparePage({ params }: Props) {
                     ? [
                         {
                           href: "/blog/channel-partner-portal-not-crm-source-field",
-                          label: "Portal vs source field",
-                          body: "Partners need status. A CRM picklist is not a portal.",
+                          label: "Referral page vs source field",
+                          body: "Partners need status. A CRM picklist is not a referral page.",
                         },
                         {
                           href: "/industries/sales",
                           label: "Sales & marketing",
-                          body: "Beat, partner intro, retainer.",
+                          body: "Dealer visits, partner intros, retainers.",
                         },
                         {
                           href: "/compare",
@@ -162,7 +162,7 @@ export default async function ComparePage({ params }: Props) {
                         {
                           href: "/industries/gyms",
                           label: "Gyms",
-                          body: "Trainer visits, portal, freeze rules.",
+                          body: "Trainer visits, the referral page, memberships.",
                         },
                         {
                           href: "/compare/vertical-software",

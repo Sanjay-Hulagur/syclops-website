@@ -26,4 +26,4 @@ export type Post = {
   hero?: PostHero;
 };
 
-export const POST_UPDATED = "2026-10-17";
+export const POST_UPDATED = "2026-11-23";

@@ -22,21 +22,21 @@ const workflows = [
   {
     industry: "Gyms",
     title: "Member referrals at a gym",
-    body: "Trainers log visits to corporate partners. Members refer friends, and each join keeps the member who sent them, so you can see which referrals became memberships that renew.",
+    body: "Trainers log visits to corporate partners. Members refer friends, and each referral keeps the member who sent it, so you can see which referrals joined and what each member is owed.",
     flow: ["Trainer visit", "Member intro", "Membership"],
     href: "/industries/gyms",
   },
   {
     industry: "Education",
     title: "Admissions at a coaching institute",
-    body: "Counselors visit schools and centres. Alumni and parents refer students, and each admission keeps the person who referred it next to the fee plan.",
+    body: "Counselors visit schools and centres. Alumni and parents refer students. Each referral keeps the person who sent it, and each fee plan shows which instalments are paid.",
     flow: ["Campus visit", "Alumni intro", "Term fee"],
     href: "/industries/education",
   },
   {
     industry: "Fintech",
     title: "Field agents at a lender or insurer",
-    body: "Agents log home visits with GPS. Family referrals keep the original agent on the record, and a missed payment can become the next visit.",
+    body: "Agents log home visits with GPS. Each family referral keeps the customer who sent it, and each plan shows the agent who sold it and any payment due.",
     flow: ["Home visit", "Family referral", "Monthly premium"],
     href: "/industries/fintech",
   },
@@ -50,7 +50,7 @@ const workflows = [
   {
     industry: "Medtech",
     title: "Clinical teams and hospital departments",
-    body: "Representatives log visits to hospitals and doctors. Department referrals and the service plan that follows stay on one record.",
+    body: "Representatives log visits to hospitals and doctors. Each department referral keeps who sent it, and each service plan shows what has been paid.",
     flow: ["Hospital visit", "Department referral", "Service plan"],
     href: "/industries/medtech",
   },

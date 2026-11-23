@@ -8,6 +8,6 @@ export default function Image() {
   return ogImage({
     eyebrow: "TADA software",
     title: "Mileage from the path, not the pin",
-    kicker: "Check-in, checkout, rate cards, and a sheet a manager can approve.",
+    kicker: "Check-in, checkout, and TA/DA from the day’s road distance.",
   });
 }

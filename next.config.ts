@@ -20,6 +20,16 @@ const nextConfig: NextConfig = {
     const landingPagesOff = process.env.LANDING_PAGES_OFF === "1";
     return [
       { source: "/demo", destination: "/start", permanent: true },
+      {
+        source: "/guides/qualification-window",
+        destination: "/guides/referral-payouts",
+        permanent: true,
+      },
+      {
+        source: "/guides/import-beat-list",
+        destination: "/guides/import-from-excel",
+        permanent: true,
+      },
       ...(landingPagesOff
         ? [
             {

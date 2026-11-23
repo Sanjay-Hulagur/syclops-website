@@ -8,7 +8,7 @@ export const post: Post = {
   updated: POST_UPDATED,
   category: "Security",
   excerpt:
-    "Understand how businesses can track employee visits, manage GPS location data, control access, and set data retention periods in line with India's DPDP Act.",
+    "Understand how businesses can track employee visits, manage GPS location data, control access, and decide data retention in line with India's DPDP Act.",
   hero: {
     src: "/blog/employee-gps-privacy-india.png",
     alt: "Employee GPS tracking and data privacy in India. A field officer checking a location pin, with access control and a DPDP retention clock.",
@@ -18,7 +18,7 @@ export const post: Post = {
   body: [
     {
       type: "p",
-      text: "DPDP and employee GPS meet on one question: how long do you keep the trail, and who can see it. Employee location is personal data. Indian field products that treat a live map as the product collect more than a growth loop needs, and they keep it longer than a working day justifies. The Digital Personal Data Protection Act does not require a blog badge. It does require a purpose you can say out loud, access control, and a retention you can actually change.",
+      text: "DPDP and employee GPS meet on one question: how long do you keep the trail, and who can see it. Employee location is personal data. Indian field products that treat a live map as the product collect more than a growth loop needs, and they keep it longer than a working day justifies. The Digital Personal Data Protection Act does not require a blog badge. It does require a purpose you can say out loud, access control, and a retention period you can explain.",
     },
     {
       type: "h2",
@@ -26,33 +26,33 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Collect a pin because a visit, a referral, or an at-risk plan needed evidence of a field day. Check-in starts that day. Checkout ends it. Managers can see location on the working day they are responsible for. History is the route, not a CCTV feed you scrub through on a Sunday. Partners never see GPS. Field seats see their own day unless you grant a manager role.",
+      text: "Collect a pin because a visit, a referral, or a payment due needed evidence of a field day. Check-in starts that day. Check-out ends it. Managers can see location for the working day they are responsible for. History is the route, not a CCTV feed you scrub through on a Sunday. Partners never see GPS. Field staff see their own day unless you make them a manager.",
     },
     {
       type: "p",
-      text: "A forever trail fails the purpose test even when the map looks impressive. If the business question is “did this clinic get a visit,” you do not need last month’s evening coordinates after the route has been approved. [Field tracking](/product/field) is built around that boundary: geo while the day is open, a route when the day closes, and a setting for how long the points remain.",
+      text: "A forever trail fails the purpose test even when the map looks impressive. If the business question is “did this clinic get a visit,” you do not need last month’s evening coordinates. [Field tracking](/product/field) is built around that boundary: location while the day is open, a route and a distance when the day closes, and nothing recorded after check-out.",
     },
     {
       type: "h2",
-      text: "Retention has to be a setting a manager can point at",
+      text: "Retention has to be a number you can point at",
     },
     {
       type: "p",
-      text: "Retention days for GPS points live in Settings, next to the other controls that decide how personal data behaves. “We keep it until someone asks” is not a setting. A number of days is. When that clock runs out, the points go. TADA can still record the approved distance from the path without keeping a replay of every coordinate that produced it.",
+      text: "“We keep it until someone asks” is not a retention policy. A period you can write down is. Agree it before rollout, put it in your employee notice, and ask your vendor to confirm it in writing. At Syclops, location is recorded only during the working day, and if your IT team needs our hosting and retention details in writing, the [security](/security) page says where to ask. TA/DA is worked out from the day’s distance, so finance needs the distance and the amount, not a replay of every coordinate.",
     },
     {
       type: "ul",
       items: [
-        "Check-in starts collection. Checkout ends it. There is no trail on a day the person did not open.",
-        "Partners and referrers never see GPS. Status of their intro is a different screen.",
-        "Field seats see their own day. A manager role is an explicit grant, not the default.",
-        "Retention days are editable. Export of personal data is a role, not a shared login.",
-        "Access and deletion requests are handled in the product, not in a mailbox you hope someone reads.",
+        "Check-in starts collection. Check-out ends it. There is no trail on a day the person did not start.",
+        "Partners and referrers never see GPS. The status of their referrals is a different screen.",
+        "Field staff see their own day. Seeing other people’s routes comes with the manager role, not by default.",
+        "Each workspace is kept apart from every other, and every role sees only its own work.",
+        "Requests to find, export, or delete a person’s records go to our support team, who help you complete them.",
       ],
     },
     {
       type: "p",
-      text: "Who can export personal data is a role. Invite expiry and session length sit on the same security screen, because a stale invite is also a way location history walks out of the company. Mock-location flags and an optional photo are proof of work for that day. They are not a reason to store a face and a pin forever.",
+      text: "Who can see location is a role decision. Make the manager role an explicit choice for the people who need it, and review that list when someone changes jobs. Photos on a visit are proof of work for that day. They are not a reason to store a face and a pin forever.",
     },
     {
       type: "h2",
@@ -64,7 +64,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "The [security](/security) page is the short version of those controls. The [privacy](/privacy) page says what is processed and where a person exports or deletes it. Read both before you buy field software that cannot name a retention period. If the vendor’s answer is “the map is the product,” you already know the purpose is wider than the job.",
+      text: "The [security](/security) page is the short version of those controls. The [privacy](/privacy) page says what is processed and how a person asks for their data to be exported or deleted. Read both before you buy field software that cannot name a retention period. If the vendor’s answer is “the map is the product,” you already know the purpose is wider than the job.",
     },
     {
       type: "h2",
@@ -72,11 +72,11 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Rank staff by paying outcomes, not by kilometres. Kilometres are a cost. A pin with no named intro and no plan that still pays is not a performance system, and it is a weak reason to keep location. Collect the point because the visit needed it. Delete it on the schedule you set. The argument is the same one in [GPS is not a growth system](/blog/gps-is-not-a-growth-system): the map answers where someone was, not whether the loop held.",
+      text: "Rank staff by paying outcomes, not by kilometres. Kilometres are a cost. A pin with no named intro and no paid plan is not a performance system, and it is a weak reason to keep location. Collect the point because the visit needed it. Keep it only as long as your stated purpose needs. The argument is the same one in [GPS is not a growth system](/blog/gps-is-not-a-growth-system): the map answers where someone was, not whether the loop held.",
     },
     {
       type: "p",
-      text: "TADA still writes from the path between check-in and checkout. Managers approve the sheet against a rate card. Statutory attendance can stay in HR. You do not need a second, always-on location product to pay a field day, and you do not need to keep the coordinates after the sheet is approved and the retention window has closed.",
+      text: "TA/DA is worked out from the road distance between check-in and check-out, using the allowance you set. Statutory attendance can stay in HR. You do not need a second, always-on location product to pay a field day.",
     },
     {
       type: "h2",
@@ -84,17 +84,17 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Ask the vendor when the trail stops, who can see it while it exists, and where a person requests deletion. If those three answers are a settings screen, you can have a field day and a defensible purpose. If they are a slide, keep looking. Do not buy field tracking software that cannot name when the trail stops. A retention number you can edit is the whole requirement. A map you cannot switch off is a different product.",
+      text: "Ask the vendor when the trail stops, who can see it while it exists, and where a person requests deletion. If those three answers are specific — a working day, named roles, and a person who handles requests — you can have a field day and a defensible purpose. If they are a slide, keep looking. Do not buy field tracking software that cannot name when the trail stops. A map you cannot switch off is a different product.",
     },
   ],
   faqs: [
     {
       q: "Is employee GPS collected all day, every day?",
-      a: "No. Collection runs between check-in and checkout on a working day. Partners never see it. Field seats see their own day unless a manager role is granted.",
+      a: "No. Location is recorded between check-in and check-out on a working day. Partners never see it. Field staff see their own day unless they have the manager role.",
     },
     {
-      q: "Where do we change how long GPS points are kept?",
-      a: "Retention days are a setting under Security. Data access and deletion sit under Data. Both are product screens, not a promise in a mailbox.",
+      q: "How do we get a person’s location data exported or deleted?",
+      a: "Write to our support team with the request, and we will help you find, export, or delete that person’s records. If you need our hosting and retention details in writing for your IT team, ask the same way.",
     },
   ],
 };

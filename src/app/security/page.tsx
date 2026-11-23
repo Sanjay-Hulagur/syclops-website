@@ -5,7 +5,7 @@ import { pageSeo } from "@/lib/seo";
 import { supportEmail } from "@/lib/site";
 
 export const metadata: Metadata = pageSeo({
-  title: "Security — DPDP, GPS retention, RBAC",
+  title: "Security — DPDP, working-day GPS, RBAC",
   description:
     "Syclops security: multi-tenant isolation, role-based access, encryption, activity logs and working-day GPS.",
   path: "/security",
@@ -28,7 +28,7 @@ export default function SecurityPage() {
       <Section>
         <Prose>
           <p>
-            Location is evidence for a working day, not a forever trail.
+            Location is evidence for a working day, not a 24-hour trail.
             Partners never see GPS, and field staff see only their own day.
             If your IT team needs hosting or retention details in writing,
             write to {supportEmail}.
@@ -59,8 +59,8 @@ export default function SecurityPage() {
       <Section eyebrow="Next">
         <Related
           items={[
-            { href: "/blog/dpdp-employee-gps-retention", label: "DPDP and GPS retention", body: "Working-day evidence, not a forever trail." },
-            { href: "/privacy", label: "Privacy policy", body: "What is processed, and how you export it." },
+            { href: "/blog/dpdp-employee-gps-retention", label: "DPDP and GPS retention", body: "Working-day evidence, not a 24-hour trail." },
+            { href: "/privacy", label: "Privacy policy", body: "What is processed, and how to request an export." },
             { href: "/product/field", label: "Field tracking", body: "GPS as visit proof, not CCTV." },
           ]}
         />

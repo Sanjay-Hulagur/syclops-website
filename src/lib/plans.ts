@@ -20,7 +20,7 @@ export const publicPlans: PublicPlan[] = [
       "Referral workspace",
       "Up to 3 managers",
       "WhatsApp + Maps",
-      "In-app help and guides",
+      "Setup guides and email support",
     ],
     gymItems: ["Field tracking", "TADA", "Referral workspace"],
     offerDescription:
@@ -33,20 +33,20 @@ export const publicPlans: PublicPlan[] = [
     featured: true,
     items: [
       "Everything in Team",
-      "Partner / member portal",
-      "Subscription plans & dunning",
-      "Referral rewards on invoices",
+      "Referral page for partners and members",
+      "Membership plans with cash, UPI, EMI and Razorpay",
+      "Referral payouts, approved before they are paid",
       "Analytics by referrer and region",
     ],
     gymItems: [
       "Everything in Team",
-      "Member referral portal",
-      "Subscription plans and dunning",
+      "Member referral page",
+      "Membership plans and EMI payments",
       "Referral rewards",
       "Analytics",
     ],
     offerDescription:
-      "Team plus partner/member portal, subscription plans and dunning, referral rewards on invoices, analytics by referrer and region. Per field seat per month.",
+      "Team plus a referral page for partners and members, membership plans with cash, UPI, EMI and Razorpay payments, referral payouts with approval, and analytics by referrer and region. Per field seat per month.",
   },
   {
     name: "Scale",
@@ -54,19 +54,19 @@ export const publicPlans: PublicPlan[] = [
     cadence: "per field seat / month",
     items: [
       "Everything in Growth",
-      "Multi-brand / multi-city",
+      "Regions and territories for large teams",
       "Audit logs",
       "HIS / ERP connector, set up for your system",
       "Setup with our team on a call",
     ],
     gymItems: [
       "Everything in Growth",
-      "Multi-brand and multi-city",
+      "Regions for several locations",
       "Audit logs",
       "Setup with our team",
     ],
     offerDescription:
-      "Growth plus multi-brand / multi-city, audit logs, an HIS or ERP connector set up for your system, and setup with the Syclops team. Per field seat per month.",
+      "Growth plus regions and territories for large teams, audit logs, an HIS or ERP connector set up for your system, and setup with the Syclops team. Per field seat per month.",
   },
 ];
 

@@ -6,11 +6,11 @@ import { Breadcrumbs, JsonLd } from "@/components/interior";
 import { GymAnalytics, GymFaq, GymLink, GymStickyCta, gymFocus } from "@/components/gym/client";
 import {
   AnalyticsSample,
+  MembershipList,
   MembershipRecord,
   PortalPhone,
   ProblemIcon,
   ReferralDesk,
-  RenewalList,
   VisitHistory,
   VisitRecord,
 } from "@/components/gym/frames";
@@ -24,7 +24,7 @@ const textLink = "font-medium text-iris hover:text-iris-dark";
 const problems: {
   title: string;
   body: string;
-  kind: "referral" | "trainer" | "renewal";
+  kind: "referral" | "trainer" | "payment";
 }[] = [
   {
     kind: "referral",
@@ -37,9 +37,9 @@ const problems: {
     body: "Trainer visits, follow-ups and field activities are scattered across WhatsApp and manual records.",
   },
   {
-    kind: "renewal",
-    title: "Missed membership renewals",
-    body: "Failed payments and upcoming renewals do not automatically become actionable follow-up tasks.",
+    kind: "payment",
+    title: "Payments nobody follows up",
+    body: "Who has paid and who still owes lives in a register, so nobody knows whom to call.",
   },
 ];
 
@@ -50,15 +50,15 @@ const steps = [
   },
   {
     title: "Referral",
-    body: "Members share a referral portal link or QR code to refer friends.",
+    body: "Members share your referral page link to refer friends.",
   },
   {
     title: "Membership",
-    body: "Connect the referred member to their membership and referral source.",
+    body: "The friend joins on a membership plan, sold and recorded in Syclops.",
   },
   {
-    title: "Renewal",
-    body: "Track upcoming renewals, failed payments and follow-up tasks.",
+    title: "Payments",
+    body: "See who has paid, who has a payment due, and who enrolled them.",
   },
 ];
 
@@ -76,7 +76,7 @@ const syclopsItems = [
   "Trainer field visits",
   "GPS check-ins",
   "TADA",
-  "Subscription follow-ups",
+  "Membership payments",
   "Referral rewards",
   "Field performance analytics",
 ];
@@ -86,27 +86,27 @@ function gymFaqs(trialDays: number) {
   return [
     {
       q: "Do I need to replace my existing gym management software?",
-      a: "No. Keep door attendance, biometric access, class scheduling, billing, and member records in your gym software. Syclops adds member referral tracking, trainer field visits, and subscription follow-ups. It does not do biometric gym attendance.",
+      a: "No. Keep door attendance, biometric access, class scheduling, billing, and member records in your gym software. Syclops adds member referral tracking, trainer field visits, and membership plans with payments. It does not do biometric gym attendance.",
     },
     {
       q: "Can members refer friends without downloading an app?",
-      a: "Yes. A member opens a portal link or a QR code in the browser. They do not install the field app, and a referrer login is not billed as a field seat. The member portal is included on Growth and Scale.",
+      a: "Yes. A member opens your referral page in the browser and signs in with a one-time code sent to their email. They do not install the field app, and referrer logins are not billed as field seats. The referral page is included on Growth and Scale.",
     },
     {
       q: "How are referral rewards managed?",
-      a: "On Growth, you set the reward in Settings → Referrals: credit, extra days, or a percent of the invoice, plus a qualification window and a cap. Nothing is credited until the referred member stays past that window. The same phone or email cannot be referred twice into the same plan. The reward sits on the next invoice.",
+      a: "Record the reward amount on the referral when the friend joins. Payouts move from pending to approved to paid, so nothing is paid before someone approves it. The referral page blocks a second open referral for the same mobile number.",
     },
     {
       q: "Can I track trainers across multiple gym branches?",
-      a: "Yes. Clubs are regions, and trainers are field seats who check in at each branch. Team and Growth cover regions in one workspace. Multi-brand or multi-city is on Scale. TADA applies when trainers travel, from the path they walked, and a manager approves it against your rate card.",
+      a: "Yes. Set up each centre as a region, and trainers check in with GPS at the centre they are covering. If trainers travel between centres, TA/DA is worked out from the distance, using the amounts you set.",
     },
     {
-      q: "Can I track failed membership payments?",
-      a: "Yes, on Growth. Subscription plans show paid, failed, and due soon. After the retry schedule you configure, a failed payment can become a follow-up task for the trainer who owns that member. Syclops connects Razorpay. It does not replace invoices in your gym software.",
+      q: "Can I see who has not paid?",
+      a: "Yes, on Growth. Each membership shows its status, such as Active or Payment Due, and EMI plans show every instalment’s due date. Members can pay by cash, UPI, EMI, or online through Razorpay, which our team connects with you. Syclops does not replace invoices in your gym software.",
     },
     {
       q: "Can trainers check in using GPS?",
-      a: "Yes. Check-in asks for location. GPS runs on a working day between check-in and check-out, and retention is a setting. A photo can be required. Mock locations are flagged. The record is the visit, the route, and what followed — a referral or a follow-up — not a live map of the evening.",
+      a: "Yes. Each visit is checked in with GPS and photos, and location is recorded only during the working day. The record is the visit and what followed — a referral or a membership — not a live map of the evening.",
     },
     {
       q: "How much does Syclops cost for gyms?",
@@ -114,11 +114,15 @@ function gymFaqs(trialDays: number) {
     },
     {
       q: "Can I start with field tracking and add referrals later?",
-      a: "Yes. Team includes field tracking, TADA, and a referral workspace. Tell us when you want Growth for the member portal, subscription plans, dunning, and referral rewards. History stays.",
+      a: "Yes. Team includes field tracking, TADA, and a referral workspace. Move to Growth when you want the member referral page, membership plans, and referral payouts. History stays.",
     },
     {
       q: "How long does setup take?",
-      a: "You create the workspace in the browser in a few minutes. There is no sales call and no implementation manager. The same day you can set clubs as regions, invite trainers, and follow the guides for the portal, check-in, and billing.",
+      a: "You create the workspace in the browser in a few minutes, with no sales call. The same day you can set up centres as regions and add trainers. We connect Razorpay and WhatsApp with you, and the guides cover check-in, referrals, and plans.",
+    },
+    {
+      q: "Does the app use gym words?",
+      a: "Not yet. Syclops was built for hospitals, so some screens say doctors and patients where you would say partners and members. The steps are the same.",
     },
     {
       q: "Is there a free trial?",
@@ -163,11 +167,11 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
               Gym referrals · trainer visits · memberships
             </p>
             <h1 className="display mt-4 max-w-xl text-4xl font-semibold leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl">
-              Turn gym referrals into paying, renewing members.
+              Turn gym referrals into paying members.
             </h1>
             <p className="mt-5 max-w-md text-[15px] leading-7 text-muted sm:text-base">
-              Track every member referral, trainer visit and subscription renewal
-              in one connected system. Keep your existing gym management software.
+              Track every member referral, trainer visit and membership payment
+              in one place. Keep your existing gym management software.
             </p>
             <div id="gym-hero-cta" className="mt-8 flex flex-wrap items-center gap-3 sm:gap-5">
               <GymLink
@@ -197,7 +201,7 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
                 `${trialDays} days free`,
                 "No credit card required",
                 "No sales call required",
-                "Free member referral portal logins",
+                "Free logins for referring members",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-2">
                   <span className="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-money text-cream">
@@ -247,8 +251,8 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
             One connected system for gym growth.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-            Trainers can check in on Team. The member portal, referral rewards,
-            and subscription follow-ups are on{" "}
+            Trainers can check in on Team. The member referral page, referral
+            payouts, and membership plans are on{" "}
             <Link href="/pricing" className={textLink}>
               Growth
             </Link>
@@ -301,28 +305,28 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
             <FeatureList
               items={[
                 {
-                  title: "Shareable member referral portal",
-                  body: "Members open a link in the browser and see what they sent. They are not a paid field seat.",
+                  title: "A referral page for members",
+                  body: "Members open a link in the browser and see whom they sent. They are not a paid field seat.",
                 },
                 {
-                  title: "QR-based referral access",
-                  body: "Share a QR at reception. No field app for members.",
+                  title: "Share it anywhere",
+                  body: "Send the link on WhatsApp or by email, or print it for reception. No field app for members.",
                 },
                 {
                   title: "Referral attribution",
-                  body: "The membership in Syclops keeps who sent the join.",
+                  body: "Each referral keeps the name of the member who sent it.",
                 },
                 {
                   title: "Duplicate referral handling",
-                  body: "The same phone or email cannot be referred twice into the same plan. Name mismatches wait for a manager.",
+                  body: "The referral page blocks a second open referral for the same mobile number.",
                 },
                 {
-                  title: "Referral qualification and rewards",
-                  body: "Credit, extra days, or a percent of the invoice, after a window you set, with a cap. On Growth.",
+                  title: "Referral rewards",
+                  body: "Record the reward for each referral, and approve it before it is paid. On Growth.",
                 },
                 {
                   title: "Referral conversion analytics",
-                  body: "Sent, converted, paying, and churned, by referrer and region.",
+                  body: "Referrals by referrer and region, and what became of each one.",
                 },
               ]}
             />
@@ -336,7 +340,7 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
               </Link>
               {" · "}
               <Link href="/guides/referral-portal" className={textLink}>
-                Portal guide
+                Referral page guide
               </Link>
             </p>
           </div>
@@ -365,27 +369,27 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
               items={[
                 {
                   title: "Planned visits and daily work",
-                  body: "A beat with last-visit dates, so the day is a list and not a WhatsApp thread.",
+                  body: "A visit plan for the week, so the day is a list and not a WhatsApp thread.",
                 },
                 {
                   title: "GPS check-ins",
-                  body: "Location is required at check-in. GPS runs only between check-in and check-out on a working day.",
+                  body: "Each visit is checked in with GPS. Location is recorded only during the working day.",
                 },
                 {
                   title: "Visit history and proof",
-                  body: "Notes, duration, and an optional photo stay on the visit.",
+                  body: "Notes and photos stay on the visit.",
                 },
                 {
-                  title: "Follow-up tasks",
-                  body: "After your retry schedule, a failed membership can become a task for the trainer who owns that member.",
+                  title: "Leave and shifts",
+                  body: "Trainer leave and shift plans sit in the same workspace.",
                 },
                 {
                   title: "Multi-location field activity",
-                  body: "Clubs are regions. Trainers check in at the branch they are covering.",
+                  body: "Centres are regions. Trainers check in at the centre they are covering.",
                 },
                 {
                   title: "TADA and travel tracking where applicable",
-                  body: "When trainers travel, mileage is the path they walked. A manager approves it against your rate card.",
+                  body: "When trainers travel, TA/DA is worked out from the distance, using the amounts you set.",
                 },
               ]}
             />
@@ -422,33 +426,33 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
               Memberships
             </p>
             <h2 id="gym-renewals" className="display mt-3 text-3xl font-semibold tracking-tight">
-              Turn failed payments into follow-up actions.
+              See who has paid, and who has not.
             </h2>
             <FeatureList
               items={[
                 {
-                  title: "Membership subscription tracking",
-                  body: "Plans keep price, interval, trial, and freeze. The membership remembers who referred it.",
+                  title: "Membership plans",
+                  body: "Plans keep the price, duration, and members covered, and the staff member who sold them.",
                 },
                 {
-                  title: "Upcoming renewals",
-                  body: "Due soon is a status on the plan, not a Monday export.",
+                  title: "Payments due",
+                  body: "Payment Due is a status on the membership, not a Monday export.",
                 },
                 {
-                  title: "Failed payment visibility",
-                  body: "Paid, failed, and due soon stay on the membership after you connect Razorpay.",
+                  title: "Cash, UPI, EMI, or online",
+                  body: "Record cash and UPI at the desk, or take payments online through Razorpay, which our team connects with you.",
                 },
                 {
-                  title: "Follow-up task management",
-                  body: "A field task is written after the retry schedule you set, for the trainer who owns that member.",
+                  title: "EMI schedules",
+                  body: "Instalment plans list every due date, and each instalment is marked paid when it comes in.",
                 },
                 {
-                  title: "Referral-linked membership history",
-                  body: "Origin stays on the plan when it renews or fails. Syclops does not replace your gym invoices.",
+                  title: "Referrals and memberships together",
+                  body: "Referrals and memberships sit in the same workspace, with reports for both. Syclops does not replace your gym invoices.",
                 },
                 {
-                  title: "Reward attribution",
-                  body: "Qualified rewards sit on the next invoice, within the cap you set.",
+                  title: "Enrollment reports",
+                  body: "Enrollments by plan and by the staff member who sold them.",
                 },
               ]}
             />
@@ -458,13 +462,13 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
               </Link>
               {" · "}
               <Link href="/guides/plans-billing" className={textLink}>
-                Plans and billing
+                Plans and payments
               </Link>
             </p>
           </div>
           <div className="grid gap-3">
             <MembershipRecord />
-            <RenewalList />
+            <MembershipList />
           </div>
         </div>
       </section>
@@ -476,8 +480,8 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             Syclops sits beside the system that already runs the floor. You do
-            not move class schedules, door access, or GST invoices to get
-            referral origin, trainer visits, and renewal follow-ups.
+            not move class schedules, door access, or GST invoices to track
+            referrals, trainer visits, and membership payments.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <article className="rounded-3xl border border-line bg-quiet p-6">
@@ -524,7 +528,7 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             Prices match the pricing page and are per field seat per month.
-            Member portal logins are not billed as seats. {growth.name} is the
+            Members who use the referral page are not billed as seats. {growth.name} is the
             plan for the full referral and membership workflow.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -587,8 +591,8 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             The records below use sample data so you can see the referral
-            portal, a field visit, and loop health. They are not a customer
-            result.
+            page, a field visit, and visits turning into members. They are not
+            a customer result.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <VisitRecord />
@@ -625,7 +629,7 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
 
       <CtaBand
         id="gym-final"
-        title="Make every referral, visit and renewal count."
+        title="Make every referral, visit and membership count."
         body="Start with your trainers and referrals. Add membership tracking when you're ready."
         note="No credit card required. No onboarding call required."
         actions={
