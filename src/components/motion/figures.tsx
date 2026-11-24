@@ -85,7 +85,7 @@ export function Person({
   );
 }
 
-export type BuildingKind = "gym" | "school" | "shop" | "office" | "hospital";
+export type BuildingKind = "gym" | "school" | "shop" | "office" | "hospital" | "clinic" | "bank";
 
 const Sign = ({ y, width, label }: { y: number; width: number; label: string }) => (
   <>
@@ -146,6 +146,33 @@ export function Building({ x, y, kind, label, size = 1 }: { x: number; y: number
         <rect x={-120} y={-170} width={110} height={90} rx={6} fill={tone.quiet} />
         <rect x={20} y={-150} width={80} height={150} rx={6} fill={tone.line} />
         <Sign y={-340} width={240} label={label} />
+      </>
+    );
+  } else if (kind === "clinic") {
+    shape = (
+      <>
+        <path d="M -150 -200 L 0 -300 L 150 -200 Z" fill={tone.ink} />
+        <rect x={-130} y={-200} width={260} height={200} fill={tone.cream} stroke={tone.line} strokeWidth={5} />
+        <rect x={-90} y={-176} width={180} height={44} rx={6} fill={tone.quiet} />
+        <text x={0} y={-146} textAnchor="middle" fontFamily={ui} fontWeight={600} fontSize={26} fill={tone.ink}>
+          {label}
+        </text>
+        <g transform="translate(-80 -70)">
+          <rect x={-6} y={-18} width={12} height={36} rx={3} fill={tone.iris} />
+          <rect x={-18} y={-6} width={36} height={12} rx={3} fill={tone.iris} />
+        </g>
+        <rect x={-35} y={-100} width={70} height={100} rx={6} fill={tone.line} />
+      </>
+    );
+  } else if (kind === "bank") {
+    shape = (
+      <>
+        <path d="M -190 -300 L 0 -370 L 190 -300 Z" fill={tone.ink} />
+        {body(340, 300)}
+        {[-110, -40, 40, 110].map((cx) => (
+          <rect key={cx} x={cx - 14} y={-260} width={28} height={230} rx={4} fill={tone.quiet} />
+        ))}
+        <Sign y={-300} width={200} label={label} />
       </>
     );
   } else if (kind === "office") {

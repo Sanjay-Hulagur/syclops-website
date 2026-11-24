@@ -1,6 +1,6 @@
 # Syclops
 
-> Syclops is referral management software for gyms, campuses, sales teams, fintech, medtech, and clinics in India. It records who sent each referral and what happened next, the field visits behind it, and membership plans and their payments, in one app.
+> Syclops is referral management software for hospitals and clinics in India, also used by gyms, campuses, sales teams, fintech, and medtech. It records who sent each referral and what happened next, the field visits behind it, and membership plans and their payments, in one app.
 
 Syclops is self-serve. Teams create a workspace with an email address and a business name, invite field staff, and add the people who refer. Referrers get a free login; only field seats are billed. Prices are per field seat per month in INR: Team ₹1,499, Growth ₹2,499, Scale ₹4,499. 14 days free, no card.
 
@@ -22,12 +22,12 @@ Crawling is welcome on every public page, including /login. /login is noindex an
 
 ## Industries
 
+- [Healthcare](https://syclops.in/industries/healthcare): Referral doctors, PRO visits, and patient referrals, beside the hospital system.
 - [Gyms](https://syclops.in/industries/gyms): Member referrals, trainer visits, and membership payments. See also [gym referral software](https://syclops.in/gym-referral-software).
 - [Education](https://syclops.in/industries/education): Counselor visits, parent and alumni referrals, admissions, and fee payments that are due.
 - [Sales and marketing](https://syclops.in/industries/sales): Sales visits, channel partner referrals, and conversions, beside your CRM. See also [channel partner login vs CRM source field](https://syclops.in/blog/channel-partner-portal-not-crm-source-field).
 - [Fintech](https://syclops.in/industries/fintech): Agent visits, customer and DSA referrals, follow-up calls, and each policy or loan closed.
 - [Medtech](https://syclops.in/industries/medtech): KOL visits, the introductions they lead to, follow-up calls, and each sale.
-- [Healthcare](https://syclops.in/industries/healthcare): Referral doctors, PRO visits, and patient referrals, beside the hospital system.
 
 ## Compare and learn
 

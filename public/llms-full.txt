@@ -1,6 +1,6 @@
 # Syclops — referral management software
 
-Syclops (https://syclops.in) is referral management software for teams in India that grow through people who refer and staff who visit, and then keep customers on a plan. It is used by gyms, campuses, sales teams, fintech, medtech, and the hospitals and clinics it was first built for.
+Syclops (https://syclops.in) is referral management software for teams in India that grow through people who refer and staff who visit, and then keep customers on a plan. It was first built for hospitals and clinics, and is also used by gyms, campuses, sales teams, fintech, and medtech.
 
 The product joins three things on one record: the field visit, the referral, and the membership plan with its payments.
 
@@ -36,12 +36,12 @@ WhatsApp Business (templates, campaigns, a shared inbox, and delivery reports), 
 
 ## Who it is for
 
+- Healthcare: referral doctors, PRO visits, and patient referrals from pending to admitted.
 - Gyms: members refer friends, trainers visit, and memberships with a payment due are followed up.
 - Education: counselor visits, parent and alumni referrals, admissions, and fees that are due.
 - Sales: channel partners and field visits on one record, not a source field in a CRM.
 - Fintech: agent visits, customer and DSA referrals, and each policy or loan closed.
 - Medtech: KOL visits, the introductions they lead to, and each sale.
-- Healthcare: referral doctors, PRO visits, and patient referrals from pending to admitted.
 
 ## How it differs
 
@@ -65,6 +65,7 @@ Billed in rupees per field seat per month. People who only refer are not billed.
 - https://syclops.in/tada-software
 - https://syclops.in/pricing
 - https://syclops.in/faq
+- https://syclops.in/industries/healthcare
 - https://syclops.in/industries/gyms
 - https://syclops.in/industries/sales
 - https://syclops.in/compare/crm

@@ -2,6 +2,7 @@
 
 import { Building, Chip, Person, tone, type BuildingKind } from "./figures";
 import { lerp, pop, progress, useLoop } from "./clock";
+import type { IndustryId } from "@/lib/industries";
 
 const LOOP = 220;
 const GROUND = 118;
@@ -9,9 +10,18 @@ const GROUND = 118;
 type Cast = { body: string; hair?: "long" | "ponytail" | "bun"; pose?: "stand" | "phone" };
 
 const scenes: Record<
-  "gyms" | "education" | "sales" | "healthcare",
+  IndustryId,
   { kind: BuildingKind; label: string; lead: Cast; guest: Cast; chip: string; width: number; poster: number }
 > = {
+  healthcare: {
+    kind: "hospital",
+    label: "City Hospital",
+    lead: { body: tone.sand },
+    guest: { body: tone.muted, hair: "long" },
+    chip: "Referred by Dr S. Rao · Admitted",
+    width: 190,
+    poster: 100,
+  },
   gyms: {
     kind: "gym",
     label: "FitZone",
@@ -23,11 +33,11 @@ const scenes: Record<
   },
   education: {
     kind: "school",
-    label: "Greenwood High",
+    label: "St. Mary’s",
     lead: { body: tone.iris, pose: "phone" },
     guest: { body: tone.sand, hair: "ponytail" },
-    chip: "Sent by Mrs Fernandes",
-    width: 140,
+    chip: "Sent by a teacher · Admitted",
+    width: 172,
     poster: 150,
   },
   sales: {
@@ -39,21 +49,28 @@ const scenes: Record<
     width: 160,
     poster: 180,
   },
-  healthcare: {
+  fintech: {
+    kind: "bank",
+    label: "Branch",
+    lead: { body: tone.muted, pose: "phone" },
+    guest: { body: tone.sand },
+    chip: "Home loan lead · DSA North",
+    width: 166,
+    poster: 140,
+  },
+  medtech: {
     kind: "hospital",
-    label: "Hospital",
+    label: "City Heart",
     lead: { body: tone.iris, pose: "phone" },
     guest: { body: tone.cream },
-    chip: "Referred by Dr Rao",
-    width: 124,
-    poster: 100,
+    chip: "Visited Dr Mehta · City Heart",
+    width: 176,
+    poster: 170,
   },
 };
 
-export type SceneIndustry = keyof typeof scenes;
-
 /** Two people walk up to the business and the record keeps who sent whom. */
-export function IndustryScene({ id }: { id: SceneIndustry }) {
+export function IndustryScene({ id }: { id: IndustryId }) {
   const scene = scenes[id];
   const [ref, frame] = useLoop<HTMLDivElement>(LOOP, scene.poster);
   const walk = progress(frame, 0, 42);
@@ -86,7 +103,7 @@ export function IndustryScene({ id }: { id: SceneIndustry }) {
             hair={scene.guest.hair}
           />
           <Chip
-            x={100}
+            x={Math.max(scene.width / 2 + 8, 100)}
             y={24}
             width={scene.width}
             label={scene.chip}

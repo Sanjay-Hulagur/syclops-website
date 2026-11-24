@@ -3,7 +3,8 @@ import Link from "next/link";
 import { FaqList, JsonLd } from "@/components/interior";
 import { CtaBand } from "@/components/page-hero";
 import { HeroScene } from "@/components/motion/hero-scene";
-import { IndustryScene, type SceneIndustry } from "@/components/motion/industry-scene";
+import { IndustryScene } from "@/components/motion/industry-scene";
+import type { IndustryId } from "@/lib/industries";
 import { OutcomeScene, TeamScene, VisitScene } from "@/components/motion/step-scenes";
 import { getBillingConfig } from "@/lib/billing";
 import { formatInr, publicPlans } from "@/lib/plans";
@@ -66,9 +67,24 @@ const extras = [
   "Razorpay payments",
 ];
 
-const stepScenes = [TeamScene, VisitScene, OutcomeScene];
+const stepScenes = [
+  { Scene: TeamScene, example: "Shown for a college’s counselors" },
+  { Scene: VisitScene, example: "Shown for a sales rep at a dealer" },
+  { Scene: OutcomeScene, example: "Shown for a loan team’s DSA referrals" },
+];
 
-const audiences: { id: SceneIndustry; title: string; body: string }[] = [
+const hospitalPoints = [
+  "PRO visits checked in with GPS and a photo",
+  "Every patient tied to the referral doctor who sent them",
+  "Doctors log in to refer patients and see their status",
+];
+
+const audiences: { id: IndustryId; title: string; body: string }[] = [
+  {
+    id: "healthcare",
+    title: "Hospitals and clinics",
+    body: "PROs log visits to referral doctors, and each referred patient stays tied to the doctor who sent them, from pending to admitted.",
+  },
   {
     id: "gyms",
     title: "Gyms and fitness",
@@ -85,9 +101,14 @@ const audiences: { id: SceneIndustry; title: string; body: string }[] = [
     body: "Reps check in at dealers and partners, and every lead keeps the partner who sent it.",
   },
   {
-    id: "healthcare",
-    title: "Hospitals and clinics",
-    body: "Field staff log doctor visits, and each referred patient stays tied to the doctor who sent them.",
+    id: "fintech",
+    title: "Loans and insurance",
+    body: "Agents check in on visits, and every customer or DSA referral keeps the name of whoever sent it.",
+  },
+  {
+    id: "medtech",
+    title: "Medical devices and diagnostics",
+    body: "Clinical reps log department and KOL visits, and each referral stays tied to the KOL who sent it.",
   },
 ];
 
@@ -179,12 +200,13 @@ export default async function HomePage() {
           </h2>
           <ol className="mt-8 grid gap-6 lg:grid-cols-3 lg:gap-8">
             {steps.map((step, index) => {
-              const Scene = stepScenes[index];
+              const { Scene, example } = stepScenes[index];
               return (
                 <li key={step.title} className="sy-rise">
                   <div className="overflow-hidden rounded-2xl bg-paper">
                     <Scene />
                   </div>
+                  <p className="mt-2 text-xs text-cream/50">{example}</p>
                   <div className="mt-5 flex gap-4">
                     <span
                       aria-hidden="true"
@@ -237,33 +259,52 @@ export default async function HomePage() {
 
       <section className="border-b border-line bg-cream">
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-5 sm:py-16">
-          <h2 className={heading}>Built for teams that grow through referrals</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            {audiences.map((item) => (
-              <Link
-                key={item.id}
-                href={`/industries/${item.id}`}
-                data-cta-id={`home_industry_${item.id}`}
-                data-cta-location="home_industries"
-                className="sy-rise group rounded-2xl border border-line bg-paper p-5 transition hover:-translate-y-0.5 hover:border-ink/40"
-              >
-                <IndustryScene id={item.id} />
-                <h3 className="font-semibold group-hover:underline">{item.title}</h3>
-                <p className="mt-1 text-sm leading-6 text-muted">{item.body}</p>
-              </Link>
-            ))}
+          <h2 className={`sy-rise ${heading}`}>
+            Built for hospitals, and for every team that grows through referrals
+          </h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {audiences.map((item, index) => {
+              const featured = index === 0;
+              return (
+                <Link
+                  key={item.id}
+                  href={`/industries/${item.id}`}
+                  data-cta-id={`home_industry_${item.id}`}
+                  data-cta-location="home_industries"
+                  className={`sy-rise group flex flex-col rounded-2xl border bg-paper p-5 transition hover:-translate-y-0.5 hover:border-ink/40 ${
+                    featured ? "border-ink/30 sm:col-span-2 lg:row-span-2" : "border-line"
+                  }`}
+                >
+                  <IndustryScene id={item.id} />
+                  {featured ? (
+                    <p className="text-xs font-medium uppercase tracking-[0.18em] text-iris">
+                      Where Syclops started
+                    </p>
+                  ) : null}
+                  <h3
+                    className={`font-semibold group-hover:underline ${featured ? "display mt-2 text-2xl" : ""}`}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className={`mt-1 leading-6 text-muted ${featured ? "text-base" : "text-sm"}`}>
+                    {item.body}
+                  </p>
+                  {featured ? (
+                    <ul className="mt-4 grid gap-2 text-sm">
+                      {hospitalPoints.map((point) => (
+                        <li key={point} className="flex gap-3">
+                          <span aria-hidden="true" className="font-semibold text-money">
+                            ✓
+                          </span>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </Link>
+              );
+            })}
           </div>
-          <p className="mt-4 text-sm text-muted">
-            Also used in{" "}
-            <Link href="/industries/fintech" className="font-medium text-ink underline underline-offset-2">
-              fintech
-            </Link>{" "}
-            and{" "}
-            <Link href="/industries/medtech" className="font-medium text-ink underline underline-offset-2">
-              medtech
-            </Link>
-            .
-          </p>
         </div>
       </section>
 

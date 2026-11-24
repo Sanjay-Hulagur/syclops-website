@@ -65,13 +65,13 @@ function Rows({
   );
 }
 
-/** Step 1: the field team joins, then the people who send referrals. */
+/** Step 1, education: counselors join, then the teachers, alumni and parents who refer. */
 export function TeamScene() {
   const [ref, frame] = useLoop<HTMLDivElement>(LOOP, 160);
   const upload = pop(frame, 96);
   return (
     <div ref={ref}>
-      <Panel label="Three field staff join, and a list of referrers fills in." frame={frame}>
+      <Panel label="Three counselors join, and a list of teachers, alumni and parents who refer students fills in." frame={frame}>
         {[34, 76, 118].map((x, index) => {
           const p = progress(frame, 8 + index * 10, 14);
           return <Person key={x} x={x} y={GROUND - (1 - p) * 12} size={0.28} body={tone.iris} frame={frame} opacity={p} />;
@@ -80,9 +80,9 @@ export function TeamScene() {
           frame={frame}
           title="Referrers"
           rows={[
-            { name: "Greenwood High", at: 44 },
-            { name: "Northwind Retail", at: 56 },
-            { name: "Priya, member", at: 68 },
+            { name: "Teacher · St. Mary’s", at: 44 },
+            { name: "Alumni · class of 2022", at: 56 },
+            { name: "Parent · North", at: 68 },
           ]}
         />
         <Chip x={228} y={164} width={156} label="Uploaded from a spreadsheet" fill={tone.ink} opacity={upload.opacity} scale={upload.scale} fontSize={9} />
@@ -91,7 +91,7 @@ export function TeamScene() {
   );
 }
 
-/** Step 2: a rep checks in at a partner with GPS and a photo. */
+/** Step 2, sales: a rep checks in at a partner with GPS and a photo. */
 export function VisitScene() {
   const [ref, frame] = useLoop<HTMLDivElement>(LOOP, 170);
   const walk = progress(frame, 0, 44);
@@ -118,24 +118,24 @@ export function VisitScene() {
   );
 }
 
-/** Step 3: each referral shows where it stands, and a conversion is recorded. */
+/** Step 3, fintech: each DSA referral shows where it stands, and a conversion is recorded. */
 export function OutcomeScene() {
   const [ref, frame] = useLoop<HTMLDivElement>(LOOP, 180);
   const convert = pop(frame, 104);
   return (
     <div ref={ref}>
-      <Panel label="Three referrals show pending, arrived and did not visit, and one is marked as a conversion." frame={frame}>
+      <Panel label="Three DSA referrals show arrived, pending and did not visit, and one is marked as converted." frame={frame}>
         <Person x={60} y={GROUND} size={0.3} body={tone.muted} pose="phone" frame={frame} />
         <Rows
           frame={frame}
-          title="Referrals"
+          title="DSA referrals"
           rows={[
-            { name: "Neha Joshi", at: 10, status: { label: "Pending", fill: tone.quiet, color: tone.ink, width: 52, at: 30 } },
-            { name: "Ravi Shah", at: 18, status: { label: "Arrived", fill: tone.money, width: 52, at: 50 } },
-            { name: "Amit Rao", at: 26, status: { label: "Did not visit", fill: tone.muted, width: 66, at: 70 } },
+            { name: "Suresh I.", at: 10, status: { label: "Arrived", fill: tone.money, width: 52, at: 30 } },
+            { name: "Meena K.", at: 18, status: { label: "Pending", fill: tone.quiet, color: tone.ink, width: 52, at: 50 } },
+            { name: "Arun P.", at: 26, status: { label: "Did not visit", fill: tone.muted, width: 66, at: 70 } },
           ]}
         />
-        <Chip x={228} y={164} width={150} label="✓ Ravi Shah · conversion" fill={tone.iris} opacity={convert.opacity} scale={convert.scale} fontSize={9} />
+        <Chip x={228} y={164} width={150} label="✓ Suresh I. · converted" fill={tone.iris} opacity={convert.opacity} scale={convert.scale} fontSize={9} />
       </Panel>
     </div>
   );
