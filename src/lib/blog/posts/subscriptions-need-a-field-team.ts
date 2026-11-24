@@ -9,12 +9,6 @@ export const post: Post = {
   category: "Subscriptions",
   excerpt:
     "Dunning emails do not replace a visit. At-risk members, students, and policyholders still live in the real world.",
-  hero: {
-    src: "/blog/subscriptions-need-a-field-team.png",
-    alt: "Subscriptions need a field team. A field officer at a clinic desk, talking a visitor through a subscription plan.",
-    width: 1958,
-    height: 803,
-  },
   body: [
     {
       type: "p",
@@ -88,7 +82,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Use both, in that order. Retry. Then visit. Connect the gateway, send us your plans, and make sure every payment due has a person who will see it on the day they check in. That is the whole design. Dunning emails remain. They stop being the last step.",
+      text: "Use both, in that order. Retry. Then visit. Connect the gateway, send us your plans, and make sure every payment due has a named person who will plan the visit. That is the whole design. Dunning emails remain. They stop being the last step.",
     },
   ],
   faqs: [

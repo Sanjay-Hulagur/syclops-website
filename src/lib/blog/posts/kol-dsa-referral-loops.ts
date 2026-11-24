@@ -9,12 +9,6 @@ export const post: Post = {
   category: "Industries",
   excerpt:
     "Learn how medtech and fintech teams can track KOL and DSA referrals, manage field visits, and record each sale or policy as a conversion, while contracts and premiums stay in their core systems.",
-  hero: {
-    src: "/blog/medtech-fintech-referrals.png",
-    alt: "Managing referrals and field teams in medtech and fintech. A field officer reviewing doctor visits and referrals with a clinician.",
-    width: 1958,
-    height: 803,
-  },
   body: [
     {
       type: "p",

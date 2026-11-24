@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import heroArt from "../../../Images/Medtech Field Visits Dashboard.png";
 import { CtaBand } from "@/components/page-hero";
 import { Breadcrumbs, JsonLd, Related } from "@/components/interior";
 import {
@@ -14,6 +12,7 @@ import {
   AnalyticsSample,
   ConversionList,
   ConversionRecord,
+  HeroBoard,
   PortalPhone,
   ReferralDesk,
   VisitHistory,
@@ -245,52 +244,47 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
         ]}
       />
 
-      <header className="grid items-center gap-6 overflow-hidden border-b border-line px-5 py-10 sm:py-12 lg:grid-cols-[max(1.25rem,calc((100%-72rem)/2+1.25rem))_minmax(0,32rem)_minmax(0,1fr)] lg:gap-0 lg:px-0 lg:py-2">
-        <div className="hidden lg:block" aria-hidden="true" />
-        <div className="lg:py-8 lg:pr-6">
-          <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
-            For devices · diagnostics · hospital teams
-          </p>
-          <h1 className="display mt-4 max-w-xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">
-            See which KOL visits turn into referrals and sales.
-          </h1>
-          <p className="mt-5 max-w-md text-base leading-7 text-muted">
-            Track department visits, the introductions KOLs make, every
-            follow-up call, and each conversion in one place. Your ERP stays as
-            it is.
-          </p>
-          <div id="medtech-hero-cta" className="mt-8 flex flex-wrap gap-3">
-            <MedtechLink
-              href={startHref("hero")}
-              event="medtech_hero_trial_click"
-              params={{ cta_location: "hero" }}
-              className={`${primary} ${medtechFocus}`}
-            >
-              Start free trial
-            </MedtechLink>
-            <MedtechLink
-              href="#how-it-works"
-              event="medtech_demo_click"
-              params={{ cta_location: "hero" }}
-              className={`${secondary} ${medtechFocus}`}
-            >
-              See how it works
-            </MedtechLink>
+      <header className="border-b border-line lg:flex lg:min-h-[calc(100svh-110px)] lg:items-center">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:py-20 lg:w-full lg:grid-cols-2">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
+              For devices · diagnostics · hospital teams
+            </p>
+            <h1 className="display mt-4 max-w-xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">
+              See which KOL visits turn into referrals and sales.
+            </h1>
+            <p className="mt-5 max-w-md text-base leading-7 text-muted">
+              Track department visits, the introductions KOLs make, every
+              follow-up call, and each conversion in one place. Your ERP stays as
+              it is.
+            </p>
+            <div id="medtech-hero-cta" className="mt-8 flex flex-wrap gap-3">
+              <MedtechLink
+                href={startHref("hero")}
+                event="medtech_hero_trial_click"
+                params={{ cta_location: "hero" }}
+                className={`${primary} ${medtechFocus}`}
+              >
+                Start free trial
+              </MedtechLink>
+              <MedtechLink
+                href="#how-it-works"
+                event="medtech_demo_click"
+                params={{ cta_location: "hero" }}
+                className={`${secondary} ${medtechFocus}`}
+              >
+                See how it works
+              </MedtechLink>
+            </div>
+            <ul className="mt-6 grid gap-2 text-sm text-muted sm:grid-cols-2">
+              <li>{trialDays} days free</li>
+              <li>No credit card required</li>
+              <li>No sales call</li>
+              <li>Your ERP stays</li>
+            </ul>
           </div>
-          <ul className="mt-6 grid gap-2 text-sm text-muted sm:grid-cols-2">
-            <li>{trialDays} days free</li>
-            <li>No credit card required</li>
-            <li>No sales call</li>
-            <li>Your ERP stays</li>
-          </ul>
+          <HeroBoard />
         </div>
-        <Image
-          src={heroArt}
-          alt="Hospital meeting with field visits, hospital accounts and leads, and a phone check-in for today's device visits."
-          priority
-          sizes="(min-width: 1024px) 55vw, 100vw"
-          className="h-auto w-full"
-        />
       </header>
 
       <section className="mx-auto max-w-6xl px-5 py-16" aria-labelledby="medtech-problem">

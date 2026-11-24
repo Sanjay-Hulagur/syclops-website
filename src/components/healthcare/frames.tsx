@@ -18,7 +18,7 @@ function Status({
     warn: "bg-quiet text-[#A16207]",
   };
   return (
-    <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${tones[tone]}`}>
+    <span className={`whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-medium ${tones[tone]}`}>
       {children}
     </span>
   );
@@ -31,8 +31,8 @@ export function HeroBoard() {
         <SampleCaption>Illustrative sample workspace</SampleCaption>
         <span className="text-xs text-muted">Doctor · visit · referral</span>
       </figcaption>
-      <div className="grid items-start gap-3 sm:grid-cols-[1.05fr_0.95fr]">
-        <DoctorRecord compact />
+      <div className="grid items-start gap-3 sm:grid-cols-[0.92fr_1.08fr]">
+        <PortalPhone />
         <div className="grid gap-3">
           <FieldDay compact />
           <ReferralRecord compact />
@@ -42,6 +42,38 @@ export function HeroBoard() {
         Sample labels for the records Syclops keeps. Not a hospital result.
       </p>
     </figure>
+  );
+}
+
+export function PortalPhone() {
+  return (
+    <div
+      className="rounded-[1.6rem] border border-line bg-paper p-3"
+      role="img"
+      aria-label="Sample referring doctor's login in the app, with a Refer User button and three referrals with their status"
+    >
+      <div className="rounded-2xl border border-line bg-cream p-3">
+        <p className="text-[11px] text-muted">Doctor’s login · not a field seat</p>
+        <p className="mt-1 text-sm font-medium">My Referrals</p>
+        <p className="mt-3 rounded-xl border border-dashed border-line bg-quiet px-3 py-4 text-center text-xs text-muted">
+          Refer User
+        </p>
+        <ul className="mt-3 space-y-2.5 text-xs">
+          <li className="flex flex-col items-start gap-1">
+            <span>R. Kumar · sent today</span>
+            <Status>Pending</Status>
+          </li>
+          <li className="flex flex-col items-start gap-1">
+            <span>S. Iyer · came in Monday</span>
+            <Status tone="money">Admitted</Status>
+          </li>
+          <li className="flex flex-col items-start gap-1">
+            <span>P. Nair · sent last week</span>
+            <Status tone="warn">Went to other hospital</Status>
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 }
 

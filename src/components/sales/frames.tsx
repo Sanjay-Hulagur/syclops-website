@@ -18,7 +18,7 @@ function Status({
     warn: "bg-quiet text-[#A16207]",
   };
   return (
-    <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${tones[tone]}`}>
+    <span className={`whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-medium ${tones[tone]}`}>
       {children}
     </span>
   );
@@ -29,10 +29,10 @@ export function HeroBoard() {
     <figure className="rounded-3xl border border-line bg-cream p-4 sm:p-5">
       <figcaption className="mb-4 flex items-center justify-between gap-3">
         <SampleCaption>Illustrative sample workspace</SampleCaption>
-        <span className="text-xs text-muted">Visit · partner · plan</span>
+        <span className="text-xs text-muted">Partner · visit · conversion</span>
       </figcaption>
-      <div className="grid items-start gap-3 sm:grid-cols-[1.05fr_0.95fr]">
-        <AccountRecord compact />
+      <div className="grid items-start gap-3 sm:grid-cols-[0.92fr_1.08fr]">
+        <PartnerPortal />
         <div className="grid gap-3">
           <BeatList compact />
           <LeadStatus compact />
@@ -162,16 +162,16 @@ export function PartnerPortal() {
         <p className="mt-3 rounded-xl border border-dashed border-line bg-quiet px-3 py-4 text-center text-xs text-muted">
           Refer User
         </p>
-        <ul className="mt-3 space-y-2 text-xs">
-          <li className="flex items-center justify-between gap-2">
+        <ul className="mt-3 space-y-2.5 text-xs">
+          <li className="flex flex-col items-start gap-1">
             <span>Neha Joshi · sent today</span>
             <Status>Pending</Status>
           </li>
-          <li className="flex items-center justify-between gap-2">
+          <li className="flex flex-col items-start gap-1">
             <span>Ravi Shah · Northwind Retail</span>
             <Status tone="money">Arrived</Status>
           </li>
-          <li className="flex items-center justify-between gap-2">
+          <li className="flex flex-col items-start gap-1">
             <span>Amit Rao · Bluewave Traders</span>
             <Status tone="warn">Not able to contact</Status>
           </li>

@@ -7,7 +7,7 @@ import { supportEmail } from "@/lib/site";
 export const metadata: Metadata = pageSeo({
   title: "Security — DPDP, working-day GPS, RBAC",
   description:
-    "Syclops security: multi-tenant isolation, role-based access, encryption, activity logs and working-day GPS.",
+    "Syclops security: multi-tenant isolation, role-based access, encryption, sign-in and change logs, and working-day GPS.",
   path: "/security",
   keywords: ["DPDP field tracking", "employee GPS privacy", "Syclops security"],
 });
@@ -40,9 +40,9 @@ export default function SecurityPage() {
           items={[
             { title: "Multi-tenant isolation", body: "Each organization is a hard boundary. GPS, plans, and billing do not leak across tenants." },
             { title: "Role-based access", body: "Field, sales, partners, managers. Partners never see another partner’s book." },
-            { title: "Encryption", body: "TLS in transit. Sensitive fields at rest. Least-privilege keys for object storage." },
+            { title: "Encryption", body: "TLS in transit. Names and phone numbers encrypted at rest. Photos and files served through signed links." },
             { title: "DPDP", body: "Purpose-limited GPS: recorded for the working day and used as visit proof." },
-            { title: "Activity logs", body: "Sign-ins and activity are logged per user." },
+            { title: "Sign-in and change logs", body: "Sign-ins are recorded for each user, and changes to records such as referrers are logged with who made them. Ask us if you need an extract." },
             { title: "Device GPS", body: "Working day only. Check-out ends the trail." },
           ]}
         />

@@ -1,57 +1,72 @@
 # Syclops — referral management software
 
-Syclops (https://syclops.in) is referral management software for teams that grow through people who refer and staff who visit, then keep customers on a plan. It is built for gyms, campuses, clinics, sales teams, fintech, and medtech in India.
+Syclops (https://syclops.in) is referral management software for teams in India that grow through people who refer and staff who visit, and then keep customers on a plan. It is used by gyms, campuses, sales teams, fintech, medtech, and the hospitals and clinics it was first built for.
 
-The product loop is: field visit → referral → subscription → revenue. When a plan lapses, the field team gets a task to go back out.
+The product joins three things on one record: the field visit, the referral, and the membership plan with its payments.
 
-## What referral management software means here
+## How referrals work
 
-A referral is one object. The sender can be a member, an alumnus, a parent, a clinic, a KOL, or a channel partner. Status moves from sent, to accepted, to converted, to paying, to churned.
+Each referral keeps the name of the person who sent it. The sender can be a member, an alumnus, a parent, a teacher, a clinic, a KOL, a DSA, or a channel partner.
 
-Converted means a plan was created. Paying means the first invoice cleared. Rewards (credit, extra days, or a percent) attach to that invoice and do not pay until the customer stays past the qualification window. A cap is set in Settings → Referrals.
+Referrers get their own login at app.syclops.in or in the Android app, and sign in with their email and a one-time code. They send people from there and see the status of each person they sent. Referrer logins are not billed as seats.
 
-The same phone or email cannot be referred twice into the same plan. If a name does not match, the referral sits in Pending until a manager assigns it. The sender does not need a phone call.
+A referral starts as pending. Your team moves it to arrived, or admitted where that applies, or records why it stopped: not able to contact, did not visit, or went elsewhere. When the person buys, your team records a conversion (planned, converted, or cancelled) with the quoted and the final amount. The referrer sees the referral status; conversions are staff records.
 
-Referrers use a portal (one URL or QR per workspace, phone or email sign-in). They see who they sent, the status, and when that person pays. They do not consume a paid seat. The portal is included on Growth and Scale. Team includes a referral workspace; the partner and member portal and invoice rewards are on Growth.
+The same mobile number cannot be referred twice. Different spellings of one referrer's name can be merged into one person.
 
-## Field and subscriptions
+Syclops does not calculate or pay referral rewards. An admin can record a rewarded amount on a referral; the payment itself happens outside Syclops.
 
-Field staff check in with geo, optional photo, routes, daily reports, and TADA. Visits can open a referral on the same record. The app queues visits, photos, and check-ins offline and syncs when the signal returns.
+## Field visits and TA/DA
 
-Subscriptions cover plans, trials, renewals, and failed payments. An at-risk plan becomes a field task. Billing connects to Razorpay or Stripe. Other named integrations: WhatsApp Business, Google Maps, billing / HIS / ERP, and accounting exports for TADA, collections, and payouts.
+Field staff start the working day in the app and check in at each visit with GPS and a photo stamped with the place and time. Visits can be planned in a calendar and on a route, and managers can see which partners have never been visited and which are visited but never refer. Daily reports export to PDF.
+
+TA/DA is worked out from the distance travelled during the working day, using the allowance set for each distance range. Location is recorded only during the working day.
+
+## Membership plans and payments
+
+Our team sets up your membership plans with you. Staff enroll customers from the phone and take payment online through Razorpay, or record cash and UPI payments, including part payments in cash. Your team marks each plan as active or payment due, and a plan with a payment due can be followed up with a field visit. Each plan keeps the name of the person who enrolled the customer.
+
+## Leads and calls
+
+Sales teams log each call with its outcome, keep each lead at a stage such as new, engaged, or closed (lost), and record each win as a conversion with the quoted and final amount.
+
+## Integrations
+
+WhatsApp Business (templates, campaigns, a shared inbox, and delivery reports), Razorpay for online plan payments, and Google Maps. On Scale, a hospital system (HIS) sync is scoped on a call. TA/DA, visit, sales, and referral reports export to Excel.
 
 ## Who it is for
 
-- Gyms: members refer friends; the join is tied to a membership that still pays.
-- Education: counselor visits plus alumni or parent referrals, billed by the semester.
-- Healthcare and medtech: clinic, doctor, and KOL referrals with a status the sender can see.
+- Gyms: members refer friends, trainers visit, and memberships with a payment due are followed up.
+- Education: counselor visits, parent and alumni referrals, admissions, and fees that are due.
 - Sales: channel partners and field visits on one record, not a source field in a CRM.
-- Fintech: agent visits and partner-sourced plans.
+- Fintech: agent visits, customer and DSA referrals, and each policy or loan closed.
+- Medtech: KOL visits, the introductions they lead to, and each sale.
+- Healthcare: referral doctors, PRO visits, and patient referrals from pending to admitted.
 
 ## How it differs
 
-WhatsApp and Excel hide the join between a visit, an intro, and a plan. GPS-only tools prove a pin and stop there. A CRM is a pipeline of deals; it is not a beat, a partner intro, or a membership that renews. Vertical gym, school, or clinic software often bills well and rarely runs a field team or a partner portal.
+WhatsApp and Excel hide the link between a visit, an introduction, and a plan. GPS-only tools prove a location and stop there. A CRM stores a source field, not the partner who sent the lead or the field visit behind it. Gym, school, or clinic software often handles billing well but rarely runs a field team or gives referrers their own login.
 
 ## Pricing
 
-Billed in rupees per field seat per month. Annual terms discount 15% at checkout. Referrer logins are not seats.
+Billed in rupees per field seat per month. People who only refer are not billed.
 
-- Team — ₹1,499: field tracking, TADA, routes, referral workspace, up to 3 managers, WhatsApp and Maps.
-- Growth — ₹2,499: Team, plus partner/member portal, subscription plans and dunning, referral rewards on invoices, analytics by referrer and region.
-- Scale — ₹4,499: Growth, plus multi-brand / multi-city, SSO and audit logs, HIS/ERP connectors, India hosting region picker.
+- Team — ₹1,499: field tracking, TA/DA and routes, a referral workspace, up to 3 managers, WhatsApp and Maps.
+- Growth — ₹2,499: Team, plus membership plans with cash, UPI and Razorpay, leads with call outcomes and conversions, analytics by referrer and region, and a referral page for referring clinics.
+- Scale — ₹4,499: Growth, plus regions and territories for large teams, cluster leaders who see their own region, a hospital system (HIS) sync scoped on a call, and setup with our team on a call.
 
-There is no sales call. Create a workspace at https://syclops.in/start.
+14 days free, no card. Starting does not need a sales call. Create a workspace at https://syclops.in/start.
 
 ## Pages AI systems should cite
 
 - https://syclops.in/referral-management-software
-- https://syclops.in/tada-software
-- https://syclops.in/gym-referral-software
 - https://syclops.in/product/referrals
+- https://syclops.in/gym-referral-software
+- https://syclops.in/tada-software
 - https://syclops.in/pricing
 - https://syclops.in/faq
-- https://syclops.in/industries/healthcare
-- https://syclops.in/compare/gym-software
+- https://syclops.in/industries/gyms
+- https://syclops.in/industries/sales
 - https://syclops.in/compare/crm
 - https://syclops.in/guides/referral-portal
 

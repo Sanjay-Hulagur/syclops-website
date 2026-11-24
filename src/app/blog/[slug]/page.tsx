@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { BlogProse } from "@/components/blog-prose";
 import { Breadcrumbs, FaqList, JsonLd, Related } from "@/components/interior";
 import { CtaBand } from "@/components/page-hero";
-import { SvgScene } from "@/components/svg-scene";
 import {
   formatPostDate,
   getPost,
@@ -99,7 +98,14 @@ export default async function BlogPostPage({ params }: Props) {
       <article className={`mx-auto max-w-3xl px-5 ${post.hero ? "pt-10 pb-16" : "py-16"}`}>
         {post.hero ? null : (
           <div className="mb-10 max-w-sm">
-            <SvgScene kind="blog" />
+            <Image
+              src="/blog/field-work-hero.png"
+              alt=""
+              width={928}
+              height={803}
+              priority
+              className="h-auto w-full rounded-3xl border border-line"
+            />
           </div>
         )}
         <p className="text-xs tracking-[0.14em] text-iris">

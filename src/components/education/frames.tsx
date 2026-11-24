@@ -18,7 +18,7 @@ function Status({
     warn: "bg-quiet text-[#A16207]",
   };
   return (
-    <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${tones[tone]}`}>
+    <span className={`whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-medium ${tones[tone]}`}>
       {children}
     </span>
   );

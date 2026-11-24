@@ -9,12 +9,6 @@ export const post: Post = {
   category: "Field",
   excerpt:
     "Learn how businesses can track employee travel, calculate the actual distance covered, and work out TA/DA from field visits using Syclops.",
-  hero: {
-    src: "/blog/calculating-tada-field-employees.png",
-    alt: "Calculating TADA for field employees. A field officer's route between visits, with the day's distance and TA/DA amount.",
-    width: 1958,
-    height: 803,
-  },
   body: [
     {
       type: "p",

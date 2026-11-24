@@ -9,12 +9,6 @@ export const post: Post = {
   category: "Subscriptions",
   excerpt:
     "Learn how to track failed membership payments, plan customer follow-up visits, and recover pending fees through your field team.",
-  hero: {
-    src: "/blog/managing-failed-payments-field-visits.png",
-    alt: "Managing failed subscription payments with field visits. A field officer reviewing failed membership payments with a member at a gym.",
-    width: 1958,
-    height: 803,
-  },
   body: [
     {
       type: "p",

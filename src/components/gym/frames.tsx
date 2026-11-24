@@ -16,9 +16,27 @@ function Status({
     warn: "bg-quiet text-ink",
   };
   return (
-    <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${tones[tone]}`}>
+    <span className={`whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-medium ${tones[tone]}`}>
       {children}
     </span>
+  );
+}
+
+export function HeroBoard() {
+  return (
+    <figure className="rounded-3xl border border-line bg-cream p-4 sm:p-5">
+      <figcaption className="mb-4 flex items-center justify-between gap-3">
+        <SampleCaption>Sample data</SampleCaption>
+        <span className="text-xs text-muted">Visit · referral · membership</span>
+      </figcaption>
+      <div className="grid items-start gap-3 sm:grid-cols-[0.92fr_1.08fr]">
+        <PortalPhone />
+        <div className="grid gap-3">
+          <VisitRecord compact />
+          <MembershipRecord compact />
+        </div>
+      </div>
+    </figure>
   );
 }
 
@@ -158,7 +176,7 @@ export function MembershipRecord({ compact = false }: { compact?: boolean }) {
       </div>
       <p className="mt-2 text-xs text-muted">Family plan · part paid in cash</p>
       <div className="mt-3 flex flex-wrap gap-2">
-        <Status tone="leak">Payment Due</Status>
+        {compact ? null : <Status tone="leak">Payment Due</Status>}
         <Status>Enrolled by Trainer B</Status>
       </div>
     </div>

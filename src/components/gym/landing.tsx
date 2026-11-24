@@ -1,11 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
-import heroArt from "../../../Images/Friendly Gym Reception Dashboard.png";
 import { CtaBand } from "@/components/page-hero";
 import { Breadcrumbs, JsonLd } from "@/components/interior";
 import { GymAnalytics, GymFaq, GymLink, GymStickyCta, gymFocus } from "@/components/gym/client";
 import {
   AnalyticsSample,
+  HeroBoard,
   MembershipList,
   MembershipRecord,
   PortalPhone,
@@ -160,9 +159,9 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
         ]}
       />
 
-      <header className="grid items-center gap-6 overflow-hidden border-b border-line px-5 py-10 sm:py-12 lg:grid-cols-[max(1.25rem,calc((100%-72rem)/2+1.25rem))_minmax(0,32rem)_minmax(0,1fr)] lg:gap-0 lg:px-0 lg:py-2">
-        <div className="hidden lg:block" aria-hidden="true" />
-        <div className="lg:py-8 lg:pr-6">
+      <header className="border-b border-line lg:flex lg:min-h-[calc(100svh-110px)] lg:items-center">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:py-20 lg:w-full lg:grid-cols-2">
+          <div>
             <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-iris sm:text-xs">
               Gym referrals · trainer visits · memberships
             </p>
@@ -221,13 +220,8 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
               ))}
             </ul>
           </div>
-          <Image
-            src={heroArt}
-            alt="Illustration of a gym reception desk with referral tracking, a trainer visit list, and a new member referral."
-            priority
-            sizes="(min-width: 1024px) 55vw, 100vw"
-            className="h-auto w-full"
-          />
+          <HeroBoard />
+        </div>
       </header>
 
       <section className="mx-auto max-w-6xl px-5 py-16" aria-labelledby="gym-problem">
