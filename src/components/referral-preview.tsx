@@ -1,10 +1,10 @@
 const STAGES = [
-  { label: "Awaiting visit", date: "9 Nov" },
+  { label: "Pending", date: "9 Nov" },
   { label: "Arrived", date: "11 Nov" },
   { label: "Admitted", date: "14 Nov" },
 ];
 
-/** A made-up referral and the visit behind it, drawn the way the app shows them. */
+/** A made-up referral and the visit behind it. Show only fields and statuses the app records today. */
 export function ReferralPreview() {
   return (
     <figure className="mx-auto w-full max-w-md">
@@ -18,16 +18,16 @@ export function ReferralPreview() {
             Sample data
           </span>
         </div>
-        <p className="display mt-3 text-xl font-semibold">R. Kumar, 54</p>
-        <p className="text-sm text-muted">Knee pain · preferred visit 11 Nov</p>
+        <p className="display mt-3 text-xl font-semibold">Aditi Sharma</p>
+        <p className="text-sm text-muted">Class 12 · asking about the weekend batch</p>
         <dl className="mt-4 grid gap-2 text-sm">
           <div className="grid grid-cols-[5.5rem_1fr] gap-2">
             <dt className="text-muted">Sent by</dt>
-            <dd>Dr S. Rao, Kukatpally clinic</dd>
+            <dd>Mrs Fernandes, Greenwood High School</dd>
           </div>
           <div className="grid grid-cols-[5.5rem_1fr] gap-2">
             <dt className="text-muted">Logged by</dt>
-            <dd>Asha, field team</dd>
+            <dd>Farhan, counselor</dd>
           </div>
         </dl>
         <ol aria-label="Status" className="mt-5 grid grid-cols-3 gap-2">
@@ -53,12 +53,12 @@ export function ReferralPreview() {
           <p className="text-sm font-semibold">Visit</p>
           <p className="text-xs text-muted">9 Nov, 10:42</p>
         </div>
-        <p className="mt-1 text-sm text-muted">Dr Rao’s clinic · Asha</p>
+        <p className="mt-1 text-sm text-muted">Greenwood High School · Farhan</p>
         <ul className="mt-3 flex flex-wrap gap-2 text-xs">
           <li className="rounded-full bg-money/10 px-2 py-0.5 font-medium text-money">
             GPS checked in
           </li>
-          <li className="rounded-full bg-quiet px-2 py-0.5">2 photos</li>
+          <li className="rounded-full bg-quiet px-2 py-0.5">Photo with place and time</li>
         </ul>
       </div>
     </figure>

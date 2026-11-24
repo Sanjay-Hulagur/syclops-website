@@ -7,7 +7,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata: Metadata = pageSeo({
   title: "Field force mobile app for visits, referrals, and plans",
   description:
-    "Download the Syclops Android app for field check-in with GPS and photos, TA/DA, plan enrollment and referrals. Staff sign in with their email and a one-time code.",
+    "Download the Syclops Android app for field check-in with GPS and a photo, TA/DA, plan enrollment and referrals. Staff sign in with their email and a one-time code.",
   path: "/product/mobile",
   keywords: [
     "field force mobile app",
@@ -38,9 +38,9 @@ export default function MobilePage() {
         <Prose>
           <p>
             Field staff start their working day, check in at visits with GPS
-            and photos, and see their TA/DA. Sales staff log calls and leads.
-            Referrers send people and follow their status, and never share
-            their location.
+            and a photo, and see their TA/DA. Sales staff log calls and leads.
+            Referrers send people and follow their status. Their location is
+            not tracked.
           </p>
           <p>
             Install the Android app from the APK on this page. Staff can use
@@ -62,7 +62,7 @@ export default function MobilePage() {
       <Section>
         <FeatureGrid
           items={[
-            { title: "Field", body: "Start the day, check in at visits with GPS and photos, and see TA/DA." },
+            { title: "Field", body: "Start the day, check in at visits with GPS and a photo, and see TA/DA." },
             { title: "Sales", body: "Log calls and leads, and record conversions." },
             { title: "Referrers", body: "Send referrals and follow their status. No GPS." },
             { title: "Plans", body: "Enroll customers in membership plans and record their payments." },
@@ -85,7 +85,7 @@ export default function MobilePage() {
           items={[
             {
               q: "Where is the Android app?",
-              a: "Download the APK on this page. Referrers can also use your referral page in a browser.",
+              a: "Download the APK on this page. Referrers can also log in at app.syclops.in in a browser.",
             },
             { q: "Can staff use their own phones?", a: "Yes. Location is recorded only during the working day." },
             { q: "Does the referrer app track location?", a: "No. Referrers send people and follow their status. They are never billed as field seats." },

@@ -6,12 +6,12 @@ import { pageSeo } from "@/lib/seo";
 export const metadata: Metadata = pageSeo({
   title: "Membership and subscription plan software for field teams",
   description:
-    "Sell membership plans from the phone. Enroll families with a one-time code and ID proof, record cash, UPI and EMI payments or take them through Razorpay, and see who has a payment due.",
+    "Sell membership plans from the phone. Enroll families with a one-time code and ID proof, record cash and UPI payments or take them through Razorpay, and see who has a payment due.",
   path: "/product/subscriptions",
   keywords: [
     "subscription management software",
     "membership plan software",
-    "EMI instalment tracking",
+    "membership payment tracking",
     "Razorpay memberships",
     "family plan enrollment app",
   ],
@@ -49,31 +49,30 @@ export default function SubscriptionsPage() {
       <Section eyebrow="How a plan works">
         <Steps
           items={[
-            { title: "Set up your plans", body: "Name, price, duration and tier, how many members it covers, and the price for each extra member." },
+            { title: "Send us your plans", body: "Name, price, duration and tier, how many members it covers, and the price for each extra member. Our team adds them to your workspace." },
             { title: "Enroll on the phone", body: "Verify the number, add members and an ID proof, then record the payment." },
-            { title: "Keep track", body: "Each enrollment shows Active, Payment Due, Inactive or Banned, and who enrolled it." },
+            { title: "Keep track", body: "Your team sets each enrollment to Active, Payment Due, Inactive or Banned, and it keeps who enrolled it." },
           ]}
         />
       </Section>
       <Section eyebrow="In the product">
         <FeatureGrid
           items={[
-            { title: "Family plans", body: "Set how many members a plan covers and what each extra member costs." },
-            { title: "Plan features", body: "List what a plan includes and record each time a member uses it." },
-            { title: "Cash, UPI or online", body: "Record cash or UPI on the phone, or take the payment online through Razorpay." },
-            { title: "EMI schedules", body: "Split a plan into instalments with due dates, and mark each one as it is paid." },
+            { title: "Family plans", body: "Each plan covers a set number of members, with a price for each extra member." },
+            { title: "Plan features", body: "Staff see everything a plan includes before they enroll someone." },
+            { title: "Cash, UPI or online", body: "Record cash or UPI with a reference and a proof photo, or take the payment online through Razorpay." },
+            { title: "Part payments", body: "Record the cash amount collected, even when it is only part of the price." },
             { title: "A status for every plan", body: "Active, Payment Due, Inactive or Banned, so you know whom to follow up." },
             { title: "Enrollment reports", body: "Totals, trends, the busiest times of day and enrollments by staff member." },
           ]}
         />
       </Section>
-      <Section eyebrow="You set">
+      <Section eyebrow="You decide">
         <Checklist
           items={[
             "Plan names, prices and durations",
             "Members per plan and the extra-member price",
             "What each plan includes",
-            "Instalment plans for customers who pay in parts",
             "Which roles can enroll customers",
           ]}
         />
@@ -81,9 +80,9 @@ export default function SubscriptionsPage() {
       <Section eyebrow="FAQ">
         <FaqList
           items={[
-            { q: "Can we collect cash?", a: "Yes. Staff record cash or UPI payments on the phone, and each payment stays on the enrollment." },
-            { q: "Can customers pay in instalments?", a: "Yes. Set up an EMI plan and Syclops builds the instalment schedule with due dates. Staff mark each instalment as it comes in." },
-            { q: "Does Syclops chase missed payments for us?", a: "Not on its own. Each enrollment shows when a payment is due, so your team knows whom to call or visit." },
+            { q: "Can we collect cash?", a: "Yes. Staff record cash or UPI payments on the phone, including a part payment in cash, and each payment stays on the enrollment." },
+            { q: "Can customers pay in instalments?", a: "Not today. EMI is only for your own staff: an enrollment marked as staff can be given a discount and split into 12 monthly EMIs in the admin dashboard." },
+            { q: "Does Syclops chase missed payments for us?", a: "No. Your team marks an enrollment as Payment Due, so everyone knows whom to call or visit." },
             { q: "Which payment gateway?", a: "Razorpay for online payments. We set it up with you." },
             { q: "Does this replace our billing software?", a: "No. Syclops keeps the plan, the payments against it and who sold it. Keep your accounting tool for invoices and tax." },
           ]}

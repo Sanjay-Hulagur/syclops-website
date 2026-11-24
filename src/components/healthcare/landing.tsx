@@ -160,27 +160,27 @@ const day = [
   {
     kicker: "The referral",
     title: "The patient is recorded against the doctor who sent them.",
-    body: "When a doctor refers a patient, that doctor stays on the referral with the date and the status. The referral page blocks a second open referral for the same mobile number. The source does not disappear when the patient reaches the desk.",
+    body: "When a doctor refers a patient, that doctor stays on the referral with the date and the status. The same mobile number cannot be referred twice. The source does not disappear when the patient reaches the desk.",
   },
   {
     kicker: "OPD",
     title: "An outpatient visit updates the referral when your HIS is connected.",
-    body: "On Scale, a connector built for the hospital system you already run matches the OPD visit back onto that referral. Staff do not retype the referring doctor. If no connector is in place, staff update the referral by hand, and Syclops does not invent the visit.",
+    body: "On Scale, where your hospital system is synced, the OPD visit is matched back onto that referral. Staff do not retype the referring doctor. If there is no sync, staff update the referral by hand, and Syclops does not invent the visit.",
   },
   {
     kicker: "IPD",
     title: "The admission is written on the same referral.",
-    body: "When the patient is admitted, the same connector records the IPD admission against that referral. The admission chart, clinical notes, and billing stay in the HIS. Syclops keeps the source and the outcome, not the chart.",
+    body: "When the patient is admitted, the same sync records the IPD admission against that referral. The admission chart, clinical notes, and billing stay in the HIS. Syclops keeps the source and the outcome, not the chart.",
   },
   {
     kicker: "Conversions",
     title: "Doctor-wise and location-wise. Specialty on every doctor.",
-    body: "On Growth, management reviews visits by PRO, and referrals by the referring doctor and by region. Specialty is stored on each doctor, so the same network can be read specialty by specialty. An OPD or IPD match is part of that view only where the connector has written it.",
+    body: "On Growth, management reviews visits by PRO, and referrals by the referring doctor and by region. Specialty is stored on each doctor, so the same network can be read specialty by specialty. An OPD or IPD match is part of that view only where the sync has written it.",
   },
   {
     kicker: "Your HIS",
-    title: "Syclops connects to the system the hospital already runs.",
-    body: "Patient registration, billing, clinical records, laboratory, and radiology stay in the HIS. HIS and ERP connectors are on Scale and are set up for that system. Syclops does not attach itself to every HIS on its own, and it does not replace hospital operations.",
+    title: "Syclops works beside the system the hospital already runs.",
+    body: "Patient registration, billing, clinical records, laboratory, and radiology stay in the HIS. An HIS sync is on Scale, scoped on a call for the system you run. Syclops does not connect to every HIS on its own, so ask us whether yours is supported. It does not replace hospital operations.",
   },
   {
     kicker: "Confidential records",
@@ -213,15 +213,15 @@ function healthcareFaqs(trialDays: number) {
     },
     {
       q: "Can we track PRO visits using GPS?",
-      a: "Yes. Each visit is checked in with GPS, notes, and photos, and location is recorded only during the working day. TA/DA is worked out from the distance travelled, using the allowance you set for each distance range. It is not a live map of the evening.",
+      a: "Yes. Each visit is checked in with GPS, notes, and a photo, and location is recorded only during the working day. TA/DA is worked out from the distance travelled, using the allowance you set for each distance range. It is not a live map of the evening.",
     },
     {
       q: "Can we track which doctor referred a patient?",
-      a: "Yes. A patient referral keeps the referring doctor, the referral date, and a status. The referral page blocks a second open referral for the same mobile number. On Growth, the referring doctor can sign in to the referral page and see their own referrals. They are not billed as a field seat.",
+      a: "Yes. A patient referral keeps the referring doctor, the referral date, and a status. The same mobile number cannot be referred twice. On Growth, the referring doctor can sign in to the referral page and see their own referrals. They are not billed as a field seat.",
     },
     {
       q: "Can we measure referral doctor performance?",
-      a: "The doctor record shows visit history and referral activity. On Growth, analytics groups referrals by referrer and region, and lists doctors who were visited but never referred, or never visited at all. A hospital visit or admission match appears where an HIS connector is configured. Syclops does not invent a revenue lift.",
+      a: "The doctor record shows visit history and referral activity. On Growth, analytics groups referrals by referrer and region, and lists doctors who were visited but never referred, or never visited at all. A hospital visit or admission match appears where an HIS sync is set up. Syclops does not invent a revenue lift.",
     },
     {
       q: "Can we manage health camps?",
@@ -233,7 +233,7 @@ function healthcareFaqs(trialDays: number) {
     },
     {
       q: "Can Syclops integrate with our existing HIS?",
-      a: "HIS and ERP connectors are on Scale. A connector is set up for the system you already run. It is not an automatic link to every HIS. Where a connector is in place, a patient referral can be matched to an outpatient visit or an inpatient admission. Clinical charts stay in the HIS.",
+      a: "An HIS sync is on Scale, scoped on a call for the system you already run. It is not an automatic link to every HIS, so ask us whether yours is supported. Where a sync is in place, a patient referral can be matched to an outpatient visit or an inpatient admission. Clinical charts stay in the HIS.",
     },
     {
       q: "How much does Syclops cost?",
@@ -527,7 +527,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Visit notes and follow-ups",
-                  body: "Notes and photos stay on the doctor visit.",
+                  body: "Notes and the photo stay on the doctor visit.",
                 },
                 {
                   title: "Completed, pending, and TADA",
@@ -576,7 +576,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Referral record and date",
-                  body: "Patient details and the referral date stay on the referral. The referral page blocks a second open referral for the same mobile number.",
+                  body: "Patient details and the referral date stay on the referral. The same mobile number cannot be referred twice.",
                 },
                 {
                   title: "Status",
@@ -754,8 +754,8 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
             </article>
           </div>
           <p className="mt-6 max-w-3xl text-sm leading-7 text-muted">
-            HIS and ERP connectors are on Scale, and they are configured for the
-            system you already run. Where that connector is in place, an OPD visit
+            An HIS sync is on Scale, scoped for the system you already run.
+            Where that sync is in place, an OPD visit
             updates the referral and an IPD admission is recorded on it. Diagnosis,
             notes, and billing stay in the HIS. A field executive sees their own
             day. A referring clinic sees status for the patients they sent, not
@@ -778,7 +778,7 @@ export function HealthcareLanding({ trialDays }: { trialDays: number }) {
             also pay for manager seats. Team includes up to 3 managers. Referrer
             logins are not billed as field seats. The doctor referral page,
             membership plans, and analytics by referrer and region are on Growth.
-            HIS and ERP connectors are on Scale. {trialDays} days free · No credit
+            An HIS sync is on Scale. {trialDays} days free · No credit
             card required.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">

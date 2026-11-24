@@ -7,52 +7,52 @@ import { pageSeo } from "@/lib/seo";
 export const metadata: Metadata = pageSeo({
   title: "How teams use Syclops — example workflows",
   description:
-    "Example Syclops workflows for hospitals, gyms, coaching institutes, lenders, agencies and medtech teams: who visits, who refers, and what gets tracked.",
+    "Example Syclops workflows for gyms, coaching institutes, lenders, agencies, medtech teams and hospitals: who visits, who refers, and what gets tracked.",
   path: "/customers",
 });
 
 const workflows = [
   {
-    industry: "Healthcare",
-    title: "Hospital doctor referrals",
-    body: "PROs visit referring doctors and log each visit with GPS and a photo. Each referred patient is recorded against the doctor, and the status moves as the patient arrives, is admitted and is discharged. Syclops was first built for this workflow.",
-    flow: ["Doctor visit", "Patient referral", "Admission"],
-    href: "/industries/healthcare",
-  },
-  {
     industry: "Gyms",
     title: "Member referrals at a gym",
-    body: "Trainers log visits to corporate partners. Members refer friends, and each referral keeps the member who sent it, so you can see which referrals joined and what each member is owed.",
+    body: "Trainers log visits to corporate partners. Members refer friends, and each referral keeps the member who sent it, so you can see which referrals joined.",
     flow: ["Trainer visit", "Member intro", "Membership"],
     href: "/industries/gyms",
   },
   {
     industry: "Education",
     title: "Admissions at a coaching institute",
-    body: "Counselors visit schools and centres. Alumni and parents refer students. Each referral keeps the person who sent it, and each fee plan shows which instalments are paid.",
+    body: "Counselors visit schools and centres. Alumni and parents refer students. Each referral keeps the person who sent it, and each fee plan shows whether a payment is due.",
     flow: ["Campus visit", "Alumni intro", "Term fee"],
     href: "/industries/education",
   },
   {
     industry: "Fintech",
     title: "Field agents at a lender or insurer",
-    body: "Agents log home visits with GPS. Each family referral keeps the customer who sent it, and each plan shows the agent who sold it and any payment due.",
-    flow: ["Home visit", "Family referral", "Monthly premium"],
+    body: "Agents log home visits with GPS. Each family referral keeps the customer who sent it, and each policy or loan is recorded as a conversion with the agent who closed it.",
+    flow: ["Home visit", "Family referral", "Issued policy"],
     href: "/industries/fintech",
   },
   {
     industry: "Sales",
     title: "Channel partners at an agency",
     body: "Sales staff visit dealers. Each partner lead is recorded with the partner who sent it, so a won deal still shows where it came from.",
-    flow: ["Dealer visit", "Partner lead", "Monthly retainer"],
+    flow: ["Dealer visit", "Partner lead", "Won customer"],
     href: "/industries/sales",
   },
   {
     industry: "Medtech",
     title: "Clinical teams and hospital departments",
-    body: "Representatives log visits to hospitals and doctors. Each department referral keeps who sent it, and each service plan shows what has been paid.",
-    flow: ["Hospital visit", "Department referral", "Service plan"],
+    body: "Representatives log visits to hospitals and doctors. Each KOL referral keeps who sent it, and each sale is recorded as a conversion with its final amount.",
+    flow: ["Hospital visit", "KOL referral", "Conversion"],
     href: "/industries/medtech",
+  },
+  {
+    industry: "Healthcare",
+    title: "Hospital doctor referrals",
+    body: "PROs visit referring doctors and log each visit with GPS and a photo. Each referred patient is recorded against the doctor, and the status moves as the patient arrives, is admitted and is discharged. Syclops was first built for this workflow.",
+    flow: ["Doctor visit", "Patient referral", "Admission"],
+    href: "/industries/healthcare",
   },
 ];
 

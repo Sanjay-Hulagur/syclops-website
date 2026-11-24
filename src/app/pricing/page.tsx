@@ -8,9 +8,9 @@ import { jsonLdGraph, pageSeo, pricingOfferNodes, softwareNode } from "@/lib/seo
 import { supportEmail } from "@/lib/site";
 
 export const metadata: Metadata = pageSeo({
-  title: "Pricing — field seats, referral page, subscriptions",
+  title: "Pricing — field seats, referrals, subscriptions",
   description:
-    "Syclops pricing in rupees per field seat a month. Team includes field tracking and referrals. Growth adds the referral page and subscriptions. Referrer logins are not billed.",
+    "Syclops pricing in rupees per field seat a month. Team includes field tracking and referrals. Growth adds subscriptions, leads with call outcomes, and analytics. Referrer logins are not billed.",
   path: "/pricing",
   keywords: [
     "field tracking software pricing India",

@@ -26,11 +26,11 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Referral management software is the record between an introduction and a payout. Everything else is a tour. Leaderboards and WhatsApp blasts are easy to demo because they are visible in the first week. The record is visible in the third month, when someone asks which introductions became paying customers and which rewards you should not have sent.",
+      text: "Referral management software is the record between an introduction and a paying customer. Everything else is a tour. Leaderboards and WhatsApp blasts are easy to demo because they are visible in the first week. The record is visible in the third month, when someone asks which introductions became paying customers and which ones were counted twice.",
     },
     {
       type: "p",
-      text: "Write the test down before the demo. Can a partner, a member, a clinic, or an alumnus open a page and see whether the person they sent arrived and converted? Does a reward wait for someone to approve it? Can the same mobile number be referred twice? When a customer has a payment due, does anyone know who sold the plan? If the vendor changes the subject, you already have your answer. The [referral management software](/referral-management-software) page is that test written as a category, not as a slogan.",
+      text: "Write the test down before the demo. Can a partner, a member, a clinic, or an alumnus log in and see whether the person they sent has arrived? When a referral stops, is there a reason? Can the same mobile number be referred twice? When a customer has a payment due, does anyone know who sold the plan? If the vendor changes the subject, you already have your answer. The [referral management software](/referral-management-software) page is that test written as a category, not as a slogan.",
     },
     {
       type: "h2",
@@ -40,8 +40,8 @@ export const post: Post = {
       type: "ul",
       items: [
         "Status for the sender. They can open their own introductions without a paid seat and without calling your desk.",
-        "Approval before payment. Nothing pays on a rumour, and every payout has a person who approved it.",
-        "A duplicate rule. A second open referral for the same mobile number is blocked.",
+        "A reason when it stops. Not able to contact, did not visit, or went elsewhere, instead of a blank row nobody explains.",
+        "A duplicate rule. The same mobile number cannot be referred twice.",
         "An owner for every plan. When a payment is due, you know who sold it and who should visit.",
         "A system you do not have to replace. The gym ERP, the HIS, the academic ERP, or the CRM for named deals can stay.",
       ],
@@ -56,11 +56,11 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Healthcare teams, gyms, campuses, and channel sales ask for the same thing with different words. A clinic wants proof the patient arrived. A gym wants to know which member sent each new join. A campus wants to know which alumni intro became an admission. A channel partner wants to know the account converted. Software that only fits one of those nouns will be replaced the year you add a second motion.",
+      text: "Healthcare teams, gyms, campuses, and channel sales ask for the same thing with different words. A clinic wants proof the patient arrived. A gym wants to know which member sent each new join. A campus wants to know which alumni intro became an admission. A channel partner wants to know what happened to the account they sent. Software that only fits one of those nouns will be replaced the year you add a second motion.",
     },
     {
       type: "p",
-      text: "Look at [referral management](/product/referrals) with that in mind. The referral page, the statuses, and the payouts work the same way for every sender. The sender can be a member, a partner, a clinic, or an alumnus. If the product needs a new database every time the noun changes, you are buying a campaign tool with a fresh login, not a record. Ask, too, whether the screens use your words. Syclops, for example, still says doctors and patients on some screens because it was built for hospitals first.",
+      text: "Look at [referral management](/product/referrals) with that in mind. The referrer login, the statuses, and the duplicate check work the same way for every sender. The sender can be a member, a partner, a clinic, or an alumnus. If the product needs a new database every time the noun changes, you are buying a campaign tool with a fresh login, not a record. Ask, too, whether the screens use your words. Syclops, for example, still says doctors and patients on some screens because it was built for hospitals first.",
     },
     {
       type: "h2",
@@ -72,7 +72,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Also ignore invented conversion rates in a sales deck. Ask to click a real introduction through to a converted customer, then to a plan with a payment due, then to the person who sold it. Time that path. If it takes an export, the product does not have the loop. The [FAQ](/faq) covers the practical objections that show up next: who uses a seat, what GPS is for, and whether you must throw away the CRM.",
+      text: "Also ignore invented conversion rates in a sales deck. Ask to follow a real introduction to a converted customer, and a plan with a payment due back to the person who sold it. Time that path. If it takes an export, the product does not have the loop. The [FAQ](/faq) covers the practical objections that show up next: who uses a seat, what GPS is for, and whether you must throw away the CRM.",
     },
     {
       type: "h2",
@@ -84,17 +84,17 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "If the sender can see status, the reward waits for approval, the duplicate is blocked, and every payment due has an owner, you have the category. If you only have a form and a dashboard of names, you have a list. Lists are how the leak hides until the month someone asks which introductions became paying customers.",
+      text: "If the sender can see status, a stopped referral has a reason, the duplicate is blocked, and every payment due has an owner, you have the category. If you only have a form and a dashboard of names, you have a list. Lists are how the leak hides until the month someone asks which introductions became paying customers.",
     },
   ],
   faqs: [
     {
       q: "What is the minimum a referral product has to show the sender?",
-      a: "Whether the person they sent arrived, converted, or was lost, for their own introductions only. They should not need a paid seat, and they should not need to call your desk to find out.",
+      a: "Whether the person they sent arrived, or why it stopped, for their own introductions only. They should not need a paid seat, and they should not need to call your desk to find out.",
     },
     {
       q: "Should we replace our CRM, gym software, or HIS to get referrals?",
-      a: "No. Keep the system that already does pipeline, the floor, or the chart. Add the record of who sent each customer, what they are owed, and who follows up when a payment is due.",
+      a: "No. Keep the system that already does pipeline, the floor, or the chart. Add the record of who sent each customer, what happened to them, and who follows up when a payment is due.",
     },
   ],
 };

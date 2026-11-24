@@ -138,13 +138,13 @@ export default async function ComparePage({ params }: Props) {
                     ? [
                         {
                           href: "/blog/channel-partner-portal-not-crm-source-field",
-                          label: "Referral page vs source field",
-                          body: "Partners need status. A CRM picklist is not a referral page.",
+                          label: "Partner login vs source field",
+                          body: "Partners need status. A CRM picklist is not a login.",
                         },
                         {
                           href: "/industries/sales",
                           label: "Sales & marketing",
-                          body: "Dealer visits, partner intros, retainers.",
+                          body: "Dealer visits, partner intros, conversions.",
                         },
                         {
                           href: "/compare",
@@ -162,7 +162,7 @@ export default async function ComparePage({ params }: Props) {
                         {
                           href: "/industries/gyms",
                           label: "Gyms",
-                          body: "Trainer visits, the referral page, memberships.",
+                          body: "Trainer visits, member referrals, memberships.",
                         },
                         {
                           href: "/compare/vertical-software",

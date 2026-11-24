@@ -102,10 +102,10 @@ export const softwareNode = {
   description: site.description,
   featureList: [
     "GPS field check-in, routes, and TADA",
-    "Partner and member referral page",
-    "Referral status from sent to converted",
-    "Referral payouts calculated from uploaded bills",
-    "Membership plans with online, cash, UPI and EMI payments",
+    "Logins for partners and members who refer",
+    "Referral status, from pending to arrived, or why it stopped",
+    "Duplicate check on referred mobile numbers",
+    "Membership plans with online, cash and UPI payments",
     "Coverage and referral analytics with Excel export",
   ],
   offers: {

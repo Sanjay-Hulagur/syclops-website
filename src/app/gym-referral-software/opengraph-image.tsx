@@ -7,7 +7,7 @@ export const contentType = ogContentType;
 export default function Image() {
   return ogImage({
     eyebrow: "Gym referral software",
-    title: "Member-get-member that pays",
-    kicker: "Who sent each member, and rewards you approve. Keep your gym software.",
+    title: "Member-get-member you can trace",
+    kicker: "Who sent each member, and whether they joined. Keep your gym software.",
   });
 }

@@ -6,7 +6,7 @@ import { pageSeo } from "@/lib/seo";
 
 const title = "Gym referral software";
 const description =
-  "Gym referral software for member-get-member programmes in India. Track who sent each new member, approve rewards before they are paid, and see which memberships have a payment due — without replacing your gym ERP.";
+  "Gym referral software for member-get-member programmes in India. Track who sent each new member, give members their own login to refer friends, and see which memberships have a payment due — without replacing your gym ERP.";
 
 export const metadata: Metadata = {
   ...pageSeo({
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is gym referral software?",
-    a: "Software that records which member sent a friend, whether that friend joined, and what the member is owed for it. Syclops also tracks memberships and payments, so you can see who has paid and who has a payment due.",
+    a: "Software that records which member sent a friend and whether that friend joined. Syclops also tracks memberships and payments, so you can see who has paid and who has a payment due.",
   },
   {
     q: "Does this replace gym management software?",
@@ -35,15 +35,15 @@ const faqs = [
   },
   {
     q: "Can members refer without downloading an app?",
-    a: "Yes. Members open your referral page in a browser and sign in with a one-time code sent to their email. Our team sets the page up with you. Members are not paid field seats.",
+    a: "Yes. Members log in at app.syclops.in in any phone browser with a one-time code, and see the friends they referred. Members are not paid field seats.",
   },
   {
-    q: "How do member-get-member rewards work?",
-    a: "Record the reward on the referral when the friend joins. Payouts move from pending to approved to paid, so nothing is paid before someone approves it. The referral page blocks a second open referral for the same mobile number.",
+    q: "Can Syclops pay member rewards?",
+    a: "Not today. Each referral shows which member sent the friend and whether the friend came in, so your desk knows whom to reward. Giving the reward happens outside the app. The same mobile number cannot be referred twice.",
   },
   {
     q: "What about multi-centre chains?",
-    a: "Set up each centre as a region. Trainers are field seats and check in at their visits. Members use the referral page and are not billed.",
+    a: "Set up each centre as a region. Trainers are field seats and check in at their visits. Members refer from their own login and are not billed.",
   },
   {
     q: "Does Syclops do biometric gym attendance?",
@@ -51,18 +51,18 @@ const faqs = [
   },
   {
     q: "Will the app use gym words?",
-    a: "Not yet. Syclops was built for hospitals, so some screens say doctors and patients where you would say trainers and members. The steps are the same.",
+    a: "Partly. The phone screens say referrers and referred users. Some forms and the admin dashboard still use hospital words, such as doctors and patients, because Syclops was built for hospitals first. The steps are the same.",
   },
 ];
 
 const jobs = [
   {
     title: "Member-get-member that knows who sent them",
-    body: "Each referral keeps the name of the member who sent it, and shows whether the friend joined or why they did not.",
+    body: "Each referral keeps the name of the member who sent it, and shows whether the friend came in or why they did not.",
   },
   {
-    title: "Rewards you approve",
-    body: "Record the reward on the referral. Payouts move from pending to approved to paid.",
+    title: "A login for members",
+    body: "Members refer friends from their own login, and see the status of each friend they referred.",
   },
   {
     title: "Trainer field days",
@@ -70,7 +70,7 @@ const jobs = [
   },
   {
     title: "Payments you can see",
-    body: "Memberships record cash, UPI, EMI, or Razorpay payments, so a payment due is visible to the trainer who sold it.",
+    body: "Memberships record cash, UPI, or Razorpay payments, and a payment due is visible to the trainer who sold it.",
   },
 ];
 
@@ -79,8 +79,8 @@ export default function GymReferralSoftwarePage() {
     <>
       <PageHero
         eyebrow="Gym referral software"
-        title="Gym referral software for member-get-member that pays."
-        body="Syclops tracks which member sent each new join, records the reward you approve, and shows which memberships have a payment due. Your floor ERP can keep classes and the door."
+        title="Gym referral software that knows who sent each member."
+        body="Syclops tracks which member sent each new join, gives members their own login to refer friends, and shows which memberships have a payment due. Your floor ERP can keep classes and the door."
         scene="referral"
         crumbs={[
           { name: "Home", path: "/" },
@@ -137,7 +137,7 @@ export default function GymReferralSoftwarePage() {
             {
               href: "/industries/gyms",
               label: "Gyms industry",
-              body: "Trainer visits, the member referral page, and memberships.",
+              body: "Trainer visits, member referrals, and memberships.",
             },
             {
               href: "/compare/gym-software",
@@ -158,8 +158,8 @@ export default function GymReferralSoftwarePage() {
       </Section>
 
       <CtaBand
-        title="Start your member referral page this week."
-        body="Create a gym workspace, add your trainers, and we set up your referral page with you."
+        title="Start tracking member referrals this week."
+        body="Create a gym workspace, add your trainers and members, and log your first referral the same day."
       />
     </>
   );

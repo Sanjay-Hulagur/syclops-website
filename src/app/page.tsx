@@ -18,7 +18,6 @@ export const metadata: Metadata = pageSeo({
     "referral management software",
     "referral tracking software",
     "partner referral software",
-    "doctor referral tracking",
     "GPS field check-in",
     "membership payments",
   ],
@@ -27,15 +26,15 @@ export const metadata: Metadata = pageSeo({
 const steps = [
   {
     title: "Add your team and your referrers",
-    body: "Invite field staff to the Android app, then add the doctors, members or partners who send people your way.",
+    body: "Invite field staff to the Android app, then add the partners, members or teachers who send people your way. A long list can be uploaded from a spreadsheet.",
   },
   {
     title: "Log visits and referrals on the phone",
-    body: "Staff check in with GPS and photos at each visit. Referrers can send people through their own login.",
+    body: "Staff check in with GPS and a photo stamped with the place and time. Referrers can send people through their own login.",
   },
   {
     title: "See what each referral became",
-    body: "Every referral moves from awaiting visit to arrived to converted, or records why it did not go ahead.",
+    body: "Every referral shows where it stands, such as pending or arrived, or why it stopped, such as did not visit. When the person buys, your team records a conversion.",
   },
 ];
 
@@ -43,34 +42,29 @@ const workflows = [
   {
     href: "/product/referrals",
     title: "Track partner referrals",
-    body: "Doctors, members, alumni or channel partners send people your way. See who sent each one and what happened next.",
+    body: "Partners, members, alumni or teachers send people your way. See who sent each one and what happened next.",
   },
   {
     href: "/product/field",
     title: "Manage field visits",
-    body: "Your team checks in with GPS and photos at every visit, so you see where they went and when.",
+    body: "Your team checks in with GPS and a photo at every visit, so you see where they went and when.",
   },
   {
     href: "/product/subscriptions",
     title: "Sell membership plans",
-    body: "Take payments online through Razorpay, or record cash, UPI and EMI payments.",
+    body: "Take payments online through Razorpay, or record cash and UPI payments, including part payments in cash.",
   },
 ];
 
 const extras = [
   "TA/DA from GPS distance",
   "WhatsApp campaigns",
-  "PDF visit reports",
+  "PDF daily reports",
   "Android app and web",
   "Razorpay payments",
 ];
 
 const audiences = [
-  {
-    id: "healthcare",
-    title: "Hospitals and clinics",
-    body: "PROs log doctor visits, and each referred patient stays tied to the doctor who sent them.",
-  },
   {
     id: "gyms",
     title: "Gyms and fitness",
@@ -79,19 +73,24 @@ const audiences = [
   {
     id: "education",
     title: "Schools and colleges",
-    body: "Counsellors visit schools and partners, and every enquiry keeps the name of whoever sent it.",
+    body: "Counselors visit schools and partners, and every enquiry keeps the name of whoever sent it.",
   },
   {
     id: "sales",
     title: "Sales and channel teams",
     body: "Reps check in at dealers and partners, and every lead keeps the partner who sent it.",
   },
+  {
+    id: "healthcare",
+    title: "Hospitals and clinics",
+    body: "Field staff log doctor visits, and each referred patient stays tied to the doctor who sent them.",
+  },
 ];
 
 const origin = [
-  "Doctor visits checked in with GPS and photos",
-  "Every referred patient tied to the doctor who sent them",
-  "Doctors logged in to send referrals and follow them",
+  "Field visits checked in with GPS and a photo stamped with the place and time",
+  "Every referral tied to whoever sent it",
+  "Referrers log in to send people and see what happened to them",
 ];
 
 const safeguards = [
@@ -270,7 +269,7 @@ export default async function HomePage() {
             </ul>
             <p className="mt-5 max-w-2xl text-base leading-7 text-muted">
               We turned it into a product any team that grows through visits and
-              referrals can set up on its own.
+              referrals can start on its own.
             </p>
           </div>
           <div className="rounded-2xl border border-line bg-cream p-5 sm:p-6">

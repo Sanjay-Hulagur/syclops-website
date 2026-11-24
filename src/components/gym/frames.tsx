@@ -27,26 +27,26 @@ export function PortalPhone() {
     <div
       className="rounded-[1.6rem] border border-line bg-paper p-3"
       role="img"
-      aria-label="Sample member referral page showing a new referral and two existing referrals with status"
+      aria-label="Sample member login in the app, with a Refer User button and three referrals with their status"
     >
       <div className="rounded-2xl border border-line bg-cream p-3">
-        <p className="text-[11px] text-muted">Member referral page</p>
-        <p className="mt-1 text-sm font-medium">Refer a friend</p>
+        <p className="text-[11px] text-muted">Member’s login</p>
+        <p className="mt-1 text-sm font-medium">My Referrals</p>
         <p className="mt-3 rounded-xl border border-dashed border-line bg-quiet px-3 py-4 text-center text-xs text-muted">
-          Link shared on WhatsApp
+          Refer User
         </p>
         <ul className="mt-3 space-y-2 text-xs">
           <li className="flex items-center justify-between gap-2">
             <span>Friend · sent today</span>
-            <Status>Sent</Status>
+            <Status>Pending</Status>
           </li>
           <li className="flex items-center justify-between gap-2">
-            <span>Friend · Gold annual</span>
-            <Status tone="money">Joined</Status>
+            <span>Friend · came in Tuesday</span>
+            <Status tone="money">Arrived</Status>
           </li>
           <li className="flex items-center justify-between gap-2">
-            <span>Same mobile blocked</span>
-            <Status tone="warn">Duplicate</Status>
+            <span>Friend · no show</span>
+            <Status tone="warn">Did not visit</Status>
           </li>
         </ul>
       </div>
@@ -71,9 +71,9 @@ export function ReferralDesk() {
         <span>Status</span>
       </div>
       {[
-        ["Member A", "Gold annual", "Joined", "money"],
-        ["Member B", "Awaiting visit", "Pending", "warn"],
-        ["Member C", "Same mobile", "Duplicate", "warn"],
+        ["Member A", "Gold annual", "Arrived", "money"],
+        ["Member B", "Not yet", "Pending", "warn"],
+        ["Member C", "None", "Did not visit", "warn"],
       ].map(([sender, plan, status, tone]) => (
         <div
           key={sender}
@@ -131,7 +131,7 @@ export function VisitHistory() {
             <span className="block font-medium">Indiranagar</span>
             <span className="text-xs text-muted">Check-in · GPS · 09:40</span>
           </span>
-          <Status tone="money">Done</Status>
+          <Status tone="money">Visited</Status>
         </li>
         <li className="flex items-start justify-between gap-3">
           <span>
@@ -154,9 +154,9 @@ export function MembershipRecord({ compact = false }: { compact?: boolean }) {
     >
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium">Gold annual</p>
-        {compact ? <Status tone="leak">Payment due</Status> : <SampleCaption>Sample data</SampleCaption>}
+        {compact ? <Status tone="leak">Payment Due</Status> : <SampleCaption>Sample data</SampleCaption>}
       </div>
-      <p className="mt-2 text-xs text-muted">Family plan · EMI due this week</p>
+      <p className="mt-2 text-xs text-muted">Family plan · part paid in cash</p>
       <div className="mt-3 flex flex-wrap gap-2">
         <Status tone="leak">Payment Due</Status>
         <Status>Enrolled by Trainer B</Status>
@@ -170,7 +170,7 @@ export function MembershipList() {
     <div
       className="overflow-hidden rounded-2xl border border-line bg-cream"
       role="img"
-      aria-label="Sample membership list with an instalment due, a cash payment, and an approved referral reward"
+      aria-label="Sample membership list with a part payment and a payment due, a cash payment, and a UPI payment"
     >
       <div className="flex items-center justify-between border-b border-line px-4 py-3">
         <p className="text-sm font-medium">Memberships</p>
@@ -179,8 +179,8 @@ export function MembershipList() {
       <ul className="divide-y divide-line text-sm">
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">EMI instalment</span>
-            <span className="text-xs text-muted">Due this week</span>
+            <span className="block font-medium">Part paid in cash</span>
+            <span className="text-xs text-muted">₹6,000 of ₹18,000</span>
           </span>
           <Status tone="warn">Payment Due</Status>
         </li>
@@ -189,14 +189,14 @@ export function MembershipList() {
             <span className="block font-medium">Cash at the desk</span>
             <span className="text-xs text-muted">Recorded by reception</span>
           </span>
-          <Status tone="money">Paid</Status>
+          <Status tone="money">Active</Status>
         </li>
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">Referral reward</span>
-            <span className="text-xs text-muted">For Member A</span>
+            <span className="block font-medium">UPI payment</span>
+            <span className="text-xs text-muted">Reference and proof photo</span>
           </span>
-          <Status tone="money">Approved</Status>
+          <Status tone="money">Active</Status>
         </li>
       </ul>
     </div>

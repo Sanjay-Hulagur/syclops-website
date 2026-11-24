@@ -32,8 +32,8 @@ export function AndroidDownload({
       </div>
       {compact ? null : (
         <p className="mt-4 max-w-xl text-xs leading-5 text-muted">
-          If Android asks, allow install from this browser. Referrers use the
-          referral page in their browser instead.
+          If Android asks, allow install from this browser. Referrers can log in at
+          app.syclops.in in their browser instead.
         </p>
       )}
     </div>

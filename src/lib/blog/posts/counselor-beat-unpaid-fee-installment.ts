@@ -3,16 +3,16 @@ import { POST_UPDATED } from "@/lib/blog/types";
 
 export const post: Post = {
   slug: "counselor-beat-unpaid-fee-installment",
-  title: "Unpaid fee installments need a counselor visit",
+  title: "Unpaid fees need a counselor visit",
   date: "2026-10-16",
   updated: POST_UPDATED,
   category: "Education",
   excerpt:
-    "Plan counselor visits around unpaid fee installments, keep alumni and parent referrals named, and stop running enquiries, calls, and fees in three lists.",
+    "Plan counselor visits around unpaid fees, keep alumni and parent referrals named, and stop running enquiries, calls, and fees in three lists.",
   body: [
     {
       type: "p",
-      text: "An unpaid fee installment is a counselor visit, not only an SMS. Campus growth teams keep three memories that never agree: an enquiry Excel, a counselor call log, and the accounts list of unpaid term fees. Alumni intros live in a parent WhatsApp group. By the time someone asks which introduction became a paying student, the sheet is a week old and the parent has already heard a different story from the bus route.",
+      text: "An unpaid fee is a counselor visit, not only an SMS. Campus growth teams keep three memories that never agree: an enquiry Excel, a counselor call log, and the accounts list of unpaid term fees. Alumni intros live in a parent WhatsApp group. By the time someone asks which introduction became a paying student, the sheet is a week old and the parent has already heard a different story from the bus route.",
     },
     {
       type: "h2",
@@ -24,7 +24,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "The failure mode is familiar. Accounts exports unpaid installments on Monday. Counselors already planned a campus day from last month’s enquiry sheet. Nobody joins the two lists, so the counselor walks a building where the urgent family is not, and the urgent family gets another text. [Subscriptions](/product/subscriptions) that stop at the gateway leave that join on the floor.",
+      text: "The failure mode is familiar. Accounts exports unpaid fees on Monday. Counselors already planned a campus day from last month’s enquiry sheet. Nobody joins the two lists, so the counselor walks a building where the urgent family is not, and the urgent family gets another text. [Subscriptions](/product/subscriptions) that stop at the gateway leave that join on the floor.",
     },
     {
       type: "h2",
@@ -32,7 +32,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "A counselor day is a field day. Check in at the campus with GPS. Log each visit with notes and a photo, so a skipped school shows up on the list of places nobody has visited instead of as silence. Upload your counselors and areas from the Excel template, then stop dual-running the sheet. The phone becomes the list. The sheet becomes a souvenir.",
+      text: "A counselor day is a field day. Check in at the campus with GPS. Log each visit with notes and a photo, so a skipped school shows up on the list of places nobody has visited instead of as silence. Upload your counselors and areas from the spreadsheet (CSV) templates, then stop dual-running the sheet. The phone becomes the list. The sheet becomes a souvenir.",
     },
     {
       type: "p",
@@ -54,11 +54,11 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Alumni and parent referrals need the same record as any other introduction. Each referral keeps the name of who sent it, and a status from sent to converted, or lost with a reason, not a rumour in a group. The referral page blocks a second open referral for the same mobile number, so two alumni cannot claim the same student. Different spellings of a referrer’s name can be linked to one person, instead of a counselor guessing in a corridor.",
+      text: "Alumni and parent referrals need the same record as any other introduction. Each referral keeps the name of who sent it, and a status from pending to admitted, or stopped with a reason, not a rumour in a group. The same mobile number cannot be referred twice, so two alumni cannot claim the same student. Different spellings of a referrer’s name can be merged into one person, instead of a counselor guessing in a corridor.",
     },
     {
       type: "p",
-      text: "That record matters the day the installment is due. The referrer is not a marketing source you file and forget. They are often the person the parent will take a call from. Before the counselor walks in, they should know who sent the family. An [education](/industries/education) workspace keeps counselor visits, alumni referrals, and fee plans in one app.",
+      text: "That record matters the day the fee is due. The referrer is not a marketing source you file and forget. They are often the person the parent will take a call from. Before the counselor walks in, they should know who sent the family. An [education](/industries/education) workspace keeps counselor visits, alumni referrals, and fee plans in one app.",
     },
     {
       type: "h2",
@@ -66,11 +66,11 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Syclops does not replace the academic ERP. Marks, timetable, and attendance registers stay there. The loop you are missing is different: who walked the campus, which intro became an admission, and which unpaid installment became a visit instead of another accounts SMS. Buying a second student-information system to get that loop is how campuses end up with two logins and the same leak.",
+      text: "Syclops does not replace the academic ERP. Marks, timetable, and attendance registers stay there. The loop you are missing is different: who walked the campus, which intro became an admission, and which unpaid fee became a visit instead of another accounts SMS. Buying a second student-information system to get that loop is how campuses end up with two logins and the same leak.",
     },
     {
       type: "p",
-      text: "Cash at the accounts window still happens. When a parent pays at the desk, the counselor or the clerk records the payment on the fee plan, as cash, UPI, or an EMI instalment. The plan shows it as paid even though the money did not come through the gateway. Review the plans with a payment due each week, and put the follow-ups on each counselor’s visit plan. You do not rebuild the list by hand every Monday.",
+      text: "Cash at the accounts window still happens. When a parent pays at the desk, the counselor or the clerk records the payment on the fee plan, as cash, including a part payment, or as UPI with its reference. The payment is on the record even though the money did not come through the gateway. Review the plans marked Payment Due each week, and plan the follow-ups in each counselor’s calendar. You do not rebuild the list by hand every Monday.",
     },
     {
       type: "h2",
@@ -78,7 +78,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Gateway retries and reminder texts belong in the billing tool. They recover the parent who only needed a new UPI pin. They do not recover the parent who is waiting to see a person. Read [why subscriptions need a field team](/blog/subscriptions-need-a-field-team) if the argument still sounds like a gym problem. On a campus it is the same loop with a counselor and a term fee. Create an education workspace, upload your counselors and areas, and let the unpaid installment decide the next visit.",
+      text: "Gateway retries and reminder texts belong in the billing tool. They recover the parent who only needed a new UPI pin. They do not recover the parent who is waiting to see a person. Read [why subscriptions need a field team](/blog/subscriptions-need-a-field-team) if the argument still sounds like a gym problem. On a campus it is the same loop with a counselor and a term fee. Create an education workspace, upload your counselors and areas, and let the unpaid fee decide the next visit.",
     },
   ],
   faqs: [
@@ -88,7 +88,7 @@ export const post: Post = {
     },
     {
       q: "Should every unpaid SMS become a campus visit?",
-      a: "No. Let the gateway retry first. Plan a counselor visit when the fee is still due after that, or when you already know the family is waiting on a person rather than a link.",
+      a: "No. Let the reminder, or another try online, go first. Plan a counselor visit when the fee is still due after that, or when you already know the family is waiting on a person rather than a reminder.",
     },
   ],
 };

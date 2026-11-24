@@ -33,20 +33,19 @@ export const publicPlans: PublicPlan[] = [
     featured: true,
     items: [
       "Everything in Team",
-      "Referral page for partners and members",
-      "Membership plans with cash, UPI, EMI and Razorpay",
-      "Referral payouts, approved before they are paid",
+      "Membership plans with cash, UPI and Razorpay",
+      "Leads, call outcomes and conversions",
       "Analytics by referrer and region",
+      "Referral page for referring clinics",
     ],
     gymItems: [
       "Everything in Team",
-      "Member referral page",
-      "Membership plans and EMI payments",
-      "Referral rewards",
-      "Analytics",
+      "Membership plans with UPI, cash and Razorpay",
+      "Leads and call outcomes",
+      "Analytics by referrer",
     ],
     offerDescription:
-      "Team plus a referral page for partners and members, membership plans with cash, UPI, EMI and Razorpay payments, referral payouts with approval, and analytics by referrer and region. Per field seat per month.",
+      "Team plus membership plans with cash, UPI and Razorpay payments, leads with call outcomes and conversions, analytics by referrer and region, and a referral page for referring clinics. Per field seat per month.",
   },
   {
     name: "Scale",
@@ -55,18 +54,18 @@ export const publicPlans: PublicPlan[] = [
     items: [
       "Everything in Growth",
       "Regions and territories for large teams",
-      "Audit logs",
-      "HIS / ERP connector, set up for your system",
+      "Cluster leaders who see their own region",
+      "Hospital system (HIS) sync, scoped on a call",
       "Setup with our team on a call",
     ],
     gymItems: [
       "Everything in Growth",
       "Regions for several locations",
-      "Audit logs",
+      "A lead for each region who sees their own team",
       "Setup with our team",
     ],
     offerDescription:
-      "Growth plus regions and territories for large teams, audit logs, an HIS or ERP connector set up for your system, and setup with the Syclops team. Per field seat per month.",
+      "Growth plus regions and territories for large teams, cluster leaders who see their own region, a hospital system (HIS) sync scoped on a call, and setup with the Syclops team. Per field seat per month.",
   },
 ];
 

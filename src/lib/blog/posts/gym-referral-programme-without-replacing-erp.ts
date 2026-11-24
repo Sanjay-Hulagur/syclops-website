@@ -8,17 +8,17 @@ export const post: Post = {
   updated: POST_UPDATED,
   category: "Referrals",
   excerpt:
-    "Learn how gyms can manage member referrals, track new memberships, reward existing members, and organise trainer follow-ups without replacing their current gym management software.",
+    "Learn how gyms can manage member referrals, track new memberships, see which members brought a friend, and organise trainer follow-ups without replacing their current gym management software.",
   hero: {
     src: "/blog/gym-referral-programme.png",
-    alt: "Running a gym referral programme with existing software. A member sharing a referral at the desk, with rewards and trainer follow-ups.",
+    alt: "Running a gym referral programme with existing software. A member referring a friend at the front desk.",
     width: 1958,
     height: 803,
   },
   body: [
     {
       type: "p",
-      text: "You can run a gym referral programme without replacing your gym ERP. Owners looking for gym referral software often get sold a second floor system: class booking, lockers, biometric attendance, GST invoices. Those are real jobs. They are not the same job as who sent this member, whether they joined, and what the member who sent them is owed. Keep the floor system. Put the loop beside it.",
+      text: "You can run a gym referral programme without replacing your gym ERP. Owners looking for gym referral software often get sold a second floor system: class booking, lockers, biometric attendance, GST invoices. Those are real jobs. They are not the same job as who sent this member and whether they joined. Keep the floor system. Put the loop beside it.",
     },
     {
       type: "h2",
@@ -34,25 +34,25 @@ export const post: Post = {
     },
     {
       type: "h2",
-      text: "Keep the ERP for the floor. Use a referral page for origin",
+      text: "Keep the ERP for the floor. Use Syclops for who sent them",
     },
     {
       type: "p",
-      text: "[Gym referral software](/gym-referral-software) is the origin side. A member shares your referral page link, which our team sets up with your gym’s name. They do not need the field app, and they are not a paid seat. Each referral keeps the name of the member who sent it, and a status: sent, joined, or lost with a reason. The class timetable does not have to move for that sentence to be true.",
+      text: "[Gym referral software](/gym-referral-software) is the origin side. A member logs in at app.syclops.in on their phone with a one-time code and refers a friend. They do not need the field app, and they are not a paid seat. Each referral keeps the name of the member who sent it, and a status, such as pending or arrived, or why it stopped, such as did not visit. The class timetable does not have to move for that sentence to be true.",
     },
     {
       type: "ul",
       items: [
-        "A link is enough. Members do not install a second app to send a friend.",
-        "The reward is recorded on the referral, and paid only after someone approves it.",
-        "A second open referral for the same mobile number is blocked.",
-        "Different spellings of a member’s name can be linked to one person.",
+        "A phone browser is enough. Members do not install a second app to send a friend.",
+        "The referral shows whether the friend actually came in, so you know whom to reward.",
+        "The same mobile number cannot be referred twice.",
+        "Different spellings of a member’s name can be merged into one person.",
         "Each membership shows its payments and who sold it, so a payment due has an owner.",
       ],
     },
     {
       type: "p",
-      text: "Approval is how you stop paying for joins that bounce. A friend who comes twice and disappears should not mint a free month. A friend who joins and pays should. Payouts move from pending to approved to paid, so the decision is made once, by a manager, not renegotiated at the front desk each Saturday.",
+      text: "Status is how you stop paying for joins that bounce. A friend who comes twice and disappears should not mint a free month. A friend who joins and pays should. Update the referral when the friend comes in, enrol their membership, and reward the member from that record. Syclops does not pay the reward itself, so the decision is made once, from the record, not renegotiated at the front desk each Saturday.",
     },
     {
       type: "h2",
@@ -76,21 +76,21 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "If you are still testing whether any referral product has to do this, [how to choose referral management software](/blog/how-to-choose-referral-management-software) is the checklist. For a gym, the pass mark is short. Create a gym workspace, add your trainers, and get your referral page from our team. ERP for the floor. The loop for growth. The member who sent a friend can see that they joined.",
+      text: "If you are still testing whether any referral product has to do this, [how to choose referral management software](/blog/how-to-choose-referral-management-software) is the checklist. For a gym, the pass mark is short. Create a gym workspace, add your trainers and members, and give members a login. ERP for the floor. The loop for growth. The member who sent a friend can see that they joined.",
     },
     {
       type: "p",
-      text: "Put the link where the join actually happens: the reception desk and the member WhatsApp group, not a PDF nobody opens. The desk still creates the membership in the gym system. The referral records the sender, or the member’s link already did. A month later you can answer who brought this person and whether they have paid, without exporting classes, lockers, or tax invoices to get there. That answer is the programme. The rest of the floor can stay where it works.",
+      text: "Ask for referrals where the join actually happens: the reception desk and the member WhatsApp group, not a PDF nobody opens. The desk still creates the membership in the gym system. The referral records the sender, or the member already did from their own login. A month later you can answer who brought this person and whether they have paid, without exporting classes, lockers, or tax invoices to get there. That answer is the programme. The rest of the floor can stay where it works.",
     },
   ],
   faqs: [
     {
       q: "Do members need a paid seat to refer a friend?",
-      a: "No. Your referral page link is enough. Paid seats are trainers and managers who run the field day, not members who send someone.",
+      a: "No. Members log in at app.syclops.in with a one-time code. Paid seats are trainers and managers who run the field day, not members who send someone.",
     },
     {
       q: "Do we have to move class booking and GST invoices?",
-      a: "No. Leave those in the gym ERP. The referral programme needs the sender’s name, a reward you approve, and a trainer who follows up when a payment is due.",
+      a: "No. Leave those in the gym ERP. The referral programme needs the sender’s name, a status that shows whether the friend came in, and a trainer who follows up when a payment is due.",
     },
   ],
 };

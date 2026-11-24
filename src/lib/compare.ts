@@ -23,11 +23,11 @@ export const comparisons = [
     faqs: [
       {
         q: "Can I bring my Excel sheets?",
-        a: "Yes, for staff and areas. Copy them into our Excel templates and upload them. Partners are added from the phone or in the admin console.",
+        a: "Yes. Staff, areas, referrers, and leads each have a spreadsheet (CSV) template. Copy your columns across and upload them.",
       },
       {
         q: "Do staff still message on WhatsApp?",
-        a: "They can. Referral updates, reminders, and campaigns can also go out from WhatsApp Business, which our team connects with you.",
+        a: "They can. Template messages, follow-up reminders, and campaigns can also go out from WhatsApp Business, which our team connects with you.",
       },
       {
         q: "Is this a WhatsApp CRM?",
@@ -35,9 +35,9 @@ export const comparisons = [
       },
     ],
     rows: [
-      ["Visit proof", "Photos in a group chat", "GPS check-in, photos, TA/DA"],
-      ["Referral status", "Scroll back and guess", "Awaiting arrival → arrived → converted, or why not"],
-      ["Membership plans", "Another sheet, stale tomorrow", "Plan status, EMI schedules, payments due"],
+      ["Visit proof", "Photos in a group chat", "GPS check-in, a stamped photo, TA/DA"],
+      ["Referral status", "Scroll back and guess", "Pending → arrived, or why it stopped"],
+      ["Membership plans", "Another sheet, stale tomorrow", "Plan status and payments due"],
       ["Who owns the account", "Whoever last typed", "Field staff + referrer + manager"],
       ["Reports", "Month-end paste", "Coverage and referrals by person, any date range"],
     ],
@@ -70,7 +70,7 @@ export const comparisons = [
       },
       {
         q: "Can staff fake a check-in?",
-        a: "Each check-in records GPS and photos, and managers see every visit on that day’s route. The point is still the referral or plan that followed.",
+        a: "Each check-in records GPS and a photo stamped with the place and time, and managers see every visit on that day’s route. The point is still the referral or plan that followed.",
       },
       {
         q: "Does TADA replace a payroll GPS app?",
@@ -81,7 +81,7 @@ export const comparisons = [
       ["Live location", "Core product", "Working day only, not the brand"],
       ["Fake check-ins", "Primary pitch", "GPS and photo proof, then the outcome"],
       ["Referrals", "Not in scope", "Referrer login and status"],
-      ["Subscriptions", "Not in scope", "Plans, EMI, payments due"],
+      ["Subscriptions", "Not in scope", "Plans and payments due"],
       ["Success metric", "Attendance %", "Referrals and paying customers"],
     ],
   },
@@ -123,8 +123,8 @@ export const comparisons = [
     rows: [
       ["Object model", "Lead / deal / company", "Visit / referrer / member"],
       ["Field work", "Notes, if anyone logs them", "Check-in, route, TADA built in"],
-      ["Partner referrals", "Source field, usually empty", "Referrer login, status, payouts"],
-      ["Recurring revenue", "Add-on or another product", "Membership plans and EMI built in"],
+      ["Partner referrals", "Source field, usually empty", "Referrer login, status, duplicate check"],
+      ["Recurring revenue", "Add-on or another product", "Membership plans and payments built in"],
       ["India field reality", "Western office CRM", "Android field app + WhatsApp"],
     ],
   },
@@ -146,7 +146,7 @@ export const comparisons = [
       },
       {
         title: "Use Syclops when referrals leak",
-        body: "If nobody can say who referred each join, admit, or patient, or what that referrer is owed, the vertical tool is not doing that job.",
+        body: "If nobody can say who referred each join, admission, or patient, the vertical tool is not doing that job.",
       },
     ],
     faqs: [
@@ -160,15 +160,15 @@ export const comparisons = [
       },
       {
         q: "Does the app use our words?",
-        a: "Not yet. Syclops was built for hospitals, so some screens say doctors and patients where you would say members or students. The steps are the same.",
+        a: "Partly. The phone screens say referrers and referred users. Some forms and the admin dashboard still use hospital words, such as doctors and patients, because Syclops was built for hospitals first. The steps are the same.",
       },
     ],
     rows: [
-      ["Memberships or fees", "Strong", "Plans with cash, UPI, EMI, and Razorpay"],
+      ["Memberships or fees", "Strong", "Plans with cash, UPI, and Razorpay"],
       ["Member-get-member", "Sometimes", "Member and partner referrals"],
       ["Field staff", "Rare", "First-class"],
       ["Built for", "One vertical", "Hospitals first, same steps elsewhere"],
-      ["Referral page", "Uncommon", "Referrers see status without calling"],
+      ["Referrer login", "Uncommon", "Referrers see status without calling"],
     ],
   },
   {
@@ -180,7 +180,7 @@ export const comparisons = [
     theirs: "Gym management software",
     intro: [
       "Gymdesk-style products, Indian GST gym ERPs, and class-booking suites are built for the floor: timetable, lockers, biometric punch-in, invoices. Member-get-member is usually a code at reception. A failed debit is an SMS from billing. Trainers covering a second centre are not a field team.",
-      "Syclops is not a second floor system. Keep the ERP for classes and the door. Use Syclops to record who referred each member, reward the referrer, and see which memberships have a payment due.",
+      "Syclops is not a second floor system. Keep the ERP for classes and the door. Use Syclops to record who referred each member, give members a login to refer friends, and see which memberships have a payment due.",
     ],
     choose: [
       {
@@ -199,7 +199,7 @@ export const comparisons = [
       },
       {
         q: "Can members refer without an app?",
-        a: "Yes. They use your referral page in a browser. Members are not paid field seats.",
+        a: "Yes. They log in at app.syclops.in in any phone browser. Members are not paid field seats.",
       },
       {
         q: "Multi-centre chains?",
@@ -208,7 +208,7 @@ export const comparisons = [
     ],
     rows: [
       ["Class booking / door", "Core product", "Out of scope — keep the ERP"],
-      ["Member-get-member", "Code at the desk, often", "Referral page, status, rewards"],
+      ["Member-get-member", "Code at the desk, often", "Member login and status"],
       ["Trainer field days", "Rare", "Check-in, visits, TADA between centres"],
       ["Payment due", "Billing SMS", "The plan shows it, staff follow up"],
       ["GST invoices", "Strong", "Keep them in the ERP"],

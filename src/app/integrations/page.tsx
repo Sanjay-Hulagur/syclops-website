@@ -7,7 +7,7 @@ import { integrations } from "@/lib/site";
 export const metadata: Metadata = pageSeo({
   title: "Integrations — WhatsApp, Razorpay, Maps",
   description:
-    "Syclops works with WhatsApp Business, Razorpay, Google Maps and hospital billing systems. Our team connects them with you during setup.",
+    "Syclops works with WhatsApp Business, Razorpay, Google Maps and hospital systems (HIS). Our team connects them with you during setup.",
   path: "/integrations",
   keywords: [
     "Razorpay gym software",
@@ -22,7 +22,7 @@ export default function IntegrationsPage() {
       <PageHero
         eyebrow="Integrations"
         title="The tools you already use, connected for you."
-        body="WhatsApp, Razorpay, Google Maps and hospital billing systems. Our team connects them with you during setup, so there are no keys to paste."
+        body="WhatsApp, Razorpay, Google Maps and hospital systems (HIS). Our team connects them with you during setup, so there are no keys to paste."
         scene="integrations"
         crumbs={[
           { name: "Home", path: "/" },
@@ -33,11 +33,11 @@ export default function IntegrationsPage() {
       <Section eyebrow="What they do" title="Tell us what you use. We connect it.">
         <Prose>
           <p>
-            WhatsApp Business sends referral updates, reminders and campaigns,
-            and keeps replies in a shared inbox. Razorpay takes online payments
-            for membership plans. Google Maps finds locations and routes for
-            the field day. On Scale, we connect your hospital billing system so
-            admissions and bills can be matched to referrals.
+            WhatsApp Business sends template messages, follow-up reminders and
+            campaigns, and keeps replies in a shared inbox. Razorpay takes online
+            payments for membership plans. Google Maps finds locations and routes
+            for the field day. On Scale, we connect your hospital system (HIS) so
+            admissions can be matched to referrals.
           </p>
         </Prose>
       </Section>
@@ -66,10 +66,10 @@ export default function IntegrationsPage() {
       <Section>
         <FeatureGrid
           items={[
-            { title: "WhatsApp Business", body: "Referral updates, reminders, campaigns and a shared inbox for replies." },
+            { title: "WhatsApp Business", body: "Templates, follow-up reminders, campaigns and a shared inbox for replies." },
             { title: "Razorpay", body: "Online payments for membership plans." },
             { title: "Google Maps", body: "Locations and routes for the field day." },
-            { title: "Hospital billing (HIS)", body: "Scale. Admissions and bills come in, so referral payouts can be worked out." },
+            { title: "Hospital system (HIS)", body: "Scale. Admissions come in from the hospital system and are matched to referrals." },
           ]}
         />
       </Section>

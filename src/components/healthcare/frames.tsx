@@ -92,7 +92,7 @@ export function FieldDay({ compact = false }: { compact?: boolean }) {
             <span className="block font-medium">Clinic visit</span>
             <span className="text-xs text-muted">GPS · notes · follow-up</span>
           </span>
-          <Status tone="money">Done</Status>
+          <Status tone="money">Visited</Status>
         </li>
         <li className="flex items-start justify-between gap-3">
           <span>

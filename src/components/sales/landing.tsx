@@ -40,11 +40,11 @@ const problems = [
   },
   {
     title: "CRM stops at the deal stage",
-    body: "Traditional CRMs often track opportunities, but field visits, partner activity and recurring contract follow-ups may remain disconnected.",
+    body: "Traditional CRMs often track opportunities, but field visits, partner activity and payment follow-ups may remain disconnected.",
   },
   {
-    title: "Renewals need action",
-    body: "Contracts approaching renewal need visibility, ownership and follow-up rather than remaining forgotten in a CRM stage.",
+    title: "Call outcomes get lost",
+    body: "A lead gets a call, but whether they agreed to visit or said no lives in someone’s memory instead of on the lead.",
   },
 ];
 
@@ -55,23 +55,23 @@ const workflow = [
   },
   {
     title: "Partner referral",
-    body: "A channel partner submits a lead on your referral page. The referral keeps their name.",
+    body: "A channel partner sends a lead from their own login. The referral keeps their name.",
   },
   {
-    title: "Lead qualification",
-    body: "The lead stays open while the team works the opportunity.",
+    title: "Call",
+    body: "Each call is logged with its outcome, such as agreed to visit or not interested.",
   },
   {
     title: "Won customer",
-    body: "Converted is a status on the referral, so the win does not disappear after close.",
+    body: "The conversion is recorded with its final amount, so the win does not disappear after close.",
   },
   {
-    title: "Recurring plan",
-    body: "The plan keeps the amount, the end date, and whether it is paid or has a payment due.",
+    title: "Paid plan",
+    body: "If the customer takes a plan, it shows how it was paid and whether a payment is due.",
   },
   {
-    title: "Renewal follow-up",
-    body: "A plan with a payment due stays visible, with its end date, to the person who sold it.",
+    title: "Payment follow-up",
+    body: "A plan with a payment due stays visible to the person who sold it.",
   },
 ];
 
@@ -100,12 +100,12 @@ const audiences = [
   },
   {
     title: "Agencies and service businesses",
-    body: "Account visits, referred customers, and recurring plans sit in one workspace, with each plan’s end date in view.",
+    body: "Account visits, referred customers, and paid plans sit in one workspace.",
     items: [
       "Account visits",
       "Referred customers",
-      "Recurring service contracts",
-      "Plan end dates and payments due",
+      "Service plans",
+      "Payments due",
       "Customer relationship visibility",
     ],
   },
@@ -135,7 +135,7 @@ const syclopsItems = [
   "Account coverage",
   "Channel partner referrals",
   "Partner attribution",
-  "Recurring plan visibility",
+  "Call outcomes and conversions",
   "Field follow-ups",
 ];
 
@@ -147,7 +147,7 @@ const proofs = [
   },
   {
     title: "Check in from the phone",
-    body: "GPS, notes, and photos stay on the visit. Location is recorded only during the working day.",
+    body: "GPS, notes, and a photo stamped with the place and time stay on the visit. Location is recorded only during the working day.",
     frame: <CheckInPhone />,
   },
   {
@@ -156,18 +156,18 @@ const proofs = [
     frame: <AccountRecord />,
   },
   {
-    title: "Let partners submit a lead",
-    body: "Your referral page opens in the browser. Partners see their own leads. They are not billed as field seats.",
+    title: "Let partners send a lead",
+    body: "Partners log in from any browser and see their own leads. They are not billed as field seats.",
     frame: <PartnerPortal />,
   },
   {
     title: "Keep status on the referral",
-    body: "Each lead shows where it stands, from sent to converted, or why it was lost.",
+    body: "Each referral shows where it stands, such as pending or arrived, and a won lead is recorded as a conversion.",
     frame: <LeadStatus />,
   },
   {
-    title: "See the renewal before it is forgotten",
-    body: "The plan shows the end date, the amount, and whether a payment is due.",
+    title: "See which plans have a payment due",
+    body: "The plan shows the amount, what has been paid, and who sold it.",
     frame: <PlanRecord />,
   },
   {
@@ -182,19 +182,19 @@ function salesFaqs(trialDays: number) {
   return [
     {
       q: "We already use a CRM. Why do we need Syclops?",
-      a: "Keep the CRM for the deal pipeline, opportunity stages, sales notes, and customer records. Syclops is the work that usually sits outside that pipeline: planned field visits, GPS check-in, account coverage, channel partner referrals, and recurring plan follow-up. There is no CRM sync to turn on. The two systems sit side by side.",
+      a: "Keep the CRM for the deal pipeline, opportunity stages, sales notes, and customer records. Syclops is the work that usually sits outside that pipeline: planned field visits, GPS check-in, account coverage, channel partner referrals, call outcomes, and plan payments. There is no CRM sync to turn on. The two systems sit side by side.",
     },
     {
       q: "Can we track our field representatives using GPS?",
-      a: "Yes. Each visit is checked in with GPS and photos, and location is recorded only during the working day. Managers see each person’s visits and route for that day. It is visit evidence, not a live map of the evening.",
+      a: "Yes. Each visit is checked in with GPS and a photo, and location is recorded only during the working day. Managers see each person’s visits and route for that day. It is visit evidence, not a live map of the evening.",
     },
     {
       q: "Can we plan daily beat visits?",
-      a: "Yes. Reps get a visit plan for the week and a route for the day, and log each visit when they check in. Managers see which accounts nobody has visited. Reps and areas upload from an Excel template.",
+      a: "Yes. Reps get a visit plan for the week and a route for the day, and log each visit when they check in. Managers see which accounts nobody has visited. Reps and areas upload from a spreadsheet (CSV) template.",
     },
     {
       q: "Can channel partners submit leads?",
-      a: "Yes, on Growth and Scale. Partners open your referral page in the browser, sign in with a one-time code sent to their email, submit a lead, and see status for what they sent. They do not install the field app, and a partner login is not billed as a field seat. Team includes the referral workspace. The referral page itself is on Growth.",
+      a: "Yes. Partners log in at app.syclops.in in any browser with a one-time code, send a lead, and see the status of what they sent. They do not install the field app, and a partner login is not billed as a field seat.",
     },
     {
       q: "Can we track which partner referred a customer?",
@@ -202,11 +202,11 @@ function salesFaqs(trialDays: number) {
     },
     {
       q: "Can we track leads through conversion?",
-      a: "Yes. Each lead shows its status until it converts, or records why it was lost. Your referral page blocks a second open referral for the same mobile number.",
+      a: "Yes. Each call is logged with its outcome, and each lead has a stage, such as new, engaged, or closed (lost). A won lead is recorded as a conversion with the quoted and final amount. The same mobile number cannot be referred twice.",
     },
     {
-      q: "Can we manage recurring contracts and renewals?",
-      a: "On Growth, a plan shows the customer, the amount, the end date, and whether it is paid or has a payment due. Payments can be recorded as cash, UPI, or EMI, or paid online through Razorpay, which our team connects with you. Syclops does not replace your accounting system, and it does not renew a contract by itself.",
+      q: "Can we track payments for service plans?",
+      a: "On Growth, a plan shows the customer, the amount, and its status, such as Active or Payment Due. Payments can be recorded as cash, including part payments, or UPI, or paid online through Razorpay, which our team connects with you. Syclops does not track contract renewals or instalments, and it does not replace your accounting system.",
     },
     {
       q: "How does TADA work?",
@@ -214,7 +214,7 @@ function salesFaqs(trialDays: number) {
     },
     {
       q: "Is Syclops an FMCG distributor management system?",
-      a: "No. It does not book secondary orders and it does not manage distributor inventory or stock. It is for field visits, partner referrals, and recurring plans.",
+      a: "No. It does not book secondary orders and it does not manage distributor inventory or stock. It is for field visits, partner referrals, calls, and conversions.",
     },
     {
       q: "Can we manage multiple territories?",
@@ -222,7 +222,7 @@ function salesFaqs(trialDays: number) {
     },
     {
       q: "Does the app use sales words?",
-      a: "Not yet. Syclops was built for hospitals, so some screens say doctors and patients where you would say dealers and customers. The steps are the same.",
+      a: "Partly. The phone screens say referrers and referred users. Some forms and the admin dashboard still use hospital words, such as doctors and patients, because Syclops was built for hospitals first. The steps are the same.",
     },
     {
       q: "How much does Syclops cost?",
@@ -282,8 +282,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
           </h1>
           <p className="mt-5 max-w-md text-base leading-7 text-muted">
             Plan sales visits, manage channel partners, track referred leads, and
-            follow every opportunity through to conversion and a paying plan — in
-            one place.
+            record every call and conversion — in one place.
           </p>
           <div id="sales-hero-cta" className="mt-8 flex flex-wrap gap-3">
             <SalesLink
@@ -312,7 +311,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
         </div>
         <Image
           src={heroArt}
-          alt="Field sales desk with today's partner visits, referred leads, revenue and renewals, and a phone check-in at Acme Industries."
+          alt="Field sales desk with today's partner visits, referred leads, and a phone check-in at Acme Industries."
           priority
           sizes="(min-width: 1024px) 55vw, 100vw"
           className="h-auto w-full"
@@ -335,8 +334,8 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
           ))}
         </ol>
         <p className="mt-8 max-w-3xl text-base leading-7">
-          Syclops puts the field visit, the partner introduction, the opportunity,
-          and the recurring plan in one place.
+          Syclops puts the field visit, the partner introduction, the call, and
+          the conversion in one place.
         </p>
       </section>
 
@@ -374,7 +373,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Account visit history",
-                  body: "Notes and photos stay on the dealer or customer.",
+                  body: "Notes and the visit photo stay on the dealer or customer.",
                 },
                 {
                   title: "Visit notes and follow-up",
@@ -419,14 +418,14 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
               Give every partner lead a clear identity and status.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              Let partners submit referred leads on your referral page and follow
-              their progress through the sales process.
+              Let partners send referred leads from their own login and see
+              the status of each one.
             </p>
             <FeatureList
               items={[
                 {
-                  title: "Partner referral page",
-                  body: "One link in the browser. Partners sign in with a one-time code sent to their email. They are not billed as field seats.",
+                  title: "Partner login",
+                  body: "Partners sign in with a one-time code, in any browser or the Android app. They are not billed as field seats.",
                 },
                 {
                   title: "Partner profile",
@@ -434,7 +433,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Lead submission",
-                  body: "The partner submits the account they introduced. Team includes the referral workspace. The referral page is on Growth.",
+                  body: "The partner sends the contact they introduced, with notes, a photo, or a voice note.",
                 },
                 {
                   title: "Referrer attribution",
@@ -442,11 +441,11 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Lead status",
-                  body: "Open, converted, or lost with a reason. The partner sees their own rows.",
+                  body: "Pending, arrived, or stopped with a reason, such as not able to contact. The partner sees their own rows.",
                 },
                 {
-                  title: "Partner payouts",
-                  body: "Record a reward for each converted lead, and approve it before it is paid.",
+                  title: "Duplicate check",
+                  body: "A mobile number that is already on a referral cannot be sent again.",
                 },
               ]}
             />
@@ -456,7 +455,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
               </Link>
               {" · "}
               <Link href="/guides/referral-portal" className={textLink}>
-                Referral page guide
+                Referrers guide
               </Link>
             </p>
           </div>
@@ -468,53 +467,53 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
       </section>
 
       <section
-        id="renewals"
-        data-sales-section="renewals"
+        id="conversions"
+        data-sales-section="conversions"
         className="scroll-mt-24 border-t border-line bg-quiet"
-        aria-labelledby="sales-renewals"
+        aria-labelledby="sales-conversions"
       >
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
-              Recurring contracts and renewals
+              Calls, conversions and payments
             </p>
-            <h2 id="sales-renewals" className="display mt-3 text-3xl font-semibold tracking-tight">
-              Keep recurring customers from slipping through the cracks.
+            <h2 id="sales-conversions" className="display mt-3 text-3xl font-semibold tracking-tight">
+              Know what happened after every call.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              Every recurring plan shows its end date and whether a payment is due,
-              so the person who sold it knows when to go back.
+              Each call keeps its outcome, a won lead is recorded as a conversion,
+              and a paid plan shows whether a payment is due.
             </p>
             <FeatureList
               items={[
                 {
-                  title: "Customer and account",
-                  body: "Each plan names the customer it was sold to.",
+                  title: "Call outcomes",
+                  body: "Spoke, agreed to visit, not interested, or wrong number. The outcome stays on the lead.",
+                },
+                {
+                  title: "Hot leads",
+                  body: "Leads that need a follow-up sit on one list, filtered by source and call outcome.",
+                },
+                {
+                  title: "Conversions",
+                  body: "A won lead is recorded as converted, with the quoted and the final amount.",
                 },
                 {
                   title: "Who sold it",
-                  body: "The plan keeps the rep who enrolled the customer, so follow-ups have an owner.",
-                },
-                {
-                  title: "Plan or contract",
-                  body: "A retainer is a plan: price, duration, and what it includes. This is on Growth.",
-                },
-                {
-                  title: "Renewal date",
-                  body: "Each plan has an end date, and EMI plans list every instalment with its due date.",
+                  body: "A plan keeps the rep who enrolled the customer, so follow-ups have an owner.",
                 },
                 {
                   title: "Payment status",
-                  body: "Paid or Payment Due, whether the payment came in online through Razorpay or staff recorded cash or UPI.",
+                  body: "Each plan shows its status, such as Active or Payment Due, and how it was paid: online through Razorpay, or cash or UPI recorded by staff.",
                 },
                 {
-                  title: "Follow-up",
-                  body: "A payment due is visible to the person who owns the account. Syclops does not renew the contract by itself.",
+                  title: "What it does not do",
+                  body: "Syclops does not track contract renewals or send invoices.",
                 },
               ]}
             />
             <p className="mt-6 text-sm leading-6 text-muted">
-              Plans and payments are on Growth.{" "}
+              Leads, conversions and plans are on Growth.{" "}
               <Link href="/product/subscriptions" className={textLink}>
                 Subscriptions
               </Link>
@@ -535,11 +534,11 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
       >
         <div className="mx-auto max-w-6xl px-5 py-16">
           <h2 id="sales-workflow" className="display max-w-3xl text-3xl font-semibold tracking-tight">
-            From the first field visit to the next renewal.
+            From the first field visit to the payment.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-            These steps happen in one app: the visit, the partner, the opportunity,
-            and the plan. It is not another place to store contacts.
+            These steps happen in one app: the visit, the partner, the call, the
+            conversion, and the plan. It is not another place to store contacts.
           </p>
           <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-6 lg:gap-4">
             {workflow.map((step, index) => (
@@ -673,7 +672,7 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
               <ul className="mt-4 space-y-2 text-sm text-muted">
                 <li>Field visits to dealers, customers, and accounts</li>
                 <li>Channel partners who submit referred leads</li>
-                <li>Recurring contracts with an end date and an owner</li>
+                <li>Calls, conversions, and plan payments with an owner</li>
               </ul>
             </article>
             <article className="rounded-3xl border border-line bg-paper p-6">
@@ -735,9 +734,9 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             Prices match the pricing page and are per field seat per month. Referrer
-            logins are not billed as field seats. Growth is the plan that adds the
-            partner referral page, recurring plans, and analytics by referrer and
-            region.
+            logins are not billed as field seats. Growth is the plan that adds
+            leads with call outcomes and conversions, paid plans, and analytics by
+            referrer and region.
             {" "}
             {trialDays} days free, without a credit card.
           </p>
@@ -815,8 +814,8 @@ export function SalesLanding({ trialDays }: { trialDays: number }) {
               items={[
                 {
                   href: "/blog/channel-partner-portal-not-crm-source-field",
-                  label: "Referral page vs CRM source field",
-                  body: "Partners need status. A picklist is not a referral page.",
+                  label: "Partner login vs CRM source field",
+                  body: "Partners need status. A picklist is not a login.",
                 },
                 {
                   href: "/start?industry=sales",

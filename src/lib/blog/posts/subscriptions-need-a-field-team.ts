@@ -11,7 +11,7 @@ export const post: Post = {
     "Dunning emails do not replace a visit. At-risk members, students, and policyholders still live in the real world.",
   hero: {
     src: "/blog/subscriptions-need-a-field-team.png",
-    alt: "Subscriptions need a field team. A field officer at a clinic desk, with outreach, new subscriptions, renewals, and active members.",
+    alt: "Subscriptions need a field team. A field officer at a clinic desk, talking a visitor through a subscription plan.",
     width: 1958,
     height: 803,
   },
@@ -38,16 +38,16 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Involuntary churn is real: failed UPI, expired cards, quiet usage. Retries belong in the gateway. After they run out, plan a visit. Who to see. Where they were last visited. Who referred them, because that referrer is often the person who can save the account. A dunning template does not carry those three facts, so the email goes out and nobody moves.",
+      text: "Involuntary churn is real: failed UPI, expired cards, quiet usage. Retries belong in your billing tool, if it has them. After they run out, plan a visit. Who to see. Why the plan is unpaid. Who referred them, because that referrer is often the person who can save the account. A dunning template does not carry those three facts, so the email goes out and nobody moves.",
     },
     {
       type: "ul",
       items: [
-        "Let the gateway retry before a visit is planned.",
+        "Give paying online a fair second try before a visit is planned.",
         "Give the visit to the person who owns the account, not to a shared list.",
-        "Check the last visit so the person is not walking in cold.",
+        "Know why the plan is unpaid before you go, so the person is not walking in cold.",
         "Look up who referred the customer. They are context, not a marketing source you file away.",
-        "Record cash collected at a desk on the same plan, so the plan shows it as paid.",
+        "Record cash collected at a desk on the same plan, even when it is only part of the price.",
       ],
     },
     {
@@ -60,11 +60,11 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Cash and desk collections still happen in India. Staff record the payment on the plan, as cash, UPI, or an EMI instalment. A renewal taken at a gym reception, a fee taken at a campus window, a programme fee taken at a clinic — each one should show as paid, with the staff member who sold the plan still named. Otherwise finance cannot tell who brought the money in.",
+      text: "Cash and desk collections still happen in India. Staff record the payment on the plan, as cash, including a part payment, or as UPI with its reference. A membership fee taken at a gym reception, a fee taken at a campus window, a programme fee taken at a clinic — each one should be on the record, with the staff member who sold the plan still named. Otherwise finance cannot tell who brought the money in.",
     },
     {
       type: "p",
-      text: "The practical version of this handoff is [managing failed subscription payments with field visits](/blog/razorpay-memberships-field-dunning). The gateway is not the mistake. Stopping there is. Connect it. Define plans. Decide which failures are links and which failures are visits. Then stop reconciling the two in a spreadsheet.",
+      text: "The practical version of this handoff is [managing failed subscription payments with field visits](/blog/razorpay-memberships-field-dunning). The gateway is not the mistake. Stopping there is. Connect it. Send us your plans. Decide which failures need another try online and which need a visit. Then stop reconciling the two in a spreadsheet.",
     },
     {
       type: "h2",
@@ -72,7 +72,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "An at-risk export feels like control. It is a weekly project. Someone downloads failed payments, someone else downloads members who have not visited, and a third person assigns rows. By Wednesday the assignments are stale. In Syclops, the plans with a payment due are already a list, and each one names the person who sold it.",
+      text: "An at-risk export feels like control. It is a weekly project. Someone downloads failed payments, someone else downloads members who have not visited, and a third person assigns rows. By Wednesday the assignments are stale. In Syclops, plans marked Payment Due are already a list, and each one names the person who sold it.",
     },
     {
       type: "p",
@@ -88,13 +88,13 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Use both, in that order. Retry. Then visit. Connect the gateway, define the plans, and make sure every payment due has a person who will see it on the day they check in. That is the whole design. Dunning emails remain. They stop being the last step.",
+      text: "Use both, in that order. Retry. Then visit. Connect the gateway, send us your plans, and make sure every payment due has a person who will see it on the day they check in. That is the whole design. Dunning emails remain. They stop being the last step.",
     },
   ],
   faqs: [
     {
       q: "Do we skip email dunning and only visit?",
-      a: "No. Let the gateway retry and message first. Plan a visit when the payment is still due after that, or when you already know a link will not move the customer.",
+      a: "No. If your billing tool retries or sends reminders, let it go first. Plan a visit when the payment is still due after that, or when you already know the customer will not pay online.",
     },
     {
       q: "Who should make the follow-up visit?",

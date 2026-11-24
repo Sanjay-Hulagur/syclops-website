@@ -50,7 +50,7 @@ const steps = [
   },
   {
     title: "Referral",
-    body: "Members share your referral page link to refer friends.",
+    body: "Members send friends from their own login in the app.",
   },
   {
     title: "Membership",
@@ -77,7 +77,7 @@ const syclopsItems = [
   "GPS check-ins",
   "TADA",
   "Membership payments",
-  "Referral rewards",
+  "Leads and call outcomes",
   "Field performance analytics",
 ];
 
@@ -90,11 +90,11 @@ function gymFaqs(trialDays: number) {
     },
     {
       q: "Can members refer friends without downloading an app?",
-      a: "Yes. A member opens your referral page in the browser and signs in with a one-time code sent to their email. They do not install the field app, and referrer logins are not billed as field seats. The referral page is included on Growth and Scale.",
+      a: "Yes. A member logs in at app.syclops.in in any phone browser with a one-time code. They do not need to install anything, and referrer logins are not billed as field seats.",
     },
     {
-      q: "How are referral rewards managed?",
-      a: "Record the reward amount on the referral when the friend joins. Payouts move from pending to approved to paid, so nothing is paid before someone approves it. The referral page blocks a second open referral for the same mobile number.",
+      q: "Can Syclops pay member rewards?",
+      a: "Not today. Each referral shows which member sent the friend and whether the friend came in, so your desk knows whom to reward. Giving the reward happens outside the app. The same mobile number cannot be referred twice.",
     },
     {
       q: "Can I track trainers across multiple gym branches?",
@@ -102,11 +102,11 @@ function gymFaqs(trialDays: number) {
     },
     {
       q: "Can I see who has not paid?",
-      a: "Yes, on Growth. Each membership shows its status, such as Active or Payment Due, and EMI plans show every instalment’s due date. Members can pay by cash, UPI, EMI, or online through Razorpay, which our team connects with you. Syclops does not replace invoices in your gym software.",
+      a: "Yes, on Growth. Each membership shows its status, such as Active or Payment Due, which your team sets. Members can pay by cash, including part payments, UPI, or online through Razorpay, which our team connects with you. Syclops does not replace invoices in your gym software.",
     },
     {
       q: "Can trainers check in using GPS?",
-      a: "Yes. Each visit is checked in with GPS and photos, and location is recorded only during the working day. The record is the visit and what followed — a referral or a membership — not a live map of the evening.",
+      a: "Yes. Each visit is checked in with GPS and a photo stamped with the place and time, and location is recorded only during the working day. The record is the visit and what followed — a referral or a membership — not a live map of the evening.",
     },
     {
       q: "How much does Syclops cost for gyms?",
@@ -114,7 +114,7 @@ function gymFaqs(trialDays: number) {
     },
     {
       q: "Can I start with field tracking and add referrals later?",
-      a: "Yes. Team includes field tracking, TADA, and a referral workspace. Move to Growth when you want the member referral page, membership plans, and referral payouts. History stays.",
+      a: "Yes. Team includes field tracking, TADA, and a referral workspace with member logins. Move to Growth when you want membership plans, leads and call outcomes. History stays.",
     },
     {
       q: "How long does setup take?",
@@ -122,7 +122,7 @@ function gymFaqs(trialDays: number) {
     },
     {
       q: "Does the app use gym words?",
-      a: "Not yet. Syclops was built for hospitals, so some screens say doctors and patients where you would say partners and members. The steps are the same.",
+      a: "Partly. The phone screens say referrers and referred users. Some forms and the admin dashboard still use hospital words, such as doctors and patients, because Syclops was built for hospitals first. The steps are the same.",
     },
     {
       q: "Is there a free trial?",
@@ -223,7 +223,7 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
           </div>
           <Image
             src={heroArt}
-            alt="Illustration of a gym reception desk with referral tracking, a trainer visit list, a new member referral, and a QR code to refer a friend."
+            alt="Illustration of a gym reception desk with referral tracking, a trainer visit list, and a new member referral."
             priority
             sizes="(min-width: 1024px) 55vw, 100vw"
             className="h-auto w-full"
@@ -251,8 +251,8 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
             One connected system for gym growth.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-            Trainers can check in on Team. The member referral page, referral
-            payouts, and membership plans are on{" "}
+            Trainers can check in and members can refer on Team. Membership
+            plans are on{" "}
             <Link href="/pricing" className={textLink}>
               Growth
             </Link>
@@ -305,12 +305,12 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
             <FeatureList
               items={[
                 {
-                  title: "A referral page for members",
-                  body: "Members open a link in the browser and see whom they sent. They are not a paid field seat.",
+                  title: "A login for members",
+                  body: "Members log in from any phone browser and see whom they sent. They are not a paid field seat.",
                 },
                 {
-                  title: "Share it anywhere",
-                  body: "Send the link on WhatsApp or by email, or print it for reception. No field app for members.",
+                  title: "Refer from the phone",
+                  body: "A member adds the friend’s name, mobile number and a note. Nothing to install.",
                 },
                 {
                   title: "Referral attribution",
@@ -318,11 +318,11 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Duplicate referral handling",
-                  body: "The referral page blocks a second open referral for the same mobile number.",
+                  body: "A mobile number that is already on a referral cannot be sent again.",
                 },
                 {
-                  title: "Referral rewards",
-                  body: "Record the reward for each referral, and approve it before it is paid. On Growth.",
+                  title: "Why a referral stopped",
+                  body: "Not able to contact or did not visit. Every stopped referral says why.",
                 },
                 {
                   title: "Referral conversion analytics",
@@ -340,7 +340,7 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
               </Link>
               {" · "}
               <Link href="/guides/referral-portal" className={textLink}>
-                Referral page guide
+                Referrers guide
               </Link>
             </p>
           </div>
@@ -377,7 +377,7 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Visit history and proof",
-                  body: "Notes and photos stay on the visit.",
+                  body: "Notes and the photo stay on the visit.",
                 },
                 {
                   title: "Leave and shifts",
@@ -418,14 +418,14 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
         id="gym-subscriptions"
         data-gym-view="gym_subscription_section_view"
         className="scroll-mt-24 border-t border-line"
-        aria-labelledby="gym-renewals"
+        aria-labelledby="gym-memberships"
       >
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
               Memberships
             </p>
-            <h2 id="gym-renewals" className="display mt-3 text-3xl font-semibold tracking-tight">
+            <h2 id="gym-memberships" className="display mt-3 text-3xl font-semibold tracking-tight">
               See who has paid, and who has not.
             </h2>
             <FeatureList
@@ -439,12 +439,12 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
                   body: "Payment Due is a status on the membership, not a Monday export.",
                 },
                 {
-                  title: "Cash, UPI, EMI, or online",
+                  title: "Cash, UPI, or online",
                   body: "Record cash and UPI at the desk, or take payments online through Razorpay, which our team connects with you.",
                 },
                 {
-                  title: "EMI schedules",
-                  body: "Instalment plans list every due date, and each instalment is marked paid when it comes in.",
+                  title: "Part payments in cash",
+                  body: "Reception records the cash amount collected, even when it is only part of the plan price.",
                 },
                 {
                   title: "Referrals and memberships together",
@@ -528,7 +528,7 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             Prices match the pricing page and are per field seat per month.
-            Members who use the referral page are not billed as seats. {growth.name} is the
+            Members who only refer are not billed as seats. {growth.name} is the
             plan for the full referral and membership workflow.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -590,9 +590,9 @@ export function GymLanding({ trialDays }: { trialDays: number }) {
             Built for teams that work on the ground.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-            The records below use sample data so you can see the referral
-            page, a field visit, and visits turning into members. They are not
-            a customer result.
+            The records below use sample data so you can see a member’s
+            referrals, a field visit, and visits turning into members. They are
+            not a customer result.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <VisitRecord />

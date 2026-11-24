@@ -22,17 +22,17 @@ const pillars = [
   {
     href: "/product/field",
     title: "Field tracking",
-    body: "Staff check in with GPS and photos at each visit. TA/DA is worked out from the distance they travel each day.",
+    body: "Staff check in with GPS and a photo at each visit. TA/DA is worked out from the distance they travel each day.",
   },
   {
     href: "/product/referrals",
     title: "Referral management",
-    body: "Each person who sends a customer has their own login, sees what happened next, and can be paid a reward you approve.",
+    body: "Each person who sends a customer has their own login and sees what happened next. The same mobile number cannot be referred twice.",
   },
   {
     href: "/product/subscriptions",
     title: "Subscription management",
-    body: "Sell membership plans from the phone, record cash, UPI and EMI payments, and see who has a payment due.",
+    body: "Sell membership plans from the phone, record cash and UPI payments or take them through Razorpay, and see who has a payment due.",
   },
   {
     href: "/product/analytics",
@@ -47,7 +47,7 @@ const pillars = [
   {
     href: "/integrations",
     title: "Integrations",
-    body: "WhatsApp, Razorpay, maps and hospital billing systems. We connect them with you during setup.",
+    body: "WhatsApp, Razorpay, maps and hospital systems (HIS). We connect them with you during setup.",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function ProductPage() {
             Gym, school, and clinic software send invoices well. Teams that
             grow through visits and word of mouth still lose the thread.
             Introductions sit in WhatsApp. Daily routes sit in Excel.
-            Renewals sit in another login.
+            Payments sit in another login.
           </p>
           <p>
             Ask a simple question and the answer is split across tools. Which
@@ -80,13 +80,13 @@ export default function ProductPage() {
           </p>
           <p>
             Syclops is for that missing picture. You create a workspace, add
-            field staff and share a referral page. We connect WhatsApp and
-            Razorpay with you. Field visits and referrals are enough on the
+            field staff and give your referrers a login. We connect WhatsApp
+            and Razorpay with you. Field visits and referrals are enough on the
             Team plan. Membership plans open on Growth.
           </p>
         </Prose>
       </Section>
-      <Section eyebrow="The loop" title="Visit, then referral, then a plan that keeps paying.">
+      <Section eyebrow="The loop" title="Visit, then referral, then a paid plan.">
         <Steps
           items={[
             {
@@ -99,7 +99,7 @@ export default function ProductPage() {
             },
             {
               title: "The plan is paid",
-              body: "The new customer joins a plan and pays by cash, UPI, EMI or online. If a payment is due, the plan shows it, so someone knows to go back.",
+              body: "The new customer joins a plan and pays by cash, UPI or online. A plan with a payment due is marked as such, so someone knows to go back.",
             },
           ]}
         />
@@ -124,15 +124,15 @@ export default function ProductPage() {
             },
             {
               title: "Sales teams",
-              body: "The day’s route, the partner who made the introduction, and the retainer live in one app instead of three tools.",
+              body: "The day’s route, the partner who made the introduction, and the won deal live in one app instead of three tools.",
             },
             {
               title: "Fintech",
-              body: "Agents visit customers and partners. Each referral keeps who sent it, and instalments show their due dates, so agents know whom to visit.",
+              body: "Agents visit customers and partners. Each referral keeps who sent it, and every call and conversion stays on the record.",
             },
             {
               title: "Medtech",
-              body: "Hospital and clinic visits, the people who refer, and the contract that follows are in one app. Managers see the region, not a pile of chats.",
+              body: "Hospital and clinic visits and the people who refer are in one app. Managers see the region, not a pile of chats.",
             },
           ]}
         />
@@ -155,9 +155,9 @@ export default function ProductPage() {
         <Prose>
           <p>
             You do not need an implementation project. Add your regions and
-            your team inside the product, or upload them from an Excel
-            template. Field staff can start their first working day the same
-            day.
+            your team inside the product, or upload them from a spreadsheet
+            (CSV) template. Field staff can start their first working day the
+            same day.
           </p>
         </Prose>
         <div className="mt-8">
@@ -165,8 +165,8 @@ export default function ProductPage() {
             items={[
               "Create a workspace with your email and business name",
               "Add field staff and managers",
-              "Upload staff and areas from Excel if you have many",
-              "Get your referral page link from our team",
+              "Upload staff, areas and referrers from a spreadsheet if you have many",
+              "Give your referrers a login",
               "Connect WhatsApp and Razorpay with our team",
               "Set up membership plans when you are ready",
             ]}
@@ -178,11 +178,11 @@ export default function ProductPage() {
           items={[
             {
               q: "Do I need every part of the product?",
-              a: "No. Field visits and referrals are enough on Team. Membership plans, the referral page, referral payouts and deeper reports open on Growth.",
+              a: "No. Field visits and referrals are enough on Team. Membership plans, leads and conversions, and deeper reports open on Growth.",
             },
             {
               q: "How long does it take to go live?",
-              a: "A workspace takes minutes. Add your staff, or upload them from Excel, and they can start their first working day the same day.",
+              a: "A workspace takes minutes. Add your staff, or upload them from a spreadsheet, and they can start their first working day the same day.",
             },
             {
               q: "Is Syclops a CRM?",
@@ -190,7 +190,7 @@ export default function ProductPage() {
             },
             {
               q: "Will the app use my industry’s words?",
-              a: "Not yet. Syclops was built for hospitals, so some screens say doctors and patients where you might say partners and customers. The steps are the same.",
+              a: "Partly. The phone screens say referrers and referred users. Some forms and the admin dashboard still use hospital words, such as doctors and patients, because Syclops was built for hospitals first. The steps are the same.",
             },
             {
               q: "Is this GPS tracking software?",
@@ -202,7 +202,7 @@ export default function ProductPage() {
             },
             {
               q: "Can I start small and add subscriptions later?",
-              a: "Yes. Start on Team, and tell us when you want Growth for membership plans, the referral page and referral payouts. History stays.",
+              a: "Yes. Start on Team, and tell us when you want Growth for membership plans, leads and conversions. History stays.",
             },
             {
               q: "What do field staff install?",

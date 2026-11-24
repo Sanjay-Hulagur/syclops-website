@@ -76,7 +76,7 @@ const defaultRelated = [
   {
     href: "/referral-management-software",
     label: "Referral management software",
-    body: "Status from sent to converted.",
+    body: "Status from sent to arrived, or why it stopped.",
   },
   { href: "/faq", label: "FAQ", body: "Seats, GPS, CRM, hosting." },
 ];
@@ -86,8 +86,8 @@ const relatedBySlug: Record<
   { href: string; label: string; body: string }[]
 > = {
   "channel-partner-portal-not-crm-source-field": [
-    { href: "/compare/crm", label: "vs traditional CRM", body: "A referral page is not a source field." },
-    { href: "/industries/sales", label: "Sales & marketing", body: "Dealer visits, partner intros, retainers." },
+    { href: "/compare/crm", label: "vs traditional CRM", body: "A partner login is not a source field." },
+    { href: "/industries/sales", label: "Sales & marketing", body: "Dealer visits, partner intros, conversions." },
     { href: "/product/referrals", label: "Referral management", body: "Status the sender can see." },
   ],
   "clinic-referral-portal-vs-whatsapp": [
@@ -102,7 +102,7 @@ const relatedBySlug: Record<
   "counselor-beat-unpaid-fee-installment": [
     { href: "/industries/education", label: "Education", body: "Counselor visits and fee plans." },
     { href: "/product/field", label: "Field tracking", body: "Campus check-in and visit plans." },
-    { href: "/product/subscriptions", label: "Subscriptions", body: "Fee plans with every instalment due date." },
+    { href: "/product/subscriptions", label: "Subscriptions", body: "Fee plans and payments due." },
   ],
   "dpdp-employee-gps-retention": [
     { href: "/security", label: "Security", body: "Working-day GPS, roles, tenant isolation." },
@@ -111,11 +111,11 @@ const relatedBySlug: Record<
   ],
   "razorpay-memberships-field-dunning": [
     { href: "/product/subscriptions", label: "Subscriptions", body: "Payment Due, and who sold the plan." },
-    { href: "/integrations", label: "Integrations", body: "Razorpay, WhatsApp, and maps, connected with our team." },
-    { href: "/guides/plans-billing", label: "Plans and billing guide", body: "Plans, EMI, and payments." },
+    { href: "/integrations", label: "Integrations", body: "Razorpay, WhatsApp, and maps." },
+    { href: "/guides/plans-billing", label: "Plans and billing guide", body: "Plans and payments." },
   ],
   "kol-dsa-referral-loops": [
-    { href: "/industries/medtech", label: "Medtech", body: "KOL visits and device contracts." },
+    { href: "/industries/medtech", label: "Medtech", body: "KOL visits, referrals, and conversions." },
     { href: "/industries/fintech", label: "Fintech", body: "Agent visits and policy referrals." },
     { href: "/product/referrals", label: "Referral management", body: "Same steps, different nouns." },
   ],
@@ -135,13 +135,13 @@ const relatedBySlug: Record<
       label: "Referral management software",
       body: "What the category has to hold.",
     },
-    { href: "/product/referrals", label: "Referral product", body: "Referral page, status, payouts." },
+    { href: "/product/referrals", label: "Referral product", body: "Referrer logins, status, and the duplicate check." },
     { href: "/faq", label: "FAQ", body: "Seats, GPS, CRM, cancel." },
   ],
   "referral-leakage-is-a-systems-problem": [
     { href: "/product/referrals", label: "Referral management", body: "Status as a view, not a paste." },
     { href: "/compare/whatsapp-excel", label: "vs WhatsApp + Excel", body: "Where intros go to die." },
-    { href: "/guides/referral-payouts", label: "Referral payouts guide", body: "Approve before you pay." },
+    { href: "/guides/referral-portal", label: "Referrers guide", body: "Add referrers and give them a login." },
   ],
   "gps-is-not-a-growth-system": [
     { href: "/product/field", label: "Field tracking", body: "GPS as evidence, not the scoreboard." },
@@ -151,7 +151,7 @@ const relatedBySlug: Record<
   "subscriptions-need-a-field-team": [
     { href: "/product/subscriptions", label: "Subscriptions", body: "Payments due, with the person who sold the plan." },
     { href: "/product/field", label: "Field tracking", body: "Where the follow-up visit happens." },
-    { href: "/blog/razorpay-memberships-field-dunning", label: "Failed payments, then a visit", body: "Retries first." },
+    { href: "/blog/razorpay-memberships-field-dunning", label: "Failed payments, then a visit", body: "Try online first, then visit." },
   ],
 };
 

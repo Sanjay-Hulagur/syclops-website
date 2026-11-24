@@ -12,8 +12,8 @@ import {
 } from "@/components/medtech/client";
 import {
   AnalyticsSample,
-  ContractList,
-  ContractRecord,
+  ConversionList,
+  ConversionRecord,
   PortalPhone,
   ReferralDesk,
   VisitHistory,
@@ -35,15 +35,15 @@ const problems = [
   },
   {
     title: "Hospital introductions",
-    body: "A department head refers another site on a call or in email. The introduction is often gone by the time an evaluation starts.",
+    body: "A KOL introduces a colleague at another hospital on a call or in email. The introduction is often gone by the time an evaluation starts.",
   },
   {
     title: "Evaluations",
-    body: "The eval lives in a thread. The team cannot see a single status between the visit and a signed contract.",
+    body: "The eval lives in a thread. The team cannot see a single status between the first visit and the sale.",
   },
   {
-    title: "Service windows",
-    body: "A service plan can lapse in the ERP while the rep who owns that hospital still has last quarter’s notes.",
+    title: "Follow-up calls",
+    body: "Calls after a demo are made from personal phones, and nobody can see who agreed to a visit and who said no.",
   },
 ];
 
@@ -53,24 +53,24 @@ const journey = [
     body: "A rep checks in at the department. The visit has an owner, notes, and a date.",
   },
   {
-    title: "Department introduction",
-    body: "The hospital or department that made the introduction stays on the record.",
+    title: "Introduction",
+    body: "The KOL sends the introduction from their own login, and stays on the record as the referrer.",
   },
   {
     title: "Evaluation",
-    body: "Before a contract exists, the referral stays open. Conversion is not a meeting that felt promising.",
+    body: "Log the demo or evaluation as a visit with notes. The referral stays pending meanwhile.",
   },
   {
-    title: "Contract",
-    body: "Converted means the contract is signed. The device and service plan is recorded as a plan in Syclops.",
+    title: "Follow-up call",
+    body: "Each call is logged with its outcome, such as agreed to visit or not interested.",
   },
   {
-    title: "Service window",
-    body: "The plan shows the amount, the end date, and whether it is paid or has a payment due.",
+    title: "Conversion",
+    body: "When the sale closes, record it as converted with the quoted and the final amount.",
   },
   {
-    title: "Follow-up",
-    body: "A payment due shows on the plan, so the rep who sold it knows to go back.",
+    title: "Analytics",
+    body: "See visits, referrals, and conversions by rep, referrer, and region.",
   },
 ];
 
@@ -78,37 +78,37 @@ const audiences = [
   {
     title: "Device companies",
     problem:
-      "A KOL visit and a department introduction disappear once the contract is raised somewhere else.",
+      "A KOL visit and the introduction it led to disappear once the order is raised in another system.",
     items: [
       "KOL visits",
-      "Department referrals",
+      "Referrals from KOLs",
       "Evaluation notes",
-      "Device contracts",
-      "Service follow-ups",
+      "Follow-up calls",
+      "Conversions with final amounts",
     ],
   },
   {
     title: "Diagnostics",
     problem:
-      "Analyzer placements and the departments that asked for them are tracked apart from the service window.",
+      "Analyzer placements and the lab heads who asked for them are tracked in different places.",
     items: [
       "Hospital and lab visit plans",
-      "Referring departments",
+      "Referring lab heads and KOLs",
       "Evaluation to placement",
-      "Analyzer service plans",
-      "Follow-ups on payments due",
+      "Call outcomes",
+      "Visits by region",
     ],
   },
   {
     title: "Multi-hospital teams",
     problem:
-      "Coverage across cities is a list, and a service plan with a payment due has no named owner.",
+      "Coverage across cities is a spreadsheet, and nobody can see which hospitals have gone unvisited.",
     items: [
       "Territory coverage",
-      "Hospital accounts",
+      "Planned and completed visits",
       "Cross-site referrals",
       "A region for each city",
-      "Service plan end dates",
+      "A lead for each region",
     ],
   },
 ];
@@ -116,18 +116,18 @@ const audiences = [
 const coreItems = [
   "Hospital information system",
   "Device master and inventory",
+  "Device contracts and service plans",
   "Invoicing of record",
   "Regulatory files",
-  "Existing commercial workflows",
 ];
 
 const syclopsItems = [
   "KOL and department visits",
   "Hospital coverage",
-  "Department referrals",
+  "Referrals from KOLs",
   "Evaluation notes",
-  "Field follow-ups",
-  "Service plans with payment status",
+  "Follow-up calls and outcomes",
+  "Conversions with quoted and final amounts",
 ];
 
 const proofs = [
@@ -138,23 +138,23 @@ const proofs = [
   },
   {
     title: "Check in from the rep’s phone",
-    body: "GPS, notes, and photos stay on the visit.",
+    body: "GPS, notes, and a photo stamped with the place and time stay on the visit.",
     frame: <VisitRecord />,
   },
   {
-    title: "Let a department refer without an app",
-    body: "Your referral page opens in the browser. The sender sees status. They are not a field seat.",
+    title: "Give each KOL their own login",
+    body: "KOLs log in from any browser and see the people they introduced. They are not a field seat.",
     frame: <PortalPhone />,
   },
   {
-    title: "Know which department opened each account",
-    body: "Each referral keeps the department that sent it, and shows whether it converted.",
+    title: "Know who made each introduction",
+    body: "Each referral keeps the referrer who sent it, and shows whether it converted.",
     frame: <ReferralDesk />,
   },
   {
-    title: "Show a payment due to the field team",
-    body: "Paid and due payments stay on the service plan, with their dates.",
-    frame: <ContractList />,
+    title: "Record what each conversion was worth",
+    body: "A conversion is planned, converted, or cancelled, with the quoted and the final amount.",
+    frame: <ConversionList />,
   },
   {
     title: "Read the loop, not a vanity chart",
@@ -168,35 +168,35 @@ function medtechFaqs(trialDays: number) {
   return [
     {
       q: "Does Syclops replace our ERP or the hospital HIS?",
-      a: "No. Clinical records stay in the hospital system. Device inventory, invoicing of record, and regulatory files stay in your ERP. Syclops is the field layer: KOL visits, department referrals, and whether the service plan has been paid.",
+      a: "No. Clinical records stay in the hospital system. Device inventory, contracts, service plans, invoicing of record, and regulatory files stay in your ERP. Syclops is the field layer: KOL visits, the introductions they lead to, follow-up calls, and conversions.",
     },
     {
       q: "Can we track KOL and department visits?",
-      a: "Yes. Reps check in at the hospital with GPS and photos. Location is recorded only during the working day, and notes stay on the visit.",
+      a: "Yes. Reps check in at the hospital with GPS and a photo stamped with the place and time. Location is recorded only during the working day, and notes stay on the visit.",
     },
     {
-      q: "Can we manage multiple cities or countries?",
-      a: "Set up each city as a region in one workspace. Each country can run as its own workspace.",
+      q: "Can we manage multiple cities?",
+      a: "Yes. Set up each city as a region in one workspace, and analytics can be filtered by region.",
     },
     {
-      q: "Can department heads refer without installing an app?",
-      a: "Yes. They open your referral page in the browser and sign in with a one-time code sent to their email. They do not install the field app, and referrer logins are not billed as field seats. The referral page is included on Growth and Scale.",
+      q: "Can KOLs refer without installing an app?",
+      a: "Yes. They log in at app.syclops.in in any phone browser with a one-time code, and see only the people they introduced. Referrer logins are not billed as field seats.",
     },
     {
-      q: "Can we import existing hospital accounts?",
-      a: "Reps and areas upload from an Excel template. Hospital accounts are added from the phone or in the admin console. Talk to us about bringing older lists across.",
+      q: "Can we import the doctors and KOLs we already visit?",
+      a: "Yes. Reps, areas, and referrers such as doctors and KOLs upload from spreadsheet (CSV) templates, or can be added one by one.",
     },
     {
-      q: "Can we track evaluations before a contract?",
-      a: "Yes. Log each evaluation as a visit with notes. The referral stays open until the contract is signed or the deal is lost.",
+      q: "Can we track evaluations before a sale?",
+      a: "Yes. Log each evaluation as a visit with notes. The referral stays pending through the evaluation. When the sale closes, record it as a conversion, or note why the referral stopped.",
     },
     {
-      q: "Can we track service plans and payments due?",
-      a: "On Growth, a service plan shows the amount, the end date, and whether it is paid or has a payment due. Payments can be recorded as cash, UPI, or EMI, or paid online through Razorpay, which our team connects with you. Syclops does not replace your ERP invoices.",
+      q: "Can we track service contracts and renewals?",
+      a: "No. Device contracts, service plans, and renewals stay in your ERP. Syclops records the visit, the introduction, the calls, and the conversion with its final amount.",
     },
     {
       q: "Does the app use medtech words?",
-      a: "Partly. Syclops was built for hospitals, so referrers show as doctors, which fits KOLs, and some screens say patients where you would say sites or accounts. The steps are the same.",
+      a: "Partly. The phone screens say referrers and referred users. Some forms and the admin dashboard still use hospital words, such as doctors and patients, because Syclops was built for hospitals first. For KOLs, doctor is often the right word anyway.",
     },
     {
       q: "Are KOL and department logins billed?",
@@ -252,12 +252,12 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
             For devices · diagnostics · hospital teams
           </p>
           <h1 className="display mt-4 max-w-xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">
-            Turn KOL visits into device contracts that stay in service.
+            See which KOL visits turn into referrals and sales.
           </h1>
           <p className="mt-5 max-w-md text-base leading-7 text-muted">
-            Track department visits, hospital referrals, evaluations, and
-            service-plan follow-ups in one place. Keep your ERP and the hospital
-            HIS.
+            Track department visits, the introductions KOLs make, every
+            follow-up call, and each conversion in one place. Your ERP stays as
+            it is.
           </p>
           <div id="medtech-hero-cta" className="mt-8 flex flex-wrap gap-3">
             <MedtechLink
@@ -281,12 +281,12 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
             <li>{trialDays} days free</li>
             <li>No credit card required</li>
             <li>No sales call</li>
-            <li>ERP and HIS stay</li>
+            <li>Your ERP stays</li>
           </ul>
         </div>
         <Image
           src={heroArt}
-          alt="Hospital meeting with field visits, hospital accounts and leads, orders and pipeline, and a phone check-in for today's device visits."
+          alt="Hospital meeting with field visits, hospital accounts and leads, and a phone check-in for today's device visits."
           priority
           sizes="(min-width: 1024px) 55vw, 100vw"
           className="h-auto w-full"
@@ -295,7 +295,7 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
 
       <section className="mx-auto max-w-6xl px-5 py-16" aria-labelledby="medtech-problem">
         <h2 id="medtech-problem" className="display max-w-3xl text-3xl font-semibold tracking-tight">
-          Contracts get lost between the KOL visit, the evaluation, and the ERP.
+          Sales get lost between the KOL visit, the evaluation, and the ERP.
         </h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {problems.map((problem) => (
@@ -306,8 +306,8 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
           ))}
         </div>
         <p className="mt-8 max-w-3xl text-base leading-7">
-          Syclops connects these activities so every visit, referral, contract, and
-          follow-up has a clear status and owner.
+          Syclops connects these activities so every visit, referral, call, and
+          conversion has a clear status and owner.
         </p>
       </section>
 
@@ -340,7 +340,7 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Visit history",
-                  body: "Notes and photos stay on the hospital account.",
+                  body: "Each visit keeps its notes and photo, so the next rep sees what happened.",
                 },
                 {
                   title: "Notes and follow-ups",
@@ -348,7 +348,7 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
                 },
                 {
                   title: "Territory coverage",
-                  body: "Hospitals are accounts in regions. Reps check in at the department they are covering.",
+                  body: "Regions group the areas each rep covers, and managers see visits by region.",
                 },
                 {
                   title: "TADA where reps travel",
@@ -378,36 +378,36 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2">
           <div className="order-1 md:order-2">
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
-              Hospital referrals
+              KOL referrals
             </p>
             <h2 id="medtech-referrals" className="display mt-3 text-3xl font-semibold tracking-tight">
-              Know which department opened every account.
+              Know which KOL made every introduction.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              Track department introductions, evaluations, contracts, and service
-              plans in one place.
+              Track introductions, evaluations, follow-up calls, and conversions in
+              one place.
             </p>
             <FeatureList
               items={[
                 {
-                  title: "Department referrer",
-                  body: "The sender is a named referrer, not an email thread that ends when the contract is raised.",
+                  title: "Named referrer",
+                  body: "The KOL is a named referrer, not an email thread that ends when the order is raised.",
                 },
                 {
-                  title: "Hospital account",
-                  body: "The referred site stays on the referral. The referral page blocks a second open referral for the same mobile number.",
+                  title: "KOL login",
+                  body: "KOLs log in with a one-time code and see the people they introduced and their status.",
+                },
+                {
+                  title: "Duplicate check",
+                  body: "The person introduced stays on the referral, and the same mobile number cannot be referred twice.",
                 },
                 {
                   title: "Evaluation before conversion",
-                  body: "The referral stays open through the evaluation. Converted means the contract is signed.",
+                  body: "The referral stays pending through the evaluation, and the sale is recorded as a conversion when it closes.",
                 },
                 {
-                  title: "Referral source",
-                  body: "Team includes the referral workspace. The referral page for department heads is on Growth.",
-                },
-                {
-                  title: "Referrals and contracts together",
-                  body: "Referrals and service plans sit in the same workspace, so the rep sees both.",
+                  title: "Visits and referrals together",
+                  body: "Visits and referrals sit in the same workspace, so the rep sees both.",
                 },
               ]}
             />
@@ -416,8 +416,8 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
                 Referral management
               </Link>
               {" · "}
-              <Link href="/guides/referral-payouts" className={textLink}>
-                Referral payouts
+              <Link href="/guides/referral-portal" className={textLink}>
+                Referrers guide
               </Link>
             </p>
           </div>
@@ -428,53 +428,53 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
         </div>
       </section>
 
-      <section className="border-t border-line" aria-labelledby="medtech-contracts">
+      <section className="border-t border-line" aria-labelledby="medtech-conversions">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-iris">
-              Service-plan follow-ups
+              Follow-up calls and conversions
             </p>
-            <h2 id="medtech-contracts" className="display mt-3 text-3xl font-semibold tracking-tight">
-              Make a payment due visible to the rep.
+            <h2 id="medtech-conversions" className="display mt-3 text-3xl font-semibold tracking-tight">
+              Know what happened after the demo.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              Every service plan shows which payments are made and which are due, so
-              the right person knows which hospital needs a visit.
+              Each follow-up call keeps its outcome, and a closed sale is recorded
+              with its final amount.
             </p>
             <FeatureList
               items={[
                 {
-                  title: "Hospital and device",
-                  body: "The plan is the device plus service, with the rep who sold it.",
+                  title: "Call outcomes",
+                  body: "Spoke, agreed to visit, not interested, or wrong number. The outcome stays on the lead.",
                 },
                 {
-                  title: "Plan dates",
-                  body: "Each plan has a start and end date, and EMI plans list every instalment.",
+                  title: "Hot leads",
+                  body: "Leads that need a follow-up sit on one list, filtered by source and call outcome.",
                 },
                 {
-                  title: "Payment status",
-                  body: "Paid or Payment Due stays on the record, whether the payment came in online through Razorpay or staff recorded it.",
+                  title: "Conversion",
+                  body: "Record each sale as planned, converted, or cancelled, with the quoted and the final amount.",
                 },
                 {
-                  title: "Pending amount",
-                  body: "The plan amount is what the follow-up is about. This is not a replacement ERP invoice.",
+                  title: "Notes on every step",
+                  body: "Visits, calls, and conversions each keep their own notes.",
                 },
                 {
-                  title: "Who sold the plan",
-                  body: "Each plan keeps the rep who enrolled the hospital, so follow-ups have an owner.",
+                  title: "What stays in your ERP",
+                  body: "Syclops does not manage device contracts, service plans, or renewals.",
                 },
               ]}
             />
             <p className="mt-6 text-sm leading-6 text-muted">
-              Service plans are on Growth. Syclops does not replace your ERP.{" "}
-              <Link href="/product/subscriptions" className={textLink}>
-                Subscriptions
+              Leads, call outcomes, and conversions are on Growth.{" "}
+              <Link href="/product/analytics" className={textLink}>
+                Analytics
               </Link>
             </p>
           </div>
           <div className="grid gap-3">
-            <ContractRecord />
-            <ContractList />
+            <ConversionRecord />
+            <ConversionList />
           </div>
         </div>
       </section>
@@ -503,7 +503,7 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
       <section className="border-t border-line" aria-labelledby="medtech-journey">
         <div className="mx-auto max-w-6xl px-5 py-16">
           <h2 id="medtech-journey" className="display max-w-2xl text-3xl font-semibold tracking-tight">
-            From the first department visit to the next service window.
+            From the first department visit to the sale.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             These steps happen in one app, so nobody retypes the same hospital in
@@ -534,7 +534,7 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
       <section className="border-t border-line" aria-labelledby="medtech-core">
         <div className="mx-auto max-w-6xl px-5 py-16">
           <h2 id="medtech-core" className="display max-w-2xl text-3xl font-semibold tracking-tight">
-            Keep your ERP and the hospital HIS. Add the missing field layer.
+            Keep your ERP. Add the missing field layer.
           </h2>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <article className="rounded-3xl border border-line bg-quiet p-6">
@@ -571,8 +571,8 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
             These layouts use sample medtech data so you can see a visit, a referral,
-            a service plan, and visits turning into contracts. They are not a
-            customer result.
+            a conversion, and visits turning into sales. They are not a customer
+            result.
           </p>
           <div className="mt-8 grid gap-8 md:grid-cols-2">
             {proofs.map((proof) => (
@@ -595,13 +595,13 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
       >
         <div className="mx-auto max-w-6xl px-5 py-16">
           <h2 id="medtech-pricing-title" className="display max-w-2xl text-3xl font-semibold tracking-tight">
-            Start with KOL visits. Add referrals and service plans as you grow.
+            Start with KOL visits. Add leads and conversions as you grow.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-            Prices match the pricing page and are per field seat per month. Department
-            and KOL logins are not billed as field seats. The referral page and
-            service plans are on Growth. {trialDays} days free · No credit
-            card required.
+            Prices match the pricing page and are per field seat per month. KOL
+            logins are not billed as field seats. Visits and referrals are on Team,
+            and leads, call outcomes, and conversions are on Growth. {trialDays}{" "}
+            days free · No credit card required.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {publicPlans.map((plan) => (
@@ -686,9 +686,9 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
                   body: "One way of working for medical reps and agents.",
                 },
                 {
-                  href: "/product/subscriptions",
-                  label: "Subscriptions",
-                  body: "Service plans, EMI, and payment status.",
+                  href: "/product/referrals",
+                  label: "Referral management",
+                  body: "Referrer logins, status, and the duplicate check.",
                 },
               ]}
             />
@@ -698,8 +698,8 @@ export function MedtechLanding({ trialDays }: { trialDays: number }) {
 
       <CtaBand
         id="medtech-final"
-        title="Bring your hospital visits, referrals, and service plans into one system."
-        body="Create your workspace, invite your reps, and start tracking the account from the department visit to the next service window."
+        title="Bring your hospital visits, referrals, and conversions into one system."
+        body="Create your workspace, invite your reps, and start tracking each introduction from the department visit to the sale."
         actions={
           <div className="flex flex-col items-start gap-3">
             <MedtechLink

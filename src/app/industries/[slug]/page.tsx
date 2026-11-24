@@ -17,7 +17,7 @@ const industryMeta: Record<
   { title: string; keywords: string[] }
 > = {
   gyms: {
-    title: "Gym referral software for referrals, trainer visits, and renewals",
+    title: "Gym referral software for referrals, trainer visits, and memberships",
     keywords: [
       "gym referral software",
       "gym membership referral",
@@ -55,26 +55,26 @@ const industryMeta: Record<
       "beat visit software",
       "partner referral software",
       "field visit tracking",
-      "recurring contract follow-up",
+      "lead call tracking",
     ],
   },
   fintech: {
-    title: "Turn agent visits into policies that get paid",
+    title: "Turn agent visits into referrals you can trace",
     keywords: [
       "insurance field tracking",
       "NBFC agent visits",
       "DSA referral software",
       "policy referral software",
-      "premium lapse follow-up",
+      "agent visit tracking",
     ],
   },
   medtech: {
-    title: "Turn KOL visits into device contracts that stay in service",
+    title: "See which KOL visits turn into referrals and sales",
     keywords: [
       "medtech field tracking",
       "KOL visit software",
-      "device contract follow-up",
-      "hospital referral portal",
+      "KOL referral tracking",
+      "medical device sales tracking",
       "diagnostics field tracking",
     ],
   },
@@ -93,7 +93,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const billing = await getBillingConfig();
     return pageSeo({
       title: meta.title,
-      description: `Gym referral software for Indian gyms and studio chains. Track member referrals, trainer visits, and membership renewals without replacing your gym management software. ${billing.trial.days}-day free trial, no credit card.`,
+      description: `Gym referral software for Indian gyms and studio chains. Track member referrals, trainer visits, and membership payments without replacing your gym management software. ${billing.trial.days}-day free trial, no credit card.`,
       path: "/industries/gyms",
       keywords: meta.keywords,
     });
@@ -102,7 +102,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const billing = await getBillingConfig();
     return pageSeo({
       title: meta.title,
-      description: `Syclops for schools, colleges, and coaching institutes. Track counselor visits, parent and alumni referrals, admissions, and pending fee installments without replacing your academic ERP. ${billing.trial.days}-day free trial, no credit card.`,
+      description: `Syclops for schools, colleges, and coaching institutes. Track counselor visits, parent and alumni referrals, admissions, and fee payments that are due without replacing your academic ERP. ${billing.trial.days}-day free trial, no credit card.`,
       path: "/industries/education",
       keywords: meta.keywords,
     });
@@ -120,7 +120,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const billing = await getBillingConfig();
     return pageSeo({
       title: meta.title,
-      description: `Plan sales visits, manage channel partners, track referred leads, and follow opportunities through conversion and renewal. Syclops complements your CRM. ${billing.trial.days}-day free trial, no credit card.`,
+      description: `Plan sales visits, manage channel partners, track referred leads, and record each conversion. Syclops complements your CRM. ${billing.trial.days}-day free trial, no credit card.`,
       path: "/industries/sales",
       keywords: meta.keywords,
     });
@@ -129,7 +129,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const billing = await getBillingConfig();
     return pageSeo({
       title: meta.title,
-      description: `Syclops for insurance, NBFC, and wealth teams. Track agent visits, customer and DSA referrals, and lapsed premiums without replacing your core policy or loan system. ${billing.trial.days}-day free trial, no credit card.`,
+      description: `Syclops for insurance, NBFC, and wealth teams. Track agent visits, customer and DSA referrals, follow-up calls, and each policy or loan you close, without replacing your core policy or loan system. ${billing.trial.days}-day free trial, no credit card.`,
       path: "/industries/fintech",
       keywords: meta.keywords,
     });
@@ -138,7 +138,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const billing = await getBillingConfig();
     return pageSeo({
       title: meta.title,
-      description: `Syclops for device and diagnostics teams. Track KOL visits, hospital referrals, evaluations, and service-plan follow-ups without replacing your ERP or the hospital HIS. ${billing.trial.days}-day free trial, no credit card.`,
+      description: `Syclops for device and diagnostics teams. Track KOL visits, the introductions they lead to, follow-up calls, and each sale, without replacing your ERP. ${billing.trial.days}-day free trial, no credit card.`,
       path: "/industries/medtech",
       keywords: meta.keywords,
     });

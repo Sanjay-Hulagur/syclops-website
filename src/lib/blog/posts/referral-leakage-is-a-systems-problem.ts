@@ -44,15 +44,15 @@ export const post: Post = {
       type: "ul",
       items: [
         "The visit is in a GPS app or a personal note. It never becomes a named referral.",
-        "The intro is in a chat. The sender cannot see whether the person arrived or converted.",
+        "The intro is in a chat. The sender cannot see whether the person ever arrived.",
         "The plan is in billing, with nobody named as the person who sold it.",
-        "The reward pays on a rumour, before anyone has approved it.",
+        "Nobody notices when the same person is sent twice, by two different referrers.",
         "Payments due arrive as a list, not as a follow-up for the person who owns the account.",
       ],
     },
     {
       type: "p",
-      text: "Blaming the front desk, the counselor, or the rep trains people to type harder into the same three tools. The next hire inherits the leak on day one. If you want a worked example in one industry, [a gym referral programme beside the ERP](/blog/gym-referral-programme-without-replacing-erp) is the same failure with a referral page and a membership. The structure does not change when the logo on the door does.",
+      text: "Blaming the front desk, the counselor, or the rep trains people to type harder into the same three tools. The next hire inherits the leak on day one. If you want a worked example in one industry, [a gym referral programme beside the ERP](/blog/gym-referral-programme-without-replacing-erp) is the same failure with a member’s login and a membership. The structure does not change when the logo on the door does.",
     },
     {
       type: "h2",
@@ -60,11 +60,11 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "[Referral management](/product/referrals) is those joins: who sent each person, what happened next, and what the sender is owed. Member referrals and B2B partners follow the same steps. A second open referral for the same mobile number is blocked. The sender sees status without a paid seat. Plans sit in the same app, so you see who paid without a month-end paste.",
+      text: "[Referral management](/product/referrals) is those joins: who sent each person and what happened next. Member referrals and B2B partners follow the same steps. The same mobile number cannot be referred twice. The sender logs in to see status without a paid seat. Plans sit in the same app, so you see who paid without a month-end paste.",
     },
     {
       type: "p",
-      text: "Rewards should not pay on a rumour. Record the reward on the referral, or work out payouts from the bills, and approve each one before it is paid — the [referral payouts guide](/guides/referral-payouts) walks through it. Different spellings of a referrer’s name can be linked to one person, instead of a phone call to the sender asking them to repeat a spelling you already lost. Approval is not bureaucracy. It is the difference between a programme and a discount you cannot audit.",
+      text: "A referral should not count on a rumour. Update its status when the person actually comes in, record the sale as a conversion, or record why it stopped, such as not able to contact or did not visit. Different spellings of a referrer’s name can be merged into one person, instead of a phone call to the sender asking them to repeat a spelling you already lost. If you reward referrers, that record tells you who earned it. Paying the reward happens outside Syclops today.",
     },
     {
       type: "h2",
@@ -84,7 +84,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "The loop has to live in one system before it can be a dashboard. Set up your referral page with our team, share the link, and watch referrals move from sent to converted, or lost with a reason, instead of a month-end paste. The view is not the fix. It is what you can see after the fix. If the underlying records still live apart, the chart will be a picture of the paste.",
+      text: "The loop has to live in one system before it can be a dashboard. Add your referrers, give them a login, and watch referrals move from pending to arrived, or stop with a reason, instead of a month-end paste. The view is not the fix. It is what you can see after the fix. If the underlying records still live apart, the chart will be a picture of the paste.",
     },
     {
       type: "p",
@@ -97,8 +97,8 @@ export const post: Post = {
       a: "Training helps people use a system. It does not create one. If the visit, the introduction, and the plan are in three tools, a careful team still loses the joins.",
     },
     {
-      q: "When should a reward be paid?",
-      a: "After someone has checked that the referral converted and approved the payout. A forwarded name is not proof the customer joined or paid.",
+      q: "When should a referral count?",
+      a: "When the person has actually joined and the sale is recorded as a conversion. A forwarded name is not proof the customer joined or paid. If you reward referrers, pay from that record. The payment itself happens outside Syclops.",
     },
   ],
 };

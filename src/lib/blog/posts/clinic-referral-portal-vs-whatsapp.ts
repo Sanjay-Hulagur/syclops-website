@@ -38,21 +38,21 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "Clinic referral software has to be a page the sender can open. The states they actually ask about are simple: sent, awaiting arrival, arrived, converted, or lost with a reason. They do not need your field map. They need to know whether the patient they trusted you with reached you. [Referral management software](/referral-management-software) is that record, shared with the sender, without giving them a paid seat.",
+      text: "Clinic referral software has to be a page the sender can open. The states they actually ask about are simple: pending, arrived, admitted, or stopped with a reason, such as did not visit or went to another hospital. They do not need your field map. They need to know whether the patient they trusted you with reached you. [Referral management software](/referral-management-software) is that record, shared with the sender, without giving them a paid seat.",
     },
     {
       type: "ul",
       items: [
         "One link for the referring clinic, set up with our team. They sign in with a one-time code and see their own patients and no one else’s.",
         "Arrived versus lost as a status, not as a sentence someone types in a group.",
-        "Payouts, if you use them, worked out from the bills and approved before they are paid.",
-        "A second open referral for the same mobile number is blocked.",
-        "Different spellings of a doctor’s name can be linked to one person, so their referrals and payouts stay together.",
+        "A referral fee, if you pay one, recorded on the referral by your team. Paying it happens outside Syclops.",
+        "The same mobile number cannot be referred twice.",
+        "Different spellings of a doctor’s name can be merged into one person, so their referrals stay together.",
       ],
     },
     {
       type: "p",
-      text: "Name matching is the quiet control. Bills spell the same doctor three ways. Link the spellings once, and that doctor’s referrals and payouts stop splitting into three people. You stop underpaying a doctor you cannot find, and you stop telling the clinic you never got the patient when you did.",
+      text: "Name matching is the quiet control. Records spell the same doctor three ways. Merge the spellings once, and that doctor’s referrals stop splitting into three people. You stop losing track of a doctor you cannot find, and you stop telling the clinic you never got the patient when you did.",
     },
     {
       type: "h2",
@@ -84,7 +84,7 @@ export const post: Post = {
     },
     {
       type: "p",
-      text: "The practical change is the phone call you no longer take. A referring centre that can see sent, arrived, or converted does not need a clerk to read a file aloud. The clerk’s remaining job is the name that does not match and the payout that needs approval, not a status recital. That is a smaller afternoon, and it is the one worth staffing. The clinic stops calling because the status is already on their screen.",
+      text: "The practical change is the phone call you no longer take. A referring centre that can see pending, arrived, or admitted does not need a clerk to read a file aloud. The clerk’s remaining job is the name that does not match and the admission that has no referral, not a status recital. That is a smaller afternoon, and it is the one worth staffing. The clinic stops calling because the status is already on their screen.",
     },
   ],
   faqs: [
@@ -94,7 +94,7 @@ export const post: Post = {
     },
     {
       q: "Does this replace our HIS or billing software?",
-      a: "No. Charts, outpatient billing, and pharmacy stay in those systems. Syclops holds who referred the patient, the referral’s status, and what the referrer is owed.",
+      a: "No. Charts, outpatient billing, and pharmacy stay in those systems. Syclops holds who referred the patient, the referral’s status, and the field visits around it.",
     },
   ],
 };

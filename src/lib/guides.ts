@@ -31,9 +31,9 @@ export const guides = [
     ],
     steps: [
       { title: "Add your managers", body: "Add each manager with their email in the admin console." },
-      { title: "Add field staff", body: "One by one, or upload a list from the Excel template." },
+      { title: "Add field staff", body: "One by one, or upload a list from the spreadsheet (CSV) template." },
       { title: "Staff install the app", body: "They download the Android APK from this site and sign in with their email." },
-      { title: "Bring in referrers", body: "Add them in the admin console, or share your referral page. They never use a seat." },
+      { title: "Bring in referrers", body: "Add them in the admin console, one by one or from a spreadsheet. They never use a seat." },
     ],
     faqs: [
       { q: "What is a field seat?", a: "A paid user who works in the field: checks in at visits and gets TA/DA. Managers can be seats. Referrers are not." },
@@ -46,13 +46,13 @@ export const guides = [
     scene: "field" as const,
     summary: "Start the day in the app. Check in at each visit. TA/DA adds itself up.",
     intro: [
-      "A field day in Syclops is not a live CCTV map. Staff start their working day in the app, and location is recorded only during the working day. Each visit is checked in with GPS and photos, and stays tied to the partner.",
+      "A field day in Syclops is not a live CCTV map. Staff start their working day in the app, and location is recorded only during the working day. Each visit is checked in with GPS and a photo stamped with the place and time, and stays tied to the partner.",
       "The day’s distance becomes TA/DA, using the allowance you set for each distance range. Managers see each person’s visits and route on the web.",
     ],
     steps: [
       { title: "Start the day", body: "One tap in the app. The working day begins." },
       { title: "Follow the plan", body: "The week’s visit plan and the day’s route are on the phone." },
-      { title: "Check in at each visit", body: "GPS and photos, a visit reason, and notes. A new partner can be added on the spot." },
+      { title: "Check in at each visit", body: "GPS and a photo, a visit reason, and notes. A new partner can be added on the spot." },
       { title: "See TA/DA add up", body: "The day’s distance becomes TA/DA, with daily and monthly totals in the app." },
     ],
     faqs: [
@@ -62,42 +62,43 @@ export const guides = [
   },
   {
     slug: "referral-portal",
-    title: "Set up your referral page",
+    title: "Set up your referrers and their logins",
     scene: "referral" as const,
-    summary: "One link for everyone who refers to you. They sign in, send people, and see what happened next.",
+    summary: "Every referrer gets a login. They send people and see what happened next.",
     intro: [
-      "Doctors, members, alumni, and channel partners all refer the same way. Each gets their own login on your referral page and sees what happened to the people they sent, without calling your desk.",
-      "The referral page blocks a second open referral for the same mobile number. When a referral is lost, your team records why: the person did not visit, could not be reached, or went somewhere else.",
+      "Partners, members, alumni, and doctors all refer the same way. Each gets their own login and sees what happened to the people they sent, without calling your desk.",
+      "A mobile number that is already on a referral cannot be sent again. When a referral is lost, your team records why: the person did not visit, could not be reached, or went somewhere else.",
     ],
     steps: [
-      { title: "Get your referral page", body: "We set it up with your business name and send you the link." },
-      { title: "Share the link", body: "On WhatsApp, by email, or in print. Referrers sign in with a one-time code sent to their email." },
-      { title: "Follow each referral", body: "Your team moves it from awaiting arrival to converted, or records why not." },
-      { title: "Reward referrers", body: "Record a reward for a referral, or work out payouts from bills. Approve them before they are paid." },
+      { title: "Add your referrers", body: "In the admin console, one by one or from a spreadsheet." },
+      { title: "Referrers log in", body: "At app.syclops.in or in the Android app, with a one-time code. They see only the people they sent." },
+      { title: "Follow each referral", body: "Your team moves it from pending to arrived, or records why it stopped. A sale is recorded as a conversion." },
+      { title: "Hospitals: add a referral page", body: "We set up a referral page with your hospital’s name. Clinics sign in with a one-time code sent to their email." },
     ],
     faqs: [
       { q: "Do referrers need a paid seat?", a: "No. People who only send referrals are never billed." },
-      { q: "Can the same person be referred twice?", a: "Not while a referral for that mobile number is still open on your referral page." },
+      { q: "Can the same person be referred twice?", a: "No. A mobile number that is already on a referral cannot be sent again." },
     ],
   },
   {
     slug: "plans-billing",
     title: "Set up membership plans and payments",
     scene: "subscription" as const,
-    summary: "Create plans, enroll customers on the phone, and record cash, UPI, EMI, or Razorpay payments.",
+    summary: "Set up your plans with our team, enroll customers on the phone, and record cash, UPI, or Razorpay payments.",
     intro: [
       "Membership plans are often sold where the customer is: at a camp, at the front desk, or at their door. Staff enroll the customer on the phone, and the plan keeps the name of whoever sold it.",
-      "Payments can be cash, UPI, EMI, or online through Razorpay, which our team connects with you. Every plan shows its status, so anyone with a payment due is easy to find.",
+      "Payments can be cash, UPI, or online through Razorpay, which our team connects with you. Every plan has a status, such as Active or Payment Due, so anyone with a payment due is easy to find.",
     ],
     steps: [
-      { title: "Create your plans", body: "Name, price, duration and tier, how many members are covered, and the price for each extra member." },
+      { title: "Send us your plans", body: "Name, price, duration and tier, how many members are covered, and the price for each extra member. Our team adds them to your workspace." },
       { title: "Enroll on the phone", body: "Verify the customer’s mobile with a one-time code, add family members and ID proof, and take the payment." },
-      { title: "Record the payment", body: "Cash, UPI, or online. For EMI, Syclops builds the instalment schedule with due dates." },
-      { title: "Keep track", body: "Each plan shows Active, Payment Due, Inactive, or Banned, and who enrolled it." },
+      { title: "Record the payment", body: "Cash, including a part payment, UPI with a reference and a proof photo, or online through Razorpay." },
+      { title: "Keep track", body: "Your team sets each plan to Active, Payment Due, Inactive, or Banned, and the plan keeps who enrolled it." },
     ],
     faqs: [
-      { q: "Can we collect cash at the desk?", a: "Yes. Staff record the cash payment and can upload proof of payment." },
-      { q: "Does Syclops retry failed payments?", a: "No. The plan shows the payment as due, so your team knows whom to call or visit." },
+      { q: "Can we collect cash at the desk?", a: "Yes. Staff record the cash amount collected, even when it is only part of the plan price." },
+      { q: "Can customers pay in instalments?", a: "Not today. EMI is only for your own staff: an enrollment marked as staff can be given a discount and split into 12 monthly EMIs in the admin dashboard." },
+      { q: "Does Syclops retry failed payments?", a: "No. A failed online payment shows as failed. Your team can mark the plan as Payment Due and follow up by call or visit." },
     ],
   },
   {
@@ -122,16 +123,16 @@ export const guides = [
   },
   {
     slug: "import-from-excel",
-    title: "Upload your team and areas from Excel",
+    title: "Upload your team, areas and referrers from a spreadsheet",
     scene: "field" as const,
     summary:
-      "Download the template, fill it in, and upload it. Staff, areas, and visit reasons go in at once.",
+      "Download the template, fill it in, and upload it. Staff, areas, referrers, and visit reasons go in at once.",
     intro: [
-      "Most teams already keep their staff list and areas in Excel. Syclops has an Excel template for each, so you do not type them in one by one.",
-      "There are templates for field staff, areas and villages, visit reasons, and announcements. Hospitals can also upload in-house doctors, community health workers, patients, and discharges.",
+      "Most teams already keep their staff list and areas in Excel. Syclops has a spreadsheet (CSV) template for each, so you do not type them in one by one. The templates open in Excel.",
+      "There are templates for field staff, referrers, leads, areas and villages, visit reasons, and announcements. Hospitals can also upload in-house doctors, community health workers, patients, and discharges.",
     ],
     steps: [
-      { title: "Download the template", body: "Each upload has its own Excel template with the right columns." },
+      { title: "Download the template", body: "Each upload has its own CSV template with the right columns." },
       { title: "Fill it in", body: "One row per person or place. Keep the column names as they are." },
       { title: "Upload it", body: "Syclops checks the file and tells you which rows need fixing." },
       { title: "Start the first day", body: "Field staff sign in to the app and start their working day." },
@@ -142,35 +143,8 @@ export const guides = [
         a: "Copy it into our template first, then upload it. From then on, use Syclops instead of the sheet.",
       },
       {
-        q: "Can I upload partners from Excel?",
-        a: "Not yet. Staff add partners from the phone after a visit, or you add them in the admin console.",
-      },
-    ],
-  },
-  {
-    slug: "referral-payouts",
-    title: "Pay referrers: rewards and payouts from bills",
-    scene: "referral" as const,
-    summary:
-      "Record a reward for each referral, or work out payouts from bills. Nothing is marked paid until it is approved.",
-    intro: [
-      "Referral programmes go wrong when nobody can say what a referrer is owed. Syclops keeps the reward on the referral itself, next to the person who was sent.",
-      "Teams that pay a share of each bill can upload bills and let payout rules do the sums. Every payout moves from pending to approved to paid, so nothing is paid twice by accident.",
-    ],
-    steps: [
-      { title: "Record a reward", body: "Add the reward amount when a referral converts." },
-      { title: "Or set payout rules", body: "Pay a share of each bill, by bill category, with any deductions you apply." },
-      { title: "Match names", body: "Link the different spellings of a referrer’s name on bills to one person." },
-      { title: "Approve, then pay", body: "Each payout is pending, then approved, then paid. Download the settlement report and thank-you letters." },
-    ],
-    faqs: [
-      {
-        q: "When is a payout marked paid?",
-        a: "Only after someone approves it and then marks it paid. Until then it shows as pending or approved.",
-      },
-      {
-        q: "Can the same person be referred twice?",
-        a: "Not while a referral for that mobile number is still open on your referral page.",
+        q: "Can I upload partners from a spreadsheet?",
+        a: "Yes. Referrers have their own template in the admin console. Staff can also add a partner from the phone after a visit.",
       },
     ],
   },
@@ -183,15 +157,15 @@ export function getGuide(slug: string) {
 export const faqs = [
   {
     q: "What is referral management software?",
-    a: "Software that records who sent a customer, whether they converted, and what the sender is owed. Syclops is referral management software that also keeps field visits and membership plans in the same workspace.",
+    a: "Software that records who sent a customer and whether they converted. Syclops is referral management software that also keeps field visits and membership plans in the same workspace.",
   },
   {
     q: "Is Syclops referral management software?",
-    a: "Yes. Doctors, partners, members, and alumni send people through their own login and see what happened next. You record rewards and approve payouts. Referrers are not paid seats.",
+    a: "Yes. Partners, members, alumni, and doctors send people through their own login and see what happened next. Referrers are not paid seats.",
   },
   {
     q: "Who is Syclops for?",
-    a: "Any team that grows through field staff and people who refer, then keeps customers on a plan. Hospitals and clinics first, and also gyms, campuses, sales teams, fintech, and medtech.",
+    a: "Any team that grows through field staff and people who refer, then keeps customers on a plan: gyms, campuses, sales teams, fintech, medtech, and the hospitals and clinics it was first built for.",
   },
   {
     q: "Is Syclops field tracking software or a CRM?",
@@ -211,7 +185,7 @@ export const faqs = [
   },
   {
     q: "Where is the Android app?",
-    a: "Download the APK from the mobile app page. Referrers can also use your referral page in a browser.",
+    a: "Download the APK from the mobile app page. Referrers can also log in at app.syclops.in in any browser.",
   },
   {
     q: "How is this different from GPS tracking?",
@@ -235,6 +209,6 @@ export const faqs = [
   },
   {
     q: "Will the app use my industry’s words?",
-    a: "Not yet. Syclops was built for hospitals, so some screens say doctors and patients where you might say partners and customers. The steps are the same.",
+    a: "Partly. The phone screens say referrers and referred users. Some forms and the admin dashboard still use hospital words, such as doctors and patients, because Syclops was built for hospitals first. The steps are the same.",
   },
 ];

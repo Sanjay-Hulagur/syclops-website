@@ -36,11 +36,11 @@ const guideProductLinks: Record<
     { href: "/pricing", label: "Pricing", body: "What a field seat costs." },
   ],
   "field-day": [
-    { href: "/product/field", label: "Field tracking", body: "Check-in, photos, and visit plans." },
+    { href: "/product/field", label: "Field tracking", body: "Check-in, the visit photo, and visit plans." },
     { href: "/tada-software", label: "TADA software", body: "TA/DA from the distance travelled." },
   ],
   "referral-portal": [
-    { href: "/product/referrals", label: "Referral management", body: "Referrer login, status, and payouts." },
+    { href: "/product/referrals", label: "Referral management", body: "Referrer login, status, and the duplicate check." },
     {
       href: "/referral-management-software",
       label: "Referral management software",
@@ -48,7 +48,7 @@ const guideProductLinks: Record<
     },
   ],
   "plans-billing": [
-    { href: "/product/subscriptions", label: "Subscriptions", body: "Plans, EMI, and payment status." },
+    { href: "/product/subscriptions", label: "Subscriptions", body: "Plans, payments, and status." },
     { href: "/integrations", label: "Integrations", body: "Razorpay, WhatsApp, Maps." },
   ],
   reports: [
@@ -58,10 +58,6 @@ const guideProductLinks: Record<
   "import-from-excel": [
     { href: "/product/field", label: "Field tracking", body: "What staff do after the upload." },
     { href: "/compare/whatsapp-excel", label: "vs WhatsApp + Excel", body: "Stop running the team from a sheet." },
-  ],
-  "referral-payouts": [
-    { href: "/product/referrals", label: "Referral management", body: "Rewards, payouts, and the duplicate check." },
-    { href: "/guides/referral-portal", label: "Referral page guide", body: "Set up the referral page first." },
   ],
 };
 

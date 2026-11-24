@@ -8,6 +8,6 @@ export default function Image() {
   return ogImage({
     eyebrow: "Referrals",
     title: "Every referral keeps the name of who sent it",
-    kicker: "A login for referrers. Payouts you approve.",
+    kicker: "A login for referrers, and the status of everyone they sent.",
   });
 }

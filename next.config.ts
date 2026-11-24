@@ -22,7 +22,12 @@ const nextConfig: NextConfig = {
       { source: "/demo", destination: "/start", permanent: true },
       {
         source: "/guides/qualification-window",
-        destination: "/guides/referral-payouts",
+        destination: "/product/referrals",
+        permanent: true,
+      },
+      {
+        source: "/guides/referral-payouts",
+        destination: "/product/referrals",
         permanent: true,
       },
       {

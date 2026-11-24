@@ -154,26 +154,26 @@ export function PartnerPortal() {
     <div
       className="rounded-[1.6rem] border border-line bg-paper p-3"
       role="img"
-      aria-label="Illustrative channel partner referral page. The partner sees leads they submitted and status. Sample workspace, not a customer result."
+      aria-label="Illustrative channel partner login. The partner sees the leads they sent and their status. Sample workspace, not a customer result."
     >
       <div className="rounded-2xl border border-line bg-cream p-3">
-        <p className="text-[11px] text-muted">Partner referral page · not a field seat</p>
+        <p className="text-[11px] text-muted">Partner’s login · not a field seat</p>
         <p className="mt-1 text-sm font-medium">Orbit Media</p>
         <p className="mt-3 rounded-xl border border-dashed border-line bg-quiet px-3 py-4 text-center text-xs text-muted">
-          Submit a lead · link in the browser
+          Refer User
         </p>
         <ul className="mt-3 space-y-2 text-xs">
           <li className="flex items-center justify-between gap-2">
-            <span>New account · sent today</span>
-            <Status>Sent</Status>
+            <span>Neha Joshi · sent today</span>
+            <Status>Pending</Status>
           </li>
           <li className="flex items-center justify-between gap-2">
-            <span>Northwind Retail</span>
-            <Status tone="money">Converted</Status>
+            <span>Ravi Shah · Northwind Retail</span>
+            <Status tone="money">Arrived</Status>
           </li>
           <li className="flex items-center justify-between gap-2">
-            <span>Same mobile blocked</span>
-            <Status tone="warn">Duplicate</Status>
+            <span>Amit Rao · Bluewave Traders</span>
+            <Status tone="warn">Not able to contact</Status>
           </li>
         </ul>
       </div>
@@ -186,7 +186,7 @@ export function LeadStatus({ compact = false }: { compact?: boolean }) {
     <div
       className="overflow-hidden rounded-2xl border border-line bg-cream"
       role="img"
-      aria-label="Illustrative partner lead with referrer and status from sent to converted. Sample workspace, not a customer result."
+      aria-label="Illustrative partner lead with the referrer, the referral status, and the conversion. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3 border-b border-line px-4 py-3">
         <p className="text-sm font-medium">Partner lead</p>
@@ -202,12 +202,16 @@ export function LeadStatus({ compact = false }: { compact?: boolean }) {
           <dd className="font-medium">Orbit Media</dd>
         </div>
         <div className="flex items-center justify-between gap-3">
-          <dt className="text-muted">Account</dt>
-          <dd className="font-medium">Northwind Retail</dd>
+          <dt className="text-muted">Contact</dt>
+          <dd className="font-medium">Ravi Shah · Northwind Retail</dd>
         </div>
         <div className="flex items-center justify-between gap-3">
-          <dt className="text-muted">Status</dt>
-          <dd>Sent → in progress → converted</dd>
+          <dt className="text-muted">Referral status</dt>
+          <dd>Arrived</dd>
+        </div>
+        <div className="flex items-center justify-between gap-3">
+          <dt className="text-muted">Conversion</dt>
+          <dd>Converted</dd>
         </div>
       </dl>
     </div>
@@ -219,10 +223,10 @@ export function PlanRecord({ compact = false }: { compact?: boolean }) {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Illustrative retainer with end date, amount, payment status, and the rep who sold it. Sample workspace, not a customer result."
+      aria-label="Illustrative service plan with its amount, a part payment, payment status, and the rep who sold it. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
-        <p className="text-sm font-medium">Growth retainer</p>
+        <p className="text-sm font-medium">Service plan</p>
         {compact ? (
           <Status tone="warn">Payment Due</Status>
         ) : (
@@ -232,12 +236,12 @@ export function PlanRecord({ compact = false }: { compact?: boolean }) {
       <p className="mt-2 text-xs text-muted">Northwind Retail · 12 months</p>
       <dl className="mt-3 grid grid-cols-2 gap-2 text-xs">
         <div className="rounded-xl bg-paper px-3 py-2">
-          <dt className="text-muted">Plan ends</dt>
-          <dd className="mt-1 font-medium">31 March</dd>
-        </div>
-        <div className="rounded-xl bg-paper px-3 py-2">
           <dt className="text-muted">Amount</dt>
           <dd className="mt-1 font-medium">₹75,000</dd>
+        </div>
+        <div className="rounded-xl bg-paper px-3 py-2">
+          <dt className="text-muted">Paid in cash</dt>
+          <dd className="mt-1 font-medium">₹25,000</dd>
         </div>
         <div className="col-span-2 rounded-xl bg-paper px-3 py-2">
           <dt className="text-muted">Sold by</dt>
@@ -253,33 +257,33 @@ export function PlanList() {
     <div
       className="overflow-hidden rounded-2xl border border-line bg-cream"
       role="img"
-      aria-label="Illustrative plan list with a paid retainer, a payment due, and an instalment paid by UPI. Sample workspace, not a customer result."
+      aria-label="Illustrative plan list with a plan paid online, a plan part-paid in cash with a payment due, and a UPI payment recorded by staff. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between border-b border-line px-4 py-3">
-        <p className="text-sm font-medium">Recurring plans</p>
+        <p className="text-sm font-medium">Plans</p>
         <SampleCaption>Illustrative sample workspace</SampleCaption>
       </div>
       <ul className="divide-y divide-line text-sm">
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">12-month retainer</span>
+            <span className="block font-medium">12-month service plan</span>
             <span className="text-xs text-muted">Paid online · Razorpay</span>
           </span>
-          <Status tone="money">Paid</Status>
+          <Status tone="money">Active</Status>
         </li>
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">Instalment due 5th</span>
-            <span className="text-xs text-muted">₹75,000 · sold by Vikram Sethi</span>
+            <span className="block font-medium">Part paid in cash</span>
+            <span className="text-xs text-muted">₹25,000 of ₹75,000 · sold by Vikram Sethi</span>
           </span>
           <Status tone="warn">Payment Due</Status>
         </li>
         <li className="flex items-center justify-between gap-3 px-4 py-3">
           <span>
-            <span className="block font-medium">Service retainer · EMI 4 of 6</span>
-            <span className="text-xs text-muted">UPI recorded by staff</span>
+            <span className="block font-medium">Annual plan</span>
+            <span className="text-xs text-muted">UPI with reference · recorded by staff</span>
           </span>
-          <Status tone="money">Paid</Status>
+          <Status tone="money">Active</Status>
         </li>
       </ul>
     </div>
@@ -291,7 +295,7 @@ export function LoopHealth() {
     <div
       className="rounded-2xl border border-line bg-cream p-4"
       role="img"
-      aria-label="Illustrative counts for visits, partner leads, retainers, and payments due. Sample workspace, not a customer result."
+      aria-label="Illustrative counts for visits, partner leads, conversions, and payments due. Sample workspace, not a customer result."
     >
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium">Visits to customers</p>
@@ -301,7 +305,7 @@ export function LoopHealth() {
         {[
           ["Visits", "54"],
           ["Partner leads", "16"],
-          ["Retainers", "₹9.2L"],
+          ["Conversions", "6"],
           ["Payment due", "5"],
         ].map(([label, value]) => (
           <li key={label} className="rounded-xl bg-quiet px-2 py-3">

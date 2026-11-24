@@ -6,7 +6,7 @@ export const site = {
   url: siteUrl,
   tagline: "See the visit. Trace the referral. Keep the subscription.",
   description:
-    "Referral management software for clinics, gyms, campuses, and field teams in India. Track partner and member referrals from intro to payout, with visits and subscriptions in one loop.",
+    "Referral management software for gyms, campuses, clinics, and field teams in India. Track partner and member referrals from intro to outcome, with visits and subscriptions in one loop.",
 };
 
 export const supportEmail = "syclops.team@gmail.com";
@@ -76,7 +76,7 @@ export const roles = [
   {
     title: "Referral partners",
     href: "/product/referrals",
-    body: "A referral page for members, alumni, KOLs, clinics, or channel partners. They send. They see status. They get paid.",
+    body: "A login for members, alumni, KOLs, clinics, or channel partners. They send. They see status. Nothing to install.",
   },
   {
     title: "Management",
@@ -89,6 +89,6 @@ export const integrations = [
   { name: "WhatsApp Business", use: "Templates, campaigns, a shared inbox and delivery reports" },
   { name: "Razorpay", use: "Online payments for plan enrollments" },
   { name: "Google Maps", use: "Locations and routes for the field day" },
-  { name: "Hospital billing (HIS)", use: "Admissions and bills, matched to referrals for payouts" },
-  { name: "Excel exports", use: "TA/DA, visit, sales and referral payout reports" },
+  { name: "Hospital system (HIS)", use: "Admissions from the hospital system, matched to referrals" },
+  { name: "Excel exports", use: "TA/DA, visit, sales and referral reports" },
 ];

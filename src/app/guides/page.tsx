@@ -8,7 +8,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata: Metadata = pageSeo({
   title: "Setup guides",
   description:
-    "Set up Syclops step by step: create a workspace, add your team, upload staff and areas from Excel, run a field day, set up your referral page and membership plans, and export reports.",
+    "Set up Syclops step by step: create a workspace, add your team, upload staff and areas from a spreadsheet, run a field day, add referrers, set up membership plans, and export reports.",
   path: "/guides",
 });
 
@@ -18,7 +18,7 @@ export default function GuidesPage() {
       <PageHero
         eyebrow="Guides"
         title="Set up most of it yourself."
-        body="Create a workspace, add your team, upload your lists from Excel, and run a field day. Our team sets up the referral page and online payments with you."
+        body="Create a workspace, add your team, upload your lists from a spreadsheet, and run a field day. Our team sets up your plans, online payments and, for hospitals, the referral page with you."
         scene="start"
         crumbs={[
           { name: "Home", path: "/" },

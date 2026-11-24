@@ -8,6 +8,6 @@ export default function Image() {
   return ogImage({
     eyebrow: "Guides",
     title: "Set up most of it yourself",
-    kicker: "Workspace, team, Excel upload, referral page, plans.",
+    kicker: "Workspace, team, spreadsheet upload, referrers, plans.",
   });
 }

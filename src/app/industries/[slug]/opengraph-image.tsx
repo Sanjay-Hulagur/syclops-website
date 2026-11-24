@@ -43,21 +43,21 @@ export default async function Image({
     return ogImage({
       eyebrow: "Sales",
       title: "Turn field visits and partner referrals into revenue.",
-      kicker: "Field visits, partner leads, and recurring plans. Keep your CRM.",
+      kicker: "Field visits, partner leads, calls, and conversions. Keep your CRM.",
     });
   }
   if (slug === "fintech") {
     return ogImage({
       eyebrow: "Fintech",
-      title: "Turn agent visits into policies that get paid.",
-      kicker: "Agent visits, DSA referrals, and premium follow-ups. Keep your core.",
+      title: "Turn agent visits into referrals you can trace.",
+      kicker: "Agent visits, DSA referrals, calls, and conversions. Keep your core.",
     });
   }
   if (slug === "medtech") {
     return ogImage({
       eyebrow: "Medtech",
-      title: "Turn KOL visits into device contracts that stay in service.",
-      kicker: "Department visits, referrals, and service plans. Keep your ERP.",
+      title: "See which KOL visits turn into referrals and sales.",
+      kicker: "Department visits, KOL referrals, calls, and conversions. Keep your ERP.",
     });
   }
   return ogImage({
