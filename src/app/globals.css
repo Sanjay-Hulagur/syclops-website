@@ -145,9 +145,28 @@ body {
   animation: sy-dot 4.5s ease-in-out 2.6s infinite;
 }
 
+@keyframes sy-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .sy-rise {
+    animation: sy-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .industry-move {
     display: none;
+  }
+
+  .sy-rise {
+    animation: none !important;
   }
 
   html {

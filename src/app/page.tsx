@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FaqList, JsonLd } from "@/components/interior";
 import { CtaBand } from "@/components/page-hero";
-import { ReferralPreview } from "@/components/referral-preview";
+import { HeroScene } from "@/components/motion/hero-scene";
+import { IndustryScene, type SceneIndustry } from "@/components/motion/industry-scene";
+import { OutcomeScene, TeamScene, VisitScene } from "@/components/motion/step-scenes";
 import { getBillingConfig } from "@/lib/billing";
 import { formatInr, publicPlans } from "@/lib/plans";
 import { jsonLdGraph, pageSeo, softwareNode } from "@/lib/seo";
@@ -64,7 +66,9 @@ const extras = [
   "Razorpay payments",
 ];
 
-const audiences = [
+const stepScenes = [TeamScene, VisitScene, OutcomeScene];
+
+const audiences: { id: SceneIndustry; title: string; body: string }[] = [
   {
     id: "gyms",
     title: "Gyms and fitness",
@@ -125,7 +129,7 @@ export default async function HomePage() {
     <>
       <JsonLd data={jsonLdGraph([softwareNode])} />
       <section className="border-b border-line lg:flex lg:min-h-[calc(100svh-65px)] lg:items-center">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-10 pt-8 sm:px-5 sm:py-16 lg:w-full lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:py-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-10 pt-8 sm:px-5 sm:py-16 lg:w-full lg:grid-cols-[1fr_1fr] lg:gap-14 lg:py-20">
           <div>
             <h1 className="display max-w-3xl text-pretty text-[2rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.4rem]">
               Track field visits, referrals and memberships in one app.
@@ -163,28 +167,39 @@ export default async function HomePage() {
               </a>
             </p>
           </div>
-          <ReferralPreview />
+          <HeroScene />
         </div>
       </section>
 
-      <section id="how" className="scroll-mt-20 border-b border-line bg-cream">
-        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-5 sm:py-16">
-          <h2 className={heading}>How it works</h2>
-          <ol className="mt-6 grid gap-6 lg:grid-cols-3 lg:gap-8">
-            {steps.map((step, index) => (
-              <li key={step.title} className="flex gap-4">
-                <span
-                  aria-hidden="true"
-                  className="display flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-ink text-base font-semibold"
-                >
-                  {index + 1}
-                </span>
-                <div>
-                  <h3 className="font-semibold">{step.title}</h3>
-                  <p className="mt-1 text-sm leading-6 text-muted">{step.body}</p>
-                </div>
-              </li>
-            ))}
+      <section id="how" className="scroll-mt-20 bg-ink text-cream">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-5 sm:py-20">
+          <p className="sy-rise text-xs font-medium uppercase tracking-[0.18em] text-iris">How it works</p>
+          <h2 className={`sy-rise mt-3 max-w-2xl ${heading}`}>
+            From the first visit to what each referral became.
+          </h2>
+          <ol className="mt-8 grid gap-6 lg:grid-cols-3 lg:gap-8">
+            {steps.map((step, index) => {
+              const Scene = stepScenes[index];
+              return (
+                <li key={step.title} className="sy-rise">
+                  <div className="overflow-hidden rounded-2xl bg-paper">
+                    <Scene />
+                  </div>
+                  <div className="mt-5 flex gap-4">
+                    <span
+                      aria-hidden="true"
+                      className="display flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-iris text-sm font-semibold text-cream"
+                    >
+                      {index + 1}
+                    </span>
+                    <div>
+                      <h3 className="font-semibold">{step.title}</h3>
+                      <p className="mt-1 text-sm leading-6 text-cream/70">{step.body}</p>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
           </ol>
         </div>
       </section>
@@ -199,7 +214,7 @@ export default async function HomePage() {
                 href={item.href}
                 data-cta-id={`home_workflow_${item.href.split("/").pop()}`}
                 data-cta-location="home_workflows"
-                className="group flex flex-col rounded-2xl border border-line bg-cream p-5 transition hover:border-ink/40"
+                className="sy-rise group flex flex-col rounded-2xl border border-line bg-cream p-5 transition hover:-translate-y-0.5 hover:border-ink/40"
               >
                 <h3 className="display text-xl font-semibold">{item.title}</h3>
                 <p className="mt-2 flex-1 text-sm leading-6 text-muted">{item.body}</p>
@@ -230,8 +245,9 @@ export default async function HomePage() {
                 href={`/industries/${item.id}`}
                 data-cta-id={`home_industry_${item.id}`}
                 data-cta-location="home_industries"
-                className="group rounded-2xl border border-line bg-paper p-5 transition hover:border-ink/40"
+                className="sy-rise group rounded-2xl border border-line bg-paper p-5 transition hover:-translate-y-0.5 hover:border-ink/40"
               >
+                <IndustryScene id={item.id} />
                 <h3 className="font-semibold group-hover:underline">{item.title}</h3>
                 <p className="mt-1 text-sm leading-6 text-muted">{item.body}</p>
               </Link>

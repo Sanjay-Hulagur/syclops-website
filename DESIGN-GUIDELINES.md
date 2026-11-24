@@ -106,6 +106,8 @@ Empty state copy is specific (“No plans match ‘clinic’”).
 
 **Motion.** The site may use the slow orbit / dash / breathe already in `globals.css`. New UI motion is 150–200ms. Honour `prefers-reduced-motion`.
 
+**Scenes.** Story scenes use the reel figures and buildings in `src/components/motion`. They loop only while on screen and rest on a finished poster frame for reduced motion. Every name and status in a scene is sample data the app can actually show. On an ink band, scenes sit on paper panels.
+
 ---
 
 ## Copy
