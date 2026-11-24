@@ -9,6 +9,12 @@ export const post: Post = {
   category: "Subscriptions",
   excerpt:
     "Dunning emails do not replace a visit. At-risk members, students, and policyholders still live in the real world.",
+  hero: {
+    src: "/blog/field-team-walk.jpg",
+    alt: "Three field staff walking together down a tree-lined street in the morning.",
+    width: 1280,
+    height: 640,
+  },
   body: [
     {
       type: "p",

@@ -9,6 +9,12 @@ export const post: Post = {
   category: "Referrals",
   excerpt:
     "Most teams do not lose referrals because staff are lazy. They lose them because the visit, the intro, and the plan live in three tools.",
+  hero: {
+    src: "/blog/referral-paths-lane.jpg",
+    alt: "A small town seen from above, with a winding lane linking a gym, a school and a corner shop, and a rider on a scooter.",
+    width: 1280,
+    height: 640,
+  },
   body: [
     {
       type: "p",

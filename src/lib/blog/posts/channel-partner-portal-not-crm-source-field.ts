@@ -9,6 +9,12 @@ export const post: Post = {
   category: "Sales",
   excerpt:
     "Why a CRM source dropdown cannot tell a channel partner what happened to their intro, and what a partner login records instead.",
+  hero: {
+    src: "/blog/channel-partner-meeting.jpg",
+    alt: "A sales representative shaking hands with a distributor at the counter of a hardware shop in a market lane.",
+    width: 1280,
+    height: 640,
+  },
   body: [
     {
       type: "p",

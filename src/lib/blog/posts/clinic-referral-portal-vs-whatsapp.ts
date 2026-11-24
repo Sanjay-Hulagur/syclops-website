@@ -9,6 +9,12 @@ export const post: Post = {
   category: "Healthcare",
   excerpt:
     "Learn how clinics can track patient referrals, share updates with referring doctors, monitor patient visits, and manage follow-ups without depending on WhatsApp messages.",
+  hero: {
+    src: "/blog/clinic-referral-visit.jpg",
+    alt: "A hospital relations officer talking with a doctor in a small clinic while a family waits on a bench.",
+    width: 1280,
+    height: 640,
+  },
   body: [
     {
       type: "p",

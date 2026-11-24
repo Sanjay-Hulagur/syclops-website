@@ -10,10 +10,10 @@ export const post: Post = {
   excerpt:
     "Understand how businesses can track employee visits, manage GPS location data, control access, and decide data retention in line with India's DPDP Act.",
   hero: {
-    src: "/blog/employee-gps-privacy-india.png",
-    alt: "Employee GPS tracking and data privacy in India. A field officer checking a location pin, with access control and a DPDP retention clock.",
-    width: 1958,
-    height: 803,
+    src: "/blog/end-of-working-day.jpg",
+    alt: "A field officer riding his scooter out of the office gate at dusk, at the end of the working day.",
+    width: 1280,
+    height: 640,
   },
   body: [
     {

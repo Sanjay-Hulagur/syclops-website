@@ -9,6 +9,12 @@ export const post: Post = {
   category: "Subscriptions",
   excerpt:
     "Learn how to track failed membership payments, plan customer follow-up visits, and recover pending fees through your field team.",
+  hero: {
+    src: "/blog/membership-follow-up-visit.jpg",
+    alt: "A field staff member at a customer's apartment door, following up in person.",
+    width: 1280,
+    height: 640,
+  },
   body: [
     {
       type: "p",

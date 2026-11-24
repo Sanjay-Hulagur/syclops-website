@@ -10,10 +10,10 @@ export const post: Post = {
   excerpt:
     "The useful test is simple: can the person who sent the customer see status, and can you see whether that customer paid?",
   hero: {
-    src: "/blog/how-to-choose-referral-software.png",
-    alt: "How to choose referral management software. A buyer comparing referral tracking, field teams, reports, integrations, and pricing.",
-    width: 1958,
-    height: 803,
+    src: "/blog/choosing-software-discussion.jpg",
+    alt: "Two business owners at a table by a window, talking through a decision over tea and notes.",
+    width: 1184,
+    height: 592,
   },
   body: [
     {

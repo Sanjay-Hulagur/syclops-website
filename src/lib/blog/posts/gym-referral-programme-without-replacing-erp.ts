@@ -9,6 +9,12 @@ export const post: Post = {
   category: "Referrals",
   excerpt:
     "Learn how gyms can manage member referrals, track new memberships, see which members brought a friend, and organise trainer follow-ups without replacing their current gym management software.",
+  hero: {
+    src: "/blog/gym-friend-referral.jpg",
+    alt: "A gym member introducing a friend to a trainer at the entrance of a neighbourhood gym.",
+    width: 1280,
+    height: 640,
+  },
   body: [
     {
       type: "p",

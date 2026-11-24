@@ -9,6 +9,12 @@ export const post: Post = {
   category: "Education",
   excerpt:
     "Plan counselor visits around unpaid fees, keep alumni and parent referrals named, and stop running enquiries, calls, and fees in three lists.",
+  hero: {
+    src: "/blog/counselor-family-visit.jpg",
+    alt: "An education counselor with a folder talking with a parent and a student at the gate of their home.",
+    width: 1280,
+    height: 640,
+  },
   body: [
     {
       type: "p",

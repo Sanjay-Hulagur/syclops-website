@@ -10,10 +10,10 @@ export const post: Post = {
   excerpt:
     "Learn why tracking employee locations alone is not enough to improve field team performance. Understand how businesses can connect GPS tracking with planned visits, customer follow-ups, referral tracking, and sales outcomes.",
   hero: {
-    src: "/blog/beyond-gps-field-sales.png",
-    alt: "Managing field sales teams beyond GPS tracking. A field officer's route connected to planned visits, follow-ups, referrals, and sales.",
-    width: 1958,
-    height: 803,
+    src: "/blog/field-visit-pharmacy.jpg",
+    alt: "A field sales officer taking notes at a pharmacy counter, with his scooter parked outside and a dotted line tracing his route along the street.",
+    width: 1280,
+    height: 640,
   },
   body: [
     {

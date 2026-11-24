@@ -9,6 +9,12 @@ export const post: Post = {
   category: "Industries",
   excerpt:
     "Learn how medtech and fintech teams can track KOL and DSA referrals, manage field visits, and record each sale or policy as a conversion, while contracts and premiums stay in their core systems.",
+  hero: {
+    src: "/blog/kol-agent-introductions.jpg",
+    alt: "A medical device representative talking with a senior doctor outside a diagnostics centre, while a loan agent meets a shopkeeper nearby.",
+    width: 1280,
+    height: 640,
+  },
   body: [
     {
       type: "p",
