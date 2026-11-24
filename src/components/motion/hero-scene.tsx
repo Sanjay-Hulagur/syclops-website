@@ -37,9 +37,9 @@ export function HeroScene() {
         <svg viewBox="0 0 560 380" aria-hidden="true" className="block h-auto w-full">
           <rect x={0} y={GROUND} width={560} height={80} fill={tone.quiet} />
           <Building x={466} y={GROUND} kind="school" label="Greenwood High" size={0.4} />
-          <Person x={350} y={GROUND} size={SIZE} body={tone.money} hair="bun" frame={frame} />
+          <Person x={300} y={GROUND} size={SIZE} body={tone.money} hair="bun" frame={frame} />
           <Person
-            x={lerp(472, 408, friendIn)}
+            x={lerp(380, 348, friendIn)}
             y={GROUND}
             size={SIZE * 0.86}
             body={tone.sand}
@@ -61,11 +61,11 @@ export function HeroScene() {
           <Pin x={214} y={160} p={pin * out} size={0.8} />
           <Chip x={130} y={54} width={224} label="✓ GPS checked in · 9 Nov, 10:42" fill={tone.money} opacity={gps.opacity * out} scale={gps.scale} fontSize={12} />
           <Chip x={130} y={88} width={224} label="Photo with place and time" fill={tone.ink} opacity={photo.opacity * out} scale={photo.scale} fontSize={12} />
-          <g opacity={bubble.opacity * out} transform={`translate(390 62) scale(${bubble.scale})`}>
-            <rect x={-130} y={-30} width={260} height={52} rx={18} fill={tone.cream} stroke={tone.ink} strokeWidth={2} />
-            <path d="M -38 21 l -8 16 l 20 -16" fill={tone.cream} stroke={tone.ink} strokeWidth={2} strokeLinejoin="round" />
-            <rect x={-44} y={18} width={24} height={4} fill={tone.cream} />
-            <text x={0} y={1} textAnchor="middle" fontFamily={ui} fontWeight={600} fontSize={13} fill={tone.ink}>
+          <g opacity={bubble.opacity * out} transform={`translate(352 124) scale(${bubble.scale})`}>
+            <rect x={-108} y={-24} width={216} height={44} rx={16} fill={tone.cream} stroke={tone.ink} strokeWidth={2} />
+            <path d="M -42 19 l -8 10 l 20 -10" fill={tone.cream} stroke={tone.ink} strokeWidth={2} strokeLinejoin="round" />
+            <rect x={-48} y={16} width={24} height={4} fill={tone.cream} />
+            <text x={0} y={2} textAnchor="middle" fontFamily={ui} fontWeight={600} fontSize={12} fill={tone.ink}>
               “Aditi wants the weekend batch.”
             </text>
           </g>
